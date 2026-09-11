@@ -620,5 +620,9 @@ function closeModal() {
   state.selectedAsset = null;
 }
 
-// Start application
-document.addEventListener("DOMContentLoaded", initApp);
+// Start application (Handles DOMContentLoaded race condition)
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}
