@@ -1,0 +1,11 @@
+﻿{
+  "name": "usd-asset-portal",
+  "version": "1.0.0",
+  "description": "3D USD Asset Portal for SimReady assets",
+  "scripts": {
+    "build": "node -e \"console.log('Build completed successfully')\""
+  },
+  "keywords": ["usd", "simready", "3d", "assets"],
+  "author": "",
+  "license": "MIT"
+}
