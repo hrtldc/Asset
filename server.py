@@ -1,4 +1,4 @@
-﻿"""
+"""
 3D USD Asset Portal Backend Server
 FastAPI + Uvicorn
 """
@@ -15,6 +15,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 
 import uvicorn
+from PIL import Image
 from fastapi import FastAPI, HTTPException, Request, Query, Response
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
@@ -35,15 +36,47 @@ app.add_middleware(
 # Ensure static directories exist
 STATIC_DIR.mkdir(parents=True, exist_ok=True)
 (STATIC_DIR / "css").mkdir(parents=True, exist_ok=True)
-(STATIC_DIR / "js").mkdir(parents=True, exist_ok=True)
+THUMB_CACHE_DIR = STATIC_DIR / "cache" / "thumbs"
+THUMB_CACHE_DIR.mkdir(parents=True, exist_ok=True)
 
 app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
+if (STATIC_DIR / "js").exists():
+    app.mount("/js", StaticFiles(directory=str(STATIC_DIR / "js")), name="js")
+if (STATIC_DIR / "css").exists():
+    app.mount("/css", StaticFiles(directory=str(STATIC_DIR / "css")), name="css")
+if (STATIC_DIR / "data").exists():
+    app.mount("/data", StaticFiles(directory=str(STATIC_DIR / "data")), name="data")
 
 # Cache for asset manifests & assets
 _manifest_cache: Dict[str, dict] = {}
 _cached_assets: Optional[List[dict]] = None
 _last_scan_timestamp: float = 0.0
 CACHE_TTL_SECONDS = 30.0
+
+
+def get_or_create_thumbnail(source_file: Path) -> Path:
+    """Generate or retrieve compressed WebP thumbnail (~15-30 KB instead of 3MB)."""
+    try:
+        mtime_int = int(source_file.stat().st_mtime)
+        batch = source_file.parent.parent.name
+        asset = source_file.parent.name
+        cache_name = f"{batch}_{asset}_{source_file.stem}_{mtime_int}.webp"
+        cache_path = THUMB_CACHE_DIR / cache_name
+        if cache_path.exists() and cache_path.stat().st_size > 0:
+            return cache_path
+
+        with Image.open(source_file) as im:
+            if im.mode in ("RGBA", "LA") or (im.mode == "P" and "transparency" in im.info):
+                im_conv = im.convert("RGBA")
+            else:
+                im_conv = im.convert("RGB")
+            im_conv.thumbnail((540, 540), Image.Resampling.LANCZOS)
+            cache_path.parent.mkdir(parents=True, exist_ok=True)
+            im_conv.save(cache_path, "WEBP", quality=85, method=4)
+        return cache_path
+    except Exception as e:
+        print(f"[Thumbnail Error] {source_file}: {e}")
+        return source_file
 
 
 def classify_category(folder_name: str, semantic_class: Optional[str] = None):
@@ -257,14 +290,27 @@ def serve_index():
     return FileResponse(index_path, media_type="text/html", headers={"Cache-Control": "no-cache"})
 
 
+@app.on_event("startup")
+def startup_event():
+    # Pre-warm asset cache on startup
+    scan_assets(force_reload=True)
+
+
 @app.get("/api/update")
+def force_update_assets():
+    """Explicit one-click refresh endpoint."""
+    assets = scan_assets(force_reload=True)
+    return format_assets_response(assets)
+
+
 @app.get("/api/assets")
 def get_assets(refresh: bool = Query(False)):
-    """Full scan and update endpoint."""
-    # If hit from /api/update, always force_reload
-    force = refresh or True
-    assets = scan_assets(force_reload=force)
-    
+    """Fast cached asset endpoint."""
+    assets = scan_assets(force_reload=refresh)
+    return format_assets_response(assets)
+
+
+def format_assets_response(assets: List[dict]):
     cat_counter = Counter(a["category"] for a in assets)
     sorted_categories = [cat for cat, _ in cat_counter.most_common()]
     
@@ -276,9 +322,7 @@ def get_assets(refresh: bool = Query(False)):
     total_size_gb = round(sum(a["total_size_bytes"] for a in assets) / (1024**3), 2)
 
     headers = {
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-        "Pragma": "no-cache",
-        "Expires": "0"
+        "Cache-Control": "public, max-age=15"
     }
 
     return JSONResponse(
@@ -314,6 +358,22 @@ def get_safe_file_path(batch: str, asset: str, filepath: str) -> Path:
     if not target_file.exists() or not target_file.is_file():
         raise HTTPException(status_code=404, detail="File not found")
     return target_file
+
+
+@app.get("/api/thumbnail/{batch}/{asset}/{filepath:path}")
+def stream_thumbnail(batch: str, asset: str, filepath: str):
+    """Serve ultra-fast WebP compressed thumbnail (~10-30KB)."""
+    file_path = get_safe_file_path(batch, asset, filepath)
+    thumb_path = get_or_create_thumbnail(file_path)
+    media_type = "image/webp" if thumb_path.suffix.lower() == ".webp" else "image/png"
+    return FileResponse(
+        thumb_path,
+        media_type=media_type,
+        headers={
+            "Cache-Control": "public, max-age=604800, immutable",
+            "ETag": f'"{int(thumb_path.stat().st_mtime)}"'
+        }
+    )
 
 
 @app.get("/api/media/{batch}/{asset}/{filepath:path}")

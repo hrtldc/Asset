@@ -1,6 +1,8 @@
-﻿/**
+/**
  * 3D USD Asset Portal Frontend Application - One-Click Force Update Edition
  */
+
+const isLocalServer = (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") && (window.location.port === "8088" || window.location.port === "8000");
 
 const state = {
   assets: [],
@@ -114,14 +116,20 @@ function bindEvents() {
     applyFilters();
   });
 
+  if (!isLocalServer && elements.updateAllBtn) {
+    elements.updateAllBtn.style.display = "none";
+  }
+
   // One-Click Force Update & Cache Busting
-  elements.updateAllBtn.addEventListener("click", async () => {
-    elements.updateAllBtn.classList.add("spinning");
-    state.forceBuster = Date.now();
-    await loadAssets(true);
-    elements.updateAllBtn.classList.remove("spinning");
-    showToast(`⚡ 资产与图片已全部强制同步完成！共 ${state.assets.length} 套模型最新就绪`);
-  });
+  if (elements.updateAllBtn) {
+    elements.updateAllBtn.addEventListener("click", async () => {
+      elements.updateAllBtn.classList.add("spinning");
+      state.forceBuster = Date.now();
+      await loadAssets(true);
+      elements.updateAllBtn.classList.remove("spinning");
+      showToast(`⚡ 资产与图片已全部强制同步完成！共 ${state.assets.length} 套模型最新就绪`);
+    });
+  }
 
   // Modal events
   elements.modalCloseBtn.addEventListener("click", closeModal);
@@ -193,9 +201,22 @@ function setViewMode(mode) {
 // Fetch Assets from API with Cache Buster
 async function loadAssets(forceRefresh = false) {
   try {
-    const url = `/api/update?refresh=${forceRefresh ? "true" : "false"}&_t=${Date.now()}`;
-    const res = await fetch(url);
-    const data = await res.json();
+    let data;
+    if (isLocalServer) {
+      const endpoint = forceRefresh ? "/api/update" : "/api/assets";
+      const url = `${endpoint}?refresh=${forceRefresh ? "true" : "false"}&_t=${Date.now()}`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      data = await res.json();
+    } else {
+      // Public Static Mode (Cloudflare / GitHub Pages)
+      let staticRes = await fetch("data/assets.json");
+      if (!staticRes.ok) staticRes = await fetch("/data/assets.json");
+      if (!staticRes.ok) staticRes = await fetch("/static/data/assets.json");
+      if (!staticRes.ok) throw new Error(`Static data load failed: ${staticRes.status}`);
+      data = await staticRes.json();
+    }
+
     state.assets = data.assets || [];
     state.batches = data.batches || [];
     state.categories = data.categories || [];
@@ -207,7 +228,28 @@ async function loadAssets(forceRefresh = false) {
     renderFilterChips();
     applyFilters();
   } catch (err) {
-    console.error("Failed to load assets:", err);
+    console.warn("API request failed, attempting static data fallback:", err);
+    try {
+      let staticRes = await fetch("/data/assets.json");
+      if (!staticRes.ok) staticRes = await fetch("data/assets.json");
+      if (!staticRes.ok) staticRes = await fetch("/static/data/assets.json");
+      if (staticRes.ok) {
+        const data = await staticRes.json();
+        state.assets = data.assets || [];
+        state.batches = data.batches || [];
+        state.categories = data.categories || [];
+        state.categoryCounts = data.category_counts || {};
+        state.batchCounts = data.batch_counts || {};
+        state.stats = data.stats || {};
+        updateStatsBar();
+        renderFilterChips();
+        applyFilters();
+        showToast("ℹ️ 当前处于离线静态模式，已加载缓存资产数据");
+        return;
+      }
+    } catch (staticErr) {
+      console.error("Static data fallback failed:", staticErr);
+    }
     elements.assetGrid.innerHTML = `
       <div class="empty-state" style="grid-column: 1/-1;">
         <h3>无法连接至资产服务</h3>
@@ -353,18 +395,30 @@ function renderGrid() {
     card.className = "asset-card";
     card.setAttribute("data-id", asset.id);
 
-    // Dynamic cache buster with file modification time + forceBuster
-    const vStamp = `${asset.thumbnail_mtime || 0}_${state.forceBuster}`;
-    const thumbUrl = asset.thumbnail_rel_path
-      ? `/api/media/${asset.batch}/${asset.name}/${asset.thumbnail_rel_path}?v=${vStamp}`
-      : null;
-    const videoUrl = asset.video_rel_path
-      ? `/api/media/${asset.batch}/${asset.name}/${asset.video_rel_path}?v=${asset.video_mtime || 0}_${state.forceBuster}`
-      : null;
+    // Media path resolution (Local server vs Static CDN)
+    let thumbUrl = null;
+    let fallbackThumbUrl = "";
+    let videoUrl = null;
+
+    if (isLocalServer) {
+      const vStamp = `${asset.thumbnail_mtime || 0}_${state.forceBuster}`;
+      thumbUrl = asset.thumbnail_rel_path
+        ? `/api/thumbnail/${asset.batch}/${asset.name}/${asset.thumbnail_rel_path}?v=${vStamp}`
+        : null;
+      fallbackThumbUrl = asset.thumbnail_rel_path
+        ? `/api/media/${asset.batch}/${asset.name}/${asset.thumbnail_rel_path}?v=${vStamp}`
+        : "";
+      videoUrl = asset.video_rel_path
+        ? `/api/media/${asset.batch}/${asset.name}/${asset.video_rel_path}?v=${asset.video_mtime || 0}_${state.forceBuster}`
+        : null;
+    } else {
+      thumbUrl = asset.static_thumb_path || (asset.thumbnail_rel_path ? `media/${asset.batch}/${asset.name}/thumb.webp` : null);
+      videoUrl = asset.static_video_path || (asset.video_rel_path ? `media/${asset.batch}/${asset.name}/${asset.video_rel_path.split("/").pop()}` : null);
+    }
 
     let mediaHtml = "";
     if (thumbUrl) {
-      mediaHtml += `<img src="${thumbUrl}" alt="${asset.displayName}" loading="lazy" class="${videoUrl ? "has-video-sibling" : ""}">`;
+      mediaHtml += `<img src="${thumbUrl}" alt="${asset.displayName}" loading="lazy" class="${videoUrl ? "has-video-sibling" : ""}" onerror="if('${fallbackThumbUrl}' && this.src!=='${fallbackThumbUrl}'){this.src='${fallbackThumbUrl}';}">`;
     }
     if (videoUrl) {
       mediaHtml += `<video src="${videoUrl}" loop muted playsinline preload="none" class="has-video"></video>`;
@@ -450,13 +504,21 @@ function openModal(asset) {
   elements.modalTitle.textContent = asset.displayName;
   elements.modalSubtitle.textContent = `类别: ${asset.category_display} · 标识名: ${asset.name} · 批次: ${asset.batch} · 完整大小: ${asset.total_size_mb} MB`;
 
-  const vStamp = `${asset.thumbnail_mtime || 0}_${state.forceBuster}`;
-  const thumbUrl = asset.thumbnail_rel_path
-    ? `/api/media/${asset.batch}/${asset.name}/${asset.thumbnail_rel_path}?v=${vStamp}`
-    : null;
-  const videoUrl = asset.video_rel_path
-    ? `/api/media/${asset.batch}/${asset.name}/${asset.video_rel_path}?v=${asset.video_mtime || 0}_${state.forceBuster}`
-    : null;
+  let thumbUrl = null;
+  let videoUrl = null;
+
+  if (isLocalServer) {
+    const vStamp = `${asset.thumbnail_mtime || 0}_${state.forceBuster}`;
+    thumbUrl = asset.thumbnail_rel_path
+      ? `/api/media/${asset.batch}/${asset.name}/${asset.thumbnail_rel_path}?v=${vStamp}`
+      : null;
+    videoUrl = asset.video_rel_path
+      ? `/api/media/${asset.batch}/${asset.name}/${asset.video_rel_path}?v=${asset.video_mtime || 0}_${state.forceBuster}`
+      : null;
+  } else {
+    thumbUrl = asset.static_thumb_path || (asset.thumbnail_rel_path ? `media/${asset.batch}/${asset.name}/thumb.webp` : null);
+    videoUrl = asset.static_video_path || (asset.video_rel_path ? `media/${asset.batch}/${asset.name}/${asset.video_rel_path.split("/").pop()}` : null);
+  }
 
   if (videoUrl) {
     elements.modalVideoTabBtn.style.display = "block";
@@ -481,25 +543,52 @@ function openModal(asset) {
     elements.modalImageTabBtn.style.display = "none";
   }
 
-  // Download ZIP Button
-  elements.modalDownloadZip.href = `/api/download/zip/${asset.batch}/${asset.name}`;
+  // Branch action buttons based on environment
+  if (isLocalServer) {
+    if (elements.modalOpenFolderBtn) elements.modalOpenFolderBtn.style.display = "inline-flex";
+    if (elements.modalCopyPathBtn) elements.modalCopyPathBtn.style.display = "inline-flex";
 
-  // Quick USD Download Buttons
-  elements.modalQuickUsdRow.innerHTML = "";
-  if (asset.usd_files && asset.usd_files.length > 0) {
-    asset.usd_files.forEach((usdFile) => {
-      const dlBtn = document.createElement("a");
-      dlBtn.className = "btn-secondary";
-      dlBtn.href = `/api/download/file/${asset.batch}/${asset.name}/${usdFile.rel_path}`;
-      dlBtn.download = usdFile.name;
-      dlBtn.innerHTML = `
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-        </svg>
-        下载 ${usdFile.name} (${usdFile.size_str})
-      `;
-      elements.modalQuickUsdRow.appendChild(dlBtn);
-    });
+    elements.modalDownloadZip.href = `/api/download/zip/${asset.batch}/${asset.name}`;
+    elements.modalDownloadZip.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> 一键打包下载完整资产 (ZIP)`;
+    elements.modalDownloadZip.style.background = "";
+    elements.modalDownloadZip.style.cursor = "pointer";
+    elements.modalDownloadZip.onclick = null;
+
+    elements.modalQuickUsdRow.innerHTML = "";
+    if (asset.usd_files && asset.usd_files.length > 0) {
+      asset.usd_files.forEach((usdFile) => {
+        const dlBtn = document.createElement("a");
+        dlBtn.className = "btn-secondary";
+        dlBtn.href = `/api/download/file/${asset.batch}/${asset.name}/${usdFile.rel_path}`;
+        dlBtn.download = usdFile.name;
+        dlBtn.innerHTML = `
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          下载 ${usdFile.name} (${usdFile.size_str})
+        `;
+        elements.modalQuickUsdRow.appendChild(dlBtn);
+      });
+    }
+  } else {
+    // Public Static CDN Mode
+    if (elements.modalOpenFolderBtn) elements.modalOpenFolderBtn.style.display = "none";
+    if (elements.modalCopyPathBtn) elements.modalCopyPathBtn.style.display = "none";
+
+    elements.modalDownloadZip.href = "javascript:void(0);";
+    elements.modalDownloadZip.innerHTML = `<span>🔒 完整 3D 资产受控 · 请联系工程师调取</span>`;
+    elements.modalDownloadZip.style.background = "linear-gradient(135deg, #1e293b 0%, #0f172a 100%)";
+    elements.modalDownloadZip.style.border = "1px solid rgba(255, 255, 255, 0.15)";
+    elements.modalDownloadZip.style.cursor = "default";
+    elements.modalDownloadZip.onclick = () => {
+      showToast("ℹ️ 完整工程 USD/USDC 资产受保护，仅供企业局域网/内网调取");
+    };
+
+    elements.modalQuickUsdRow.innerHTML = `
+      <div style="font-size:0.82rem; color:#94a3b8; background:rgba(255,255,255,0.03); padding:12px 16px; border-radius:10px; border:1px solid rgba(255,255,255,0.06); width:100%; line-height:1.6;">
+        💡 <b>工程模型规格说明：</b>该套资产包含高精 USD 网格、物理碰撞属性、MDL 真实物理材质库及 4K 贴图。公网仅供 360° 视频在线交互审阅，完整文件仅供内网调取。
+      </div>
+    `;
   }
 
   // Open backdrop

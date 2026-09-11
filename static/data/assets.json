@@ -134,7 +134,8 @@
           "size_str": "3.41 MB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_GuiZi"
+      "static_thumb_path": "media/qzs_10/SM_GuiZi/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_GuiZi/V_GuiZi.mp4"
     },
     {
       "id": "qzs_10/SM_GuiZi01",
@@ -326,7 +327,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_GuiZi01"
+      "static_thumb_path": "media/qzs_10/SM_GuiZi01/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_GuiZi01/V_GuiZi01.mp4"
     },
     {
       "id": "qzs_10/SM_YuShiGui01-B",
@@ -345,16 +347,16 @@
       "thumbnail_rel_path": "T_YuShiGui01.png",
       "thumbnail_mtime": 1789099389,
       "video_rel_path": "V_YuShiGui01.mp4",
-      "video_mtime": 1789099734,
+      "video_mtime": 1789112789,
       "primary_usd_rel_path": "SM_YuShiGui01-B.usd",
-      "total_size_bytes": 84495364,
-      "total_size_mb": 80.58,
+      "total_size_bytes": 84870680,
+      "total_size_mb": 80.94,
       "usd_files": [
         {
           "name": "SM_YuShiGui01-B.usd",
           "rel_path": "SM_YuShiGui01-B.usd",
-          "size_bytes": 3639202,
-          "mtime": 1789094288,
+          "size_bytes": 3642703,
+          "mtime": 1789112493,
           "size_str": "3.47 MB"
         },
         {
@@ -369,9 +371,9 @@
         {
           "name": "V_YuShiGui01.mp4",
           "rel_path": "V_YuShiGui01.mp4",
-          "size_bytes": 2827482,
-          "mtime": 1789099734,
-          "size_str": "2.70 MB"
+          "size_bytes": 3199297,
+          "mtime": 1789112789,
+          "size_str": "3.05 MB"
         }
       ],
       "image_files": [
@@ -513,8 +515,8 @@
         {
           "name": "SM_YuShiGui01-B.usd",
           "rel_path": "SM_YuShiGui01-B.usd",
-          "size_bytes": 3639202,
-          "mtime": 1789094288,
+          "size_bytes": 3642703,
+          "mtime": 1789112493,
           "size_str": "3.47 MB"
         },
         {
@@ -534,9 +536,9 @@
         {
           "name": "V_YuShiGui01.mp4",
           "rel_path": "V_YuShiGui01.mp4",
-          "size_bytes": 2827482,
-          "mtime": 1789099734,
-          "size_str": "2.70 MB"
+          "size_bytes": 3199297,
+          "mtime": 1789112789,
+          "size_str": "3.05 MB"
         },
         {
           "name": "a2026_75623150006.mdl",
@@ -777,7 +779,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_YuShiGui01-B"
+      "static_thumb_path": "media/qzs_10/SM_YuShiGui01-B/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_YuShiGui01-B/V_YuShiGui01.mp4"
     },
     {
       "id": "qzs_10/SM_YuShiGui02-B",
@@ -1067,7 +1070,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_YuShiGui02-B"
+      "static_thumb_path": "media/qzs_10/SM_YuShiGui02-B/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_YuShiGui02-B/V_YuShiGui02.mp4"
     },
     {
       "id": "qzs_10/SM_YuShiGui03-B",
@@ -1371,7 +1375,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_YuShiGui03-B"
+      "static_thumb_path": "media/qzs_10/SM_YuShiGui03-B/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_YuShiGui03-B/V_YuShiGui03.mp4"
     },
     {
       "id": "qzs_10/SM_YuShiGui_B",
@@ -1822,7 +1827,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_YuShiGui_B"
+      "static_thumb_path": "media/qzs_10/SM_YuShiGui_B/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_YuShiGui_B/V_YuShiGui.mp4"
     },
     {
       "id": "qzs_10/SM_ZheDieMen01_B",
@@ -1958,7 +1964,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_ZheDieMen01_B"
+      "static_thumb_path": "media/qzs_10/SM_ZheDieMen01_B/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_ZheDieMen01_B/V_ZheDieMen01.mp4"
     },
     {
       "id": "qzs_10/SM_ZheDieMen02_B",
@@ -1979,15 +1986,15 @@
       "video_rel_path": "V_ZheDieMen02.mp4",
       "video_mtime": 1789101955,
       "primary_usd_rel_path": "SM_ZheDieMen02_B.usd",
-      "total_size_bytes": 16492680,
+      "total_size_bytes": 16495191,
       "total_size_mb": 15.73,
       "usd_files": [
         {
           "name": "SM_ZheDieMen02_B.usd",
           "rel_path": "SM_ZheDieMen02_B.usd",
-          "size_bytes": 6682469,
-          "mtime": 1789109113,
-          "size_str": "6.37 MB"
+          "size_bytes": 6684980,
+          "mtime": 1789112279,
+          "size_str": "6.38 MB"
         },
         {
           "name": "SM_ZheDieMen02_B.usdc",
@@ -2026,9 +2033,9 @@
         {
           "name": "SM_ZheDieMen02_B.usd",
           "rel_path": "SM_ZheDieMen02_B.usd",
-          "size_bytes": 6682469,
-          "mtime": 1789109113,
-          "size_str": "6.37 MB"
+          "size_bytes": 6684980,
+          "mtime": 1789112279,
+          "size_str": "6.38 MB"
         },
         {
           "name": "SM_ZheDieMen02_B.usdc",
@@ -2108,7 +2115,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_ZheDieMen02_B"
+      "static_thumb_path": "media/qzs_10/SM_ZheDieMen02_B/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_ZheDieMen02_B/V_ZheDieMen02.mp4"
     },
     {
       "id": "qzs_10/SM_ZheDieMen03_B",
@@ -2244,7 +2252,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_ZheDieMen03_B"
+      "static_thumb_path": "media/qzs_10/SM_ZheDieMen03_B/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_ZheDieMen03_B/V_ZheDieMen03.mp4"
     },
     {
       "id": "qzs_10/SM_ZheDieMen04_B",
@@ -2380,7 +2389,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_ZheDieMen04_B"
+      "static_thumb_path": "media/qzs_10/SM_ZheDieMen04_B/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_ZheDieMen04_B/V_ZheDieMen04.mp4"
     },
     {
       "id": "qzs_10/SM_ZheDieMen05_B",
@@ -2516,7 +2526,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_ZheDieMen05_B"
+      "static_thumb_path": "media/qzs_10/SM_ZheDieMen05_B/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_ZheDieMen05_B/V_ZheDieMen05.mp4"
     },
     {
       "id": "qzs_10/SM_ZheDieMen_B",
@@ -2666,7 +2677,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_10\\SM_ZheDieMen_B"
+      "static_thumb_path": "media/qzs_10/SM_ZheDieMen_B/thumb.webp",
+      "static_video_path": "media/qzs_10/SM_ZheDieMen_B/V_ZheDieMen.mp4"
     },
     {
       "id": "qzs_2/SM_GuiZi",
@@ -2844,7 +2856,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_2\\SM_GuiZi"
+      "static_thumb_path": "media/qzs_2/SM_GuiZi/thumb.webp",
+      "static_video_path": "media/qzs_2/SM_GuiZi/V_GuiZi.mp4"
     },
     {
       "id": "qzs_2/SM_GuiZi01",
@@ -3064,7 +3077,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_2\\SM_GuiZi01"
+      "static_thumb_path": "media/qzs_2/SM_GuiZi01/thumb.webp",
+      "static_video_path": "media/qzs_2/SM_GuiZi01/V_GuiZi01.mp4"
     },
     {
       "id": "qzs_2/SM_GuiZi02",
@@ -3284,7 +3298,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_2\\SM_GuiZi02"
+      "static_thumb_path": "media/qzs_2/SM_GuiZi02/thumb.webp",
+      "static_video_path": "media/qzs_2/SM_GuiZi02/V_GuiZi02.mp4"
     },
     {
       "id": "qzs_2/SM_GuiZi03",
@@ -3490,7 +3505,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_2\\SM_GuiZi03"
+      "static_thumb_path": "media/qzs_2/SM_GuiZi03/thumb.webp",
+      "static_video_path": "media/qzs_2/SM_GuiZi03/V_GuiZi03.mp4"
     },
     {
       "id": "qzs_2/SM_GuiZi04",
@@ -3780,7 +3796,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_2\\SM_GuiZi04"
+      "static_thumb_path": "media/qzs_2/SM_GuiZi04/thumb.webp",
+      "static_video_path": "media/qzs_2/SM_GuiZi04/V_GiZi04.mp4"
     },
     {
       "id": "qzs_2/SM_GuiZi05",
@@ -4476,7 +4493,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_2\\SM_GuiZi05"
+      "static_thumb_path": "media/qzs_2/SM_GuiZi05/thumb.webp",
+      "static_video_path": "media/qzs_2/SM_GuiZi05/V_GuiZi05.mp4"
     },
     {
       "id": "qzs_2/SM_GuiZi06",
@@ -7636,7 +7654,8 @@
           "size_str": "37.2 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_2\\SM_GuiZi06"
+      "static_thumb_path": "media/qzs_2/SM_GuiZi06/thumb.webp",
+      "static_video_path": "media/qzs_2/SM_GuiZi06/V_GuiZi06.mp4"
     },
     {
       "id": "qzs_2/SM_GuiZi07",
@@ -10803,7 +10822,8 @@
           "size_str": "37.2 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_2\\SM_GuiZi07"
+      "static_thumb_path": "media/qzs_2/SM_GuiZi07/thumb.webp",
+      "static_video_path": "media/qzs_2/SM_GuiZi07/V_GuiZi07.mp4"
     },
     {
       "id": "qzs_3/SM_BingXiang",
@@ -10953,7 +10973,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_3\\SM_BingXiang"
+      "static_thumb_path": "media/qzs_3/SM_BingXiang/thumb.webp",
+      "static_video_path": "media/qzs_3/SM_BingXiang/V_BingXiang.mp4"
     },
     {
       "id": "qzs_3/SM_BingXiang01",
@@ -11138,7 +11159,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_3\\SM_BingXiang01"
+      "static_thumb_path": "media/qzs_3/SM_BingXiang01/thumb.webp",
+      "static_video_path": "media/qzs_3/SM_BingXiang01/V_BingXiang01.mp4"
     },
     {
       "id": "qzs_3/SM_BingXiang02",
@@ -11323,7 +11345,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_3\\SM_BingXiang02"
+      "static_thumb_path": "media/qzs_3/SM_BingXiang02/thumb.webp",
+      "static_video_path": "media/qzs_3/SM_BingXiang02/V_BingXiang02.mp4"
     },
     {
       "id": "qzs_3/SM_BingXiang03",
@@ -11662,7 +11685,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_3\\SM_BingXiang03"
+      "static_thumb_path": "media/qzs_3/SM_BingXiang03/thumb.webp",
+      "static_video_path": "media/qzs_3/SM_BingXiang03/V_BingXiang03.mp4"
     },
     {
       "id": "qzs_3/SM_BingXiang04",
@@ -11910,7 +11934,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_3\\SM_BingXiang04"
+      "static_thumb_path": "media/qzs_3/SM_BingXiang04/thumb.webp",
+      "static_video_path": "media/qzs_3/SM_BingXiang04/V_BingXiang04.mp4"
     },
     {
       "id": "qzs_3/SM_BingXiang05",
@@ -13558,7 +13583,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_3\\SM_BingXiang05"
+      "static_thumb_path": "media/qzs_3/SM_BingXiang05/thumb.webp",
+      "static_video_path": "media/qzs_3/SM_BingXiang05/V_BingXiang05.mp4"
     },
     {
       "id": "qzs_3/SM_GuiZi08",
@@ -13764,7 +13790,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_3\\SM_GuiZi08"
+      "static_thumb_path": "media/qzs_3/SM_GuiZi08/thumb.webp",
+      "static_video_path": "media/qzs_3/SM_GuiZi08/V_GuiZi08.mp4"
     },
     {
       "id": "qzs_3/SM_GuiZi09",
@@ -14411,7 +14438,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_3\\SM_GuiZi09"
+      "static_thumb_path": "media/qzs_3/SM_GuiZi09/thumb.webp",
+      "static_video_path": "media/qzs_3/SM_GuiZi09/V_GuiZi09.mp4"
     },
     {
       "id": "qzs_4/SM_GuiZi",
@@ -14771,7 +14799,8 @@
           "size_str": "1.4 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_4\\SM_GuiZi"
+      "static_thumb_path": "media/qzs_4/SM_GuiZi/thumb.webp",
+      "static_video_path": "media/qzs_4/SM_GuiZi/V_GuiZi.mp4"
     },
     {
       "id": "qzs_4/SM_GuiZi01",
@@ -14963,7 +14992,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_4\\SM_GuiZi01"
+      "static_thumb_path": "media/qzs_4/SM_GuiZi01/thumb.webp",
+      "static_video_path": "media/qzs_4/SM_GuiZi01/V_GuiZi01.mp4"
     },
     {
       "id": "qzs_4/SM_GuiZi02",
@@ -15120,7 +15150,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_4\\SM_GuiZi02"
+      "static_thumb_path": "media/qzs_4/SM_GuiZi02/thumb.webp",
+      "static_video_path": "media/qzs_4/SM_GuiZi02/V_GuiZi02.mp4"
     },
     {
       "id": "qzs_4/SM_GuiZi03",
@@ -15277,7 +15308,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_4\\SM_GuiZi03"
+      "static_thumb_path": "media/qzs_4/SM_GuiZi03/thumb.webp",
+      "static_video_path": "media/qzs_4/SM_GuiZi03/V_GuiZi03.mp4"
     },
     {
       "id": "qzs_4/SM_KaoXiang",
@@ -15518,7 +15550,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_4\\SM_KaoXiang"
+      "static_thumb_path": "media/qzs_4/SM_KaoXiang/thumb.webp",
+      "static_video_path": "media/qzs_4/SM_KaoXiang/V_KaoXiang.mp4"
     },
     {
       "id": "qzs_4/SM_KaoXiang01",
@@ -15752,7 +15785,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_4\\SM_KaoXiang01"
+      "static_thumb_path": "media/qzs_4/SM_KaoXiang01/thumb.webp",
+      "static_video_path": "media/qzs_4/SM_KaoXiang01/V_KaoXiang01.mp4"
     },
     {
       "id": "qzs_4/SM_KaoXiang02",
@@ -15993,7 +16027,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_4\\SM_KaoXiang02"
+      "static_thumb_path": "media/qzs_4/SM_KaoXiang02/thumb.webp",
+      "static_video_path": "media/qzs_4/SM_KaoXiang02/V_KaoXiang02.mp4"
     },
     {
       "id": "qzs_4/SM_XiaoDuGui",
@@ -16388,7 +16423,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_4\\SM_XiaoDuGui"
+      "static_thumb_path": "media/qzs_4/SM_XiaoDuGui/thumb.webp",
+      "static_video_path": "media/qzs_4/SM_XiaoDuGui/V_XiaoDuGui.mp4"
     },
     {
       "id": "qzs_7/SM_GuiZi",
@@ -16552,7 +16588,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_7\\SM_GuiZi"
+      "static_thumb_path": "media/qzs_7/SM_GuiZi/thumb.webp",
+      "static_video_path": "media/qzs_7/SM_GuiZi/V_GuiZi.mp4"
     },
     {
       "id": "qzs_7/SM_GuiZi01",
@@ -16709,7 +16746,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_7\\SM_GuiZi01"
+      "static_thumb_path": "media/qzs_7/SM_GuiZi01/thumb.webp",
+      "static_video_path": "media/qzs_7/SM_GuiZi01/V_GuiZi1.mp4"
     },
     {
       "id": "qzs_7/SM_XieGui01",
@@ -16929,7 +16967,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_7\\SM_XieGui01"
+      "static_thumb_path": "media/qzs_7/SM_XieGui01/thumb.webp",
+      "static_video_path": "media/qzs_7/SM_XieGui01/V_XieGui01.mp4"
     },
     {
       "id": "qzs_7/SM_XieGui02",
@@ -17142,7 +17181,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_7\\SM_XieGui02"
+      "static_thumb_path": "media/qzs_7/SM_XieGui02/thumb.webp",
+      "static_video_path": "media/qzs_7/SM_XieGui02/V_XieGui02.mp4"
     },
     {
       "id": "qzs_7/SM_XieGui03",
@@ -17278,7 +17318,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_7\\SM_XieGui03"
+      "static_thumb_path": "media/qzs_7/SM_XieGui03/thumb.webp",
+      "static_video_path": "media/qzs_7/SM_XieGui03/V_XieGui03.mp4"
     },
     {
       "id": "qzs_7/SM_XieGui04",
@@ -17484,7 +17525,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_7\\SM_XieGui04"
+      "static_thumb_path": "media/qzs_7/SM_XieGui04/thumb.webp",
+      "static_video_path": "media/qzs_7/SM_XieGui04/V_XieGui04.mp4"
     },
     {
       "id": "qzs_8/SM_ChuangTouGui",
@@ -17627,7 +17669,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_8\\SM_ChuangTouGui"
+      "static_thumb_path": "media/qzs_8/SM_ChuangTouGui/thumb.webp",
+      "static_video_path": "media/qzs_8/SM_ChuangTouGui/V_ChuangTouGui.mp4"
     },
     {
       "id": "qzs_8/SM_ChuangTouGui01",
@@ -17833,7 +17876,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_8\\SM_ChuangTouGui01"
+      "static_thumb_path": "media/qzs_8/SM_ChuangTouGui01/thumb.webp",
+      "static_video_path": "media/qzs_8/SM_ChuangTouGui01/V_ChuangTouGui01.mp4"
     },
     {
       "id": "qzs_8/SM_ChuangTouGui02",
@@ -17969,7 +18013,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_8\\SM_ChuangTouGui02"
+      "static_thumb_path": "media/qzs_8/SM_ChuangTouGui02/thumb.webp",
+      "static_video_path": "media/qzs_8/SM_ChuangTouGui02/V_ChuangTouGui02.mp4"
     },
     {
       "id": "qzs_8/SM_ChuangTouGui03",
@@ -18154,7 +18199,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_8\\SM_ChuangTouGui03"
+      "static_thumb_path": "media/qzs_8/SM_ChuangTouGui03/thumb.webp",
+      "static_video_path": "media/qzs_8/SM_ChuangTouGui03/V_ChuangTouGui03.mp4"
     },
     {
       "id": "qzs_8/SM_ChuangTouGui04",
@@ -18493,7 +18539,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_8\\SM_ChuangTouGui04"
+      "static_thumb_path": "media/qzs_8/SM_ChuangTouGui04/thumb.webp",
+      "static_video_path": "media/qzs_8/SM_ChuangTouGui04/V_ChuangTouGui04.mp4"
     },
     {
       "id": "qzs_9/SM_GuiZi",
@@ -18636,7 +18683,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_9\\SM_GuiZi"
+      "static_thumb_path": "media/qzs_9/SM_GuiZi/thumb.webp",
+      "static_video_path": "media/qzs_9/SM_GuiZi/V_GuiZi.mp4"
     },
     {
       "id": "qzs_9/SM_GuiZi01",
@@ -18772,7 +18820,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_9\\SM_GuiZi01"
+      "static_thumb_path": "media/qzs_9/SM_GuiZi01/thumb.webp",
+      "static_video_path": "media/qzs_9/SM_GuiZi01/V_GuiZi01.mp4"
     },
     {
       "id": "qzs_9/SM_GuiZi02",
@@ -18908,7 +18957,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_9\\SM_GuiZi02"
+      "static_thumb_path": "media/qzs_9/SM_GuiZi02/thumb.webp",
+      "static_video_path": "media/qzs_9/SM_GuiZi02/V_GuiZi02.mp4"
     },
     {
       "id": "qzs_9/SM_ShuiBa",
@@ -19128,7 +19178,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_9\\SM_ShuiBa"
+      "static_thumb_path": "media/qzs_9/SM_ShuiBa/thumb.webp",
+      "static_video_path": "media/qzs_9/SM_ShuiBa/V_ShuiBa.mp4"
     },
     {
       "id": "qzs_9/SM_ShuiBa01",
@@ -19362,7 +19413,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_9\\SM_ShuiBa01"
+      "static_thumb_path": "media/qzs_9/SM_ShuiBa01/thumb.webp",
+      "static_video_path": "media/qzs_9/SM_ShuiBa01/V_ShuiBa01.mp4"
     },
     {
       "id": "qzs_9/SN_ShoJiShuJuXian",
@@ -19546,7 +19598,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_9\\SN_ShoJiShuJuXian"
+      "static_thumb_path": "media/qzs_9/SN_ShoJiShuJuXian/thumb.webp",
+      "static_video_path": null
     },
     {
       "id": "qzs_9/SN_ShoJiShuJuXian01",
@@ -19563,19 +19616,19 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SN.png",
-      "thumbnail_mtime": 1789107855,
+      "thumbnail_mtime": 1789111206,
       "video_rel_path": "V_SN.mp4",
-      "video_mtime": 1789108404,
+      "video_mtime": 1789112381,
       "primary_usd_rel_path": "SN_ShoJiShuJuXian01.usd",
-      "total_size_bytes": 10120265,
-      "total_size_mb": 9.65,
+      "total_size_bytes": 9804560,
+      "total_size_mb": 9.35,
       "usd_files": [
         {
           "name": "SN_ShoJiShuJuXian01.usd",
           "rel_path": "SN_ShoJiShuJuXian01.usd",
-          "size_bytes": 3331111,
-          "mtime": 1789021261,
-          "size_str": "3.18 MB"
+          "size_bytes": 3342237,
+          "mtime": 1789110983,
+          "size_str": "3.19 MB"
         },
         {
           "name": "SN_ShoJiShuJuXian01.usdc",
@@ -19589,18 +19642,18 @@
         {
           "name": "V_SN.mp4",
           "rel_path": "V_SN.mp4",
-          "size_bytes": 584593,
-          "mtime": 1789108404,
-          "size_str": "570.9 KB"
+          "size_bytes": 504158,
+          "mtime": 1789112381,
+          "size_str": "492.3 KB"
         }
       ],
       "image_files": [
         {
           "name": "T_SN.png",
           "rel_path": "T_SN.png",
-          "size_bytes": 2006985,
-          "mtime": 1789107855,
-          "size_str": "1.91 MB"
+          "size_bytes": 1760589,
+          "mtime": 1789111206,
+          "size_str": "1.68 MB"
         },
         {
           "name": "znzmoModel-1201036208-0008.jpg",
@@ -19614,9 +19667,9 @@
         {
           "name": "SN_ShoJiShuJuXian01.usd",
           "rel_path": "SN_ShoJiShuJuXian01.usd",
-          "size_bytes": 3331111,
-          "mtime": 1789021261,
-          "size_str": "3.18 MB"
+          "size_bytes": 3342237,
+          "mtime": 1789110983,
+          "size_str": "3.19 MB"
         },
         {
           "name": "SN_ShoJiShuJuXian01.usdc",
@@ -19628,16 +19681,16 @@
         {
           "name": "T_SN.png",
           "rel_path": "T_SN.png",
-          "size_bytes": 2006985,
-          "mtime": 1789107855,
-          "size_str": "1.91 MB"
+          "size_bytes": 1760589,
+          "mtime": 1789111206,
+          "size_str": "1.68 MB"
         },
         {
           "name": "V_SN.mp4",
           "rel_path": "V_SN.mp4",
-          "size_bytes": 584593,
-          "mtime": 1789108404,
-          "size_str": "570.9 KB"
+          "size_bytes": 504158,
+          "mtime": 1789112381,
+          "size_str": "492.3 KB"
         },
         {
           "name": "core_definitions.mdl",
@@ -19682,7 +19735,8 @@
           "size_str": "527.7 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\qzs_9\\SN_ShoJiShuJuXian01"
+      "static_thumb_path": "media/qzs_9/SN_ShoJiShuJuXian01/thumb.webp",
+      "static_video_path": "media/qzs_9/SN_ShoJiShuJuXian01/V_SN.mp4"
     },
     {
       "id": "wq_10/SM-TUILAMEN-1",
@@ -19818,7 +19872,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-TUILAMEN-1"
+      "static_thumb_path": "media/wq_10/SM-TUILAMEN-1/thumb.webp",
+      "static_video_path": "media/wq_10/SM-TUILAMEN-1/V_TUILAMEN-1.mp4"
     },
     {
       "id": "wq_10/SM-TUILAMEN-2",
@@ -19947,7 +20002,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-TUILAMEN-2"
+      "static_thumb_path": "media/wq_10/SM-TUILAMEN-2/thumb.webp",
+      "static_video_path": "media/wq_10/SM-TUILAMEN-2/V_TUILAMEN-2.mp4"
     },
     {
       "id": "wq_10/SM-TUILAMEN-3",
@@ -20111,7 +20167,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-TUILAMEN-3"
+      "static_thumb_path": "media/wq_10/SM-TUILAMEN-3/thumb.webp",
+      "static_video_path": "media/wq_10/SM-TUILAMEN-3/V_TUILAMEN-3.mp4"
     },
     {
       "id": "wq_10/SM-TUILAMEN-4",
@@ -20254,7 +20311,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-TUILAMEN-4"
+      "static_thumb_path": "media/wq_10/SM-TUILAMEN-4/thumb.webp",
+      "static_video_path": "media/wq_10/SM-TUILAMEN-4/V_TUILAMEN-4.mp4"
     },
     {
       "id": "wq_10/SM-YUSHIGUI-1",
@@ -20467,7 +20525,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-YUSHIGUI-1"
+      "static_thumb_path": "media/wq_10/SM-YUSHIGUI-1/thumb.webp",
+      "static_video_path": "media/wq_10/SM-YUSHIGUI-1/V_YUSHIGUI.mp4"
     },
     {
       "id": "wq_10/SM-YUSHIGUI-2",
@@ -20701,7 +20760,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-YUSHIGUI-2"
+      "static_thumb_path": "media/wq_10/SM-YUSHIGUI-2/thumb.webp",
+      "static_video_path": "media/wq_10/SM-YUSHIGUI-2/V_YUSHIGUI.mp4"
     },
     {
       "id": "wq_10/SM-YUSHIGUI-3",
@@ -20872,7 +20932,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-YUSHIGUI-3"
+      "static_thumb_path": "media/wq_10/SM-YUSHIGUI-3/thumb.webp",
+      "static_video_path": "media/wq_10/SM-YUSHIGUI-3/V_YUSHIGUI.mp4"
     },
     {
       "id": "wq_10/SM-YUSHIGUI-4",
@@ -21099,7 +21160,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-YUSHIGUI-4"
+      "static_thumb_path": "media/wq_10/SM-YUSHIGUI-4/thumb.webp",
+      "static_video_path": "media/wq_10/SM-YUSHIGUI-4/V_YUSHIGUI.mp4"
     },
     {
       "id": "wq_10/SM-YUSHIGUI-5",
@@ -21298,7 +21360,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-YUSHIGUI-5"
+      "static_thumb_path": "media/wq_10/SM-YUSHIGUI-5/thumb.webp",
+      "static_video_path": "media/wq_10/SM-YUSHIGUI-5/V_YUSHIGUI-5.mp4"
     },
     {
       "id": "wq_10/SM-YUSHIGUI-6",
@@ -21532,7 +21595,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-YUSHIGUI-6"
+      "static_thumb_path": "media/wq_10/SM-YUSHIGUI-6/thumb.webp",
+      "static_video_path": "media/wq_10/SM-YUSHIGUI-6/V_YUSHIGUI-6.mp4"
     },
     {
       "id": "wq_10/SM-ZHEDIEMEN-1",
@@ -21899,7 +21963,8 @@
           "size_str": "338.4 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-ZHEDIEMEN-1"
+      "static_thumb_path": "media/wq_10/SM-ZHEDIEMEN-1/thumb.webp",
+      "static_video_path": "media/wq_10/SM-ZHEDIEMEN-1/V_ZHEDIEMEN-1.mp4"
     },
     {
       "id": "wq_10/SM-ZHEDIEMEN-2",
@@ -21918,17 +21983,17 @@
       "thumbnail_rel_path": "T_ZHEDIEMEN.png",
       "thumbnail_mtime": 1789108342,
       "video_rel_path": "V_ZHEDIEMEN_fold.mp4",
-      "video_mtime": 1789109038,
+      "video_mtime": 1789110808,
       "primary_usd_rel_path": "SM-ZHEDIEMEN-2.usd",
-      "total_size_bytes": 9795558,
-      "total_size_mb": 9.34,
+      "total_size_bytes": 12294221,
+      "total_size_mb": 11.72,
       "usd_files": [
         {
           "name": "SM-ZHEDIEMEN-2.usd",
           "rel_path": "SM-ZHEDIEMEN-2.usd",
-          "size_bytes": 2351108,
-          "mtime": 1789109514,
-          "size_str": "2.24 MB"
+          "size_bytes": 2354604,
+          "mtime": 1789111525,
+          "size_str": "2.25 MB"
         },
         {
           "name": "SM-ZHEDIEMEN-2.usdc",
@@ -21942,9 +22007,9 @@
         {
           "name": "V_ZHEDIEMEN_fold.mp4",
           "rel_path": "V_ZHEDIEMEN_fold.mp4",
-          "size_bytes": 679544,
-          "mtime": 1789109038,
-          "size_str": "663.6 KB"
+          "size_bytes": 3174711,
+          "mtime": 1789110808,
+          "size_str": "3.03 MB"
         }
       ],
       "image_files": [
@@ -21967,9 +22032,9 @@
         {
           "name": "SM-ZHEDIEMEN-2.usd",
           "rel_path": "SM-ZHEDIEMEN-2.usd",
-          "size_bytes": 2351108,
-          "mtime": 1789109514,
-          "size_str": "2.24 MB"
+          "size_bytes": 2354604,
+          "mtime": 1789111525,
+          "size_str": "2.25 MB"
         },
         {
           "name": "SM-ZHEDIEMEN-2.usdc",
@@ -21988,9 +22053,9 @@
         {
           "name": "V_ZHEDIEMEN_fold.mp4",
           "rel_path": "V_ZHEDIEMEN_fold.mp4",
-          "size_bytes": 679544,
-          "mtime": 1789109038,
-          "size_str": "663.6 KB"
+          "size_bytes": 3174711,
+          "mtime": 1789110808,
+          "size_str": "3.03 MB"
         },
         {
           "name": "obj0002.mdl",
@@ -22042,7 +22107,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-ZHEDIEMEN-2"
+      "static_thumb_path": "media/wq_10/SM-ZHEDIEMEN-2/thumb.webp",
+      "static_video_path": "media/wq_10/SM-ZHEDIEMEN-2/V_ZHEDIEMEN_fold.mp4"
     },
     {
       "id": "wq_10/SM-ZHEDIEMEN-3",
@@ -22170,7 +22236,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-ZHEDIEMEN-3"
+      "static_thumb_path": "media/wq_10/SM-ZHEDIEMEN-3/thumb.webp",
+      "static_video_path": null
     },
     {
       "id": "wq_10/SM-ZHEDIEMEN-4",
@@ -22320,7 +22387,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-ZHEDIEMEN-4"
+      "static_thumb_path": "media/wq_10/SM-ZHEDIEMEN-4/thumb.webp",
+      "static_video_path": "media/wq_10/SM-ZHEDIEMEN-4/V_ZHEDIEMEN.mp4"
     },
     {
       "id": "wq_10/SM-ZHEDIEMEN-5",
@@ -22526,7 +22594,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_10\\SM-ZHEDIEMEN-5"
+      "static_thumb_path": "media/wq_10/SM-ZHEDIEMEN-5/thumb.webp",
+      "static_video_path": "media/wq_10/SM-ZHEDIEMEN-5/V_ZHEDIEMEN.mp4"
     },
     {
       "id": "wq_2/SM-CHAJI-1",
@@ -23061,7 +23130,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_2\\SM-CHAJI-1"
+      "static_thumb_path": "media/wq_2/SM-CHAJI-1/thumb.webp",
+      "static_video_path": "media/wq_2/SM-CHAJI-1/V_CHAJI.mp4"
     },
     {
       "id": "wq_2/SM-CHUGUI-1",
@@ -23883,7 +23953,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_2\\SM-CHUGUI-1"
+      "static_thumb_path": "media/wq_2/SM-CHUGUI-1/thumb.webp",
+      "static_video_path": "media/wq_2/SM-CHUGUI-1/V_CHUGUI-1.mp4"
     },
     {
       "id": "wq_2/SM-SHUZHUANGTAI-1",
@@ -24124,7 +24195,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_2\\SM-SHUZHUANGTAI-1"
+      "static_thumb_path": "media/wq_2/SM-SHUZHUANGTAI-1/thumb.webp",
+      "static_video_path": "media/wq_2/SM-SHUZHUANGTAI-1/V_SHUZHUANGTAI-1.mp4"
     },
     {
       "id": "wq_2/SM-ZHUANGSHIGUI-1",
@@ -24372,7 +24444,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_2\\SM-ZHUANGSHIGUI-1"
+      "static_thumb_path": "media/wq_2/SM-ZHUANGSHIGUI-1/thumb.webp",
+      "static_video_path": "media/wq_2/SM-ZHUANGSHIGUI-1/V_ZHUANGSHIGUI-1.mp4"
     },
     {
       "id": "wq_2/SM-ZHUANGSHIGUI-2",
@@ -24564,7 +24637,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_2\\SM-ZHUANGSHIGUI-2"
+      "static_thumb_path": "media/wq_2/SM-ZHUANGSHIGUI-2/thumb.webp",
+      "static_video_path": "media/wq_2/SM-ZHUANGSHIGUI-2/V_ZHUANGSHIGUI-2.mp4"
     },
     {
       "id": "wq_2/SM-ZHUANGSHIGUI-3",
@@ -24735,7 +24809,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_2\\SM-ZHUANGSHIGUI-3"
+      "static_thumb_path": "media/wq_2/SM-ZHUANGSHIGUI-3/thumb.webp",
+      "static_video_path": "media/wq_2/SM-ZHUANGSHIGUI-3/V_ZHUANGSHIGUI.mp4"
     },
     {
       "id": "wq_2/SM-ZHUANGSHIGUI-4",
@@ -24906,7 +24981,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_2\\SM-ZHUANGSHIGUI-4"
+      "static_thumb_path": "media/wq_2/SM-ZHUANGSHIGUI-4/thumb.webp",
+      "static_video_path": "media/wq_2/SM-ZHUANGSHIGUI-4/V_ZHUANGSHIGUI-4.mp4"
     },
     {
       "id": "wq_2/SM-ZHUANGSHIGUI-5",
@@ -25077,7 +25153,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_2\\SM-ZHUANGSHIGUI-5"
+      "static_thumb_path": "media/wq_2/SM-ZHUANGSHIGUI-5/thumb.webp",
+      "static_video_path": "media/wq_2/SM-ZHUANGSHIGUI-5/V_ZHUANGSHIGUI-5.mp4"
     },
     {
       "id": "wq_3/SM-CHAJI-2",
@@ -25227,7 +25304,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_3\\SM-CHAJI-2"
+      "static_thumb_path": "media/wq_3/SM-CHAJI-2/thumb.webp",
+      "static_video_path": "media/wq_3/SM-CHAJI-2/V_CHAJI.mp4"
     },
     {
       "id": "wq_3/SM-bingxiang-1",
@@ -25440,7 +25518,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_3\\SM-bingxiang-1"
+      "static_thumb_path": "media/wq_3/SM-bingxiang-1/thumb.webp",
+      "static_video_path": "media/wq_3/SM-bingxiang-1/V_bingxiang-1.mp4"
     },
     {
       "id": "wq_3/SM-bingxiang-2",
@@ -26262,7 +26341,8 @@
           "size_str": "545.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_3\\SM-bingxiang-2"
+      "static_thumb_path": "media/wq_3/SM-bingxiang-2/thumb.webp",
+      "static_video_path": "media/wq_3/SM-bingxiang-2/V_bingxiang-2.mp4"
     },
     {
       "id": "wq_3/SM-bingxiang-3",
@@ -26475,7 +26555,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_3\\SM-bingxiang-3"
+      "static_thumb_path": "media/wq_3/SM-bingxiang-3/thumb.webp",
+      "static_video_path": "media/wq_3/SM-bingxiang-3/V_bingxiang-3.mp4"
     },
     {
       "id": "wq_3/SM-hongjiugui-1",
@@ -26653,7 +26734,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_3\\SM-hongjiugui-1"
+      "static_thumb_path": "media/wq_3/SM-hongjiugui-1/thumb.webp",
+      "static_video_path": "media/wq_3/SM-hongjiugui-1/V_hongjiugui.mp4"
     },
     {
       "id": "wq_4/SM-SHOUNAIGUI-1",
@@ -27083,7 +27165,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_4\\SM-SHOUNAIGUI-1"
+      "static_thumb_path": "media/wq_4/SM-SHOUNAIGUI-1/thumb.webp",
+      "static_video_path": "media/wq_4/SM-SHOUNAIGUI-1/V_SHOUNAIGUI.mp4"
     },
     {
       "id": "wq_4/SM-SHUZHUANGTAI-2",
@@ -27324,7 +27407,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_4\\SM-SHUZHUANGTAI-2"
+      "static_thumb_path": "media/wq_4/SM-SHUZHUANGTAI-2/thumb.webp",
+      "static_video_path": "media/wq_4/SM-SHUZHUANGTAI-2/V_SHUZHUANGTAI-2.mp4"
     },
     {
       "id": "wq_4/SM-SHUZHUANGTAI-3",
@@ -27593,7 +27677,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_4\\SM-SHUZHUANGTAI-3"
+      "static_thumb_path": "media/wq_4/SM-SHUZHUANGTAI-3/thumb.webp",
+      "static_video_path": "media/wq_4/SM-SHUZHUANGTAI-3/V_SHUZHUANGTAI.mp4"
     },
     {
       "id": "wq_4/SM-WEIBOLU-1",
@@ -27967,7 +28052,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_4\\SM-WEIBOLU-1"
+      "static_thumb_path": "media/wq_4/SM-WEIBOLU-1/thumb.webp",
+      "static_video_path": "media/wq_4/SM-WEIBOLU-1/V_WEIBOLU.mp4"
     },
     {
       "id": "wq_4/SM-WEIBOLU-2",
@@ -29552,7 +29638,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_4\\SM-WEIBOLU-2"
+      "static_thumb_path": "media/wq_4/SM-WEIBOLU-2/thumb.webp",
+      "static_video_path": "media/wq_4/SM-WEIBOLU-2/V_WEIBOLU.mp4"
     },
     {
       "id": "wq_4/SM-WEIBOLU-3",
@@ -29954,7 +30041,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_4\\SM-WEIBOLU-3"
+      "static_thumb_path": "media/wq_4/SM-WEIBOLU-3/thumb.webp",
+      "static_video_path": "media/wq_4/SM-WEIBOLU-3/V_WEIBOLU.mp4"
     },
     {
       "id": "wq_4/SM-XIWANJI-1",
@@ -30223,7 +30311,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_4\\SM-XIWANJI-1"
+      "static_thumb_path": "media/wq_4/SM-XIWANJI-1/thumb.webp",
+      "static_video_path": "media/wq_4/SM-XIWANJI-1/V_XIWANJI.mp4"
     },
     {
       "id": "wq_7/SM-XIEGUI-1",
@@ -30443,7 +30532,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_7\\SM-XIEGUI-1"
+      "static_thumb_path": "media/wq_7/SM-XIEGUI-1/thumb.webp",
+      "static_video_path": "media/wq_7/SM-XIEGUI-1/V_XIEGUI-1.mp4"
     },
     {
       "id": "wq_7/SM-XIEGUI-2",
@@ -30761,7 +30851,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_7\\SM-XIEGUI-2"
+      "static_thumb_path": "media/wq_7/SM-XIEGUI-2/thumb.webp",
+      "static_video_path": "media/wq_7/SM-XIEGUI-2/V_XIEGUI-2.mp4"
     },
     {
       "id": "wq_7/SM-XIEGUI-3",
@@ -30911,7 +31002,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_7\\SM-XIEGUI-3"
+      "static_thumb_path": "media/wq_7/SM-XIEGUI-3/thumb.webp",
+      "static_video_path": "media/wq_7/SM-XIEGUI-3/V_XIEGUI.mp4"
     },
     {
       "id": "wq_7/SM-XIEGUI-4",
@@ -31103,7 +31195,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_7\\SM-XIEGUI-4"
+      "static_thumb_path": "media/wq_7/SM-XIEGUI-4/thumb.webp",
+      "static_video_path": "media/wq_7/SM-XIEGUI-4/V_XIEGUI-4.mp4"
     },
     {
       "id": "wq_7/SM-XIEGUI-5",
@@ -31582,7 +31675,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_7\\SM-XIEGUI-5"
+      "static_thumb_path": "media/wq_7/SM-XIEGUI-5/thumb.webp",
+      "static_video_path": "media/wq_7/SM-XIEGUI-5/V_XIEGUI-5.mp4"
     },
     {
       "id": "wq_7/SM-XIEGUI-6",
@@ -31732,7 +31826,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_7\\SM-XIEGUI-6"
+      "static_thumb_path": "media/wq_7/SM-XIEGUI-6/thumb.webp",
+      "static_video_path": "media/wq_7/SM-XIEGUI-6/V_XIEGUI-6.mp4"
     },
     {
       "id": "wq_8/SM-CHUANGTOUGUI-1",
@@ -31987,7 +32082,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_8\\SM-CHUANGTOUGUI-1"
+      "static_thumb_path": "media/wq_8/SM-CHUANGTOUGUI-1/thumb.webp",
+      "static_video_path": "media/wq_8/SM-CHUANGTOUGUI-1/V_CHUANGTOUGUI.mp4"
     },
     {
       "id": "wq_8/SM-CHUANGTOUGUI-2",
@@ -32130,7 +32226,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_8\\SM-CHUANGTOUGUI-2"
+      "static_thumb_path": "media/wq_8/SM-CHUANGTOUGUI-2/thumb.webp",
+      "static_video_path": "media/wq_8/SM-CHUANGTOUGUI-2/V_CHUANGTOUGUI.mp4"
     },
     {
       "id": "wq_8/SM-CHUANGTOUGUI-3",
@@ -32301,7 +32398,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_8\\SM-CHUANGTOUGUI-3"
+      "static_thumb_path": "media/wq_8/SM-CHUANGTOUGUI-3/thumb.webp",
+      "static_video_path": "media/wq_8/SM-CHUANGTOUGUI-3/V_CHUANGTOUGUI-3.mp4"
     },
     {
       "id": "wq_8/SM-CHUANGTOUGUI-4",
@@ -32472,7 +32570,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_8\\SM-CHUANGTOUGUI-4"
+      "static_thumb_path": "media/wq_8/SM-CHUANGTOUGUI-4/thumb.webp",
+      "static_video_path": "media/wq_8/SM-CHUANGTOUGUI-4/V_CHUANGTOUGUI.mp4"
     },
     {
       "id": "wq_8/SM-XIEGUI-1",
@@ -32608,7 +32707,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_8\\SM-XIEGUI-1"
+      "static_thumb_path": "media/wq_8/SM-XIEGUI-1/thumb.webp",
+      "static_video_path": "media/wq_8/SM-XIEGUI-1/V_XIEGUI-1.mp4"
     },
     {
       "id": "wq_9/SM-CHAZUOSHUJUXIAN-1",
@@ -37944,7 +38044,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_9\\SM-CHAZUOSHUJUXIAN-1"
+      "static_thumb_path": "media/wq_9/SM-CHAZUOSHUJUXIAN-1/thumb.webp",
+      "static_video_path": null
     },
     {
       "id": "wq_9/SM-CHUANGTOUGUI-1",
@@ -38094,7 +38195,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_9\\SM-CHUANGTOUGUI-1"
+      "static_thumb_path": "media/wq_9/SM-CHUANGTOUGUI-1/thumb.webp",
+      "static_video_path": "media/wq_9/SM-CHUANGTOUGUI-1/V_CHUANGTOUGUI.mp4"
     },
     {
       "id": "wq_9/SM-ZHONGDAO-1",
@@ -38405,7 +38507,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_9\\SM-ZHONGDAO-1"
+      "static_thumb_path": "media/wq_9/SM-ZHONGDAO-1/thumb.webp",
+      "static_video_path": "media/wq_9/SM-ZHONGDAO-1/V_CHUANGTOUGUI.mp4"
     },
     {
       "id": "wq_9/SM-ZHONGDAO-2",
@@ -38709,7 +38812,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_9\\SM-ZHONGDAO-2"
+      "static_thumb_path": "media/wq_9/SM-ZHONGDAO-2/thumb.webp",
+      "static_video_path": "media/wq_9/SM-ZHONGDAO-2/V_ZHONGDAO.mp4"
     },
     {
       "id": "wq_9/SM-ZHONGDAO-3",
@@ -38887,7 +38991,8 @@
           "size_str": "2.15 MB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_9\\SM-ZHONGDAO-3"
+      "static_thumb_path": "media/wq_9/SM-ZHONGDAO-3/thumb.webp",
+      "static_video_path": "media/wq_9/SM-ZHONGDAO-3/V_ZHONGDAO.mp4"
     },
     {
       "id": "wq_9/SM-ZHONGDAO-4",
@@ -39135,7 +39240,8 @@
           "size_str": "50.1 KB"
         }
       ],
-      "abs_path": "G:\\Simreay\\output\\wq_9\\SM-ZHONGDAO-4"
+      "static_thumb_path": "media/wq_9/SM-ZHONGDAO-4/thumb.webp",
+      "static_video_path": "media/wq_9/SM-ZHONGDAO-4/V_ZHONGDAO.mp4"
     }
   ],
   "total": 106,
@@ -39202,5 +39308,7 @@
     "total_batches": 14,
     "total_categories": 10,
     "total_size_gb": 5.42
-  }
+  },
+  "build_timestamp": 1789112946,
+  "is_static_showcase": true
 }

@@ -1,4 +1,4 @@
-﻿/* 3D USD Asset Portal - Cyberpunk / Sci-Fi Glassmorphism Theme */
+/* 3D USD Asset Portal - Cyberpunk / Sci-Fi Glassmorphism Theme */
 :root {
   --bg-dark: #050811;
   --bg-card: rgba(11, 18, 33, 0.85);
@@ -624,15 +624,17 @@ body.mode-videowall .asset-card .card-preview img.has-video-sibling {
 }
 
 .modal-container {
-  background: #080e1d;
-  background-image: radial-gradient(circle at 80% 10%, rgba(0, 242, 254, 0.08) 0%, transparent 40%);
+  background: #070c18;
+  background-image: radial-gradient(circle at 85% 10%, rgba(0, 242, 254, 0.08) 0%, transparent 45%),
+                    radial-gradient(circle at 10% 90%, rgba(37, 99, 235, 0.06) 0%, transparent 45%);
   border: 1px solid var(--border-neon);
   border-radius: 20px;
-  max-width: 1140px;
-  width: 100%;
-  max-height: 92vh;
+  max-width: 1560px !important;
+  width: 93vw !important;
+  height: 88vh !important;
+  max-height: 88vh !important;
   overflow: hidden;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 35px rgba(0, 242, 254, 0.2);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.88), 0 0 45px rgba(0, 242, 254, 0.22);
   display: flex;
   flex-direction: column;
   animation: modalIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
@@ -644,16 +646,17 @@ body.mode-videowall .asset-card .card-preview img.has-video-sibling {
 }
 
 .modal-header {
-  padding: 18px 26px;
-  background: rgba(10, 18, 35, 0.85);
+  padding: 16px 28px;
+  background: rgba(8, 15, 30, 0.9);
   border-bottom: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-shrink: 0;
 }
 
 .modal-title-wrap h2 {
-  font-size: 1.35rem;
+  font-size: 1.45rem;
   font-weight: 800;
   color: #ffffff;
   background: linear-gradient(90deg, #ffffff 0%, #38bdf8 100%);
@@ -662,22 +665,22 @@ body.mode-videowall .asset-card .card-preview img.has-video-sibling {
 }
 
 .modal-title-wrap p {
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 
 .modal-close-btn {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #cbd5e1;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   transition: var(--transition);
 }
 
@@ -691,70 +694,81 @@ body.mode-videowall .asset-card .card-preview img.has-video-sibling {
 .modal-body {
   display: flex;
   flex-direction: row;
-  overflow-y: auto;
+  overflow: hidden;
   flex: 1;
+  height: calc(100% - 70px);
 }
 
-@media (max-width: 880px) {
+@media (max-width: 960px) {
+  .modal-container {
+    height: 94vh;
+    max-height: 94vh;
+  }
   .modal-body {
     flex-direction: column;
+    overflow-y: auto;
   }
 }
 
-/* Modal Left: Media Player */
+/* Modal Left: Media Player (Big Screen Studio) */
 .modal-media-col {
-  flex: 1.2;
-  background: #060b17;
+  flex: 1.8;
+  background: #040813;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 440px;
+  height: 100%;
   position: relative;
   border-right: 1px solid var(--border-subtle);
+  overflow: hidden;
 }
 
 .media-viewer {
   width: 100%;
   height: 100%;
-  min-height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 50% 50%, #707070 0%, #4a4a4a 100%);
+  background: radial-gradient(circle at 50% 50%, #686868 0%, #3e3e3e 100%);
+  padding: 24px;
+  box-sizing: border-box;
 }
 
 .media-viewer video {
   width: 100%;
-  max-height: 500px;
+  height: 100%;
+  max-height: calc(88vh - 130px);
   object-fit: contain;
 }
 
 .media-viewer img {
   width: 100%;
-  max-height: 500px;
+  height: 100%;
+  max-height: calc(88vh - 130px);
   object-fit: contain;
 }
 
 .media-controls-tab {
   position: absolute;
-  bottom: 16px;
-  background: rgba(5, 12, 24, 0.85);
-  backdrop-filter: blur(10px);
+  bottom: 20px;
+  background: rgba(5, 12, 24, 0.88);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--border-subtle);
-  padding: 4px;
+  padding: 5px;
   border-radius: var(--radius-pill);
   display: flex;
-  gap: 6px;
+  gap: 8px;
   z-index: 10;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 .media-tab-btn {
   background: transparent;
   border: none;
   color: var(--text-muted);
-  padding: 6px 16px;
-  font-size: 0.8rem;
+  padding: 8px 20px;
+  font-size: 0.85rem;
   font-weight: 600;
   border-radius: var(--radius-pill);
   cursor: pointer;
@@ -764,25 +778,27 @@ body.mode-videowall .asset-card .card-preview img.has-video-sibling {
 .media-tab-btn.active {
   background: linear-gradient(135deg, #00f2fe 0%, #2563eb 100%);
   color: #ffffff;
-  box-shadow: 0 0 14px var(--cyan-glow);
+  box-shadow: 0 0 16px var(--cyan-glow);
 }
 
 /* Modal Right: Details & Downloads (Dark High-Tech Glass Style) */
 .modal-info-col {
   flex: 1;
-  padding: 26px;
-  background: rgba(8, 14, 28, 0.95);
+  min-width: 400px;
+  max-width: 480px;
+  padding: 36px 30px;
+  background: rgba(8, 14, 28, 0.96);
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 24px;
   overflow-y: auto;
-  max-height: calc(92vh - 75px);
+  height: 100%;
 }
 
 .info-section {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .section-label {
