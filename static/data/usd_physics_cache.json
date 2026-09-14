@@ -1,0 +1,1098 @@
+{
+  "qzs_10/SM_GuiZi": {
+    "mass_kg": 124.073,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_10/SM_GuiZi01": {
+    "mass_kg": 15.624,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_10/SM_YuShiGui01-B": {
+    "mass_kg": 79.083,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
+  },
+  "qzs_10/SM_YuShiGui02-B": {
+    "mass_kg": 245.285,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Bathroom",
+    "wikidata_qcode": null
+  },
+  "qzs_10/SM_YuShiGui03-B": {
+    "mass_kg": 44.113,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Bathroom",
+    "wikidata_qcode": null
+  },
+  "qzs_10/SM_YuShiGui_B": {
+    "mass_kg": 38.121,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "DressingTable",
+    "wikidata_qcode": "Q204370"
+  },
+  "qzs_10/SM_ZheDieMen01_B": {
+    "mass_kg": 27.841,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_10/SM_ZheDieMen02_B": {
+    "mass_kg": 42.129,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_10/SM_ZheDieMen03_B": {
+    "mass_kg": 83.677,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_10/SM_ZheDieMen04_B": {
+    "mass_kg": 3.269,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_10/SM_ZheDieMen05_B": {
+    "mass_kg": 6.678,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_10/SM_ZheDieMen_B": {
+    "mass_kg": 72.361,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men01_B": {
+    "mass_kg": 109.604,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men02_B": {
+    "mass_kg": 92.109,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men03_B": {
+    "mass_kg": 69.202,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men04_B": {
+    "mass_kg": 100.141,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men05_B": {
+    "mass_kg": 55.485,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men06_B": {
+    "mass_kg": 55.585,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men11_B": {
+    "mass_kg": 0.695,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men12_B": {
+    "mass_kg": 0.713,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men13_B": {
+    "mass_kg": 0.655,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men14_B": {
+    "mass_kg": 0.823,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men15_B": {
+    "mass_kg": 0.849,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men16_B": {
+    "mass_kg": 0.628,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men17_B": {
+    "mass_kg": 0.855,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_Men_B": {
+    "mass_kg": 44.904,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_ZheDieMen07_B": {
+    "mass_kg": 97.406,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_ZheDieMen08_B": {
+    "mass_kg": 69.577,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_ZheDieMen09_B": {
+    "mass_kg": 48.486,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_11/SM_ZheDieMen10_B": {
+    "mass_kg": 45.485,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_2/SM_GuiZi": {
+    "mass_kg": 130.414,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_2/SM_GuiZi01": {
+    "mass_kg": 63.18,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_2/SM_GuiZi02": {
+    "mass_kg": 153.416,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_2/SM_GuiZi03": {
+    "mass_kg": 40.722,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_2/SM_GuiZi04": {
+    "mass_kg": 157.384,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_2/SM_GuiZi05": {
+    "mass_kg": 43.752,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Dresser",
+    "wikidata_qcode": null
+  },
+  "qzs_2/SM_GuiZi06": {
+    "mass_kg": 69.372,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": null
+  },
+  "qzs_2/SM_GuiZi07": {
+    "mass_kg": 24.715,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": null
+  },
+  "qzs_3/SM_BingXiang": {
+    "mass_kg": 134.93,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Refrigerator",
+    "wikidata_qcode": "Q37867"
+  },
+  "qzs_3/SM_BingXiang01": {
+    "mass_kg": 79.726,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Refrigerator",
+    "wikidata_qcode": "Q37867"
+  },
+  "qzs_3/SM_BingXiang02": {
+    "mass_kg": 71.442,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Refrigerator",
+    "wikidata_qcode": "Q37867"
+  },
+  "qzs_3/SM_BingXiang03": {
+    "mass_kg": 204.989,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Refrigerator",
+    "wikidata_qcode": "Q37867"
+  },
+  "qzs_3/SM_BingXiang04": {
+    "mass_kg": 62.773,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Refrigerator",
+    "wikidata_qcode": "Q37867"
+  },
+  "qzs_3/SM_BingXiang05": {
+    "mass_kg": 23231.92,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Refrigerator",
+    "wikidata_qcode": "Q37867"
+  },
+  "qzs_3/SM_GuiZi08": {
+    "mass_kg": 70.548,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_3/SM_GuiZi09": {
+    "mass_kg": null,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
+  },
+  "qzs_4/SM_GuiZi": {
+    "mass_kg": 28.52,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_4/SM_GuiZi01": {
+    "mass_kg": 177.799,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_4/SM_GuiZi02": {
+    "mass_kg": 5.598,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_4/SM_GuiZi03": {
+    "mass_kg": 130.257,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_4/SM_KaoXiang": {
+    "mass_kg": 11.459,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Oven",
+    "wikidata_qcode": null
+  },
+  "qzs_4/SM_KaoXiang01": {
+    "mass_kg": 13.524,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Microwave",
+    "wikidata_qcode": null
+  },
+  "qzs_4/SM_KaoXiang02": {
+    "mass_kg": 15.682,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Oven",
+    "wikidata_qcode": null
+  },
+  "qzs_4/SM_XiaoDuGui": {
+    "mass_kg": 7.479,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": null
+  },
+  "qzs_7/SM_GuiZi": {
+    "mass_kg": 95.41,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_7/SM_GuiZi01": {
+    "mass_kg": 63.894,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_7/SM_XieGui01": {
+    "mass_kg": 148.497,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_7/SM_XieGui02": {
+    "mass_kg": 120.0,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_7/SM_XieGui03": {
+    "mass_kg": 74.683,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_7/SM_XieGui04": {
+    "mass_kg": 48.701,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_8/SM_ChuangTouGui": {
+    "mass_kg": 11.426,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.2,
+    "semantic_class": "bedside table",
+    "wikidata_qcode": "Q42177"
+  },
+  "qzs_8/SM_ChuangTouGui01": {
+    "mass_kg": 22.948,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.2,
+    "semantic_class": "bedside table",
+    "wikidata_qcode": "Q42177"
+  },
+  "qzs_8/SM_ChuangTouGui02": {
+    "mass_kg": 21.225,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.2,
+    "semantic_class": "bedside table",
+    "wikidata_qcode": "Q42177"
+  },
+  "qzs_8/SM_ChuangTouGui03": {
+    "mass_kg": 19.407,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.2,
+    "semantic_class": "bedside table",
+    "wikidata_qcode": "Q42177"
+  },
+  "qzs_8/SM_ChuangTouGui04": {
+    "mass_kg": 13.68,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "bedside table",
+    "wikidata_qcode": "Q42177"
+  },
+  "qzs_9/SM_GuiZi": {
+    "mass_kg": 39.356,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_9/SM_GuiZi01": {
+    "mass_kg": 40.788,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_9/SM_GuiZi02": {
+    "mass_kg": 22.923,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_9/SM_ShuiBa": {
+    "mass_kg": 144.569,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Book",
+    "wikidata_qcode": "Q571"
+  },
+  "qzs_9/SM_ShuiBa01": {
+    "mass_kg": 67.853,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Table",
+    "wikidata_qcode": null
+  },
+  "qzs_9/SN_ShoJiShuJuXian": {
+    "mass_kg": 70.605,
+    "static_friction": 0.6,
+    "dynamic_friction": 0.45,
+    "restitution": 0.05,
+    "semantic_class": "Cable",
+    "wikidata_qcode": "Q16865280"
+  },
+  "qzs_9/SN_ShoJiShuJuXian01": {
+    "mass_kg": 0.169,
+    "static_friction": 0.6,
+    "dynamic_friction": 0.45,
+    "restitution": 0.05,
+    "semantic_class": "Cable",
+    "wikidata_qcode": "Q16865280"
+  },
+  "wq_10/SM-TUILAMEN-1": {
+    "mass_kg": 58.777,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_10/SM-TUILAMEN-2": {
+    "mass_kg": 88.688,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_10/SM-TUILAMEN-3": {
+    "mass_kg": 164.949,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_10/SM-TUILAMEN-4": {
+    "mass_kg": 48.485,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_10/SM-YUSHIGUI-1": {
+    "mass_kg": 30.893,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Bathroom",
+    "wikidata_qcode": null
+  },
+  "wq_10/SM-YUSHIGUI-2": {
+    "mass_kg": 24.222,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Bathroom",
+    "wikidata_qcode": null
+  },
+  "wq_10/SM-YUSHIGUI-3": {
+    "mass_kg": 69.968,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Bathroom",
+    "wikidata_qcode": null
+  },
+  "wq_10/SM-YUSHIGUI-4": {
+    "mass_kg": 19.371,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Bathroom",
+    "wikidata_qcode": null
+  },
+  "wq_10/SM-YUSHIGUI-5": {
+    "mass_kg": 20.218,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Bathroom",
+    "wikidata_qcode": null
+  },
+  "wq_10/SM-YUSHIGUI-6": {
+    "mass_kg": 15.583,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Bathroom",
+    "wikidata_qcode": null
+  },
+  "wq_10/SM-ZHEDIEMEN-1": {
+    "mass_kg": 312.111,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_10/SM-ZHEDIEMEN-2": {
+    "mass_kg": 19.316,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_10/SM-ZHEDIEMEN-3": {
+    "mass_kg": 46.212,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_10/SM-ZHEDIEMEN-4": {
+    "mass_kg": 38.961,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_10/SM-ZHEDIEMEN-5": {
+    "mass_kg": 15.555,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-PINGBANMEN-10_B": {
+    "mass_kg": 75.565,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-PINGBANMEN-1_B": {
+    "mass_kg": 32.657,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-PINGBANMEN-2_B": {
+    "mass_kg": 12.549,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-PINGBANMEN-3_B": {
+    "mass_kg": 13.039,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-PINGBANMEN-4_B": {
+    "mass_kg": 16.096,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-PINGBANMEN-5_B": {
+    "mass_kg": 12.52,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-PINGBANMEN-6_B": {
+    "mass_kg": 14.688,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-PINGBANMEN-7_B": {
+    "mass_kg": 76.748,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-PINGBANMEN-8_B": {
+    "mass_kg": 63.597,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-PINGBANMEN-9_B": {
+    "mass_kg": 81.392,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-SHUANGKAIMEN-1_B": {
+    "mass_kg": 14.429,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-SHUANGKAIMEN-2_B": {
+    "mass_kg": 28.711,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_11/SM-TUILAMEN_B": {
+    "mass_kg": 85.524,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_2/SM-CHAJI-1": {
+    "mass_kg": 50.589,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "CoffeeTable",
+    "wikidata_qcode": "Q1151608"
+  },
+  "wq_2/SM-CHUGUI-1": {
+    "mass_kg": 798.748,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "KitchenCabinet",
+    "wikidata_qcode": "Q148600"
+  },
+  "wq_2/SM-SHUZHUANGTAI-1": {
+    "mass_kg": 79.1,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "DressingTable",
+    "wikidata_qcode": "Q204370"
+  },
+  "wq_2/SM-ZHUANGSHIGUI-1": {
+    "mass_kg": 82.236,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "DisplayCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_2/SM-ZHUANGSHIGUI-2": {
+    "mass_kg": 93.422,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "DisplayCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_2/SM-ZHUANGSHIGUI-3": {
+    "mass_kg": null,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
+  },
+  "wq_2/SM-ZHUANGSHIGUI-4": {
+    "mass_kg": 88.992,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "DisplayCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_2/SM-ZHUANGSHIGUI-5": {
+    "mass_kg": 140.923,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "DisplayCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_3/SM-bingxiang-1": {
+    "mass_kg": 103.706,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Refrigerator",
+    "wikidata_qcode": "Q37867"
+  },
+  "wq_3/SM-bingxiang-2": {
+    "mass_kg": 208.013,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Refrigerator",
+    "wikidata_qcode": null
+  },
+  "wq_3/SM-bingxiang-3": {
+    "mass_kg": 149.143,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Refrigerator",
+    "wikidata_qcode": "Q37867"
+  },
+  "wq_3/SM-CHAJI-2": {
+    "mass_kg": 30.937,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "CoffeeTable",
+    "wikidata_qcode": "Q1151608"
+  },
+  "wq_3/SM-hongjiugui-1": {
+    "mass_kg": 88.587,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_4/SM-SHOUNAIGUI-1": {
+    "mass_kg": 27.771,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "KitchenCabinet",
+    "wikidata_qcode": "Q148600"
+  },
+  "wq_4/SM-SHUZHUANGTAI-2": {
+    "mass_kg": 106.401,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "DressingTable",
+    "wikidata_qcode": "Q204370"
+  },
+  "wq_4/SM-SHUZHUANGTAI-3": {
+    "mass_kg": 74.579,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "DressingTable",
+    "wikidata_qcode": "Q204370"
+  },
+  "wq_4/SM-WEIBOLU-1": {
+    "mass_kg": 116.431,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "MicrowaveOven",
+    "wikidata_qcode": "Q127950"
+  },
+  "wq_4/SM-WEIBOLU-2": {
+    "mass_kg": 10.457,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "MicrowaveOven",
+    "wikidata_qcode": "Q127950"
+  },
+  "wq_4/SM-WEIBOLU-3": {
+    "mass_kg": 1.512,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Microwave",
+    "wikidata_qcode": null
+  },
+  "wq_4/SM-XIWANJI-1": {
+    "mass_kg": 13.417,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Dishwasher",
+    "wikidata_qcode": "Q186263"
+  },
+  "wq_7/SM-XIEGUI-1": {
+    "mass_kg": 241.932,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_7/SM-XIEGUI-2": {
+    "mass_kg": 154.865,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_7/SM-XIEGUI-3": {
+    "mass_kg": 193.018,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_7/SM-XIEGUI-4": {
+    "mass_kg": 32.523,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_7/SM-XIEGUI-5": {
+    "mass_kg": 84899112.0,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_7/SM-XIEGUI-6": {
+    "mass_kg": 245.434,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_8/SM-CHUANGTOUGUI-1": {
+    "mass_kg": 7.637,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.2,
+    "semantic_class": "Bed",
+    "wikidata_qcode": "Q42177"
+  },
+  "wq_8/SM-CHUANGTOUGUI-2": {
+    "mass_kg": 5.043,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.2,
+    "semantic_class": "Bed",
+    "wikidata_qcode": "Q42177"
+  },
+  "wq_8/SM-CHUANGTOUGUI-3": {
+    "mass_kg": 15.408,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.2,
+    "semantic_class": "Bed",
+    "wikidata_qcode": "Q42177"
+  },
+  "wq_8/SM-CHUANGTOUGUI-4": {
+    "mass_kg": 38.421,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.2,
+    "semantic_class": "Bed",
+    "wikidata_qcode": "Q42177"
+  },
+  "wq_8/SM-XIEGUI-1": {
+    "mass_kg": 57.349,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "ShoeCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "wq_9/SM-CHAZUOSHUJUXIAN-1": {
+    "mass_kg": 0.889,
+    "static_friction": 0.6,
+    "dynamic_friction": 0.45,
+    "restitution": 0.05,
+    "semantic_class": "Cable",
+    "wikidata_qcode": "Q16865280"
+  },
+  "wq_9/SM-CHUANGTOUGUI-1": {
+    "mass_kg": 8.393,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.2,
+    "semantic_class": "Bed",
+    "wikidata_qcode": "Q42177"
+  },
+  "wq_9/SM-ZHONGDAO-1": {
+    "mass_kg": 42.78,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.2,
+    "semantic_class": "Bed",
+    "wikidata_qcode": "Q42177"
+  },
+  "wq_9/SM-ZHONGDAO-2": {
+    "mass_kg": 368.847,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Clock",
+    "wikidata_qcode": "Q376"
+  },
+  "wq_9/SM-ZHONGDAO-3": {
+    "mass_kg": 315.064,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Clock",
+    "wikidata_qcode": "Q376"
+  },
+  "wq_9/SM-ZHONGDAO-4": {
+    "mass_kg": 519.599,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Clock",
+    "wikidata_qcode": "Q376"
+  }
+}
