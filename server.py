@@ -126,7 +126,7 @@ def load_batch_manifests():
 
 
 def derive_display_name(folder_name: str, manifest_item: Optional[dict] = None) -> str:
-    """Generate a clean, professional display name."""
+    """Generate a clean, professional display name in 'English / 中文' format."""
     # 1. Check known Chinese/English translations first
     for prefix, trans in NAME_TRANSLATIONS.items():
         if folder_name.startswith(prefix) or folder_name.lower().startswith(prefix.lower()):
@@ -135,18 +135,89 @@ def derive_display_name(folder_name: str, manifest_item: Optional[dict] = None) 
                 return f"{trans} - {suffix}"
             return trans
 
-    # 2. Check semantic class from manifest if not mismatched
+    # 2. Check semantic class from manifest
+    SEMANTIC_TRANSLATIONS = {
+        "bed": "Bed / 床具",
+        "sidecabinet": "Side Cabinet / 边柜",
+        "kitchencabinet": "Kitchen Cabinet / 橱柜",
+        "refrigerator": "Refrigerator / 冰箱",
+        "microwave": "Microwave / 微波炉",
+        "microwaveoven": "Microwave / 微波炉",
+        "dishwasher": "Dishwasher / 洗碗机",
+        "cable": "Cable / 线缆",
+        "door": "Door / 门",
+        "cabinet": "Cabinet / 柜子",
+        "nightstand": "Nightstand / 床头柜",
+        "shoecabinet": "Shoe Cabinet / 鞋柜",
+        "bathroomvanity": "Bathroom Vanity / 浴室柜",
+        "dressingtable": "Dressing Table / 梳妆台",
+        "coffeetable": "Coffee Table / 茶几"
+    }
+
     if manifest_item and manifest_item.get("semantic_class"):
         sem = manifest_item["semantic_class"]
-        sem_clean = re.sub(r"([a-z])([A-Z])", r"\1 \2", sem)
+        sem_lower = sem.lower()
         num_match = re.search(r"(\d+)", folder_name)
-        if num_match:
-            return f"{sem_clean} #{num_match.group(1)}"
-        return sem_clean
+        suffix_str = f" - {num_match.group(1)}" if num_match else ""
+        if sem_lower in SEMANTIC_TRANSLATIONS:
+            return f"{SEMANTIC_TRANSLATIONS[sem_lower]}{suffix_str}"
+        sem_clean = re.sub(r"([a-z])([A-Z])", r"\1 \2", sem)
+        return f"{sem_clean}{suffix_str}"
 
     cleaned = re.sub(r"^SM[-_]", "", folder_name)
     cleaned = cleaned.replace("_", " ").replace("-", " ")
     return cleaned.strip() or folder_name
+
+
+def get_physics_specs(manifest_info: Optional[dict], category_en: str, item_name: str):
+    """Extract physical properties or compute realistic physics defaults based on category."""
+    # Default category physics based on real-world Isaac Sim material presets
+    DEFAULTS = {
+        "Cabinets & Storage": {"density": 620.0, "mass": 45.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Bathroom Vanity": {"density": 650.0, "mass": 38.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Doors": {"density": 700.0, "mass": 28.5, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Nightstand": {"density": 600.0, "mass": 18.2, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Shoe Cabinet": {"density": 620.0, "mass": 32.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Kitchen Appliances": {"density": 450.0, "mass": 55.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Tables & Vanities": {"density": 600.0, "mass": 22.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Kitchen Island": {"density": 650.0, "mass": 85.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Beds": {"density": 580.0, "mass": 65.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Cables & Outlets": {"density": 1150.0, "mass": 0.45, "static_friction": 0.6, "dynamic_friction": 0.45, "restitution": 0.05},
+        "Other": {"density": 600.0, "mass": 25.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05}
+    }
+    fallback = DEFAULTS.get(category_en, DEFAULTS["Other"])
+
+    density = None
+    mass = None
+    static_f = None
+    dynamic_f = None
+    restitution = None
+
+    if manifest_info:
+        density = manifest_info.get("density_kg_m3")
+        mass = manifest_info.get("mass_kg")
+        static_f = manifest_info.get("static_friction")
+        dynamic_f = manifest_info.get("dynamic_friction")
+        restitution = manifest_info.get("restitution")
+
+    if density is None:
+        density = fallback["density"]
+    if mass is None:
+        mass = fallback["mass"]
+    if static_f is None:
+        static_f = fallback["static_friction"]
+    if dynamic_f is None:
+        dynamic_f = fallback["dynamic_friction"]
+    if restitution is None:
+        restitution = fallback["restitution"]
+
+    return {
+        "mass_kg": round(float(mass), 3) if mass is not None else 0.0,
+        "density_kg_m3": round(float(density), 1) if density is not None else 0.0,
+        "static_friction": round(float(static_f), 2) if static_f is not None else 0.5,
+        "dynamic_friction": round(float(dynamic_f), 2) if dynamic_f is not None else 0.35,
+        "restitution": round(float(restitution), 2) if restitution is not None else 0.05
+    }
 
 
 def scan_assets(force_reload: bool = False) -> List[dict]:
@@ -247,6 +318,7 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
 
             cat_cn, cat_en = classify_category(item_name, semantic_class)
             display_name = derive_display_name(item_name, manifest_info)
+            physics = get_physics_specs(manifest_info, cat_en, item_name)
 
             asset_obj = {
                 "id": f"{batch_name}/{item_name}",
@@ -257,8 +329,12 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
                 "category_en": cat_en,
                 "category_display": f"{cat_cn} / {cat_en}",
                 "semantic_class": semantic_class,
-                "mass_kg": mass_kg,
-                "friction": friction,
+                "mass_kg": physics["mass_kg"],
+                "density_kg_m3": physics["density_kg_m3"],
+                "static_friction": physics["static_friction"],
+                "dynamic_friction": physics["dynamic_friction"],
+                "restitution": physics["restitution"],
+                "friction": f"{physics['static_friction']} / {physics['dynamic_friction']}",
                 "status": status,
                 "has_video": len(video_files) > 0,
                 "has_usd": len(usd_files) > 0,

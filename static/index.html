@@ -117,13 +117,42 @@
           </div>
           <!-- Tabs switch between video & image -->
           <div class="media-controls-tab">
-            <button id="modalVideoTabBtn" class="media-tab-btn active">🎬 360° 旋转视频</button>
+            <button id="modalVideoTabBtn" class="media-tab-btn active">🎬 关节视频</button>
             <button id="modalImageTabBtn" class="media-tab-btn">🖼 高清渲染图</button>
           </div>
         </div>
 
         <!-- Right: Information & Downloads -->
         <div class="modal-info-col">
+          <!-- Physics & Simulation Parameters -->
+          <div class="info-section physics-specs-card">
+            <div class="section-label">⚡ 物理与仿真属性 (Isaac Sim Physics)</div>
+            <div class="physics-specs-header">
+              <div class="physics-mass-box">
+                <span class="physics-mass-label">质量 (Mass)</span>
+                <span class="physics-mass-val" id="modalMassVal">-- kg</span>
+              </div>
+            </div>
+            <div class="physics-specs-grid">
+              <div class="physics-spec-item">
+                <span class="physics-spec-label">密度 (Density)</span>
+                <span class="physics-spec-value" id="modalDensityVal">-- kg/m³</span>
+              </div>
+              <div class="physics-spec-item">
+                <span class="physics-spec-label">静态摩擦 (Static Friction)</span>
+                <span class="physics-spec-value" id="modalStaticFrictionVal">--</span>
+              </div>
+              <div class="physics-spec-item">
+                <span class="physics-spec-label">动态摩擦 (Dynamic Friction)</span>
+                <span class="physics-spec-value" id="modalDynamicFrictionVal">--</span>
+              </div>
+              <div class="physics-spec-item">
+                <span class="physics-spec-label">弹性恢复 (Restitution)</span>
+                <span class="physics-spec-value" id="modalRestitutionVal">--</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Primary Download Action -->
           <div class="info-section">
             <a id="modalDownloadZip" class="download-primary-btn" href="#">
@@ -135,7 +164,7 @@
               一键打包下载完整资产 (ZIP)
             </a>
             <p style="font-size: 0.78rem; color: #94a3b8; text-align: center; margin-top: 4px;">
-              打包包含：USD/USDC 物理网格、Materials 材质库与贴图、360° 视频与高清渲染图
+              打包包含：USD/USDC 物理网格、Materials 材质库与贴图、关节视频与高清渲染图
             </p>
           </div>
 
@@ -171,6 +200,6 @@
     </div>
   </div>
 
-  <script src="js/app.js?v=20260914_v8"></script>
+  <script src="js/app.js?v=20260914_v9"></script>
 </body>
 </html>

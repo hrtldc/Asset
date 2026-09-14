@@ -459,18 +459,7 @@ body.mode-videowall .asset-card .card-preview img.has-video-sibling {
 
 /* Badges on Preview */
 .badge-batch {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(5, 10, 20, 0.85);
-  backdrop-filter: blur(6px);
-  color: #cbd5e1;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  font-size: 0.72rem;
-  font-weight: 600;
-  padding: 3px 9px;
-  border-radius: 6px;
-  z-index: 5;
+  display: none !important;
 }
 
 .badge-video {
@@ -872,6 +861,73 @@ body.mode-videowall .asset-card .card-preview img.has-video-sibling {
 }
 
 /* Specifications Table (Re-styling Image 3 in Dark Sci-Fi) */
+.physics-specs-card {
+  background: rgba(10, 18, 36, 0.85);
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(0, 242, 254, 0.05);
+}
+
+.physics-specs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.physics-mass-box {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.physics-mass-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+.physics-mass-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color: var(--cyan-neon);
+  text-shadow: 0 0 10px var(--cyan-glow);
+}
+
+.physics-specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.physics-spec-item {
+  background: rgba(15, 25, 50, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.physics-spec-label {
+  font-size: 0.72rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.physics-spec-value {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
 .specs-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

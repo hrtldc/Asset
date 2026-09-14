@@ -52,6 +52,11 @@ const elements = {
   modalImageTabBtn: document.getElementById("modalImageTabBtn"),
   modalDownloadZip: document.getElementById("modalDownloadZip"),
   modalQuickUsdRow: document.getElementById("modalQuickUsdRow"),
+  modalMassVal: document.getElementById("modalMassVal"),
+  modalDensityVal: document.getElementById("modalDensityVal"),
+  modalStaticFrictionVal: document.getElementById("modalStaticFrictionVal"),
+  modalDynamicFrictionVal: document.getElementById("modalDynamicFrictionVal"),
+  modalRestitutionVal: document.getElementById("modalRestitutionVal"),
   modalOpenFolderBtn: document.getElementById("modalOpenFolderBtn"),
   modalCopyPathBtn: document.getElementById("modalCopyPathBtn"),
   toast: document.getElementById("toastNotice")
@@ -441,10 +446,9 @@ function renderGrid() {
 
     card.innerHTML = `
       <div class="card-preview">
-        <span class="badge-batch">${asset.batch}</span>
         ${
           asset.has_video
-            ? `<span class="badge-video"><span class="video-playing-indicator"></span> 360° 视频</span>`
+            ? `<span class="badge-video"><span class="video-playing-indicator"></span> 关节视频</span>`
             : ""
         }
         ${mediaHtml}
@@ -518,6 +522,23 @@ function openModal(asset) {
   state.selectedAsset = asset;
   elements.modalTitle.textContent = asset.displayName;
   elements.modalSubtitle.textContent = `类别: ${asset.category_display} · 标识名: ${asset.name} · 批次: ${asset.batch} · 完整大小: ${asset.total_size_mb} MB`;
+
+  // Populate Physics & Simulation specs
+  if (elements.modalMassVal) {
+    elements.modalMassVal.textContent = (asset.mass_kg !== undefined && asset.mass_kg !== null) ? `${asset.mass_kg} kg` : "-- kg";
+  }
+  if (elements.modalDensityVal) {
+    elements.modalDensityVal.textContent = (asset.density_kg_m3 !== undefined && asset.density_kg_m3 !== null) ? `${asset.density_kg_m3} kg/m³` : "-- kg/m³";
+  }
+  if (elements.modalStaticFrictionVal) {
+    elements.modalStaticFrictionVal.textContent = (asset.static_friction !== undefined && asset.static_friction !== null) ? `${asset.static_friction}` : "0.50";
+  }
+  if (elements.modalDynamicFrictionVal) {
+    elements.modalDynamicFrictionVal.textContent = (asset.dynamic_friction !== undefined && asset.dynamic_friction !== null) ? `${asset.dynamic_friction}` : "0.35";
+  }
+  if (elements.modalRestitutionVal) {
+    elements.modalRestitutionVal.textContent = (asset.restitution !== undefined && asset.restitution !== null) ? `${asset.restitution}` : "0.05";
+  }
 
   let thumbUrl = null;
   let videoUrl = null;
