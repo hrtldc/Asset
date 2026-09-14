@@ -53,7 +53,8 @@ const elements = {
   modalDownloadZip: document.getElementById("modalDownloadZip"),
   modalQuickUsdRow: document.getElementById("modalQuickUsdRow"),
   modalMassVal: document.getElementById("modalMassVal"),
-  modalDensityVal: document.getElementById("modalDensityVal"),
+  modalSemanticClassVal: document.getElementById("modalSemanticClassVal"),
+  modalQCodeVal: document.getElementById("modalQCodeVal"),
   modalStaticFrictionVal: document.getElementById("modalStaticFrictionVal"),
   modalDynamicFrictionVal: document.getElementById("modalDynamicFrictionVal"),
   modalRestitutionVal: document.getElementById("modalRestitutionVal"),
@@ -527,8 +528,11 @@ function openModal(asset) {
   if (elements.modalMassVal) {
     elements.modalMassVal.textContent = (asset.mass_kg !== undefined && asset.mass_kg !== null) ? `${asset.mass_kg} kg` : "-- kg";
   }
-  if (elements.modalDensityVal) {
-    elements.modalDensityVal.textContent = (asset.density_kg_m3 !== undefined && asset.density_kg_m3 !== null) ? `${asset.density_kg_m3} kg/m³` : "-- kg/m³";
+  if (elements.modalSemanticClassVal) {
+    elements.modalSemanticClassVal.textContent = asset.semantic_class || "--";
+  }
+  if (elements.modalQCodeVal) {
+    elements.modalQCodeVal.textContent = asset.wikidata_qcode || "--";
   }
   if (elements.modalStaticFrictionVal) {
     elements.modalStaticFrictionVal.textContent = (asset.static_friction !== undefined && asset.static_friction !== null) ? `${asset.static_friction}` : "0.50";

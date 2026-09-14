@@ -135,8 +135,12 @@
             </div>
             <div class="physics-specs-grid">
               <div class="physics-spec-item">
-                <span class="physics-spec-label">密度 (Density)</span>
-                <span class="physics-spec-value" id="modalDensityVal">-- kg/m³</span>
+                <span class="physics-spec-label">语义类别 (Semantic Class)</span>
+                <span class="physics-spec-value" id="modalSemanticClassVal" style="color: var(--cyan-neon);">--</span>
+              </div>
+              <div class="physics-spec-item">
+                <span class="physics-spec-label">Wikidata QCode</span>
+                <span class="physics-spec-value" id="modalQCodeVal" style="color: var(--cyan-neon);">--</span>
               </div>
               <div class="physics-spec-item">
                 <span class="physics-spec-label">静态摩擦 (Static Friction)</span>
@@ -146,7 +150,7 @@
                 <span class="physics-spec-label">动态摩擦 (Dynamic Friction)</span>
                 <span class="physics-spec-value" id="modalDynamicFrictionVal">--</span>
               </div>
-              <div class="physics-spec-item">
+              <div class="physics-spec-item" style="grid-column: span 2;">
                 <span class="physics-spec-label">弹性恢复 (Restitution)</span>
                 <span class="physics-spec-value" id="modalRestitutionVal">--</span>
               </div>
@@ -200,6 +204,6 @@
     </div>
   </div>
 
-  <script src="js/app.js?v=20260914_v9"></script>
+  <script src="js/app.js?v=20260914_v10"></script>
 </body>
 </html>

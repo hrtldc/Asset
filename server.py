@@ -80,31 +80,36 @@ def get_or_create_thumbnail(source_file: Path) -> Path:
 
 
 def classify_category(folder_name: str, semantic_class: Optional[str] = None):
-    """Accurately classify asset into human-friendly Chinese & English categories."""
-    target = (folder_name + " " + (semantic_class or "")).lower()
-    if any(k in target for k in ["bingxiang", "refrigerator"]):
-        return "冰箱", "Refrigerator"
-    elif any(k in target for k in ["yushigui", "bathroomvanity"]):
-        return "浴室柜", "Bathroom Vanity"
-    elif any(k in target for k in ["zhediemen", "tuilamen", "door", "foldingdoor", "slidingdoor"]):
-        return "门类", "Doors"
-    elif any(k in target for k in ["chuangtougui", "nightstand"]):
-        return "床头柜", "Nightstand"
-    elif any(k in target for k in ["xiegui", "shoecabinet"]):
-        return "鞋柜", "Shoe Cabinet"
+    """Accurately classify asset into human-friendly Chinese & English categories, class and QCode."""
+    fn = folder_name.lower()
+    sem = (semantic_class or "").lower()
+    target = fn + " " + sem
+
+    if "bingxiang" in target or "refrigerator" in target:
+        return ("Refrigerator", "冰箱", "Refrigerator", "Q37867", "Refrigerator")
+    elif "yushigui" in target or "bathroomvanity" in target:
+        return ("Bathroom Vanity", "浴室柜", "Bathroom Vanity", "Q1321517", "BathroomVanity")
+    elif "chuangtougui" in target or "nightstand" in target:
+        return ("Nightstand", "床头柜", "Nightstand", "Q1321517", "Nightstand")
+    elif "xiegui" in target or "shoecabinet" in target:
+        return ("Shoe Cabinet", "鞋柜", "Shoe Cabinet", "Q1321517", "ShoeCabinet")
+    elif any(k in target for k in ["zhediemen", "tuilamen", "pingbanmen", "shuangkaimen", "door", "foldingdoor", "slidingdoor"]) or fn.startswith(("sm_men", "sm-men")):
+        return ("Door", "门类", "Doors", "Q36794", "Door")
     elif any(k in target for k in ["kaoxiang", "weibolu", "xiaodugui", "xiwanji", "microwave", "oven", "dishwasher"]):
-        return "厨房电器", "Kitchen Appliances"
-    elif any(k in target for k in ["shuzhuangtai", "chaji", "dressingtable", "coffeetable"]):
-        return "桌几/梳妆台", "Tables & Vanities"
-    elif any(k in target for k in ["zhongdao"]):
-        return "中岛台", "Kitchen Island"
-    elif any(k in target for k in ["bed"]):
-        return "床具", "Beds"
+        return ("Kitchen Appliance", "厨房电器", "Kitchen Appliances", "Q127950", "KitchenAppliance")
+    elif "shuzhuangtai" in target or "dressingtable" in target:
+        return ("Dressing Table", "梳妆台", "Tables & Vanities", "Q204370", "DressingTable")
+    elif "chaji" in target or "coffeetable" in target:
+        return ("Coffee Table", "茶几", "Tables & Vanities", "Q1151608", "CoffeeTable")
+    elif "zhongdao" in target or "kitchenisland" in target:
+        return ("Kitchen Island", "中岛台", "Kitchen Island", "Q148600", "KitchenIsland")
     elif any(k in target for k in ["chazuo", "shujuxian", "cable"]):
-        return "数码配件", "Cables & Outlets"
+        return ("Cable & Outlet", "数码配件", "Cables & Outlets", "Q16865280", "Cable")
     elif any(k in target for k in ["guizi", "chugui", "sidecabinet", "kitchencabinet", "shounaigui", "zhuangshigui", "hongjiugui", "shuiba", "cabinet", "storage"]):
-        return "柜类/储物", "Cabinets & Storage"
-    return "其他资产", "Other"
+        return ("Cabinet", "柜类", "Cabinets & Storage", "Q1321517", "Cabinet")
+    elif "bed" in target:
+        return ("Bed", "床具", "Beds", "Q42177", "Bed")
+    return ("Asset", "其他资产", "Other", "Q223557", "PhysicalAsset")
 
 
 def load_batch_manifests():
@@ -125,83 +130,34 @@ def load_batch_manifests():
     return manifests
 
 
-def derive_display_name(folder_name: str, manifest_item: Optional[dict] = None) -> str:
-    """Generate a clean, professional display name in 'English / 中文' format."""
-    # 1. Check known Chinese/English translations first
-    for prefix, trans in NAME_TRANSLATIONS.items():
-        if folder_name.startswith(prefix) or folder_name.lower().startswith(prefix.lower()):
-            suffix = folder_name[len(prefix):].lstrip("-_")
-            if suffix:
-                return f"{trans} - {suffix}"
-            return trans
-
-    # 2. Check semantic class from manifest
-    SEMANTIC_TRANSLATIONS = {
-        "bed": "Bed / 床具",
-        "sidecabinet": "Side Cabinet / 边柜",
-        "kitchencabinet": "Kitchen Cabinet / 橱柜",
-        "refrigerator": "Refrigerator / 冰箱",
-        "microwave": "Microwave / 微波炉",
-        "microwaveoven": "Microwave / 微波炉",
-        "dishwasher": "Dishwasher / 洗碗机",
-        "cable": "Cable / 线缆",
-        "door": "Door / 门",
-        "cabinet": "Cabinet / 柜子",
-        "nightstand": "Nightstand / 床头柜",
-        "shoecabinet": "Shoe Cabinet / 鞋柜",
-        "bathroomvanity": "Bathroom Vanity / 浴室柜",
-        "dressingtable": "Dressing Table / 梳妆台",
-        "coffeetable": "Coffee Table / 茶几"
-    }
-
-    if manifest_item and manifest_item.get("semantic_class"):
-        sem = manifest_item["semantic_class"]
-        sem_lower = sem.lower()
-        num_match = re.search(r"(\d+)", folder_name)
-        suffix_str = f" - {num_match.group(1)}" if num_match else ""
-        if sem_lower in SEMANTIC_TRANSLATIONS:
-            return f"{SEMANTIC_TRANSLATIONS[sem_lower]}{suffix_str}"
-        sem_clean = re.sub(r"([a-z])([A-Z])", r"\1 \2", sem)
-        return f"{sem_clean}{suffix_str}"
-
-    cleaned = re.sub(r"^SM[-_]", "", folder_name)
-    cleaned = cleaned.replace("_", " ").replace("-", " ")
-    return cleaned.strip() or folder_name
-
-
 def get_physics_specs(manifest_info: Optional[dict], category_en: str, item_name: str):
     """Extract physical properties or compute realistic physics defaults based on category."""
-    # Default category physics based on real-world Isaac Sim material presets
     DEFAULTS = {
-        "Cabinets & Storage": {"density": 620.0, "mass": 45.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Bathroom Vanity": {"density": 650.0, "mass": 38.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Doors": {"density": 700.0, "mass": 28.5, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Nightstand": {"density": 600.0, "mass": 18.2, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Shoe Cabinet": {"density": 620.0, "mass": 32.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Kitchen Appliances": {"density": 450.0, "mass": 55.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Tables & Vanities": {"density": 600.0, "mass": 22.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Kitchen Island": {"density": 650.0, "mass": 85.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Beds": {"density": 580.0, "mass": 65.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Cables & Outlets": {"density": 1150.0, "mass": 0.45, "static_friction": 0.6, "dynamic_friction": 0.45, "restitution": 0.05},
-        "Other": {"density": 600.0, "mass": 25.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05}
+        "Cabinets & Storage": {"mass": 45.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Bathroom Vanity": {"mass": 38.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Doors": {"mass": 28.5, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Nightstand": {"mass": 18.2, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Shoe Cabinet": {"mass": 32.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Kitchen Appliances": {"mass": 55.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Tables & Vanities": {"mass": 22.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Kitchen Island": {"mass": 85.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Beds": {"mass": 65.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Cables & Outlets": {"mass": 0.45, "static_friction": 0.6, "dynamic_friction": 0.45, "restitution": 0.05},
+        "Other": {"mass": 25.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05}
     }
     fallback = DEFAULTS.get(category_en, DEFAULTS["Other"])
 
-    density = None
     mass = None
     static_f = None
     dynamic_f = None
     restitution = None
 
     if manifest_info:
-        density = manifest_info.get("density_kg_m3")
         mass = manifest_info.get("mass_kg")
         static_f = manifest_info.get("static_friction")
         dynamic_f = manifest_info.get("dynamic_friction")
         restitution = manifest_info.get("restitution")
 
-    if density is None:
-        density = fallback["density"]
     if mass is None:
         mass = fallback["mass"]
     if static_f is None:
@@ -213,7 +169,6 @@ def get_physics_specs(manifest_info: Optional[dict], category_en: str, item_name
 
     return {
         "mass_kg": round(float(mass), 3) if mass is not None else 0.0,
-        "density_kg_m3": round(float(density), 1) if density is not None else 0.0,
         "static_friction": round(float(static_f), 2) if static_f is not None else 0.5,
         "dynamic_friction": round(float(dynamic_f), 2) if dynamic_f is not None else 0.35,
         "restitution": round(float(restitution), 2) if restitution is not None else 0.05
@@ -316,21 +271,21 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
                     friction = f"{static_friction} / {dynamic_friction}"
                 status = manifest_info.get("status", "PASS")
 
-            cat_cn, cat_en = classify_category(item_name, semantic_class)
-            display_name = derive_display_name(item_name, manifest_info)
+            cls_en, cat_cn, cat_en, qcode, default_sem = classify_category(item_name, semantic_class)
             physics = get_physics_specs(manifest_info, cat_en, item_name)
+            final_semantic = semantic_class or default_sem
 
             asset_obj = {
                 "id": f"{batch_name}/{item_name}",
                 "batch": batch_name,
                 "name": item_name,
-                "displayName": display_name,
                 "category": cat_cn,
                 "category_en": cat_en,
                 "category_display": f"{cat_cn} / {cat_en}",
-                "semantic_class": semantic_class,
+                "clean_category_en": cls_en,
+                "semantic_class": final_semantic,
+                "wikidata_qcode": qcode,
                 "mass_kg": physics["mass_kg"],
-                "density_kg_m3": physics["density_kg_m3"],
                 "static_friction": physics["static_friction"],
                 "dynamic_friction": physics["dynamic_friction"],
                 "restitution": physics["restitution"],
@@ -352,6 +307,16 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
                 "abs_path": str(Path(item_dir.path).resolve())
             }
             assets.append(asset_obj)
+
+    # Sort assets by id to ensure deterministic order, then assign sequential numbers per category
+    assets.sort(key=lambda a: (a["clean_category_en"], a["batch"], a["name"]))
+    category_counters = {}
+    for a in assets:
+        cls = a["clean_category_en"]
+        cat_cn = a["category"]
+        category_counters[cls] = category_counters.get(cls, 0) + 1
+        idx = category_counters[cls]
+        a["displayName"] = f"{cls} / {cat_cn} - {idx:02d}"
 
     _cached_assets = assets
     _last_scan_timestamp = now
