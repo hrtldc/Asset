@@ -97,24 +97,27 @@ function bindEvents() {
     setViewMode("videowall");
   });
 
-  // Category vs Batch Strip Switchers
-  elements.stripModeCategory.addEventListener("click", () => {
-    state.stripMode = "category";
-    elements.stripModeCategory.classList.add("active");
-    elements.stripModeBatch.classList.remove("active");
-    state.currentBatch = "all";
-    renderFilterChips();
-    applyFilters();
-  });
+  if (elements.stripModeCategory) {
+    elements.stripModeCategory.addEventListener("click", () => {
+      state.stripMode = "category";
+      elements.stripModeCategory.classList.add("active");
+      if (elements.stripModeBatch) elements.stripModeBatch.classList.remove("active");
+      state.currentBatch = "all";
+      renderFilterChips();
+      applyFilters();
+    });
+  }
 
-  elements.stripModeBatch.addEventListener("click", () => {
-    state.stripMode = "batch";
-    elements.stripModeBatch.classList.add("active");
-    elements.stripModeCategory.classList.remove("active");
-    state.currentCategory = "all";
-    renderFilterChips();
-    applyFilters();
-  });
+  if (elements.stripModeBatch) {
+    elements.stripModeBatch.addEventListener("click", () => {
+      state.stripMode = "batch";
+      elements.stripModeBatch.classList.add("active");
+      if (elements.stripModeCategory) elements.stripModeCategory.classList.remove("active");
+      state.currentCategory = "all";
+      renderFilterChips();
+      applyFilters();
+    });
+  }
 
   if (!isLocalServer && elements.updateAllBtn) {
     elements.updateAllBtn.style.display = "none";

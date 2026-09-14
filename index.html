@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D USD 资产展示平台 - Cyber Studio</title>
-  <link rel="stylesheet" href="css/style.css?v=20260914_v7">
+  <link rel="stylesheet" href="css/style.css?v=20260914_v8">
 </head>
 <body style="background-color: #050811; color: #f8fafc;">
 
@@ -24,7 +24,6 @@
             3D USD 资产展示平台
             <span class="brand-badge">Cyber Studio</span>
           </h1>
-          <p class="brand-subtitle">SimReady & OpenUSD 资产元宇宙 · 360° 旋转视频沉浸预览与极速打包下载</p>
         </div>
       </div>
 
@@ -84,38 +83,8 @@
     </div>
   </header>
 
-  <!-- Quick Stats Bar -->
-  <section class="stats-bar">
-    <div class="stats-badges">
-      <div class="stat-pill active-pill">
-        <span>当前显示:</span>
-        <strong id="filteredCount">0</strong> / <span id="totalAssetsCount">0</span>
-      </div>
-      <div class="stat-pill">
-        <span>🎬 360° 旋转视频:</span>
-        <strong id="videosCount">0</strong> 个
-      </div>
-      <div class="stat-pill">
-        <span>📦 USD 网格:</span>
-        <strong id="usdCount">0</strong> 套
-      </div>
-      <div class="stat-pill">
-        <span>💾 资源总容量:</span>
-        <strong id="totalSize">0 GB</strong>
-      </div>
-    </div>
-  </section>
-
-  <!-- Category & Batch Switcher Header -->
-  <div class="strip-header">
-    <div class="strip-toggle-group">
-      <button id="stripModeCategory" class="strip-mode-btn active">🏷️ 按模型类别筛选</button>
-      <button id="stripModeBatch" class="strip-mode-btn">📁 按生产批次筛选</button>
-    </div>
-  </div>
-
-  <!-- Horizontal Chips Navigation Strip (Categories by default) -->
-  <nav class="batch-strip" id="filterChips">
+  <!-- Horizontal Chips Navigation Strip -->
+  <nav class="batch-strip" id="filterChips" style="margin-top: 20px;">
     <!-- Populated by JS -->
   </nav>
 
@@ -202,6 +171,6 @@
     </div>
   </div>
 
-  <script src="js/app.js?v=20260914_v7"></script>
+  <script src="js/app.js?v=20260914_v8"></script>
 </body>
 </html>
