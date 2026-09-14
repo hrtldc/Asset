@@ -186,6 +186,7 @@ function setViewMode(mode) {
     elements.modeVideoBtn.classList.add("active");
     elements.modeThumbBtn.classList.remove("active");
     document.querySelectorAll(".card-preview video.has-video").forEach((v) => {
+      if (!v.src && v.dataset.src) v.src = v.dataset.src;
       v.play().catch(() => {});
     });
   } else {
@@ -421,7 +422,7 @@ function renderGrid() {
       mediaHtml += `<img src="${thumbUrl}" alt="${asset.displayName}" loading="lazy" class="${videoUrl ? "has-video-sibling" : ""}" onerror="if('${fallbackThumbUrl}' && this.src!=='${fallbackThumbUrl}'){this.src='${fallbackThumbUrl}';}">`;
     }
     if (videoUrl) {
-      mediaHtml += `<video src="${videoUrl}" loop muted playsinline preload="metadata" class="has-video"></video>`;
+      mediaHtml += `<video data-src="${videoUrl}" loop muted playsinline preload="none" class="has-video"></video>`;
     }
     if (!thumbUrl && !videoUrl) {
       mediaHtml = `
@@ -464,13 +465,17 @@ function renderGrid() {
       </div>
     `;
 
-    // Video hover interaction with instant smooth playback
+    // Video hover interaction with on-demand zero-lag loading
     const videoElem = card.querySelector("video.has-video");
     if (videoElem) {
       videoElem.addEventListener("playing", () => {
         videoElem.classList.add("is-playing");
       });
       card.addEventListener("mouseenter", () => {
+        if (!videoElem.src && videoElem.dataset.src) {
+          videoElem.src = videoElem.dataset.src;
+          videoElem.preload = "auto";
+        }
         if (state.viewMode === "thumb") {
           const playPromise = videoElem.play();
           if (playPromise !== undefined) {

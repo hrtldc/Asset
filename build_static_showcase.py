@@ -70,6 +70,9 @@ def build_showcase():
         static_asset["static_thumb_path"] = target_thumb_name
         static_asset["static_video_path"] = target_video_name
         static_asset.pop("abs_path", None)
+        static_asset.pop("all_files", None)
+        static_asset.pop("usd_files", None)
+        static_asset.pop("image_files", None)
         static_assets.append(static_asset)
 
         if idx % 20 == 0 or idx == len(raw_assets):
