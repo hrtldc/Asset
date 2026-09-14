@@ -444,13 +444,14 @@ body {
   transition: opacity 0.35s ease;
 }
 
-/* Hover or Video Wall active video */
-.asset-card:hover .card-preview video.has-video,
+/* Hover or Video Wall active video - smooth fade without black flicker */
+.asset-card:hover .card-preview video.has-video.is-playing,
 body.mode-videowall .asset-card .card-preview video.has-video {
   opacity: 1;
 }
 
-.asset-card:hover .card-preview img.has-video-sibling,
+.asset-card:hover .card-preview video.has-video.is-playing ~ img.has-video-sibling,
+.asset-card:hover .card-preview:has(video.is-playing) img.has-video-sibling,
 body.mode-videowall .asset-card .card-preview img.has-video-sibling {
   opacity: 0;
 }

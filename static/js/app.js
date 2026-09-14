@@ -421,7 +421,7 @@ function renderGrid() {
       mediaHtml += `<img src="${thumbUrl}" alt="${asset.displayName}" loading="lazy" class="${videoUrl ? "has-video-sibling" : ""}" onerror="if('${fallbackThumbUrl}' && this.src!=='${fallbackThumbUrl}'){this.src='${fallbackThumbUrl}';}">`;
     }
     if (videoUrl) {
-      mediaHtml += `<video src="${videoUrl}" loop muted playsinline preload="none" class="has-video"></video>`;
+      mediaHtml += `<video src="${videoUrl}" loop muted playsinline preload="metadata" class="has-video"></video>`;
     }
     if (!thumbUrl && !videoUrl) {
       mediaHtml = `
@@ -464,17 +464,24 @@ function renderGrid() {
       </div>
     `;
 
-    // Video hover interaction
+    // Video hover interaction with instant smooth playback
     const videoElem = card.querySelector("video.has-video");
     if (videoElem) {
+      videoElem.addEventListener("playing", () => {
+        videoElem.classList.add("is-playing");
+      });
       card.addEventListener("mouseenter", () => {
         if (state.viewMode === "thumb") {
-          videoElem.play().catch(() => {});
+          const playPromise = videoElem.play();
+          if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+          }
         }
       });
       card.addEventListener("mouseleave", () => {
         if (state.viewMode === "thumb") {
           videoElem.pause();
+          videoElem.classList.remove("is-playing");
           videoElem.currentTime = 0;
         }
       });
