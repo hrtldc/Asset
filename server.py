@@ -130,8 +130,27 @@ def load_batch_manifests():
     return manifests
 
 
-def get_physics_specs(manifest_info: Optional[dict], category_en: str, item_name: str):
+def load_usd_physics_cache():
+    """Load pre-extracted authored USD physics properties (mass, frictions)."""
+    cache_path = STATIC_DIR / "data" / "usd_physics_cache.json"
+    if cache_path.exists():
+        try:
+            with open(cache_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"Error loading usd_physics_cache: {e}")
+    return {}
+
+
+_usd_physics_cache = load_usd_physics_cache()
+
+
+def get_physics_specs(manifest_info: Optional[dict], category_en: str, item_name: str, asset_key: str = ""):
     """Extract physical properties or compute realistic physics defaults based on category."""
+    global _usd_physics_cache
+    if not _usd_physics_cache:
+        _usd_physics_cache = load_usd_physics_cache()
+
     DEFAULTS = {
         "Cabinets & Storage": {"mass": 45.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
         "Bathroom Vanity": {"mass": 38.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
@@ -152,12 +171,25 @@ def get_physics_specs(manifest_info: Optional[dict], category_en: str, item_name
     dynamic_f = None
     restitution = None
 
-    if manifest_info:
+    # 1. Check direct USD authored physics cache first (exact mass as in Isaac Sim)
+    usd_info = _usd_physics_cache.get(asset_key)
+    if usd_info:
+        mass = usd_info.get("mass_kg")
+        static_f = usd_info.get("static_friction")
+        dynamic_f = usd_info.get("dynamic_friction")
+        restitution = usd_info.get("restitution")
+
+    # 2. Check manifest info if not in USD cache
+    if mass is None and manifest_info:
         mass = manifest_info.get("mass_kg")
+    if static_f is None and manifest_info:
         static_f = manifest_info.get("static_friction")
+    if dynamic_f is None and manifest_info:
         dynamic_f = manifest_info.get("dynamic_friction")
+    if restitution is None and manifest_info:
         restitution = manifest_info.get("restitution")
 
+    # 3. Fallback to realistic category preset
     if mass is None:
         mass = fallback["mass"]
     if static_f is None:
@@ -272,7 +304,8 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
                 status = manifest_info.get("status", "PASS")
 
             cls_en, cat_cn, cat_en, qcode, default_sem = classify_category(item_name, semantic_class)
-            physics = get_physics_specs(manifest_info, cat_en, item_name)
+            asset_key = f"{batch_name}/{item_name}"
+            physics = get_physics_specs(manifest_info, cat_en, item_name, asset_key=asset_key)
             final_semantic = semantic_class or default_sem
 
             asset_obj = {
