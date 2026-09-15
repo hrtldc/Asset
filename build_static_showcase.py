@@ -45,7 +45,9 @@ def build_showcase():
             src_png = Path(asset["abs_path"]) / asset["thumbnail_rel_path"]
             dst_webp = asset_media_dir / "thumb.webp"
             if src_png.exists():
-                if not dst_webp.exists() or dst_webp.stat().st_size == 0:
+                src_mtime = src_png.stat().st_mtime
+                needs_update = not dst_webp.exists() or dst_webp.stat().st_size == 0 or dst_webp.stat().st_mtime < src_mtime
+                if needs_update:
                     try:
                         with Image.open(src_png) as im:
                             im_conv = im.convert("RGBA") if im.mode in ("RGBA", "LA") else im.convert("RGB")
