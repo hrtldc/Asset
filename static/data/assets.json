@@ -2842,19 +2842,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "Ready",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_Men19.png",
       "thumbnail_mtime": 1789444990,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "video_rel_path": "V_Men19.mp4",
+      "video_mtime": 1789445428,
       "primary_usd_rel_path": "SM_Men19_B.usd",
-      "total_size_bytes": 784592323,
-      "total_size_mb": 748.25,
-      "video_files": [],
+      "total_size_bytes": 8670301,
+      "total_size_mb": 8.27,
+      "video_files": [
+        {
+          "name": "V_Men19.mp4",
+          "rel_path": "V_Men19.mp4",
+          "size_bytes": 3603344,
+          "mtime": 1789445428,
+          "size_str": "3.44 MB"
+        }
+      ],
       "displayName": "Door / 门类 - 26",
       "static_thumb_path": "media/qzs_14/SM_Men19_B/thumb.webp",
-      "static_video_path": null
+      "static_video_path": "media/qzs_14/SM_Men19_B/V_Men19.mp4"
     },
     {
       "id": "qzs_14/SM_Men20_B",
@@ -2872,19 +2880,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "Ready",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": null,
-      "thumbnail_mtime": 0,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Men20.png",
+      "thumbnail_mtime": 1789445450,
+      "video_rel_path": "V_Men20.mp4",
+      "video_mtime": 1789445755,
       "primary_usd_rel_path": "SM_Men20_B.usd",
-      "total_size_bytes": 2414280,
-      "total_size_mb": 2.3,
-      "video_files": [],
+      "total_size_bytes": 10148896,
+      "total_size_mb": 9.68,
+      "video_files": [
+        {
+          "name": "V_Men20.mp4",
+          "rel_path": "V_Men20.mp4",
+          "size_bytes": 2959371,
+          "mtime": 1789445755,
+          "size_str": "2.82 MB"
+        }
+      ],
       "displayName": "Door / 门类 - 27",
-      "static_thumb_path": null,
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_14/SM_Men20_B/thumb.webp",
+      "static_video_path": "media/qzs_14/SM_Men20_B/V_Men20.mp4"
     },
     {
       "id": "qzs_14/SM_Men21_B",
@@ -2902,19 +2918,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "Ready",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": null,
-      "thumbnail_mtime": 0,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Men21.png",
+      "thumbnail_mtime": 1789445772,
+      "video_rel_path": "V_Men21.mp4",
+      "video_mtime": 1789446056,
       "primary_usd_rel_path": "SM_Men21_B.usd",
-      "total_size_bytes": 2711536,
-      "total_size_mb": 2.59,
-      "video_files": [],
+      "total_size_bytes": 11112898,
+      "total_size_mb": 10.6,
+      "video_files": [
+        {
+          "name": "V_Men21.mp4",
+          "rel_path": "V_Men21.mp4",
+          "size_bytes": 2952635,
+          "mtime": 1789446056,
+          "size_str": "2.82 MB"
+        }
+      ],
       "displayName": "Door / 门类 - 28",
-      "static_thumb_path": null,
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_14/SM_Men21_B/thumb.webp",
+      "static_video_path": "media/qzs_14/SM_Men21_B/V_Men21.mp4"
     },
     {
       "id": "qzs_14/SM_Men22_B",
@@ -2932,19 +2956,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "Ready",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": null,
-      "thumbnail_mtime": 0,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Men22.png",
+      "thumbnail_mtime": 1789446099,
+      "video_rel_path": "V_Men22.mp4",
+      "video_mtime": 1789446311,
       "primary_usd_rel_path": "SM_Men22_B.usd",
-      "total_size_bytes": 4570897,
-      "total_size_mb": 4.36,
-      "video_files": [],
+      "total_size_bytes": 10212963,
+      "total_size_mb": 9.74,
+      "video_files": [
+        {
+          "name": "V_Men22.mp4",
+          "rel_path": "V_Men22.mp4",
+          "size_bytes": 1219670,
+          "mtime": 1789446311,
+          "size_str": "1.16 MB"
+        }
+      ],
       "displayName": "Door / 门类 - 29",
-      "static_thumb_path": null,
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_14/SM_Men22_B/thumb.webp",
+      "static_video_path": "media/qzs_14/SM_Men22_B/V_Men22.mp4"
     },
     {
       "id": "qzs_14/SM_Men23_B",
@@ -2962,19 +2994,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "Ready",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/a150029/150010.png",
-      "thumbnail_mtime": 1789351902,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Men23.png",
+      "thumbnail_mtime": 1789446329,
+      "video_rel_path": "V_Men23.mp4",
+      "video_mtime": 1789446535,
       "primary_usd_rel_path": "SM_Men23_B.usd",
-      "total_size_bytes": 49152761,
-      "total_size_mb": 46.88,
-      "video_files": [],
+      "total_size_bytes": 57151944,
+      "total_size_mb": 54.5,
+      "video_files": [
+        {
+          "name": "V_Men23.mp4",
+          "rel_path": "V_Men23.mp4",
+          "size_bytes": 1201465,
+          "mtime": 1789446535,
+          "size_str": "1.15 MB"
+        }
+      ],
       "displayName": "Door / 门类 - 30",
       "static_thumb_path": "media/qzs_14/SM_Men23_B/thumb.webp",
-      "static_video_path": null
+      "static_video_path": "media/qzs_14/SM_Men23_B/V_Men23.mp4"
     },
     {
       "id": "qzs_14/SM_Men24_B",
@@ -2992,19 +3032,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "Ready",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/a150029/150010.png",
-      "thumbnail_mtime": 1789351975,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Men24.png",
+      "thumbnail_mtime": 1789446543,
+      "video_rel_path": "V_Men24.mp4",
+      "video_mtime": 1789446757,
       "primary_usd_rel_path": "SM_Men24_B.usd",
-      "total_size_bytes": 49835834,
-      "total_size_mb": 47.53,
-      "video_files": [],
+      "total_size_bytes": 57629286,
+      "total_size_mb": 54.96,
+      "video_files": [
+        {
+          "name": "V_Men24.mp4",
+          "rel_path": "V_Men24.mp4",
+          "size_bytes": 1106405,
+          "mtime": 1789446757,
+          "size_str": "1.06 MB"
+        }
+      ],
       "displayName": "Door / 门类 - 31",
       "static_thumb_path": "media/qzs_14/SM_Men24_B/thumb.webp",
-      "static_video_path": null
+      "static_video_path": "media/qzs_14/SM_Men24_B/V_Men24.mp4"
     },
     {
       "id": "qzs_14/SM_Men25_B",
@@ -3022,19 +3070,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "Ready",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/a150027/150003.jpg",
-      "thumbnail_mtime": 1789352063,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Men25.png",
+      "thumbnail_mtime": 1789446789,
+      "video_rel_path": "V_Men25.mp4",
+      "video_mtime": 1789447026,
       "primary_usd_rel_path": "SM_Men25_B.usd",
-      "total_size_bytes": 7145781,
-      "total_size_mb": 6.81,
-      "video_files": [],
+      "total_size_bytes": 15454535,
+      "total_size_mb": 14.74,
+      "video_files": [
+        {
+          "name": "V_Men25.mp4",
+          "rel_path": "V_Men25.mp4",
+          "size_bytes": 1373843,
+          "mtime": 1789447026,
+          "size_str": "1.31 MB"
+        }
+      ],
       "displayName": "Door / 门类 - 32",
       "static_thumb_path": "media/qzs_14/SM_Men25_B/thumb.webp",
-      "static_video_path": null
+      "static_video_path": "media/qzs_14/SM_Men25_B/V_Men25.mp4"
     },
     {
       "id": "qzs_14/SM_Men26_B",
@@ -3054,13 +3110,13 @@
       "status": "Ready",
       "has_video": false,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/a150036/150016.png",
-      "thumbnail_mtime": 1789352141,
+      "thumbnail_rel_path": "T_Men26.png",
+      "thumbnail_mtime": 1789447062,
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_Men26_B.usd",
-      "total_size_bytes": 10706222,
-      "total_size_mb": 10.21,
+      "total_size_bytes": 583892237,
+      "total_size_mb": 556.84,
       "video_files": [],
       "displayName": "Door / 门类 - 33",
       "static_thumb_path": "media/qzs_14/SM_Men26_B/thumb.webp",
@@ -3481,17 +3537,17 @@
       "thumbnail_rel_path": "T_ZHEDIEMEN.png",
       "thumbnail_mtime": 1789445026,
       "video_rel_path": "V_ZHEDIEMEN.mp4",
-      "video_mtime": 1789445004,
+      "video_mtime": 1789445414,
       "primary_usd_rel_path": "SM-ZHEDIEMEN-4.usd",
-      "total_size_bytes": 793735768,
-      "total_size_mb": 756.97,
+      "total_size_bytes": 18581979,
+      "total_size_mb": 17.72,
       "video_files": [
         {
           "name": "V_ZHEDIEMEN.mp4",
           "rel_path": "V_ZHEDIEMEN.mp4",
-          "size_bytes": 972221,
-          "mtime": 1789445004,
-          "size_str": "949.4 KB"
+          "size_bytes": 966809,
+          "mtime": 1789445414,
+          "size_str": "944.1 KB"
         }
       ],
       "displayName": "Door / 门类 - 45",
@@ -3517,19 +3573,19 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_ZHEDIEMEN.png",
-      "thumbnail_mtime": 1789119818,
+      "thumbnail_mtime": 1789445693,
       "video_rel_path": "V_ZHEDIEMEN.mp4",
-      "video_mtime": 1789118864,
+      "video_mtime": 1789445948,
       "primary_usd_rel_path": "SM-ZHEDIEMEN-5.usd",
-      "total_size_bytes": 60228199,
-      "total_size_mb": 57.44,
+      "total_size_bytes": 59724818,
+      "total_size_mb": 56.96,
       "video_files": [
         {
           "name": "V_ZHEDIEMEN.mp4",
           "rel_path": "V_ZHEDIEMEN.mp4",
-          "size_bytes": 2519128,
-          "mtime": 1789118864,
-          "size_str": "2.40 MB"
+          "size_bytes": 2147765,
+          "mtime": 1789445948,
+          "size_str": "2.05 MB"
         }
       ],
       "displayName": "Door / 门类 - 46",
@@ -3555,19 +3611,19 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_PINGBANMEN-10.png",
-      "thumbnail_mtime": 1789357231,
+      "thumbnail_mtime": 1789446177,
       "video_rel_path": "V_PINGBANMEN-10.mp4",
-      "video_mtime": 1789357365,
+      "video_mtime": 1789446396,
       "primary_usd_rel_path": "SM-PINGBANMEN-10_B.usd",
-      "total_size_bytes": 102513001,
-      "total_size_mb": 97.76,
+      "total_size_bytes": 104940772,
+      "total_size_mb": 100.08,
       "video_files": [
         {
           "name": "V_PINGBANMEN-10.mp4",
           "rel_path": "V_PINGBANMEN-10.mp4",
-          "size_bytes": 1456716,
-          "mtime": 1789357365,
-          "size_str": "1.39 MB"
+          "size_bytes": 2419762,
+          "mtime": 1789446396,
+          "size_str": "2.31 MB"
         }
       ],
       "displayName": "Door / 门类 - 47",
@@ -3593,19 +3649,19 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_PINGBANMEN.png",
-      "thumbnail_mtime": 1789367056,
+      "thumbnail_mtime": 1789446619,
       "video_rel_path": "V_PINGBANMEN.mp4",
-      "video_mtime": 1789367191,
+      "video_mtime": 1789446806,
       "primary_usd_rel_path": "SM-PINGBANMEN-1.usd",
-      "total_size_bytes": 4569845,
-      "total_size_mb": 4.36,
+      "total_size_bytes": 4941264,
+      "total_size_mb": 4.71,
       "video_files": [
         {
           "name": "V_PINGBANMEN.mp4",
           "rel_path": "V_PINGBANMEN.mp4",
-          "size_bytes": 991003,
-          "mtime": 1789367191,
-          "size_str": "967.8 KB"
+          "size_bytes": 1135269,
+          "mtime": 1789446806,
+          "size_str": "1.08 MB"
         }
       ],
       "displayName": "Door / 门类 - 48",
@@ -3631,19 +3687,19 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_PINGBANMEN-2.png",
-      "thumbnail_mtime": 1789357523,
+      "thumbnail_mtime": 1789447062,
       "video_rel_path": "V_PINGBANMEN-2.mp4",
-      "video_mtime": 1789357651,
+      "video_mtime": 1789447055,
       "primary_usd_rel_path": "SM-PINGBANMEN-2_B.usd",
-      "total_size_bytes": 33347805,
-      "total_size_mb": 31.8,
+      "total_size_bytes": 760141398,
+      "total_size_mb": 724.93,
       "video_files": [
         {
           "name": "V_PINGBANMEN-2.mp4",
           "rel_path": "V_PINGBANMEN-2.mp4",
-          "size_bytes": 1409990,
-          "mtime": 1789357651,
-          "size_str": "1.34 MB"
+          "size_bytes": 1862642,
+          "mtime": 1789447055,
+          "size_str": "1.78 MB"
         }
       ],
       "displayName": "Door / 门类 - 49",
@@ -4623,8 +4679,8 @@
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_Men27_B.usd",
-      "total_size_bytes": 9745216,
-      "total_size_mb": 9.29,
+      "total_size_bytes": 9759239,
+      "total_size_mb": 9.31,
       "video_files": [],
       "displayName": "Door / 门类 - 79",
       "static_thumb_path": "media/wq_14/SM_Men27_B/thumb.webp",
@@ -4653,8 +4709,8 @@
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_Men28_B.usd",
-      "total_size_bytes": 3146320,
-      "total_size_mb": 3.0,
+      "total_size_bytes": 3154415,
+      "total_size_mb": 3.01,
       "video_files": [],
       "displayName": "Door / 门类 - 80",
       "static_thumb_path": null,
@@ -4683,7 +4739,7 @@
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_Men29_B.usd",
-      "total_size_bytes": 7303400,
+      "total_size_bytes": 7309068,
       "total_size_mb": 6.97,
       "video_files": [],
       "displayName": "Door / 门类 - 81",
@@ -4713,8 +4769,8 @@
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_Men30_B.usd",
-      "total_size_bytes": 3149338,
-      "total_size_mb": 3.0,
+      "total_size_bytes": 3163185,
+      "total_size_mb": 3.02,
       "video_files": [],
       "displayName": "Door / 门类 - 82",
       "static_thumb_path": null,
@@ -6500,12 +6556,12 @@
   },
   "stats": {
     "total_assets": 177,
-    "total_videos": 140,
+    "total_videos": 147,
     "total_usds": 177,
     "total_batches": 18,
     "total_categories": 11,
-    "total_size_gb": 7.85
+    "total_size_gb": 7.66
   },
-  "build_timestamp": 1789445317,
+  "build_timestamp": 1789447131,
   "is_static_showcase": true
 }

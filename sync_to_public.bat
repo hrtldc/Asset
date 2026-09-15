@@ -2,10 +2,9 @@
 setlocal enabledelayedexpansion
 title Update Public Showcase to Cloudflare Pages
 cd /d "%~dp0"
-chcp 65001 >nul
 
 echo ======================================================================
-echo   1. 正在提取最新的 3D USD 物理属性 (质量、关节参数、本体 QCode)...
+echo   [1/3] Extracting latest USD physics attributes...
 echo ======================================================================
 
 set "ISAAC_PYTHON=g:\jsuds\isaacsim\kit\python\python.exe"
@@ -14,7 +13,7 @@ if exist "%ISAAC_PYTHON%" (
 )
 
 echo ======================================================================
-echo   2. 正在扫描 G:\Simreay\output 构建轻量化展示数据与媒体...
+echo   [2/3] Building lightweight showcase data and media...
 echo ======================================================================
 
 set "PYTHON_EXE=C:\Users\ruotong.huang\AppData\Local\Programs\Python\Python312\python.exe"
@@ -27,7 +26,7 @@ if not exist "%PYTHON_EXE%" (
 copy /y "static\index.html" "index.html" >nul
 
 echo ======================================================================
-echo   3. 正在提交并自动推送到 GitHub (触发 Cloudflare Pages 自动部署)...
+echo   [3/3] Committing and pushing to GitHub...
 echo ======================================================================
 
 set "GIT_EXE=C:\Program Files\Git\bin\git.exe"
@@ -39,9 +38,8 @@ if exist "%GIT_EXE%" (
 
 echo.
 echo ======================================================================
-echo   [完成] 数据已同步推送至 GitHub！
-echo   Cloudflare Pages 将在 1~2 分钟内自动部署最新页面与视频。
+echo   [SUCCESS] Assets and videos synced and pushed to GitHub!
+echo   Cloudflare Pages will update automatically in 1-2 minutes.
 echo ======================================================================
 
 pause
-
