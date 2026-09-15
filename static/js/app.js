@@ -219,10 +219,11 @@ async function loadAssets(forceRefresh = false) {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       data = await res.json();
     } else {
-      // Public Static Mode (Cloudflare / GitHub Pages)
-      let staticRes = await fetch("data/assets.json");
-      if (!staticRes.ok) staticRes = await fetch("/data/assets.json");
-      if (!staticRes.ok) staticRes = await fetch("/static/data/assets.json");
+      // Public Static Mode (Cloudflare / GitHub Pages) with zero-cache timestamp
+      const ts = Date.now();
+      let staticRes = await fetch(`data/assets.json?_t=${ts}`);
+      if (!staticRes.ok) staticRes = await fetch(`/data/assets.json?_t=${ts}`);
+      if (!staticRes.ok) staticRes = await fetch(`/static/data/assets.json?_t=${ts}`);
       if (!staticRes.ok) throw new Error(`Static data load failed: ${staticRes.status}`);
       data = await staticRes.json();
     }

@@ -63,8 +63,12 @@ def build_showcase():
             if src_mp4.exists():
                 if not dst_mp4.exists() or dst_mp4.stat().st_size != src_mp4.stat().st_size:
                     shutil.copy2(src_mp4, dst_mp4)
-                target_video_name = f"media/{batch}/{name}/{src_mp4.name}"
+                v_stamp = int(src_mp4.stat().st_mtime)
+                target_video_name = f"media/{batch}/{name}/{src_mp4.name}?v={v_stamp}"
                 total_videos_copied += 1
+
+        if target_thumb_name and dst_webp.exists():
+            target_thumb_name = f"{target_thumb_name}?v={int(dst_webp.stat().st_mtime)}"
 
         static_asset = dict(asset)
         static_asset["static_thumb_path"] = target_thumb_name
