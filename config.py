@@ -59,4 +59,18 @@ NAME_TRANSLATIONS = {
     # Cables & Outlets
     "SM-CHAZUOSHUJUXIAN": "Cable & Outlet / 插座数据线",
     "SN_ShoJiShuJuXian": "Phone Cable / 手机数据线",
+
+    # Digital Devices & Electronics (数码用品)
+    "SM_BiJiBenDianNao": "Laptop / 笔记本电脑",
+    "SM-BIJIBENDIANNAO": "Laptop / 笔记本电脑",
+    "SM-PINGBANDIANNAO": "Tablet / 平板电脑",
+    "SM_ShoJi": "Phone / 手机",
+    "SM-SHOUJI": "Phone / 手机",
+    "SM_ErJi": "Headphones / 耳机",
+    "SM-ERJI": "Headphones / 耳机",
+    "SM_DaJiangWuRenJi": "Drone / 无人机",
+    "SM-WURENJI": "Drone / 无人机",
+    "SM_SheXiangTou": "Camera / 摄像头",
+    "SM-SHEXIANGTOU": "Camera / 摄像头",
+    "SM-YUNTAI": "Gimbal / 云台相机",
 }

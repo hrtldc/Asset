@@ -86,30 +86,45 @@ def classify_category(folder_name: str, semantic_class: Optional[str] = None):
     target = fn + " " + sem
 
     if "bingxiang" in target or "refrigerator" in target:
-        return ("Refrigerator", "冰箱", "Refrigerator", "Q37867", "Refrigerator")
+        return ("Refrigerator", "冰箱", "Refrigerator", "Q37867", "Refrigerator", "冰箱")
     elif "yushigui" in target or "bathroomvanity" in target:
-        return ("Bathroom Vanity", "浴室柜", "Bathroom Vanity", "Q1321517", "BathroomVanity")
+        return ("Bathroom Vanity", "浴室柜", "Bathroom Vanity", "Q1321517", "BathroomVanity", "浴室柜")
     elif "chuangtougui" in target or "nightstand" in target:
-        return ("Nightstand", "床头柜", "Nightstand", "Q1321517", "Nightstand")
+        return ("Nightstand", "床头柜", "Nightstand", "Q1321517", "Nightstand", "床头柜")
     elif "xiegui" in target or "shoecabinet" in target:
-        return ("Shoe Cabinet", "鞋柜", "Shoe Cabinet", "Q1321517", "ShoeCabinet")
+        return ("Shoe Cabinet", "鞋柜", "Shoe Cabinet", "Q1321517", "ShoeCabinet", "鞋柜")
     elif any(k in target for k in ["zhediemen", "tuilamen", "pingbanmen", "shuangkaimen", "door", "foldingdoor", "slidingdoor"]) or fn.startswith(("sm_men", "sm-men")):
-        return ("Door", "门类", "Doors", "Q36794", "Door")
+        return ("Door", "门类", "Doors", "Q36794", "Door", "门类")
     elif any(k in target for k in ["kaoxiang", "weibolu", "xiaodugui", "xiwanji", "microwave", "oven", "dishwasher"]):
-        return ("Kitchen Appliance", "厨房电器", "Kitchen Appliances", "Q127950", "KitchenAppliance")
+        return ("Kitchen Appliance", "厨房电器", "Kitchen Appliances", "Q127950", "KitchenAppliance", "厨房电器")
     elif "shuzhuangtai" in target or "dressingtable" in target:
-        return ("Dressing Table", "梳妆台", "Tables & Vanities", "Q204370", "DressingTable")
+        return ("Dressing Table", "梳妆台", "Tables & Vanities", "Q204370", "DressingTable", "梳妆台")
     elif "chaji" in target or "coffeetable" in target:
-        return ("Coffee Table", "茶几", "Tables & Vanities", "Q1151608", "CoffeeTable")
+        return ("Coffee Table", "茶几", "Tables & Vanities", "Q1151608", "CoffeeTable", "茶几")
     elif "zhongdao" in target or "kitchenisland" in target:
-        return ("Kitchen Island", "中岛台", "Kitchen Island", "Q148600", "KitchenIsland")
+        return ("Kitchen Island", "中岛台", "Kitchen Island", "Q148600", "KitchenIsland", "中岛台")
     elif any(k in target for k in ["chazuo", "shujuxian", "cable"]):
-        return ("Cable & Outlet", "数码配件", "Cables & Outlets", "Q16865280", "Cable")
+        return ("Cable & Outlet", "数码配件", "Cables & Outlets", "Q16865280", "Cable", "数码配件")
     elif any(k in target for k in ["guizi", "chugui", "sidecabinet", "kitchencabinet", "shounaigui", "zhuangshigui", "hongjiugui", "shuiba", "cabinet", "storage"]):
-        return ("Cabinet", "柜类", "Cabinets & Storage", "Q1321517", "Cabinet")
+        return ("Cabinet", "柜类", "Cabinets & Storage", "Q1321517", "Cabinet", "柜类")
     elif "bed" in target:
-        return ("Bed", "床具", "Beds", "Q42177", "Bed")
-    return ("Asset", "其他资产", "Other", "Q223557", "PhysicalAsset")
+        return ("Bed", "床具", "Beds", "Q42177", "Bed", "床具")
+    # Digital Devices & Consumer Electronics (数码用品)
+    elif "pingbandiannao" in fn or "tablet" in target:
+        return ("Tablet", "数码用品", "Digital Devices", "Q155972", "Tablet", "平板电脑")
+    elif "bijibendiannao" in fn or "laptop" in target:
+        return ("Laptop", "数码用品", "Digital Devices", "Q3962", "Laptop", "笔记本电脑")
+    elif "erji" in fn or "headphone" in target or "earphone" in target:
+        return ("Headphones", "数码用品", "Digital Devices", "Q186694", "Headphones", "耳机")
+    elif any(k in fn for k in ["shouji", "shoji"]) or any(k in sem for k in ["phone", "smartphone"]):
+        return ("Phone", "数码用品", "Digital Devices", "Q193175", "Phone", "手机")
+    elif "wurenji" in fn or "drone" in target:
+        return ("Drone", "数码用品", "Digital Devices", "Q223557", "Drone", "无人机")
+    elif "yuntai" in fn or "gimbal" in target:
+        return ("Gimbal", "数码用品", "Digital Devices", "Q15328", "CameraGimbal", "云台相机")
+    elif "shexiangtou" in fn or "webcam" in target or "camera" in target:
+        return ("Camera", "数码用品", "Digital Devices", "Q15328", "Camera", "摄像头")
+    return ("Asset", "其他资产", "Other", "Q223557", "PhysicalAsset", "其他资产")
 
 
 def load_batch_manifests():
@@ -162,6 +177,7 @@ def get_physics_specs(manifest_info: Optional[dict], category_en: str, item_name
         "Kitchen Island": {"mass": 85.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
         "Beds": {"mass": 65.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
         "Cables & Outlets": {"mass": 0.45, "static_friction": 0.6, "dynamic_friction": 0.45, "restitution": 0.05},
+        "Digital Devices": {"mass": 1.2, "static_friction": 0.45, "dynamic_friction": 0.35, "restitution": 0.05},
         "Other": {"mass": 25.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05}
     }
     fallback = DEFAULTS.get(category_en, DEFAULTS["Other"])
@@ -188,6 +204,26 @@ def get_physics_specs(manifest_info: Optional[dict], category_en: str, item_name
         dynamic_f = manifest_info.get("dynamic_friction")
     if restitution is None and manifest_info:
         restitution = manifest_info.get("restitution")
+
+    # Sanitize unreasonable manifest mass (e.g. scale errors >150kg or <=0.001kg)
+    if mass is not None and (float(mass) > 150.0 or float(mass) <= 0.001):
+        name_low = item_name.lower()
+        if "bijibendiannao" in name_low or "laptop" in name_low:
+            mass = 1.8
+        elif "pingbandiannao" in name_low or "tablet" in name_low:
+            mass = 0.48
+        elif "shouji" in name_low or "shoji" in name_low or "phone" in name_low:
+            mass = 0.19
+        elif "erji" in name_low or "headphone" in name_low or "earphone" in name_low:
+            mass = 0.22
+        elif "wurenji" in name_low or "drone" in name_low:
+            mass = 0.55
+        elif "shexiangtou" in name_low or "camera" in name_low:
+            mass = 0.35
+        elif "yuntai" in name_low or "gimbal" in name_low:
+            mass = 0.42
+        else:
+            mass = fallback["mass"]
 
     # 3. Fallback to realistic category preset
     if mass is None:
@@ -237,9 +273,19 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
             if sub:
                 manifest_by_subfolder[sub] = it
 
+        candidate_items = []
         for item_dir in sorted(os.scandir(batch_dir.path), key=lambda e: e.name):
             if not item_dir.is_dir():
                 continue
+            sub_dirs = [d for d in os.scandir(item_dir.path) if d.is_dir() and not d.name.startswith((".", "_")) and d.name != "Materials"]
+            has_direct_usd = any(f.lower().endswith((".usd", ".usdc", ".usda")) for f in os.listdir(item_dir.path) if os.path.isfile(os.path.join(item_dir.path, f)))
+            if not has_direct_usd and sub_dirs and any(d.name.startswith(("SM_", "SM-", "SN_")) for d in sub_dirs):
+                for sd in sorted(sub_dirs, key=lambda e: e.name):
+                    candidate_items.append((f"{batch_name}_{item_dir.name}", sd))
+            else:
+                candidate_items.append((batch_name, item_dir))
+
+        for current_batch, item_dir in candidate_items:
             item_name = item_dir.name
             manifest_info = manifest_by_subfolder.get(item_name)
 
@@ -303,19 +349,21 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
                     friction = f"{static_friction} / {dynamic_friction}"
                 status = manifest_info.get("status", "PASS")
 
-            cls_en, cat_cn, cat_en, qcode, default_sem = classify_category(item_name, semantic_class)
-            asset_key = f"{batch_name}/{item_name}"
+            cls_en, cat_cn, cat_en, qcode, default_sem, *rest = classify_category(item_name, semantic_class)
+            specific_zh = rest[0] if rest else cat_cn
+            asset_key = f"{current_batch}/{item_name}"
             physics = get_physics_specs(manifest_info, cat_en, item_name, asset_key=asset_key)
             final_semantic = semantic_class or default_sem
 
             asset_obj = {
-                "id": f"{batch_name}/{item_name}",
-                "batch": batch_name,
+                "id": f"{current_batch}/{item_name}",
+                "batch": current_batch,
                 "name": item_name,
                 "category": cat_cn,
                 "category_en": cat_en,
                 "category_display": f"{cat_cn} / {cat_en}",
                 "clean_category_en": cls_en,
+                "specific_zh": specific_zh,
                 "semantic_class": final_semantic,
                 "wikidata_qcode": qcode,
                 "mass_kg": physics["mass_kg"],
@@ -342,14 +390,14 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
             assets.append(asset_obj)
 
     # Sort assets by id to ensure deterministic order, then assign sequential numbers per category
-    assets.sort(key=lambda a: (a["clean_category_en"], a["batch"], a["name"]))
+    assets.sort(key=lambda a: (a["category"], a["clean_category_en"], a["batch"], a["name"]))
     category_counters = {}
     for a in assets:
         cls = a["clean_category_en"]
-        cat_cn = a["category"]
+        spec_cn = a.get("specific_zh") or a["category"]
         category_counters[cls] = category_counters.get(cls, 0) + 1
         idx = category_counters[cls]
-        a["displayName"] = f"{cls} / {cat_cn} - {idx:02d}"
+        a["displayName"] = f"{cls} / {spec_cn} - {idx:02d}"
 
     _cached_assets = assets
     _last_scan_timestamp = now
