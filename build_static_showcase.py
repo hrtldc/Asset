@@ -63,9 +63,11 @@ def build_showcase():
             src_mp4 = Path(asset["abs_path"]) / asset["video_rel_path"]
             dst_mp4 = asset_media_dir / src_mp4.name
             if src_mp4.exists():
-                if not dst_mp4.exists() or dst_mp4.stat().st_size != src_mp4.stat().st_size:
+                src_stat = src_mp4.stat()
+                needs_copy = not dst_mp4.exists() or dst_mp4.stat().st_size != src_stat.st_size or dst_mp4.stat().st_mtime < src_stat.st_mtime
+                if needs_copy:
                     shutil.copy2(src_mp4, dst_mp4)
-                v_stamp = int(src_mp4.stat().st_mtime)
+                v_stamp = int(src_stat.st_mtime)
                 target_video_name = f"media/{batch}/{name}/{src_mp4.name}?v={v_stamp}"
                 total_videos_copied += 1
 
