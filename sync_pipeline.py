@@ -14,6 +14,7 @@ def print_banner(title):
     print("=" * 68)
 
 def main():
+    os.system("chcp 65001 >nul")
     os.system("color 0F")
     print_banner("【3D USD 资产平台】一键外网同步与发布工具")
     print(f"  工作目录: {BASE_DIR}")
