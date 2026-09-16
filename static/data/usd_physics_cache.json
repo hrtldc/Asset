@@ -927,6 +927,38 @@
     "semantic_class": "Door",
     "wikidata_qcode": "Q36794"
   },
+  "wq_14/SM-PINGBANMEN-11_B": {
+    "mass_kg": 56.052,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_14/SM-PINGBANMEN-12_B": {
+    "mass_kg": 81.018,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_14/SM-PINGBANMEN-13_B": {
+    "mass_kg": 60.002,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "wq_14/SM-PINGBANMEN-14_B": {
+    "mass_kg": 40.696,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
   "wq_14/SM-PINGBANMEN-1_B": {
     "mass_kg": 28.586,
     "static_friction": 0.5,
@@ -968,7 +1000,7 @@
     "wikidata_qcode": "Q36794"
   },
   "wq_14/SM-PINGBANMEN-6_B": {
-    "mass_kg": 66.856,
+    "mass_kg": 43.452,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -999,120 +1031,8 @@
     "semantic_class": "Door",
     "wikidata_qcode": "Q36794"
   },
-  "wq_14/SM_GuiZi11": {
-    "mass_kg": 79.956,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "SideCabinet",
-    "wikidata_qcode": "Q1321517"
-  },
-  "wq_14/SM_GuiZi12": {
-    "mass_kg": 176.867,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "SideCabinet",
-    "wikidata_qcode": "Q1321517"
-  },
-  "wq_14/SM_Men18_B": {
-    "mass_kg": 0.921,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men19_B": {
-    "mass_kg": 2.535,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men20_B": {
-    "mass_kg": 1.834,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men21_B": {
-    "mass_kg": 0.207,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men22_B": {
-    "mass_kg": 0.984,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men23_B": {
-    "mass_kg": 0.832,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men24_B": {
-    "mass_kg": 0.834,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men25_B": {
-    "mass_kg": 0.608,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men26_B": {
-    "mass_kg": 0.62,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men27_B": {
-    "mass_kg": 0.506,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men28_B": {
-    "mass_kg": 0.678,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men29_B": {
-    "mass_kg": 0.546,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
-  },
-  "wq_14/SM_Men30_B": {
-    "mass_kg": 0.661,
+  "wq_14/SM-SHUANGKAIMEN-1_B": {
+    "mass_kg": 75.366,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
