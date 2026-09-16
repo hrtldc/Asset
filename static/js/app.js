@@ -125,20 +125,20 @@ function bindEvents() {
     });
   }
 
-  if (!isLocalServer && elements.updateAllBtn) {
-    elements.updateAllBtn.style.display = "none";
-  }
-
-  // One-Click Force Update & Cache Busting
+  // One-Click Force Update & Cache Busting (Enabled for both local server and public static showcase)
   if (elements.updateAllBtn) {
+    if (!isLocalServer) {
+      elements.updateAllBtn.title = "强制刷新外网最新资产数据与视频缓存";
+    }
     elements.updateAllBtn.addEventListener("click", async () => {
       elements.updateAllBtn.classList.add("spinning");
       state.forceBuster = Date.now();
       await loadAssets(true);
       elements.updateAllBtn.classList.remove("spinning");
-      showToast(`⚡ 资产与图片已全部强制同步完成！共 ${state.assets.length} 套模型最新就绪`);
+      showToast(`⚡ 资产与视频缓存已全部强制刷新！共 ${state.assets.length} 套模型最新就绪`);
     });
   }
+
 
   // Modal events
   elements.modalCloseBtn.addEventListener("click", closeModal);
@@ -221,9 +221,9 @@ async function loadAssets(forceRefresh = false) {
     } else {
       // Public Static Mode (Cloudflare / GitHub Pages) with zero-cache timestamp
       const ts = Date.now();
-      let staticRes = await fetch(`data/assets.json?_t=${ts}`);
-      if (!staticRes.ok) staticRes = await fetch(`/data/assets.json?_t=${ts}`);
-      if (!staticRes.ok) staticRes = await fetch(`/static/data/assets.json?_t=${ts}`);
+      let staticRes = await fetch(`data/assets.json?_t=${ts}`, { cache: "no-store" });
+      if (!staticRes.ok) staticRes = await fetch(`/data/assets.json?_t=${ts}`, { cache: "no-store" });
+      if (!staticRes.ok) staticRes = await fetch(`/static/data/assets.json?_t=${ts}`, { cache: "no-store" });
       if (!staticRes.ok) throw new Error(`Static data load failed: ${staticRes.status}`);
       data = await staticRes.json();
     }
@@ -423,8 +423,10 @@ function renderGrid() {
         ? `/api/media/${asset.batch}/${asset.name}/${asset.video_rel_path}?v=${asset.video_mtime || 0}_${state.forceBuster}`
         : null;
     } else {
-      thumbUrl = asset.static_thumb_path || (asset.thumbnail_rel_path ? `media/${asset.batch}/${asset.name}/thumb.webp` : null);
-      videoUrl = asset.static_video_path || (asset.video_rel_path ? `media/${asset.batch}/${asset.name}/${asset.video_rel_path.split("/").pop()}` : null);
+      const rawThumb = asset.static_thumb_path || (asset.thumbnail_rel_path ? `media/${asset.batch}/${asset.name}/thumb.webp` : null);
+      const rawVideo = asset.static_video_path || (asset.video_rel_path ? `media/${asset.batch}/${asset.name}/${asset.video_rel_path.split("/").pop()}` : null);
+      thumbUrl = rawThumb ? (rawThumb.includes("?") ? `${rawThumb}&_b=${state.forceBuster}` : `${rawThumb}?_b=${state.forceBuster}`) : null;
+      videoUrl = rawVideo ? (rawVideo.includes("?") ? `${rawVideo}&_b=${state.forceBuster}` : `${rawVideo}?_b=${state.forceBuster}`) : null;
     }
 
     let mediaHtml = "";
@@ -557,8 +559,10 @@ function openModal(asset) {
       ? `/api/media/${asset.batch}/${asset.name}/${asset.video_rel_path}?v=${asset.video_mtime || 0}_${state.forceBuster}`
       : null;
   } else {
-    thumbUrl = asset.static_thumb_path || (asset.thumbnail_rel_path ? `media/${asset.batch}/${asset.name}/thumb.webp` : null);
-    videoUrl = asset.static_video_path || (asset.video_rel_path ? `media/${asset.batch}/${asset.name}/${asset.video_rel_path.split("/").pop()}` : null);
+    const rawThumb = asset.static_thumb_path || (asset.thumbnail_rel_path ? `media/${asset.batch}/${asset.name}/thumb.webp` : null);
+    const rawVideo = asset.static_video_path || (asset.video_rel_path ? `media/${asset.batch}/${asset.name}/${asset.video_rel_path.split("/").pop()}` : null);
+    thumbUrl = rawThumb ? (rawThumb.includes("?") ? `${rawThumb}&_b=${state.forceBuster}` : `${rawThumb}?_b=${state.forceBuster}`) : null;
+    videoUrl = rawVideo ? (rawVideo.includes("?") ? `${rawVideo}&_b=${state.forceBuster}` : `${rawVideo}?_b=${state.forceBuster}`) : null;
   }
 
   if (videoUrl) {

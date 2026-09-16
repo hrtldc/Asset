@@ -26,15 +26,10 @@ if not exist "%PYTHON_EXE%" (
 copy /y "static\index.html" "index.html" >nul
 
 echo ======================================================================
-echo   [3/3] Committing and pushing to GitHub...
+echo   [3/3] Committing and pushing to GitHub safely...
 echo ======================================================================
 
-set "GIT_EXE=C:\Program Files\Git\bin\git.exe"
-if exist "%GIT_EXE%" (
-    "%GIT_EXE%" add -A
-    "%GIT_EXE%" commit -m "update: sync latest 3D assets and videos"
-    "%GIT_EXE%" push origin main
-)
+"%PYTHON_EXE%" push_to_git.py
 
 echo.
 echo ======================================================================
