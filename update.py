@@ -1,4 +1,4 @@
-﻿# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 """
 One-Click Asset Update and Push Script
 """
@@ -17,12 +17,49 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="repla
 APP_DIR = Path(__file__).parent.resolve()
 sys.path.insert(0, str(APP_DIR))
 
-from config import ASSET_SOURCE_DIR, HOST, PORT
+from config import ASSET_SOURCE_DIR, HOST, PORT, get_batch_status_list, read_ignore_file_raw, write_ignore_file_raw
+
+def prompt_filter_settings():
+    batches = get_batch_status_list()
+    ignored_batches = [b["name"] for b in batches if b["ignored"]]
+    included_batches = [b["name"] for b in batches if not b["ignored"]]
+    
+    print("\n" + "=" * 65)
+    print("   【资产过滤与排除设置】(Ignore & Filter Settings)")
+    print("=" * 65)
+    print(f"   当前已排除的批次目录 ({len(ignored_batches)} 个):")
+    if ignored_batches:
+        print(f"     🚫 {', '.join(ignored_batches)}")
+    else:
+        print("     (无已排除批次)")
+    print(f"   当前待索引展示的批次目录 ({len(included_batches)} 个):")
+    print(f"     ✓ {', '.join(included_batches[:8])}{' ...' if len(included_batches) > 8 else ''}")
+    print("-" * 65)
+    print("   [输入说明]：")
+    print("   • 直接按【回车 Enter】: 保持当前规则，直接开始更新")
+    print("   • 手动输入文件夹名称或通配符 (如: qzs_0916_Joint 或 *_draft*): 立即添加排除")
+    print("-" * 65)
+    
+    try:
+        user_input = input("   请输入要排除的文件夹名称 (留空直接回车继续): ").strip()
+        if user_input:
+            current_raw = read_ignore_file_raw()
+            lines = [l.strip() for l in current_raw.splitlines() if l.strip()]
+            if user_input not in lines:
+                lines.append(user_input)
+                write_ignore_file_raw("\n".join(lines))
+                print(f"\n   ✓ 已成功将 [{user_input}] 添加至排除列表 (ignore_batches.txt)！")
+            else:
+                print(f"\n   ℹ️ [{user_input}] 已在排除规则中。")
+    except (EOFError, KeyboardInterrupt):
+        pass
 
 def run_update():
     print("=" * 65)
     print("   3D USD 资产全量更新同步中 (One-Click Asset Update)")
     print("=" * 65)
+
+    prompt_filter_settings()
 
     if not ASSET_SOURCE_DIR.exists():
         print(f"[错误] 资产源目录不存在: {ASSET_SOURCE_DIR}")
