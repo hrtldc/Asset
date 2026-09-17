@@ -21,7 +21,11 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
-from config import ASSET_SOURCE_DIR, HOST, PORT, STATIC_DIR, NAME_TRANSLATIONS, is_batch_ignored
+from config import (
+    APP_DIR, ASSET_SOURCE_DIR, HOST, PORT, STATIC_DIR, NAME_TRANSLATIONS,
+    is_batch_ignored, read_ignore_file_raw, write_ignore_file_raw,
+    get_batch_status_list, get_ignore_patterns
+)
 
 app = FastAPI(title="3D USD Asset Portal", version="1.5.0")
 
@@ -425,6 +429,47 @@ def force_update_assets():
     """Explicit one-click refresh endpoint."""
     assets = scan_assets(force_reload=True)
     return format_assets_response(assets)
+
+
+@app.get("/api/ignore-rules")
+def get_ignore_rules_api():
+    """Get current ignore file text and status of all scanned batch folders."""
+    content = read_ignore_file_raw()
+    patterns = get_ignore_patterns()
+    batches = get_batch_status_list()
+    return {
+        "content": content,
+        "patterns": patterns,
+        "batches": batches
+    }
+
+
+@app.post("/api/ignore-rules")
+async def update_ignore_rules_api(request: Request):
+    """Save user-typed ignore rules and immediately re-scan assets."""
+    data = await request.json()
+    content = data.get("content", "")
+    write_ignore_file_raw(content)
+    # Refresh cache immediately
+    assets = scan_assets(force_reload=True)
+    return {
+        "success": True,
+        "message": "过滤规则已成功更新并重新扫描",
+        "total_assets": len(assets),
+        "batches": get_batch_status_list()
+    }
+
+
+@app.post("/api/sync-public")
+def trigger_sync_public():
+    """Trigger background build and public push."""
+    import sys
+    py_exe = sys.executable
+    sync_script = APP_DIR / "sync_pipeline.py"
+    if sync_script.exists():
+        subprocess.Popen([py_exe, str(sync_script)], cwd=str(APP_DIR))
+        return {"success": True, "message": "已在后台启动外网同步与发布流程"}
+    return {"success": False, "message": "sync_pipeline.py 不存在"}
 
 
 @app.get("/api/assets")

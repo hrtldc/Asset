@@ -60,7 +60,19 @@ const elements = {
   modalRestitutionVal: document.getElementById("modalRestitutionVal"),
   modalOpenFolderBtn: document.getElementById("modalOpenFolderBtn"),
   modalCopyPathBtn: document.getElementById("modalCopyPathBtn"),
-  toast: document.getElementById("toastNotice")
+  toast: document.getElementById("toastNotice"),
+  // Filter Settings Modal
+  openFilterModalBtn: document.getElementById("openFilterModalBtn"),
+  filterSettingsModal: document.getElementById("filterSettingsModal"),
+  filterModalCloseBtn: document.getElementById("filterModalCloseBtn"),
+  quickAddInput: document.getElementById("quickAddInput"),
+  quickAddBtn: document.getElementById("quickAddBtn"),
+  detectedBatchesCount: document.getElementById("detectedBatchesCount"),
+  batchTagsGrid: document.getElementById("batchTagsGrid"),
+  ignoreRulesTextarea: document.getElementById("ignoreRulesTextarea"),
+  resetDefaultRulesBtn: document.getElementById("resetDefaultRulesBtn"),
+  saveAndRefreshBtn: document.getElementById("saveAndRefreshBtn"),
+  saveAndSyncPublicBtn: document.getElementById("saveAndSyncPublicBtn")
 };
 
 // Initialize
@@ -140,6 +152,36 @@ function bindEvents() {
   }
 
 
+  // Filter Settings Modal Events
+  if (elements.openFilterModalBtn) {
+    elements.openFilterModalBtn.addEventListener("click", openFilterSettingsModal);
+  }
+  if (elements.filterModalCloseBtn) {
+    elements.filterModalCloseBtn.addEventListener("click", closeFilterSettingsModal);
+  }
+  if (elements.filterSettingsModal) {
+    elements.filterSettingsModal.addEventListener("click", (e) => {
+      if (e.target === elements.filterSettingsModal) closeFilterSettingsModal();
+    });
+  }
+  if (elements.quickAddBtn) {
+    elements.quickAddBtn.addEventListener("click", addQuickFilterRule);
+  }
+  if (elements.quickAddInput) {
+    elements.quickAddInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") addQuickFilterRule();
+    });
+  }
+  if (elements.resetDefaultRulesBtn) {
+    elements.resetDefaultRulesBtn.addEventListener("click", resetDefaultRules);
+  }
+  if (elements.saveAndRefreshBtn) {
+    elements.saveAndRefreshBtn.addEventListener("click", () => saveFilterRules(false));
+  }
+  if (elements.saveAndSyncPublicBtn) {
+    elements.saveAndSyncPublicBtn.addEventListener("click", () => saveFilterRules(true));
+  }
+
   // Modal events
   elements.modalCloseBtn.addEventListener("click", closeModal);
   elements.modalBackdrop.addEventListener("click", (e) => {
@@ -147,7 +189,10 @@ function bindEvents() {
   });
 
   window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeModal();
+    if (e.key === "Escape") {
+      closeModal();
+      closeFilterSettingsModal();
+    }
   });
 
   elements.modalVideoTabBtn.addEventListener("click", () => {
@@ -663,6 +708,198 @@ function closeModal() {
   elements.modalVideoPlayer.pause();
   document.body.style.overflow = "";
   state.selectedAsset = null;
+}
+
+// ==============================================================================
+// Filter & Exclude Settings Management (Interactive UI)
+// ==============================================================================
+
+let cachedFilterBatches = [];
+
+async function openFilterSettingsModal() {
+  if (!elements.filterSettingsModal) return;
+  elements.filterSettingsModal.classList.add("open");
+  document.body.style.overflow = "hidden";
+  await loadFilterRules();
+}
+
+function closeFilterSettingsModal() {
+  if (!elements.filterSettingsModal) return;
+  elements.filterSettingsModal.classList.remove("open");
+  document.body.style.overflow = "";
+}
+
+async function loadFilterRules() {
+  try {
+    if (elements.batchTagsGrid) {
+      elements.batchTagsGrid.innerHTML = '<div style="color:#94a3b8; font-size:0.85rem; padding:10px;">⏳ 正在读取本地磁盘批次与过滤配置...</div>';
+    }
+    const res = await fetch("/api/ignore-rules?t=" + Date.now());
+    if (res.ok) {
+      const data = await res.json();
+      if (elements.ignoreRulesTextarea) {
+        elements.ignoreRulesTextarea.value = data.content || "";
+      }
+      cachedFilterBatches = data.batches || [];
+      renderBatchTags(cachedFilterBatches);
+    } else {
+      renderStaticFilterRules();
+    }
+  } catch (e) {
+    console.warn("Failed to load /api/ignore-rules:", e);
+    renderStaticFilterRules();
+  }
+}
+
+function renderStaticFilterRules() {
+  if (elements.ignoreRulesTextarea) {
+    elements.ignoreRulesTextarea.value = `*_Joint\n*_Processed\n*_SimReady_Processed*\n*_wip*\n*_temp*\n*_draft*`;
+  }
+  if (elements.batchTagsGrid) {
+    elements.batchTagsGrid.innerHTML = '<div style="color:#94a3b8; font-size:0.82rem; padding:10px;">🌐 当前处于外网静态模式。规则配置可在本地 http://127.0.0.1:8088/ 直接编辑并一键同步。</div>';
+  }
+}
+
+function renderBatchTags(batches) {
+  if (!elements.batchTagsGrid) return;
+  if (elements.detectedBatchesCount) {
+    elements.detectedBatchesCount.textContent = batches.length;
+  }
+  if (!batches || batches.length === 0) {
+    elements.batchTagsGrid.innerHTML = '<div style="color:#94a3b8; font-size:0.82rem; padding:8px;">未检测到任何资产批次文件夹</div>';
+    return;
+  }
+
+  elements.batchTagsGrid.innerHTML = batches.map(b => {
+    const isIgnored = b.ignored;
+    const cls = isIgnored ? "status-ignored" : "status-included";
+    const icon = isIgnored ? "🚫 已排除" : "✓ 正常展示";
+    return `
+      <div class="batch-status-chip ${cls}" data-batch="${b.name}" onclick="toggleBatchFilter('${b.name}')" title="点击快速切换排除/包含状态">
+        <span>${b.name}</span>
+        <span style="font-size:0.75rem; opacity:0.85;">(${icon})</span>
+      </div>
+    `;
+  }).join("");
+}
+
+function addQuickFilterRule() {
+  if (!elements.quickAddInput || !elements.ignoreRulesTextarea) return;
+  const val = elements.quickAddInput.value.trim();
+  if (!val) {
+    showToast("⚠️ 请输入要排除的文件夹名称或通配符");
+    return;
+  }
+  const current = elements.ignoreRulesTextarea.value.trim();
+  const lines = current ? current.split("\n").map(l => l.trim()) : [];
+  if (!lines.includes(val)) {
+    lines.push(val);
+    elements.ignoreRulesTextarea.value = lines.join("\n");
+    showToast(`✓ 已添加规则: ${val}`);
+  } else {
+    showToast(`ℹ️ 规则已存在: ${val}`);
+  }
+  elements.quickAddInput.value = "";
+  updateBatchTagsLive();
+}
+
+window.toggleBatchFilter = function(batchName) {
+  if (!elements.ignoreRulesTextarea) return;
+  const current = elements.ignoreRulesTextarea.value;
+  const lines = current.split("\n").map(l => l.trim()).filter(l => l);
+  
+  const existingIdx = lines.findIndex(l => l === batchName);
+  if (existingIdx >= 0) {
+    lines.splice(existingIdx, 1);
+    showToast(`✓ 已取消排除批次: ${batchName}`);
+  } else {
+    lines.push(batchName);
+    showToast(`🚫 已加入排除批次: ${batchName}`);
+  }
+  elements.ignoreRulesTextarea.value = lines.join("\n");
+  updateBatchTagsLive();
+};
+
+function updateBatchTagsLive() {
+  const text = elements.ignoreRulesTextarea ? elements.ignoreRulesTextarea.value : "";
+  const lines = text.split("\n").map(l => l.trim()).filter(l => l && !l.startsWith("#"));
+  
+  cachedFilterBatches.forEach(b => {
+    const nameLow = b.name.toLowerCase();
+    let ignored = false;
+    for (const pat of lines) {
+      if (pat.includes("*")) {
+        const regex = new RegExp("^" + pat.replace(/[-[\]{}()+?.,\\^$|#\s]/g, "\\$&").replace(/\*/g, ".*") + "$", "i");
+        if (regex.test(nameLow)) {
+          ignored = true;
+          break;
+        }
+      } else if (nameLow === pat.toLowerCase()) {
+        ignored = true;
+        break;
+      }
+    }
+    b.ignored = ignored;
+  });
+  renderBatchTags(cachedFilterBatches);
+}
+
+function resetDefaultRules() {
+  const defaults = `# ==============================================================================
+# 3D USD 资产自动过滤排除列表 (ignore_batches.txt)
+# ==============================================================================
+*_Joint
+*_joint
+*_Processed
+*_processed
+*_SimReady_Processed*
+*_wip*
+*_temp*
+*_tmp*
+*_draft*
+*_raw*
+*_bak*
+*_backup*`;
+  if (elements.ignoreRulesTextarea) {
+    elements.ignoreRulesTextarea.value = defaults;
+    updateBatchTagsLive();
+    showToast("🔄 已重置为默认排除规则");
+  }
+}
+
+async function saveFilterRules(andSyncPublic = false) {
+  if (!elements.ignoreRulesTextarea) return;
+  const content = elements.ignoreRulesTextarea.value.trim();
+
+  if (elements.saveAndRefreshBtn) elements.saveAndRefreshBtn.disabled = true;
+  if (elements.saveAndSyncPublicBtn) elements.saveAndSyncPublicBtn.disabled = true;
+
+  try {
+    const res = await fetch("/api/ignore-rules", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content })
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      showToast(`💾 规则已保存！重新扫描共 ${data.total_assets} 套有效资产`);
+      await loadAssets(true);
+      
+      if (andSyncPublic) {
+        showToast("🚀 正在后台启动一键外网同步与发布...");
+        fetch("/api/sync-public", { method: "POST" }).catch(() => {});
+      }
+      closeFilterSettingsModal();
+    } else {
+      showToast("⚠️ 保存失败，请确认是否运行在本地 8088 端口");
+    }
+  } catch (e) {
+    showToast("⚠️ 请求异常: " + e.message);
+  } finally {
+    if (elements.saveAndRefreshBtn) elements.saveAndRefreshBtn.disabled = false;
+    if (elements.saveAndSyncPublicBtn) elements.saveAndSyncPublicBtn.disabled = false;
+  }
 }
 
 // Start application (Handles DOMContentLoaded race condition)

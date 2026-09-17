@@ -115,6 +115,51 @@ def get_ignore_patterns():
             pass
     return patterns
 
+def read_ignore_file_raw() -> str:
+    """Read the full raw text of ignore_batches.txt."""
+    if IGNORE_FILE.exists():
+        try:
+            with open(IGNORE_FILE, "r", encoding="utf-8") as f:
+                return f.read()
+        except Exception as e:
+            return f"# 读取文件失败: {e}"
+    return "\n".join(DEFAULT_IGNORE_PATTERNS)
+
+def write_ignore_file_raw(content: str) -> bool:
+    """Write raw text to ignore_batches.txt."""
+    try:
+        with open(IGNORE_FILE, "w", encoding="utf-8") as f:
+            f.write(content.strip() + "\n")
+        return True
+    except Exception as e:
+        print(f"Error writing to {IGNORE_FILE}: {e}")
+        return False
+
+def get_batch_status_list():
+    """Scan ASSET_SOURCE_DIR and return all batch folders with their ignore status."""
+    import os
+    results = []
+    if not ASSET_SOURCE_DIR.exists():
+        return results
+    patterns = get_ignore_patterns()
+    for entry in sorted(os.scandir(ASSET_SOURCE_DIR), key=lambda e: e.name):
+        if entry.is_dir():
+            name = entry.name
+            ignored = False
+            matched = None
+            for pat in patterns:
+                if fnmatch.fnmatch(name.lower(), pat.lower()):
+                    ignored = True
+                    matched = pat
+                    break
+            results.append({
+                "name": name,
+                "ignored": ignored,
+                "matched_pattern": matched,
+                "path": entry.path
+            })
+    return results
+
 def is_batch_ignored(batch_name: str) -> bool:
     """Check if a batch directory should be filtered out from local scan and public push."""
     name = batch_name.strip()

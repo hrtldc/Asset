@@ -72,6 +72,14 @@
           </button>
         </div>
 
+        <!-- Filter Settings Button -->
+        <button id="openFilterModalBtn" class="btn-filter-settings" title="配置需过滤排除/跳过的资产文件夹">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+          </svg>
+          排除文件夹设置
+        </button>
+
         <!-- One-Click Full Update Button -->
         <button id="updateAllBtn" class="btn-update-all" title="全量重新扫描 G:\Simreay\output 磁盘并强刷最新图片与视频">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -204,6 +212,61 @@
     </div>
   </div>
 
-  <script src="js/app.js?v=20260916_v12"></script>
+  <!-- Ignore & Filter Rules Settings Modal -->
+  <div class="modal-backdrop" id="filterSettingsModal">
+    <div class="modal-container filter-modal-box">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <h2>⚙️ 资产过滤与排除设置</h2>
+          <p>自定义哪些文件夹/批次不参与本地展示、不推送到外网发布</p>
+        </div>
+        <button class="modal-close-btn" id="filterModalCloseBtn" title="关闭 (Esc)">✕</button>
+      </div>
+
+      <div class="filter-modal-body">
+        <!-- Quick Add Section -->
+        <div class="filter-section">
+          <label class="filter-label">➕ 快速添加排除名称或通配符</label>
+          <div class="filter-quick-add-row">
+            <input type="text" id="quickAddInput" placeholder="输入要排除的文件夹名称或通配符，如：qzs_0916_Joint 或 *_draft*" class="filter-input-text">
+            <button id="quickAddBtn" class="btn-filter-add">+ 添加到规则</button>
+          </div>
+        </div>
+
+        <!-- Detected Batches Grid / Toggles -->
+        <div class="filter-section">
+          <div class="filter-section-header">
+            <label class="filter-label">📁 磁盘已检测批次文件夹状态 (<span id="detectedBatchesCount">0</span> 个)</label>
+            <span class="filter-tip">点击标签即可快速切换该文件夹的过滤状态</span>
+          </div>
+          <div class="batch-tags-grid" id="batchTagsGrid">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <!-- Advanced Multi-Line Textarea Section -->
+        <div class="filter-section">
+          <label class="filter-label">📝 手动编辑排除规则列表 (每行一条规则，支持 * 通配符，可随时自由编辑填写)</label>
+          <textarea id="ignoreRulesTextarea" class="filter-textarea" rows="6" spellcheck="false" placeholder="# 每行一个规则，例如：&#10;*_Joint&#10;*_Processed&#10;*_SimReady_Processed*&#10;*_wip*&#10;*_temp*"></textarea>
+          <div class="filter-note">
+            💡 规则将保存至根目录下的 <code>ignore_batches.txt</code>。被排除的批次既不会出现在本地 8088 页面，也不会被上传至外网展示。
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer Action Buttons -->
+      <div class="filter-modal-footer">
+        <button id="resetDefaultRulesBtn" class="btn-filter-reset">🔄 恢复默认规则</button>
+        <div class="footer-right-actions">
+          <button id="saveAndRefreshBtn" class="btn-filter-save">💾 保存规则并立即刷新本地</button>
+          <button id="saveAndSyncPublicBtn" class="btn-filter-sync">🚀 保存并一键推送到外网</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastNotice" class="toast-notice"></div>
+
+  <script src="js/app.js?v=20260917_v1"></script>
 </body>
 </html>
