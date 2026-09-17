@@ -680,19 +680,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_QiHuaLu04.png",
       "thumbnail_mtime": 1789641301,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "video_rel_path": "V_QiHuaLu04.mp4",
+      "video_mtime": 1789641467,
       "primary_usd_rel_path": "SM_QiHuaLu04.usd",
-      "total_size_bytes": 168001976,
-      "total_size_mb": 160.22,
-      "video_files": [],
+      "total_size_bytes": 12507286,
+      "total_size_mb": 11.93,
+      "video_files": [
+        {
+          "name": "V_QiHuaLu04.mp4",
+          "rel_path": "V_QiHuaLu04.mp4",
+          "size_bytes": 180674,
+          "mtime": 1789641467,
+          "size_str": "176.4 KB"
+        }
+      ],
       "displayName": "Kitchen Appliance / 厨房电器 - 05",
       "static_thumb_path": "media/qzs_16/SM_QiHuaLu04/thumb.webp?v=1789641424",
-      "static_video_path": null
+      "static_video_path": "media/qzs_16/SM_QiHuaLu04/V_QiHuaLu04.mp4?v=1789641467"
     },
     {
       "id": "qzs_16/SM_QiHuaLu05",
@@ -8153,12 +8161,12 @@
   },
   "stats": {
     "total_assets": 209,
-    "total_videos": 199,
+    "total_videos": 200,
     "total_usds": 209,
     "total_batches": 21,
     "total_categories": 14,
-    "total_size_gb": 9.5
+    "total_size_gb": 9.36
   },
-  "build_timestamp": 1789641425,
+  "build_timestamp": 1789641473,
   "is_static_showcase": true
 }
