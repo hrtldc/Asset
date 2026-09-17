@@ -18,15 +18,26 @@ STATIC_DATA_DIR.mkdir(parents=True, exist_ok=True)
 import sys
 sys.path.insert(0, str(BASE_DIR))
 from server import scan_assets
+from config import is_batch_ignored
 
 def build_showcase():
     print("=" * 60)
-    print("  正在构建外网轻量级静态展示网站包 (203MB)...")
+    print("  正在构建外网轻量级静态展示网站包...")
     print("=" * 60)
+
+    # Clean up any leftover ignored batch directories in static/media
+    if STATIC_MEDIA_DIR.exists():
+        for d in STATIC_MEDIA_DIR.iterdir():
+            if d.is_dir() and is_batch_ignored(d.name):
+                try:
+                    shutil.rmtree(d)
+                    print(f"  -> 已清理已排除的临时媒体目录: {d.name}")
+                except Exception as e:
+                    print(f"  -> 清理失败 {d.name}: {e}")
 
     t0 = time.time()
     raw_assets = scan_assets(force_reload=True)
-    print(f"[1/4] 扫描到 {len(raw_assets)} 套模型资产...")
+    print(f"[1/4] 扫描到 {len(raw_assets)} 套模型资产 (已自动过滤未处理/WIP文件夹)...")
 
     static_assets = []
     total_videos_copied = 0

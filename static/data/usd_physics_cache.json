@@ -1,51 +1,139 @@
 {
-  "qzs_0901-0911xg/0901": {
-    "mass_kg": null,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": null,
-    "wikidata_qcode": null
+  "qzs_0916_SimReady_Processed/SM_Deng": {
+    "mass_kg": 2.574,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
   },
-  "qzs_0901-0911xg/0903": {
-    "mass_kg": null,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": null,
-    "wikidata_qcode": null
+  "qzs_0916_SimReady_Processed/SM_Deng01": {
+    "mass_kg": 18.564,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
   },
-  "qzs_0901-0911xg/0904": {
-    "mass_kg": null,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": null,
-    "wikidata_qcode": null
+  "qzs_0916_SimReady_Processed/SM_Deng02": {
+    "mass_kg": 8.229,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
   },
-  "qzs_0901-0911xg/0907": {
-    "mass_kg": null,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": null,
-    "wikidata_qcode": null
+  "qzs_0916_SimReady_Processed/SM_Deng03": {
+    "mass_kg": 0.4,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
   },
-  "qzs_0901-0911xg/0910": {
-    "mass_kg": null,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": null,
-    "wikidata_qcode": null
+  "qzs_0916_SimReady_Processed/SM_Deng04": {
+    "mass_kg": 0.446,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
   },
-  "qzs_0901-0911xg/0911": {
-    "mass_kg": null,
+  "qzs_0916_SimReady_Processed/SM_Deng05": {
+    "mass_kg": 1.322,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "qzs_0916_SimReady_Processed/SM_QiHuaLu": {
+    "mass_kg": 0.371,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
-    "semantic_class": null,
-    "wikidata_qcode": null
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_0916_SimReady_Processed/SM_QiHuaLu01": {
+    "mass_kg": 0.477,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_0916_SimReady_Processed/SM_QiHuaLu02": {
+    "mass_kg": 2.053,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_0916_SimReady_Processed/SM_QiHuaLu03": {
+    "mass_kg": 1.462,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_0916_SimReady_Processed/SM_QiHuaLu04": {
+    "mass_kg": 0.857,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_0916_SimReady_Processed/SM_QiHuaLu05": {
+    "mass_kg": 1.206,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_0916_SimReady_Processed/SM_QiHuaLu06": {
+    "mass_kg": 4.644,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_0916_SimReady_Processed/SM_XiYiJi": {
+    "mass_kg": 69.092,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "qzs_0916_SimReady_Processed/SM_XiYiJi01": {
+    "mass_kg": 69246574592.0,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "qzs_0916_SimReady_Processed/SM_XiYiJi02": {
+    "mass_kg": 75.754,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "qzs_0916_SimReady_Processed/SM_XiYiJi03": {
+    "mass_kg": 78.54,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
   },
   "qzs_10/SM_GuiZi": {
     "mass_kg": 124.073,
@@ -72,11 +160,11 @@
     "wikidata_qcode": null
   },
   "qzs_10/SM_YuShiGui02-B": {
-    "mass_kg": 245.285,
+    "mass_kg": null,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
-    "semantic_class": "Bathroom",
+    "semantic_class": null,
     "wikidata_qcode": null
   },
   "qzs_10/SM_YuShiGui03-B": {
@@ -208,7 +296,7 @@
     "wikidata_qcode": "Q36794"
   },
   "qzs_11/SM_Men13_B": {
-    "mass_kg": 0.655,
+    "mass_kg": 0.608,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -216,7 +304,7 @@
     "wikidata_qcode": "Q36794"
   },
   "qzs_11/SM_Men14_B": {
-    "mass_kg": 0.823,
+    "mass_kg": 0.791,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -495,6 +583,142 @@
     "semantic_class": "Phone",
     "wikidata_qcode": "Q193175"
   },
+  "qzs_16/SM_Deng": {
+    "mass_kg": 2.574,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "qzs_16/SM_Deng01": {
+    "mass_kg": 18.564,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "qzs_16/SM_Deng02": {
+    "mass_kg": 8.229,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "qzs_16/SM_Deng03": {
+    "mass_kg": 0.4,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "qzs_16/SM_Deng04": {
+    "mass_kg": 0.446,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "qzs_16/SM_Deng05": {
+    "mass_kg": 1.322,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "qzs_16/SM_QiHuaLu": {
+    "mass_kg": 0.371,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_16/SM_QiHuaLu01": {
+    "mass_kg": 0.477,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_16/SM_QiHuaLu02": {
+    "mass_kg": 2.053,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_16/SM_QiHuaLu03": {
+    "mass_kg": 1.462,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_16/SM_QiHuaLu04": {
+    "mass_kg": 0.857,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_16/SM_QiHuaLu05": {
+    "mass_kg": 1.206,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_16/SM_QiHuaLu06": {
+    "mass_kg": 4.644,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "qzs_16/SM_XiYiJi": {
+    "mass_kg": 69.092,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "qzs_16/SM_XiYiJi01": {
+    "mass_kg": 69246574592.0,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "qzs_16/SM_XiYiJi02": {
+    "mass_kg": 75.754,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "qzs_16/SM_XiYiJi03": {
+    "mass_kg": 78.54,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
   "qzs_2/SM_GuiZi": {
     "mass_kg": 130.414,
     "static_friction": 0.5,
@@ -561,25 +785,25 @@
   },
   "qzs_3/SM_BingXiang": {
     "mass_kg": 134.93,
-    "static_friction": 0.5,
+    "static_friction": 0.45,
     "dynamic_friction": 0.35,
-    "restitution": 0.05,
+    "restitution": 0.15,
     "semantic_class": "Refrigerator",
     "wikidata_qcode": "Q37867"
   },
   "qzs_3/SM_BingXiang01": {
     "mass_kg": 79.726,
-    "static_friction": 0.5,
+    "static_friction": 0.45,
     "dynamic_friction": 0.35,
-    "restitution": 0.05,
+    "restitution": 0.15,
     "semantic_class": "Refrigerator",
     "wikidata_qcode": "Q37867"
   },
   "qzs_3/SM_BingXiang02": {
-    "mass_kg": 71.442,
-    "static_friction": 0.5,
+    "mass_kg": 71.439,
+    "static_friction": 0.45,
     "dynamic_friction": 0.35,
-    "restitution": 0.05,
+    "restitution": 0.15,
     "semantic_class": "Refrigerator",
     "wikidata_qcode": "Q37867"
   },
@@ -728,12 +952,12 @@
     "wikidata_qcode": "Q1321517"
   },
   "qzs_7/SM_XieGui04": {
-    "mass_kg": 48.701,
-    "static_friction": 0.5,
+    "mass_kg": 35.347,
+    "static_friction": 0.45,
     "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "ShoeCabinet",
-    "wikidata_qcode": "Q1321517"
+    "restitution": 0.15,
+    "semantic_class": "Dresser",
+    "wikidata_qcode": null
   },
   "qzs_8/SM_ChuangTouGui": {
     "mass_kg": 11.426,
@@ -830,14 +1054,6 @@
     "restitution": 0.05,
     "semantic_class": "Cable",
     "wikidata_qcode": "Q16865280"
-  },
-  "SM_YuShiGui02-B_Joint_Export/Materials": {
-    "mass_kg": null,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": null,
-    "wikidata_qcode": null
   },
   "wq_10/SM-TUILAMEN-1": {
     "mass_kg": 58.777,

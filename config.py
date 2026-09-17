@@ -49,12 +49,17 @@ NAME_TRANSLATIONS = {
     "SM-SHUZHUANGTAI": "Dressing Table / 梳妆台",
     "SM-CHAJI": "Coffee Table / 茶几",
 
-    # Kitchen Appliances
+    # Kitchen & Home Appliances
     "SM_BingXiang": "Refrigerator / 冰箱",
     "SM-bingxiang": "Refrigerator / 冰箱",
     "SM_KaoXiang": "Oven / 烤箱",
     "SM-WEIBOLU": "Microwave Oven / 微波炉",
     "SM-XIWANJI": "Dishwasher / 洗碗机",
+    "SM_QiHuaLu": "Gas Stove / 气化炉",
+    "SM_XiYiJi": "Washing Machine / 洗衣机",
+
+    # Lighting
+    "SM_Deng": "Light / 灯具",
 
     # Cables & Outlets
     "SM-CHAZUOSHUJUXIAN": "Cable & Outlet / 插座数据线",
@@ -74,3 +79,49 @@ NAME_TRANSLATIONS = {
     "SM-SHEXIANGTOU": "Camera / 摄像头",
     "SM-YUNTAI": "Gimbal / 云台相机",
 }
+
+import fnmatch
+
+# Default patterns for batches/folders that should NEVER be ingested or pushed
+DEFAULT_IGNORE_PATTERNS = [
+    "*_Joint",
+    "*_joint",
+    "*_Processed",
+    "*_processed",
+    "*_SimReady_Processed*",
+    "*_wip*",
+    "*_temp*",
+    "*_tmp*",
+    "*_draft*",
+    "*_raw*",
+    "*_bak*",
+    "*_backup*",
+    ".*",
+    "_*"
+]
+
+IGNORE_FILE = APP_DIR / "ignore_batches.txt"
+
+def get_ignore_patterns():
+    patterns = list(DEFAULT_IGNORE_PATTERNS)
+    if IGNORE_FILE.exists():
+        try:
+            with open(IGNORE_FILE, "r", encoding="utf-8") as f:
+                for line in f:
+                    clean = line.strip()
+                    if clean and not clean.startswith("#"):
+                        patterns.append(clean)
+        except Exception:
+            pass
+    return patterns
+
+def is_batch_ignored(batch_name: str) -> bool:
+    """Check if a batch directory should be filtered out from local scan and public push."""
+    name = batch_name.strip()
+    if not name:
+        return True
+    patterns = get_ignore_patterns()
+    for pat in patterns:
+        if fnmatch.fnmatch(name.lower(), pat.lower()):
+            return True
+    return False

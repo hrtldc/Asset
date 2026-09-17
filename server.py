@@ -21,9 +21,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
-from config import ASSET_SOURCE_DIR, HOST, PORT, STATIC_DIR, NAME_TRANSLATIONS
+from config import ASSET_SOURCE_DIR, HOST, PORT, STATIC_DIR, NAME_TRANSLATIONS, is_batch_ignored
 
-app = FastAPI(title="3D USD Asset Portal", version="1.4.0")
+app = FastAPI(title="3D USD Asset Portal", version="1.5.0")
 
 app.add_middleware(
     CORSMiddleware,
@@ -95,8 +95,12 @@ def classify_category(folder_name: str, semantic_class: Optional[str] = None):
         return ("Shoe Cabinet", "鞋柜", "Shoe Cabinet", "Q1321517", "ShoeCabinet", "鞋柜")
     elif any(k in target for k in ["zhediemen", "tuilamen", "pingbanmen", "shuangkaimen", "door", "foldingdoor", "slidingdoor"]) or fn.startswith(("sm_men", "sm-men")):
         return ("Door", "门类", "Doors", "Q36794", "Door", "门类")
-    elif any(k in target for k in ["kaoxiang", "weibolu", "xiaodugui", "xiwanji", "microwave", "oven", "dishwasher"]):
+    elif any(k in target for k in ["kaoxiang", "weibolu", "xiaodugui", "xiwanji", "qihualu", "stove", "microwave", "oven", "dishwasher"]):
         return ("Kitchen Appliance", "厨房电器", "Kitchen Appliances", "Q127950", "KitchenAppliance", "厨房电器")
+    elif "xiyiji" in target or "washingmachine" in target:
+        return ("Washing Machine", "洗衣机", "Home Appliances", "Q124441", "WashingMachine", "洗衣机")
+    elif "deng" in fn or "light" in target or "lamp" in target:
+        return ("Light", "灯具", "Lighting", "Q135260", "Light", "灯具")
     elif "shuzhuangtai" in target or "dressingtable" in target:
         return ("Dressing Table", "梳妆台", "Tables & Vanities", "Q204370", "DressingTable", "梳妆台")
     elif "chaji" in target or "coffeetable" in target:
@@ -128,12 +132,12 @@ def classify_category(folder_name: str, semantic_class: Optional[str] = None):
 
 
 def load_batch_manifests():
-    """Load all _simready_manifest.json files from batches."""
+    """Load all _simready_manifest.json files from non-ignored batches."""
     manifests = {}
     if not ASSET_SOURCE_DIR.exists():
         return manifests
     for batch_entry in os.scandir(ASSET_SOURCE_DIR):
-        if batch_entry.is_dir():
+        if batch_entry.is_dir() and not is_batch_ignored(batch_entry.name):
             manifest_file = Path(batch_entry.path) / "_simready_manifest.json"
             if manifest_file.exists():
                 try:
@@ -260,8 +264,12 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
         _last_scan_timestamp = now
         return assets
 
+    ignored_batches = []
     for batch_dir in sorted(os.scandir(ASSET_SOURCE_DIR), key=lambda e: e.name):
         if not batch_dir.is_dir():
+            continue
+        if is_batch_ignored(batch_dir.name):
+            ignored_batches.append(batch_dir.name)
             continue
         batch_name = batch_dir.name
         manifest_data = _manifest_cache.get(batch_name, {})
@@ -275,15 +283,9 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
 
         candidate_items = []
         for item_dir in sorted(os.scandir(batch_dir.path), key=lambda e: e.name):
-            if not item_dir.is_dir():
+            if not item_dir.is_dir() or is_batch_ignored(item_dir.name):
                 continue
-            sub_dirs = [d for d in os.scandir(item_dir.path) if d.is_dir() and not d.name.startswith((".", "_")) and d.name != "Materials"]
-            has_direct_usd = any(f.lower().endswith((".usd", ".usdc", ".usda")) for f in os.listdir(item_dir.path) if os.path.isfile(os.path.join(item_dir.path, f)))
-            if not has_direct_usd and sub_dirs and any(d.name.startswith(("SM_", "SM-", "SN_")) for d in sub_dirs):
-                for sd in sorted(sub_dirs, key=lambda e: e.name):
-                    candidate_items.append((f"{batch_name}_{item_dir.name}", sd))
-            else:
-                candidate_items.append((batch_name, item_dir))
+            candidate_items.append((batch_name, item_dir))
 
         for current_batch, item_dir in candidate_items:
             item_name = item_dir.name
