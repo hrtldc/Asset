@@ -1488,22 +1488,22 @@
       "thumbnail_rel_path": "T_SheXiangTou.png",
       "thumbnail_mtime": 1789641210,
       "video_rel_path": "V_SheXiangTou.mp4",
-      "video_mtime": 1789540455,
+      "video_mtime": 1789641495,
       "primary_usd_rel_path": "SM_SheXiangTou.usd",
-      "total_size_bytes": 635429685,
-      "total_size_mb": 605.99,
+      "total_size_bytes": 635304102,
+      "total_size_mb": 605.87,
       "video_files": [
         {
           "name": "V_SheXiangTou.mp4",
           "rel_path": "V_SheXiangTou.mp4",
-          "size_bytes": 125631,
-          "mtime": 1789540455,
-          "size_str": "122.7 KB"
+          "size_bytes": 48,
+          "mtime": 1789641495,
+          "size_str": "0.0 KB"
         }
       ],
       "displayName": "Camera / 摄像头 - 01",
       "static_thumb_path": "media/qzs_15/SM_SheXiangTou/thumb.webp?v=1789641424",
-      "static_video_path": "media/qzs_15/SM_SheXiangTou/V_SheXiangTou.mp4?v=1789540455"
+      "static_video_path": "media/qzs_15/SM_SheXiangTou/V_SheXiangTou.mp4?v=1789641495"
     },
     {
       "id": "qzs_15/SM_SheXiangTou01",
@@ -8167,6 +8167,6 @@
     "total_categories": 14,
     "total_size_gb": 9.36
   },
-  "build_timestamp": 1789641473,
+  "build_timestamp": 1789641498,
   "is_static_showcase": true
 }
