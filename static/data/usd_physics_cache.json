@@ -359,6 +359,94 @@
     "semantic_class": "Door",
     "wikidata_qcode": "Q36794"
   },
+  "qzs_15/SM_BiJiBenDianNao": {
+    "mass_kg": 0.133,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Laptop",
+    "wikidata_qcode": "Q3962"
+  },
+  "qzs_15/SM_BiJiBenDianNao01": {
+    "mass_kg": 4.16,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Laptop",
+    "wikidata_qcode": "Q3962"
+  },
+  "qzs_15/SM_BiJiBenDianNao02": {
+    "mass_kg": 0.546,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Laptop",
+    "wikidata_qcode": "Q3962"
+  },
+  "qzs_15/SM_DaJiangWuRenJi": {
+    "mass_kg": 1.838,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
+  },
+  "qzs_15/SM_DaJiangWuRenJi01": {
+    "mass_kg": 35141.914,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
+  },
+  "qzs_15/SM_ErJi": {
+    "mass_kg": 0.046,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Headphones",
+    "wikidata_qcode": "Q186694"
+  },
+  "qzs_15/SM_SheXiangTou": {
+    "mass_kg": 0.68,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
+  },
+  "qzs_15/SM_SheXiangTou01": {
+    "mass_kg": 111862032.0,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Camera",
+    "wikidata_qcode": "Q15328"
+  },
+  "qzs_15/SM_SheXiangTou02": {
+    "mass_kg": 5.441,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Camera",
+    "wikidata_qcode": "Q15328"
+  },
+  "qzs_15/SM_ShoJi": {
+    "mass_kg": 0.11,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Phone",
+    "wikidata_qcode": "Q193175"
+  },
+  "qzs_15/SM_ShoJi01": {
+    "mass_kg": 0.068,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Phone",
+    "wikidata_qcode": "Q193175"
+  },
   "qzs_2/SM_GuiZi": {
     "mass_kg": 130.414,
     "static_friction": 0.5,
@@ -1038,6 +1126,118 @@
     "restitution": 0.05,
     "semantic_class": "Door",
     "wikidata_qcode": "Q36794"
+  },
+  "wq_15/SM-BIJIBENDIANNAO-1": {
+    "mass_kg": 0.361,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Laptop",
+    "wikidata_qcode": "Q3962"
+  },
+  "wq_15/SM-BIJIBENDIANNAO-2": {
+    "mass_kg": 0.606,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Laptop",
+    "wikidata_qcode": "Q3962"
+  },
+  "wq_15/SM-ERJI-1": {
+    "mass_kg": null,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
+  },
+  "wq_15/SM-ERJI-2": {
+    "mass_kg": 54320528.0,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Headphones",
+    "wikidata_qcode": "Q186694"
+  },
+  "wq_15/SM-PINGBANDIANNAO-1": {
+    "mass_kg": 0.098,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Laptop",
+    "wikidata_qcode": "Q3962"
+  },
+  "wq_15/SM-SHEXIANGTOU-1": {
+    "mass_kg": 0.1,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Camera",
+    "wikidata_qcode": "Q15328"
+  },
+  "wq_15/SM-SHOUJI-1": {
+    "mass_kg": 105686.805,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Phone",
+    "wikidata_qcode": "Q193175"
+  },
+  "wq_15/SM-SHOUJI-2": {
+    "mass_kg": 217610.125,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Phone",
+    "wikidata_qcode": "Q193175"
+  },
+  "wq_15/SM-SHOUJI-3": {
+    "mass_kg": 0.137,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Phone",
+    "wikidata_qcode": "Q193175"
+  },
+  "wq_15/SM-SHOUJI-4": {
+    "mass_kg": 0.223,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Phone",
+    "wikidata_qcode": "Q193175"
+  },
+  "wq_15/SM-SHOUJI-5": {
+    "mass_kg": 0.585,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Phone",
+    "wikidata_qcode": "Q193175"
+  },
+  "wq_15/SM-WURENJI-1": {
+    "mass_kg": 310.39,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Drone",
+    "wikidata_qcode": null
+  },
+  "wq_15/SM-WURENJI-2": {
+    "mass_kg": 40.927,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Drone",
+    "wikidata_qcode": null
+  },
+  "wq_15/SM-YUNTAI-1": {
+    "mass_kg": 0.35,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Camera",
+    "wikidata_qcode": "Q15328"
   },
   "wq_2/SM-CHAJI-1": {
     "mass_kg": 50.589,

@@ -1346,12 +1346,12 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SHEXIANGTOU.png",
-      "thumbnail_mtime": 1789545465,
+      "thumbnail_mtime": 1789609485,
       "video_rel_path": "V_SHEXIANGTOU.mp4",
       "video_mtime": 1789545588,
       "primary_usd_rel_path": "SM-SHEXIANGTOU-1.usd",
-      "total_size_bytes": 1671925,
-      "total_size_mb": 1.59,
+      "total_size_bytes": 557286398,
+      "total_size_mb": 531.47,
       "video_files": [
         {
           "name": "V_SHEXIANGTOU.mp4",
@@ -1362,7 +1362,7 @@
         }
       ],
       "displayName": "Camera / 摄像头 - 04",
-      "static_thumb_path": "media/wq_15/SM-SHEXIANGTOU-1/thumb.webp?v=1789547404",
+      "static_thumb_path": "media/wq_15/SM-SHEXIANGTOU-1/thumb.webp?v=1789613012",
       "static_video_path": "media/wq_15/SM-SHEXIANGTOU-1/V_SHEXIANGTOU.mp4?v=1789545588"
     },
     {
@@ -1460,19 +1460,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/obj0001/obj0001.png",
-      "thumbnail_mtime": 1789463501,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_WURENJI.png",
+      "thumbnail_mtime": 1789547517,
+      "video_rel_path": "V_WURENJI.mp4",
+      "video_mtime": 1789548149,
       "primary_usd_rel_path": "SM-WURENJI-1.usd",
-      "total_size_bytes": 68624277,
-      "total_size_mb": 65.45,
-      "video_files": [],
+      "total_size_bytes": 77165847,
+      "total_size_mb": 73.59,
+      "video_files": [
+        {
+          "name": "V_WURENJI.mp4",
+          "rel_path": "V_WURENJI.mp4",
+          "size_bytes": 998154,
+          "mtime": 1789548149,
+          "size_str": "974.8 KB"
+        }
+      ],
       "displayName": "Drone / 无人机 - 03",
-      "static_thumb_path": "media/wq_15/SM-WURENJI-1/thumb.webp?v=1789547405",
-      "static_video_path": null
+      "static_thumb_path": "media/wq_15/SM-WURENJI-1/thumb.webp?v=1789613013",
+      "static_video_path": "media/wq_15/SM-WURENJI-1/V_WURENJI.mp4?v=1789548149"
     },
     {
       "id": "wq_15/SM-WURENJI-2",
@@ -1491,19 +1499,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": null,
-      "thumbnail_mtime": 0,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_WURENJI.png",
+      "thumbnail_mtime": 1789548242,
+      "video_rel_path": "V_WURENJI.mp4",
+      "video_mtime": 1789548555,
       "primary_usd_rel_path": "SM-WURENJI-2.usd",
-      "total_size_bytes": 14052693,
-      "total_size_mb": 13.4,
-      "video_files": [],
+      "total_size_bytes": 31890755,
+      "total_size_mb": 30.41,
+      "video_files": [
+        {
+          "name": "V_WURENJI.mp4",
+          "rel_path": "V_WURENJI.mp4",
+          "size_bytes": 1029262,
+          "mtime": 1789548555,
+          "size_str": "1005.1 KB"
+        }
+      ],
       "displayName": "Drone / 无人机 - 04",
-      "static_thumb_path": null,
-      "static_video_path": null
+      "static_thumb_path": "media/wq_15/SM-WURENJI-2/thumb.webp?v=1789613013",
+      "static_video_path": "media/wq_15/SM-WURENJI-2/V_WURENJI.mp4?v=1789548555"
     },
     {
       "id": "wq_15/SM-YUNTAI-1",
@@ -1522,19 +1538,27 @@
       "restitution": 0.15,
       "friction": "0.45 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/obj0003/obj0001.jpg",
-      "thumbnail_mtime": 1789466573,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_YUNTAI.png",
+      "thumbnail_mtime": 1789548590,
+      "video_rel_path": "V_YUNTAI.mp4",
+      "video_mtime": 1789548711,
       "primary_usd_rel_path": "SM-YUNTAI-1.usd",
-      "total_size_bytes": 30673662,
-      "total_size_mb": 29.25,
-      "video_files": [],
+      "total_size_bytes": 36956931,
+      "total_size_mb": 35.24,
+      "video_files": [
+        {
+          "name": "V_YUNTAI.mp4",
+          "rel_path": "V_YUNTAI.mp4",
+          "size_bytes": 527361,
+          "mtime": 1789548711,
+          "size_str": "515.0 KB"
+        }
+      ],
       "displayName": "Gimbal / 云台相机 - 01",
-      "static_thumb_path": "media/wq_15/SM-YUNTAI-1/thumb.webp?v=1789547405",
-      "static_video_path": null
+      "static_thumb_path": "media/wq_15/SM-YUNTAI-1/thumb.webp?v=1789613013",
+      "static_video_path": "media/wq_15/SM-YUNTAI-1/V_YUNTAI.mp4?v=1789548711"
     },
     {
       "id": "qzs_15/SM_ErJi",
@@ -1556,24 +1580,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_ErJi.png",
-      "thumbnail_mtime": 1789547205,
+      "thumbnail_mtime": 1789548161,
       "video_rel_path": "V_ErJi.mp4",
-      "video_mtime": 1789540355,
+      "video_mtime": 1789548153,
       "primary_usd_rel_path": "SM_ErJi.usd",
-      "total_size_bytes": 41919886,
-      "total_size_mb": 39.98,
+      "total_size_bytes": 436661739,
+      "total_size_mb": 416.43,
       "video_files": [
         {
           "name": "V_ErJi.mp4",
           "rel_path": "V_ErJi.mp4",
-          "size_bytes": 27377,
-          "mtime": 1789540355,
-          "size_str": "26.7 KB"
+          "size_bytes": 848867,
+          "mtime": 1789548153,
+          "size_str": "829.0 KB"
         }
       ],
       "displayName": "Headphones / 耳机 - 01",
-      "static_thumb_path": "media/qzs_15/SM_ErJi/thumb.webp?v=1789547405",
-      "static_video_path": "media/qzs_15/SM_ErJi/V_ErJi.mp4?v=1789540355"
+      "static_thumb_path": "media/qzs_15/SM_ErJi/thumb.webp?v=1789613013",
+      "static_video_path": "media/qzs_15/SM_ErJi/V_ErJi.mp4?v=1789548153"
     },
     {
       "id": "wq_15/SM-ERJI-1",
@@ -1589,21 +1613,21 @@
       "mass_kg": 0.057,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
-      "restitution": 0.15,
+      "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "PASS",
       "has_video": false,
       "has_usd": true,
-      "thumbnail_rel_path": "SM-ERJI-1.png",
-      "thumbnail_mtime": 1789464333,
+      "thumbnail_rel_path": "T_ERJI.png",
+      "thumbnail_mtime": 1789609655,
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM-ERJI-1.usd",
-      "total_size_bytes": 64601165,
-      "total_size_mb": 61.61,
+      "total_size_bytes": 456373782,
+      "total_size_mb": 435.23,
       "video_files": [],
       "displayName": "Headphones / 耳机 - 02",
-      "static_thumb_path": "media/wq_15/SM-ERJI-1/thumb.webp?v=1789547405",
+      "static_thumb_path": "media/wq_15/SM-ERJI-1/thumb.webp?v=1789613013",
       "static_video_path": null
     },
     {
@@ -1630,7 +1654,7 @@
       "video_rel_path": "V_ERJI.mp4",
       "video_mtime": 1789545116,
       "primary_usd_rel_path": "SM-ERJI-2.usd",
-      "total_size_bytes": 17098264,
+      "total_size_bytes": 17099624,
       "total_size_mb": 16.31,
       "video_files": [
         {
@@ -1786,7 +1810,7 @@
       "video_rel_path": "V_BIJIBENDIANNAO.mp4",
       "video_mtime": 1789544372,
       "primary_usd_rel_path": "SM-BIJIBENDIANNAO-1.usd",
-      "total_size_bytes": 17973060,
+      "total_size_bytes": 17974221,
       "total_size_mb": 17.14,
       "video_files": [
         {
@@ -1821,24 +1845,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_BIJIBENDIANNAO.png",
-      "thumbnail_mtime": 1789546635,
+      "thumbnail_mtime": 1789548052,
       "video_rel_path": "V_BIJIBENDIANNAO.mp4",
-      "video_mtime": 1789544594,
+      "video_mtime": 1789548492,
       "primary_usd_rel_path": "SM-BIJIBENDIANNAO-2.usd",
-      "total_size_bytes": 581261826,
-      "total_size_mb": 554.33,
+      "total_size_bytes": 17243377,
+      "total_size_mb": 16.44,
       "video_files": [
         {
           "name": "V_BIJIBENDIANNAO.mp4",
           "rel_path": "V_BIJIBENDIANNAO.mp4",
-          "size_bytes": 1083761,
-          "mtime": 1789544594,
-          "size_str": "1.03 MB"
+          "size_bytes": 1175147,
+          "mtime": 1789548492,
+          "size_str": "1.12 MB"
         }
       ],
       "displayName": "Laptop / 笔记本电脑 - 05",
-      "static_thumb_path": "media/wq_15/SM-BIJIBENDIANNAO-2/thumb.webp?v=1789547406",
-      "static_video_path": "media/wq_15/SM-BIJIBENDIANNAO-2/V_BIJIBENDIANNAO.mp4?v=1789544594"
+      "static_thumb_path": "media/wq_15/SM-BIJIBENDIANNAO-2/thumb.webp?v=1789613013",
+      "static_video_path": "media/wq_15/SM-BIJIBENDIANNAO-2/V_BIJIBENDIANNAO.mp4?v=1789548492"
     },
     {
       "id": "qzs_15/SM_ShoJi",
@@ -1938,12 +1962,12 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SHOUJI.png",
-      "thumbnail_mtime": 1789545659,
+      "thumbnail_mtime": 1789609465,
       "video_rel_path": "V_SHOUJI.mp4",
       "video_mtime": 1789545738,
       "primary_usd_rel_path": "SM-SHOUJI-1.usd",
-      "total_size_bytes": 2740286,
-      "total_size_mb": 2.61,
+      "total_size_bytes": 558319772,
+      "total_size_mb": 532.46,
       "video_files": [
         {
           "name": "V_SHOUJI.mp4",
@@ -1954,7 +1978,7 @@
         }
       ],
       "displayName": "Phone / 手机 - 03",
-      "static_thumb_path": "media/wq_15/SM-SHOUJI-1/thumb.webp?v=1789547406",
+      "static_thumb_path": "media/wq_15/SM-SHOUJI-1/thumb.webp?v=1789613013",
       "static_video_path": "media/wq_15/SM-SHOUJI-1/V_SHOUJI.mp4?v=1789545738"
     },
     {
@@ -1981,8 +2005,8 @@
       "video_rel_path": "V_SHOUJI.mp4",
       "video_mtime": 1789545982,
       "primary_usd_rel_path": "SM-SHOUJI-2.usd",
-      "total_size_bytes": 10574798,
-      "total_size_mb": 10.08,
+      "total_size_bytes": 10575911,
+      "total_size_mb": 10.09,
       "video_files": [
         {
           "name": "V_SHOUJI.mp4",
@@ -2020,7 +2044,7 @@
       "video_rel_path": "V_SHOUJI.mp4",
       "video_mtime": 1789546282,
       "primary_usd_rel_path": "SM-SHOUJI-3.usd",
-      "total_size_bytes": 6895810,
+      "total_size_bytes": 6896981,
       "total_size_mb": 6.58,
       "video_files": [
         {
@@ -2055,12 +2079,12 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SHOUJI.png",
-      "thumbnail_mtime": 1789546493,
+      "thumbnail_mtime": 1789609490,
       "video_rel_path": "V_SHOUJI.mp4",
       "video_mtime": 1789546574,
       "primary_usd_rel_path": "SM-SHOUJI-4.usd",
-      "total_size_bytes": 19518302,
-      "total_size_mb": 18.61,
+      "total_size_bytes": 602052011,
+      "total_size_mb": 574.16,
       "video_files": [
         {
           "name": "V_SHOUJI.mp4",
@@ -2071,7 +2095,7 @@
         }
       ],
       "displayName": "Phone / 手机 - 06",
-      "static_thumb_path": "media/wq_15/SM-SHOUJI-4/thumb.webp?v=1789547407",
+      "static_thumb_path": "media/wq_15/SM-SHOUJI-4/thumb.webp?v=1789613014",
       "static_video_path": "media/wq_15/SM-SHOUJI-4/V_SHOUJI.mp4?v=1789546574"
     },
     {
@@ -2094,12 +2118,12 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SHOUJI.png",
-      "thumbnail_mtime": 1789546605,
+      "thumbnail_mtime": 1789609104,
       "video_rel_path": "V_SHOUJI.mp4",
       "video_mtime": 1789547008,
       "primary_usd_rel_path": "SM-SHOUJI-5.usd",
-      "total_size_bytes": 13382724,
-      "total_size_mb": 12.76,
+      "total_size_bytes": 650312609,
+      "total_size_mb": 620.19,
       "video_files": [
         {
           "name": "V_SHOUJI.mp4",
@@ -2110,7 +2134,7 @@
         }
       ],
       "displayName": "Phone / 手机 - 07",
-      "static_thumb_path": "media/wq_15/SM-SHOUJI-5/thumb.webp?v=1789547407",
+      "static_thumb_path": "media/wq_15/SM-SHOUJI-5/thumb.webp?v=1789613014",
       "static_video_path": "media/wq_15/SM-SHOUJI-5/V_SHOUJI.mp4?v=1789547008"
     },
     {
@@ -2133,12 +2157,12 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_PINGBANDIANNAO.png",
-      "thumbnail_mtime": 1789545142,
+      "thumbnail_mtime": 1789609587,
       "video_rel_path": "V_PINGBANDIANNAO.mp4",
       "video_mtime": 1789545366,
       "primary_usd_rel_path": "SM-PINGBANDIANNAO-1.usd",
-      "total_size_bytes": 8361272,
-      "total_size_mb": 7.97,
+      "total_size_bytes": 599808540,
+      "total_size_mb": 572.02,
       "video_files": [
         {
           "name": "V_PINGBANDIANNAO.mp4",
@@ -2149,7 +2173,7 @@
         }
       ],
       "displayName": "Tablet / 平板电脑 - 01",
-      "static_thumb_path": "media/wq_15/SM-PINGBANDIANNAO-1/thumb.webp?v=1789547407",
+      "static_thumb_path": "media/wq_15/SM-PINGBANDIANNAO-1/thumb.webp?v=1789613014",
       "static_video_path": "media/wq_15/SM-PINGBANDIANNAO-1/V_PINGBANDIANNAO.mp4?v=1789545366"
     },
     {
@@ -7532,12 +7556,12 @@
   },
   "stats": {
     "total_assets": 192,
-    "total_videos": 188,
+    "total_videos": 191,
     "total_usds": 192,
     "total_batches": 20,
     "total_categories": 12,
-    "total_size_gb": 7.64
+    "total_size_gb": 10.6
   },
-  "build_timestamp": 1789547407,
+  "build_timestamp": 1789613014,
   "is_static_showcase": true
 }
