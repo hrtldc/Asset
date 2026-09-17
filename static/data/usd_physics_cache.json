@@ -1,140 +1,4 @@
 {
-  "qzs_0916_SimReady_Processed/SM_Deng": {
-    "mass_kg": 2.574,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.33,
-    "restitution": 0.08,
-    "semantic_class": "Lamp",
-    "wikidata_qcode": "Q1134005"
-  },
-  "qzs_0916_SimReady_Processed/SM_Deng01": {
-    "mass_kg": 18.564,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.33,
-    "restitution": 0.08,
-    "semantic_class": "Lamp",
-    "wikidata_qcode": "Q1134005"
-  },
-  "qzs_0916_SimReady_Processed/SM_Deng02": {
-    "mass_kg": 8.229,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.33,
-    "restitution": 0.08,
-    "semantic_class": "Lamp",
-    "wikidata_qcode": "Q1134005"
-  },
-  "qzs_0916_SimReady_Processed/SM_Deng03": {
-    "mass_kg": 0.4,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.33,
-    "restitution": 0.08,
-    "semantic_class": "Lamp",
-    "wikidata_qcode": "Q1134005"
-  },
-  "qzs_0916_SimReady_Processed/SM_Deng04": {
-    "mass_kg": 0.446,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.33,
-    "restitution": 0.08,
-    "semantic_class": "Lamp",
-    "wikidata_qcode": "Q1134005"
-  },
-  "qzs_0916_SimReady_Processed/SM_Deng05": {
-    "mass_kg": 1.322,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.33,
-    "restitution": 0.08,
-    "semantic_class": "Lamp",
-    "wikidata_qcode": "Q1134005"
-  },
-  "qzs_0916_SimReady_Processed/SM_QiHuaLu": {
-    "mass_kg": 0.371,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "GasStove",
-    "wikidata_qcode": "Q180399"
-  },
-  "qzs_0916_SimReady_Processed/SM_QiHuaLu01": {
-    "mass_kg": 0.477,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "GasStove",
-    "wikidata_qcode": "Q180399"
-  },
-  "qzs_0916_SimReady_Processed/SM_QiHuaLu02": {
-    "mass_kg": 2.053,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "GasStove",
-    "wikidata_qcode": "Q180399"
-  },
-  "qzs_0916_SimReady_Processed/SM_QiHuaLu03": {
-    "mass_kg": 1.462,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "GasStove",
-    "wikidata_qcode": "Q180399"
-  },
-  "qzs_0916_SimReady_Processed/SM_QiHuaLu04": {
-    "mass_kg": 0.857,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "GasStove",
-    "wikidata_qcode": "Q180399"
-  },
-  "qzs_0916_SimReady_Processed/SM_QiHuaLu05": {
-    "mass_kg": 1.206,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "GasStove",
-    "wikidata_qcode": "Q180399"
-  },
-  "qzs_0916_SimReady_Processed/SM_QiHuaLu06": {
-    "mass_kg": 4.644,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": "GasStove",
-    "wikidata_qcode": "Q180399"
-  },
-  "qzs_0916_SimReady_Processed/SM_XiYiJi": {
-    "mass_kg": 69.092,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.35,
-    "restitution": 0.15,
-    "semantic_class": "WashingMachine",
-    "wikidata_qcode": "Q124441"
-  },
-  "qzs_0916_SimReady_Processed/SM_XiYiJi01": {
-    "mass_kg": 69246574592.0,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.35,
-    "restitution": 0.15,
-    "semantic_class": "WashingMachine",
-    "wikidata_qcode": "Q124441"
-  },
-  "qzs_0916_SimReady_Processed/SM_XiYiJi02": {
-    "mass_kg": 75.754,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.35,
-    "restitution": 0.15,
-    "semantic_class": "WashingMachine",
-    "wikidata_qcode": "Q124441"
-  },
-  "qzs_0916_SimReady_Processed/SM_XiYiJi03": {
-    "mass_kg": 78.54,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.35,
-    "restitution": 0.15,
-    "semantic_class": "WashingMachine",
-    "wikidata_qcode": "Q124441"
-  },
   "qzs_10/SM_GuiZi": {
     "mass_kg": 124.073,
     "static_friction": 0.5,
@@ -584,12 +448,12 @@
     "wikidata_qcode": "Q193175"
   },
   "qzs_16/SM_Deng": {
-    "mass_kg": 2.574,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.33,
-    "restitution": 0.08,
-    "semantic_class": "Lamp",
-    "wikidata_qcode": "Q1134005"
+    "mass_kg": null,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
   },
   "qzs_16/SM_Deng01": {
     "mass_kg": 18.564,

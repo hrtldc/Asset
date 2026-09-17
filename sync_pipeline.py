@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import io
 import os
 import sys
 import time
@@ -6,12 +7,57 @@ import subprocess
 import shutil
 from pathlib import Path
 
+# Safe UTF-8 stdout wrapper for Windows console
+if sys.platform == "win32" and hasattr(sys.stdout, "buffer"):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+
 BASE_DIR = Path(__file__).resolve().parent
+sys.path.insert(0, str(BASE_DIR))
 
 def print_banner(title):
     print("\n" + "=" * 68)
     print(f"  {title}")
     print("=" * 68)
+
+def prompt_filter_settings():
+    from config import get_batch_status_list, read_ignore_file_raw, write_ignore_file_raw
+    
+    batches = get_batch_status_list()
+    ignored_batches = [b["name"] for b in batches if b["ignored"]]
+    included_batches = [b["name"] for b in batches if not b["ignored"]]
+    
+    print("\n" + "=" * 68)
+    print("  【资产过滤与排除设置】(Ignore & Filter Settings)")
+    print("=" * 68)
+    print(f"  当前已排除的批次目录 ({len(ignored_batches)} 个):")
+    if ignored_batches:
+        print(f"    🚫 {', '.join(ignored_batches)}")
+    else:
+        print("    (无已排除批次)")
+    print(f"  当前待同步发布的批次目录 ({len(included_batches)} 个):")
+    print(f"    ✓ {', '.join(included_batches[:10])}{' ...' if len(included_batches) > 10 else ''}")
+    print("-" * 68)
+    print("  [输入说明]：")
+    print("  • 直接按【回车 Enter】: 保持当前规则，直接开始构建并同步")
+    print("  • 手动输入文件夹名称或通配符 (如: qzs_0916_Joint 或 *_draft*): 立即添加排除")
+    print("-" * 68)
+    
+    try:
+        user_input = input("  请输入要排除的文件夹名称 (留空直接回车继续): ").strip()
+        if user_input:
+            current_raw = read_ignore_file_raw()
+            lines = [l.strip() for l in current_raw.splitlines() if l.strip()]
+            if user_input not in lines:
+                lines.append(user_input)
+                write_ignore_file_raw("\n".join(lines))
+                print(f"\n  ✓ 已成功将 [{user_input}] 添加至排除列表 (ignore_batches.txt)！")
+            else:
+                print(f"\n  ℹ️ [{user_input}] 已在排除规则中。")
+    except EOFError:
+        pass
+    except KeyboardInterrupt:
+        print("\n用户取消操作。")
+        sys.exit(0)
 
 def main():
     os.system("chcp 65001 >nul")
@@ -19,6 +65,9 @@ def main():
     print_banner("【3D USD 资产平台】一键外网同步与发布工具")
     print(f"  工作目录: {BASE_DIR}")
     print(f"  当前时间: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+
+    # Prompt user for optional extra ignore filters
+    prompt_filter_settings()
 
     # Step 1: Isaac Sim physics extraction (optional)
     print_banner("[第 1/3 步] 正在提取最新的 USD 物理网格属性...")

@@ -524,19 +524,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/iron/3d66Model-593739-files-1.JPG",
-      "thumbnail_mtime": 1789525947,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_QiHuaLu.png",
+      "thumbnail_mtime": 1789640834,
+      "video_rel_path": "V_QiHuaLu.mp4",
+      "video_mtime": 1789640909,
       "primary_usd_rel_path": "SM_QiHuaLu.usd",
-      "total_size_bytes": 8875248,
-      "total_size_mb": 8.46,
-      "video_files": [],
+      "total_size_bytes": 10339954,
+      "total_size_mb": 9.86,
+      "video_files": [
+        {
+          "name": "V_QiHuaLu.mp4",
+          "rel_path": "V_QiHuaLu.mp4",
+          "size_bytes": 169219,
+          "mtime": 1789640909,
+          "size_str": "165.3 KB"
+        }
+      ],
       "displayName": "Kitchen Appliance / 厨房电器 - 01",
-      "static_thumb_path": "media/qzs_16/SM_QiHuaLu/thumb.webp?v=1789636241",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_QiHuaLu/thumb.webp?v=1789641423",
+      "static_video_path": "media/qzs_16/SM_QiHuaLu/V_QiHuaLu.mp4?v=1789640909"
     },
     {
       "id": "qzs_16/SM_QiHuaLu01",
@@ -555,19 +563,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/iron/3d66Model-593739-files-1.JPG",
-      "thumbnail_mtime": 1789526028,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_QiHuaLu01.png",
+      "thumbnail_mtime": 1789640913,
+      "video_rel_path": "V_QiHuaLu01.mp4",
+      "video_mtime": 1789640972,
       "primary_usd_rel_path": "SM_QiHuaLu01.usd",
-      "total_size_bytes": 10985345,
-      "total_size_mb": 10.48,
-      "video_files": [],
+      "total_size_bytes": 14713560,
+      "total_size_mb": 14.03,
+      "video_files": [
+        {
+          "name": "V_QiHuaLu01.mp4",
+          "rel_path": "V_QiHuaLu01.mp4",
+          "size_bytes": 258178,
+          "mtime": 1789640972,
+          "size_str": "252.1 KB"
+        }
+      ],
       "displayName": "Kitchen Appliance / 厨房电器 - 02",
-      "static_thumb_path": "media/qzs_16/SM_QiHuaLu01/thumb.webp?v=1789636241",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_QiHuaLu01/thumb.webp?v=1789641423",
+      "static_video_path": "media/qzs_16/SM_QiHuaLu01/V_QiHuaLu01.mp4?v=1789640972"
     },
     {
       "id": "qzs_16/SM_QiHuaLu02",
@@ -586,19 +602,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/iron1/3d66Model-593739-files-5.JPG",
-      "thumbnail_mtime": 1789526072,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_QiHuaLu02.png",
+      "thumbnail_mtime": 1789641040,
+      "video_rel_path": "V_QiHuaLu02.mp4",
+      "video_mtime": 1789641162,
       "primary_usd_rel_path": "SM_QiHuaLu02.usd",
-      "total_size_bytes": 17032862,
-      "total_size_mb": 16.24,
-      "video_files": [],
+      "total_size_bytes": 25360019,
+      "total_size_mb": 24.19,
+      "video_files": [
+        {
+          "name": "V_QiHuaLu02.mp4",
+          "rel_path": "V_QiHuaLu02.mp4",
+          "size_bytes": 254876,
+          "mtime": 1789641162,
+          "size_str": "248.9 KB"
+        }
+      ],
       "displayName": "Kitchen Appliance / 厨房电器 - 03",
-      "static_thumb_path": "media/qzs_16/SM_QiHuaLu02/thumb.webp?v=1789636241",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_QiHuaLu02/thumb.webp?v=1789641423",
+      "static_video_path": "media/qzs_16/SM_QiHuaLu02/V_QiHuaLu02.mp4?v=1789641162"
     },
     {
       "id": "qzs_16/SM_QiHuaLu03",
@@ -617,19 +641,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/iron1/3d66Model-593739-files-5.JPG",
-      "thumbnail_mtime": 1789526155,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_QiHuaLu03.png",
+      "thumbnail_mtime": 1789641166,
+      "video_rel_path": "V_QiHuaLu03.mp4",
+      "video_mtime": 1789641295,
       "primary_usd_rel_path": "SM_QiHuaLu03.usd",
-      "total_size_bytes": 11429975,
-      "total_size_mb": 10.9,
-      "video_files": [],
+      "total_size_bytes": 14196279,
+      "total_size_mb": 13.54,
+      "video_files": [
+        {
+          "name": "V_QiHuaLu03.mp4",
+          "rel_path": "V_QiHuaLu03.mp4",
+          "size_bytes": 265346,
+          "mtime": 1789641295,
+          "size_str": "259.1 KB"
+        }
+      ],
       "displayName": "Kitchen Appliance / 厨房电器 - 04",
-      "static_thumb_path": "media/qzs_16/SM_QiHuaLu03/thumb.webp?v=1789636241",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_QiHuaLu03/thumb.webp?v=1789641423",
+      "static_video_path": "media/qzs_16/SM_QiHuaLu03/V_QiHuaLu03.mp4?v=1789641295"
     },
     {
       "id": "qzs_16/SM_QiHuaLu04",
@@ -650,16 +682,16 @@
       "status": "PASS",
       "has_video": false,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/iron1/3d66Model-593739-files-5.JPG",
-      "thumbnail_mtime": 1789526201,
+      "thumbnail_rel_path": "T_QiHuaLu04.png",
+      "thumbnail_mtime": 1789641301,
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_QiHuaLu04.usd",
-      "total_size_bytes": 10662795,
-      "total_size_mb": 10.17,
+      "total_size_bytes": 168001976,
+      "total_size_mb": 160.22,
       "video_files": [],
       "displayName": "Kitchen Appliance / 厨房电器 - 05",
-      "static_thumb_path": "media/qzs_16/SM_QiHuaLu04/thumb.webp?v=1789636241",
+      "static_thumb_path": "media/qzs_16/SM_QiHuaLu04/thumb.webp?v=1789641424",
       "static_video_path": null
     },
     {
@@ -686,8 +718,8 @@
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_QiHuaLu05.usd",
-      "total_size_bytes": 17311474,
-      "total_size_mb": 16.51,
+      "total_size_bytes": 17319305,
+      "total_size_mb": 16.52,
       "video_files": [],
       "displayName": "Kitchen Appliance / 厨房电器 - 06",
       "static_thumb_path": "media/qzs_16/SM_QiHuaLu05/thumb.webp?v=1789636241",
@@ -717,8 +749,8 @@
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_QiHuaLu06.usd",
-      "total_size_bytes": 19197024,
-      "total_size_mb": 18.31,
+      "total_size_bytes": 19204739,
+      "total_size_mb": 18.32,
       "video_files": [],
       "displayName": "Kitchen Appliance / 厨房电器 - 07",
       "static_thumb_path": "media/qzs_16/SM_QiHuaLu06/thumb.webp?v=1789636241",
@@ -1446,12 +1478,12 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SheXiangTou.png",
-      "thumbnail_mtime": 1789540359,
+      "thumbnail_mtime": 1789641210,
       "video_rel_path": "V_SheXiangTou.mp4",
       "video_mtime": 1789540455,
       "primary_usd_rel_path": "SM_SheXiangTou.usd",
-      "total_size_bytes": 99366324,
-      "total_size_mb": 94.76,
+      "total_size_bytes": 635429685,
+      "total_size_mb": 605.99,
       "video_files": [
         {
           "name": "V_SheXiangTou.mp4",
@@ -1462,7 +1494,7 @@
         }
       ],
       "displayName": "Camera / 摄像头 - 01",
-      "static_thumb_path": "media/qzs_15/SM_SheXiangTou/thumb.webp?v=1789547403",
+      "static_thumb_path": "media/qzs_15/SM_SheXiangTou/thumb.webp?v=1789641424",
       "static_video_path": "media/qzs_15/SM_SheXiangTou/V_SheXiangTou.mp4?v=1789540455"
     },
     {
@@ -2397,12 +2429,12 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SN.png",
-      "thumbnail_mtime": 1789439298,
+      "thumbnail_mtime": 1789640764,
       "video_rel_path": "V_SN.mp4",
       "video_mtime": 1789439438,
       "primary_usd_rel_path": "SN_ShoJiShuJuXian.usd",
-      "total_size_bytes": 16047670,
-      "total_size_mb": 15.3,
+      "total_size_bytes": 14996900,
+      "total_size_mb": 14.3,
       "video_files": [
         {
           "name": "V_SN.mp4",
@@ -2413,7 +2445,7 @@
         }
       ],
       "displayName": "Cable & Outlet / 数码配件 - 01",
-      "static_thumb_path": "media/qzs_9/SN_ShoJiShuJuXian/thumb.webp?v=1789448231",
+      "static_thumb_path": "media/qzs_9/SN_ShoJiShuJuXian/thumb.webp?v=1789641424",
       "static_video_path": "media/qzs_9/SN_ShoJiShuJuXian/V_SN.mp4?v=1789439438"
     },
     {
@@ -2436,12 +2468,12 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SN.png",
-      "thumbnail_mtime": 1789439580,
+      "thumbnail_mtime": 1789640859,
       "video_rel_path": "V_SN.mp4",
       "video_mtime": 1789439777,
       "primary_usd_rel_path": "SN_ShoJiShuJuXian01.usd",
-      "total_size_bytes": 10229408,
-      "total_size_mb": 9.76,
+      "total_size_bytes": 9001210,
+      "total_size_mb": 8.58,
       "video_files": [
         {
           "name": "V_SN.mp4",
@@ -2452,7 +2484,7 @@
         }
       ],
       "displayName": "Cable & Outlet / 数码配件 - 02",
-      "static_thumb_path": "media/qzs_9/SN_ShoJiShuJuXian01/thumb.webp?v=1789448231",
+      "static_thumb_path": "media/qzs_9/SN_ShoJiShuJuXian01/thumb.webp?v=1789641424",
       "static_video_path": "media/qzs_9/SN_ShoJiShuJuXian01/V_SN.mp4?v=1789439777"
     },
     {
@@ -3922,8 +3954,8 @@
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_XiYiJi.usd",
-      "total_size_bytes": 11869673,
-      "total_size_mb": 11.32,
+      "total_size_bytes": 11887347,
+      "total_size_mb": 11.34,
       "video_files": [],
       "displayName": "Washing Machine / 洗衣机 - 01",
       "static_thumb_path": "media/qzs_16/SM_XiYiJi/thumb.webp?v=1789636241",
@@ -3953,8 +3985,8 @@
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_XiYiJi01.usd",
-      "total_size_bytes": 19915464,
-      "total_size_mb": 18.99,
+      "total_size_bytes": 19924619,
+      "total_size_mb": 19.0,
       "video_files": [],
       "displayName": "Washing Machine / 洗衣机 - 02",
       "static_thumb_path": "media/qzs_16/SM_XiYiJi01/thumb.webp?v=1789636241",
@@ -3984,8 +4016,8 @@
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_XiYiJi02.usd",
-      "total_size_bytes": 8760468,
-      "total_size_mb": 8.35,
+      "total_size_bytes": 8779967,
+      "total_size_mb": 8.37,
       "video_files": [],
       "displayName": "Washing Machine / 洗衣机 - 03",
       "static_thumb_path": "media/qzs_16/SM_XiYiJi02/thumb.webp?v=1789636242",
@@ -4015,8 +4047,8 @@
       "video_rel_path": null,
       "video_mtime": 0,
       "primary_usd_rel_path": "SM_XiYiJi03.usd",
-      "total_size_bytes": 4892895,
-      "total_size_mb": 4.67,
+      "total_size_bytes": 4918388,
+      "total_size_mb": 4.69,
       "video_files": [],
       "displayName": "Washing Machine / 洗衣机 - 04",
       "static_thumb_path": null,
@@ -4424,24 +4456,32 @@
       "semantic_class": "Lamp",
       "wikidata_qcode": "Q135260",
       "mass_kg": 2.574,
-      "static_friction": 0.45,
-      "dynamic_friction": 0.33,
-      "restitution": 0.08,
-      "friction": "0.45 / 0.33",
+      "static_friction": 0.5,
+      "dynamic_friction": 0.35,
+      "restitution": 0.05,
+      "friction": "0.5 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": null,
-      "thumbnail_mtime": 0,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Deng.png",
+      "thumbnail_mtime": 1789640242,
+      "video_rel_path": "V_Deng.mp4",
+      "video_mtime": 1789640299,
       "primary_usd_rel_path": "SM_Deng.usd",
-      "total_size_bytes": 421714,
-      "total_size_mb": 0.4,
-      "video_files": [],
+      "total_size_bytes": 1559468,
+      "total_size_mb": 1.49,
+      "video_files": [
+        {
+          "name": "V_Deng.mp4",
+          "rel_path": "V_Deng.mp4",
+          "size_bytes": 215706,
+          "mtime": 1789640299,
+          "size_str": "210.7 KB"
+        }
+      ],
       "displayName": "Light / 灯具 - 01",
-      "static_thumb_path": null,
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_Deng/thumb.webp?v=1789641424",
+      "static_video_path": "media/qzs_16/SM_Deng/V_Deng.mp4?v=1789640299"
     },
     {
       "id": "qzs_16/SM_Deng01",
@@ -4460,19 +4500,27 @@
       "restitution": 0.08,
       "friction": "0.45 / 0.33",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": null,
-      "thumbnail_mtime": 0,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Deng01.png",
+      "thumbnail_mtime": 1789640311,
+      "video_rel_path": "V_Deng01.mp4",
+      "video_mtime": 1789640370,
       "primary_usd_rel_path": "SM_Deng01.usd",
-      "total_size_bytes": 649460,
-      "total_size_mb": 0.62,
-      "video_files": [],
+      "total_size_bytes": 1968722,
+      "total_size_mb": 1.88,
+      "video_files": [
+        {
+          "name": "V_Deng01.mp4",
+          "rel_path": "V_Deng01.mp4",
+          "size_bytes": 177284,
+          "mtime": 1789640370,
+          "size_str": "173.1 KB"
+        }
+      ],
       "displayName": "Light / 灯具 - 02",
-      "static_thumb_path": null,
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_Deng01/thumb.webp?v=1789641424",
+      "static_video_path": "media/qzs_16/SM_Deng01/V_Deng01.mp4?v=1789640370"
     },
     {
       "id": "qzs_16/SM_Deng02",
@@ -4491,19 +4539,27 @@
       "restitution": 0.08,
       "friction": "0.45 / 0.33",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": null,
-      "thumbnail_mtime": 0,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Deng02.png",
+      "thumbnail_mtime": 1789640389,
+      "video_rel_path": "V_Deng02.mp4",
+      "video_mtime": 1789640447,
       "primary_usd_rel_path": "SM_Deng02.usd",
-      "total_size_bytes": 391789,
-      "total_size_mb": 0.37,
-      "video_files": [],
+      "total_size_bytes": 1484520,
+      "total_size_mb": 1.42,
+      "video_files": [
+        {
+          "name": "V_Deng02.mp4",
+          "rel_path": "V_Deng02.mp4",
+          "size_bytes": 213849,
+          "mtime": 1789640447,
+          "size_str": "208.8 KB"
+        }
+      ],
       "displayName": "Light / 灯具 - 03",
-      "static_thumb_path": null,
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_Deng02/thumb.webp?v=1789641425",
+      "static_video_path": "media/qzs_16/SM_Deng02/V_Deng02.mp4?v=1789640447"
     },
     {
       "id": "qzs_16/SM_Deng03",
@@ -4522,19 +4578,27 @@
       "restitution": 0.08,
       "friction": "0.45 / 0.33",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/a3d66_VRayMtl_33494380_024/3d66Model-33494380-files-002.png",
-      "thumbnail_mtime": 1789537368,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Deng03.png",
+      "thumbnail_mtime": 1789640468,
+      "video_rel_path": "V_Deng03.mp4",
+      "video_mtime": 1789640529,
       "primary_usd_rel_path": "SM_Deng03.usd",
-      "total_size_bytes": 7669536,
-      "total_size_mb": 7.31,
-      "video_files": [],
+      "total_size_bytes": 9852140,
+      "total_size_mb": 9.4,
+      "video_files": [
+        {
+          "name": "V_Deng03.mp4",
+          "rel_path": "V_Deng03.mp4",
+          "size_bytes": 240254,
+          "mtime": 1789640529,
+          "size_str": "234.6 KB"
+        }
+      ],
       "displayName": "Light / 灯具 - 04",
-      "static_thumb_path": "media/qzs_16/SM_Deng03/thumb.webp?v=1789636240",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_Deng03/thumb.webp?v=1789641425",
+      "static_video_path": "media/qzs_16/SM_Deng03/V_Deng03.mp4?v=1789640529"
     },
     {
       "id": "qzs_16/SM_Deng04",
@@ -4553,19 +4617,27 @@
       "restitution": 0.08,
       "friction": "0.45 / 0.33",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/a3d66_VRayMtl_23123878_059/3d66Model-23123878-files-007.jpg",
-      "thumbnail_mtime": 1789542831,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Deng04.png",
+      "thumbnail_mtime": 1789640609,
+      "video_rel_path": "V_Deng04.mp4",
+      "video_mtime": 1789640668,
       "primary_usd_rel_path": "SM_Deng04.usd",
-      "total_size_bytes": 46522940,
-      "total_size_mb": 44.37,
-      "video_files": [],
+      "total_size_bytes": 49879499,
+      "total_size_mb": 47.57,
+      "video_files": [
+        {
+          "name": "V_Deng04.mp4",
+          "rel_path": "V_Deng04.mp4",
+          "size_bytes": 218429,
+          "mtime": 1789640668,
+          "size_str": "213.3 KB"
+        }
+      ],
       "displayName": "Light / 灯具 - 05",
-      "static_thumb_path": "media/qzs_16/SM_Deng04/thumb.webp?v=1789636240",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_Deng04/thumb.webp?v=1789641425",
+      "static_video_path": "media/qzs_16/SM_Deng04/V_Deng04.mp4?v=1789640668"
     },
     {
       "id": "qzs_16/SM_Deng05",
@@ -4584,19 +4656,27 @@
       "restitution": 0.08,
       "friction": "0.45 / 0.33",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/a3d66_VRayMtl_23123878_048/3d66Model-23123878-files-009.jpg",
-      "thumbnail_mtime": 1789543414,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_Deng05.png",
+      "thumbnail_mtime": 1789640715,
+      "video_rel_path": "V_Deng05.mp4",
+      "video_mtime": 1789640795,
       "primary_usd_rel_path": "SM_Deng05.usd",
-      "total_size_bytes": 12535198,
-      "total_size_mb": 11.95,
-      "video_files": [],
+      "total_size_bytes": 14240424,
+      "total_size_mb": 13.58,
+      "video_files": [
+        {
+          "name": "V_Deng05.mp4",
+          "rel_path": "V_Deng05.mp4",
+          "size_bytes": 211109,
+          "mtime": 1789640795,
+          "size_str": "206.2 KB"
+        }
+      ],
       "displayName": "Light / 灯具 - 06",
-      "static_thumb_path": "media/qzs_16/SM_Deng05/thumb.webp?v=1789636241",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_Deng05/thumb.webp?v=1789641425",
+      "static_video_path": "media/qzs_16/SM_Deng05/V_Deng05.mp4?v=1789640795"
     },
     {
       "id": "wq_2/SM-CHAJI-1",
@@ -8073,12 +8153,12 @@
   },
   "stats": {
     "total_assets": 209,
-    "total_videos": 189,
+    "total_videos": 199,
     "total_usds": 209,
     "total_batches": 21,
     "total_categories": 14,
-    "total_size_gb": 8.84
+    "total_size_gb": 9.5
   },
-  "build_timestamp": 1789639061,
+  "build_timestamp": 1789641425,
   "is_static_showcase": true
 }
