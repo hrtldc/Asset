@@ -67,12 +67,72 @@ def init_git_configs():
         ("http.lowSpeedTime", "120"),             # 120s timeout on dead connections
         ("core.longpaths", "true"),               # Support deep Windows paths
         ("core.autocrlf", "false"),               # Preserve LF/CRLF as-is
+        ("pack.windowMemory", "256m"),            # Limit pack memory usage
     ]
     for key, val in configs:
         try:
             subprocess.run([GIT_EXE, "config", key, val], cwd=str(BASE_DIR), capture_output=True)
         except Exception:
             pass
+
+def run_git_maintenance():
+    """Run git gc/repack to compress loose objects and speed up push operations."""
+    try:
+        # Check loose object count — if too many, gc is needed
+        obj_dir = BASE_DIR / ".git" / "objects"
+        loose_count = 0
+        if obj_dir.exists():
+            for sub in obj_dir.iterdir():
+                if sub.is_dir() and len(sub.name) == 2:
+                    loose_count += len(list(sub.iterdir()))
+        if loose_count > 500:
+            print(f"  [Git 维护] 检测到 {loose_count} 个松散对象，正在压缩优化 (git gc)...", flush=True)
+            subprocess.run(
+                [GIT_EXE, "gc", "--auto", "--prune=now"],
+                cwd=str(BASE_DIR), capture_output=True, timeout=300
+            )
+            print("  [Git 维护] ✓ 仓库压缩完成，推送速度将显著提升。", flush=True)
+    except Exception as e:
+        print(f"  [Git 维护] 跳过压缩: {e}", flush=True)
+
+def count_unpushed_commits():
+    """Count commits that exist locally but haven't been pushed to origin/main."""
+    try:
+        res = subprocess.run(
+            [GIT_EXE, "rev-list", "--count", "origin/main..HEAD"],
+            cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="replace"
+        )
+        if res.returncode == 0:
+            return int(res.stdout.strip())
+    except Exception:
+        pass
+    return 0
+
+def pull_rebase_if_needed():
+    """Pull with rebase if remote has diverged, to avoid push rejection."""
+    try:
+        res = subprocess.run(
+            [GIT_EXE, "fetch", "origin", "main"],
+            cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="replace",
+            timeout=60
+        )
+        if res.returncode != 0:
+            return
+        # Check if local is behind remote
+        behind = subprocess.run(
+            [GIT_EXE, "rev-list", "--count", "HEAD..origin/main"],
+            cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="replace"
+        )
+        if behind.returncode == 0 and int(behind.stdout.strip()) > 0:
+            print(f"  [Git Sync] 远端有 {behind.stdout.strip()} 个新提交，正在自动合并 (rebase)...", flush=True)
+            subprocess.run(
+                [GIT_EXE, "pull", "--rebase", "origin", "main"],
+                cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="replace",
+                timeout=120
+            )
+            print("  [Git Sync] ✓ 本地已与远端同步。", flush=True)
+    except Exception as e:
+        print(f"  [Git Sync] 同步检查跳过: {e}", flush=True)
 
 def run_cmd_live(args, desc="执行命令"):
     """Run git command with live output streaming to prevent silent blocking."""
@@ -123,9 +183,20 @@ def safe_push():
     print("  [Git Push] 正在检测本地待推送改动与媒体文件...")
     print("=" * 68)
 
-    # 0. Self-heal and init configs
+    # 0. Self-heal, init configs, and optimize repo
     clean_git_locks()
     init_git_configs()
+    run_git_maintenance()
+    pull_rebase_if_needed()
+
+    # 0.5 Check for stale unpushed commits from previous failed runs
+    stale_count = count_unpushed_commits()
+    if stale_count > 0:
+        print(f"  [Git Push] 检测到 {stale_count} 个上次未推送的历史提交，正在补推...", flush=True)
+        if not push_with_retry():
+            print("  [警告] 历史提交补推失败，请检查网络连接。")
+            return False
+        print(f"  [Git Push] ✓ {stale_count} 个历史提交已成功补推！", flush=True)
 
     # 1. First push code, JSON, and web assets
     code_files = ["config.py", "server.py", "build_static_showcase.py", "push_to_git.py", "sync_pipeline.py",

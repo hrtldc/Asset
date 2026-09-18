@@ -3722,19 +3722,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "Ready",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "SM-ZHUANGSHIGUI-2.jpg",
-      "thumbnail_mtime": 1788320296,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_SM-ZHUANGSHIGUI.png",
+      "thumbnail_mtime": 1789725156,
+      "video_rel_path": "V_SM-ZHUANGSHIGUI.mp4",
+      "video_mtime": 1789725299,
       "primary_usd_rel_path": "SM-SM-ZHUANGSHIGUI-2.usd",
-      "total_size_bytes": 40685259,
-      "total_size_mb": 38.8,
-      "video_files": [],
+      "total_size_bytes": 47046268,
+      "total_size_mb": 44.87,
+      "video_files": [
+        {
+          "name": "V_SM-ZHUANGSHIGUI.mp4",
+          "rel_path": "V_SM-ZHUANGSHIGUI.mp4",
+          "size_bytes": 1965238,
+          "mtime": 1789725299,
+          "size_str": "1.87 MB"
+        }
+      ],
       "displayName": "Cabinet / 柜类 - 28",
-      "static_thumb_path": "media/wq_2/SM-ZHUANGSHIGUI-2/thumb.webp?v=1789522052",
-      "static_video_path": null
+      "static_thumb_path": "media/wq_2/SM-ZHUANGSHIGUI-2/thumb.webp?v=1789725382",
+      "static_video_path": "media/wq_2/SM-ZHUANGSHIGUI-2/V_SM-ZHUANGSHIGUI.mp4?v=1789725299"
     },
     {
       "id": "wq_2/SM-ZHUANGSHIGUI-3",
@@ -8845,12 +8853,12 @@
   },
   "stats": {
     "total_assets": 225,
-    "total_videos": 223,
+    "total_videos": 224,
     "total_usds": 225,
     "total_batches": 22,
     "total_categories": 15,
     "total_size_gb": 7.95
   },
-  "build_timestamp": 1789724914,
+  "build_timestamp": 1789725382,
   "is_static_showcase": true
 }
