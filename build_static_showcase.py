@@ -8,8 +8,11 @@ import time
 from pathlib import Path
 from PIL import Image
 
-if sys.platform == "win32" and hasattr(sys.stdout, "buffer"):
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace", line_buffering=True, write_through=True)
+# Safe UTF-8 stdout configuration for Windows console
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 BASE_DIR = Path(r"G:\JSUDS\Asset")
 OUTPUT_DIR = Path(r"G:\Simreay\output")

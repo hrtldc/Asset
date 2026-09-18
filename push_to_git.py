@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
+import io
 import os
 import sys
 import time
 import subprocess
 from pathlib import Path
+
+# Safe UTF-8 stdout configuration for Windows console
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 GIT_EXE = r"C:\Program Files\Git\bin\git.exe"
 if not os.path.exists(GIT_EXE):

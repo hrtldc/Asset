@@ -11,8 +11,11 @@ import urllib.request
 import webbrowser
 from pathlib import Path
 
-# Set stdout encoding to utf-8 safely
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+# Safe UTF-8 stdout configuration for Windows console
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 APP_DIR = Path(__file__).parent.resolve()
 sys.path.insert(0, str(APP_DIR))
