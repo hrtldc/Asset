@@ -23,4 +23,3 @@
 # 例如：
 # qzs_test_batch
 # wq_unfinished_door
-\
