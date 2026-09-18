@@ -719,19 +719,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/Mat3d66_1076930_1_7606/3d66Model-1076930-files-4.jpg",
-      "thumbnail_mtime": 1789526586,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_QiHuaLu05.png",
+      "thumbnail_mtime": 1789641529,
+      "video_rel_path": "V_QiHuaLu05.mp4",
+      "video_mtime": 1789641639,
       "primary_usd_rel_path": "SM_QiHuaLu05.usd",
-      "total_size_bytes": 17319305,
-      "total_size_mb": 16.52,
-      "video_files": [],
+      "total_size_bytes": 26127741,
+      "total_size_mb": 24.92,
+      "video_files": [
+        {
+          "name": "V_QiHuaLu05.mp4",
+          "rel_path": "V_QiHuaLu05.mp4",
+          "size_bytes": 162809,
+          "mtime": 1789641639,
+          "size_str": "159.0 KB"
+        }
+      ],
       "displayName": "Kitchen Appliance / 厨房电器 - 06",
-      "static_thumb_path": "media/qzs_16/SM_QiHuaLu05/thumb.webp?v=1789636241",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_QiHuaLu05/thumb.webp?v=1789693632",
+      "static_video_path": "media/qzs_16/SM_QiHuaLu05/V_QiHuaLu05.mp4?v=1789641639"
     },
     {
       "id": "qzs_16/SM_QiHuaLu06",
@@ -750,19 +758,27 @@
       "restitution": 0.05,
       "friction": "0.5 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/a3d66_VRayMtl_22970106_039/3d66Model-22970106-files-003.jpg",
-      "thumbnail_mtime": 1789542201,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_QiHuaLu06.png",
+      "thumbnail_mtime": 1789641695,
+      "video_rel_path": "V_QiHuaLu06.mp4",
+      "video_mtime": 1789641747,
       "primary_usd_rel_path": "SM_QiHuaLu06.usd",
-      "total_size_bytes": 19204739,
-      "total_size_mb": 18.32,
-      "video_files": [],
+      "total_size_bytes": 23010879,
+      "total_size_mb": 21.94,
+      "video_files": [
+        {
+          "name": "V_QiHuaLu06.mp4",
+          "rel_path": "V_QiHuaLu06.mp4",
+          "size_bytes": 187255,
+          "mtime": 1789641747,
+          "size_str": "182.9 KB"
+        }
+      ],
       "displayName": "Kitchen Appliance / 厨房电器 - 07",
-      "static_thumb_path": "media/qzs_16/SM_QiHuaLu06/thumb.webp?v=1789636241",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_QiHuaLu06/thumb.webp?v=1789693632",
+      "static_video_path": "media/qzs_16/SM_QiHuaLu06/V_QiHuaLu06.mp4?v=1789641747"
     },
     {
       "id": "qzs_4/SM_KaoXiang",
@@ -1486,24 +1502,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SheXiangTou.png",
-      "thumbnail_mtime": 1789641210,
+      "thumbnail_mtime": 1789641523,
       "video_rel_path": "V_SheXiangTou.mp4",
-      "video_mtime": 1789641495,
+      "video_mtime": 1789641689,
       "primary_usd_rel_path": "SM_SheXiangTou.usd",
-      "total_size_bytes": 635304102,
-      "total_size_mb": 605.87,
+      "total_size_bytes": 100974302,
+      "total_size_mb": 96.3,
       "video_files": [
         {
           "name": "V_SheXiangTou.mp4",
           "rel_path": "V_SheXiangTou.mp4",
-          "size_bytes": 48,
-          "mtime": 1789641495,
-          "size_str": "0.0 KB"
+          "size_bytes": 357805,
+          "mtime": 1789641689,
+          "size_str": "349.4 KB"
         }
       ],
       "displayName": "Camera / 摄像头 - 01",
-      "static_thumb_path": "media/qzs_15/SM_SheXiangTou/thumb.webp?v=1789641424",
-      "static_video_path": "media/qzs_15/SM_SheXiangTou/V_SheXiangTou.mp4?v=1789641495"
+      "static_thumb_path": "media/qzs_15/SM_SheXiangTou/thumb.webp?v=1789693632",
+      "static_video_path": "media/qzs_15/SM_SheXiangTou/V_SheXiangTou.mp4?v=1789641689"
     },
     {
       "id": "qzs_15/SM_SheXiangTou01",
@@ -3955,19 +3971,27 @@
       "restitution": 0.15,
       "friction": "0.45 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/Mat3d66_15199752_10_56403/3d66Model-15199752-files-15.jpg",
-      "thumbnail_mtime": 1789529080,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_XiYiJi.png",
+      "thumbnail_mtime": 1789641811,
+      "video_rel_path": "V_XiYiJi.mp4",
+      "video_mtime": 1789641869,
       "primary_usd_rel_path": "SM_XiYiJi.usd",
-      "total_size_bytes": 11887347,
-      "total_size_mb": 11.34,
-      "video_files": [],
+      "total_size_bytes": 23447849,
+      "total_size_mb": 22.36,
+      "video_files": [
+        {
+          "name": "V_XiYiJi.mp4",
+          "rel_path": "V_XiYiJi.mp4",
+          "size_bytes": 586025,
+          "mtime": 1789641869,
+          "size_str": "572.3 KB"
+        }
+      ],
       "displayName": "Washing Machine / 洗衣机 - 01",
-      "static_thumb_path": "media/qzs_16/SM_XiYiJi/thumb.webp?v=1789636241",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_XiYiJi/thumb.webp?v=1789693632",
+      "static_video_path": "media/qzs_16/SM_XiYiJi/V_XiYiJi.mp4?v=1789641869"
     },
     {
       "id": "qzs_16/SM_XiYiJi01",
@@ -3986,19 +4010,27 @@
       "restitution": 0.15,
       "friction": "0.45 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/AEG9000_metal_Anisotropy_vray/3d66Model-15199752-files-1.jpg",
-      "thumbnail_mtime": 1789529686,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_XiYiJi01.png",
+      "thumbnail_mtime": 1789641921,
+      "video_rel_path": "V_XiYiJi01.mp4",
+      "video_mtime": 1789641977,
       "primary_usd_rel_path": "SM_XiYiJi01.usd",
-      "total_size_bytes": 19924619,
-      "total_size_mb": 19.0,
-      "video_files": [],
+      "total_size_bytes": 39095690,
+      "total_size_mb": 37.28,
+      "video_files": [
+        {
+          "name": "V_XiYiJi01.mp4",
+          "rel_path": "V_XiYiJi01.mp4",
+          "size_bytes": 372909,
+          "mtime": 1789641977,
+          "size_str": "364.2 KB"
+        }
+      ],
       "displayName": "Washing Machine / 洗衣机 - 02",
-      "static_thumb_path": "media/qzs_16/SM_XiYiJi01/thumb.webp?v=1789636241",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_XiYiJi01/thumb.webp?v=1789693632",
+      "static_video_path": "media/qzs_16/SM_XiYiJi01/V_XiYiJi01.mp4?v=1789641977"
     },
     {
       "id": "qzs_16/SM_XiYiJi02",
@@ -4017,19 +4049,27 @@
       "restitution": 0.15,
       "friction": "0.45 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": "Materials/Mat3d66_12854389_8_34288/3d66Model-12854389-files-1.jpg",
-      "thumbnail_mtime": 1789536519,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_XiYiJi02.png",
+      "thumbnail_mtime": 1789642072,
+      "video_rel_path": "V_XiYiJi02.mp4",
+      "video_mtime": 1789642128,
       "primary_usd_rel_path": "SM_XiYiJi02.usd",
-      "total_size_bytes": 8779967,
-      "total_size_mb": 8.37,
-      "video_files": [],
+      "total_size_bytes": 12465502,
+      "total_size_mb": 11.89,
+      "video_files": [
+        {
+          "name": "V_XiYiJi02.mp4",
+          "rel_path": "V_XiYiJi02.mp4",
+          "size_bytes": 486750,
+          "mtime": 1789642128,
+          "size_str": "475.3 KB"
+        }
+      ],
       "displayName": "Washing Machine / 洗衣机 - 03",
-      "static_thumb_path": "media/qzs_16/SM_XiYiJi02/thumb.webp?v=1789636242",
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_XiYiJi02/thumb.webp?v=1789693632",
+      "static_video_path": "media/qzs_16/SM_XiYiJi02/V_XiYiJi02.mp4?v=1789642128"
     },
     {
       "id": "qzs_16/SM_XiYiJi03",
@@ -4048,19 +4088,27 @@
       "restitution": 0.15,
       "friction": "0.45 / 0.35",
       "status": "PASS",
-      "has_video": false,
+      "has_video": true,
       "has_usd": true,
-      "thumbnail_rel_path": null,
-      "thumbnail_mtime": 0,
-      "video_rel_path": null,
-      "video_mtime": 0,
+      "thumbnail_rel_path": "T_XiYiJi03.png",
+      "thumbnail_mtime": 1789642131,
+      "video_rel_path": "V_XiYiJi03.mp4",
+      "video_mtime": 1789642186,
       "primary_usd_rel_path": "SM_XiYiJi03.usd",
-      "total_size_bytes": 4918388,
-      "total_size_mb": 4.69,
-      "video_files": [],
+      "total_size_bytes": 10373643,
+      "total_size_mb": 9.89,
+      "video_files": [
+        {
+          "name": "V_XiYiJi03.mp4",
+          "rel_path": "V_XiYiJi03.mp4",
+          "size_bytes": 317953,
+          "mtime": 1789642186,
+          "size_str": "310.5 KB"
+        }
+      ],
       "displayName": "Washing Machine / 洗衣机 - 04",
-      "static_thumb_path": null,
-      "static_video_path": null
+      "static_thumb_path": "media/qzs_16/SM_XiYiJi03/thumb.webp?v=1789693632",
+      "static_video_path": "media/qzs_16/SM_XiYiJi03/V_XiYiJi03.mp4?v=1789642186"
     },
     {
       "id": "qzs_10/SM_YuShiGui01-B",
@@ -8161,12 +8209,12 @@
   },
   "stats": {
     "total_assets": 209,
-    "total_videos": 200,
+    "total_videos": 206,
     "total_usds": 209,
     "total_batches": 21,
     "total_categories": 14,
-    "total_size_gb": 9.36
+    "total_size_gb": 8.91
   },
-  "build_timestamp": 1789641498,
+  "build_timestamp": 1789693633,
   "is_static_showcase": true
 }
