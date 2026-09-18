@@ -7,17 +7,17 @@ import subprocess
 import shutil
 from pathlib import Path
 
-# Safe UTF-8 stdout wrapper for Windows console
+# Safe UTF-8 stdout wrapper for Windows console with forced line buffering
 if sys.platform == "win32" and hasattr(sys.stdout, "buffer"):
-    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace", line_buffering=True, write_through=True)
 
 BASE_DIR = Path(__file__).resolve().parent
 sys.path.insert(0, str(BASE_DIR))
 
 def print_banner(title):
-    print("\n" + "=" * 68)
-    print(f"  {title}")
-    print("=" * 68)
+    print("\n" + "=" * 68, flush=True)
+    print(f"  {title}", flush=True)
+    print("=" * 68, flush=True)
 
 def prompt_filter_settings():
     from config import get_batch_status_list, read_ignore_file_raw, write_ignore_file_raw
@@ -26,62 +26,65 @@ def prompt_filter_settings():
     ignored_batches = [b["name"] for b in batches if b["ignored"]]
     included_batches = [b["name"] for b in batches if not b["ignored"]]
     
-    print("\n" + "=" * 68)
-    print("  【资产过滤与排除设置】(Ignore & Filter Settings)")
-    print("=" * 68)
-    print(f"  当前已排除的批次目录 ({len(ignored_batches)} 个):")
+    print("\n" + "=" * 68, flush=True)
+    print("  【资产过滤与排除设置】(Ignore & Filter Settings)", flush=True)
+    print("=" * 68, flush=True)
+    print(f"  当前已排除的批次目录 ({len(ignored_batches)} 个):", flush=True)
     if ignored_batches:
-        print(f"    🚫 {', '.join(ignored_batches)}")
+        print(f"    🚫 {', '.join(ignored_batches)}", flush=True)
     else:
-        print("    (无已排除批次)")
-    print(f"  当前待同步发布的批次目录 ({len(included_batches)} 个):")
-    print(f"    ✓ {', '.join(included_batches[:10])}{' ...' if len(included_batches) > 10 else ''}")
-    print("-" * 68)
-    print("  【请按回车键开始】")
-    print("  • 如果不需要额外排除：直接按键盘上的【回车 Enter】即可开始同步")
-    print("  • 如果需要额外排除：输入文件夹名称 (如: qzs_test) 后按【回车 Enter】")
-    print("-" * 68)
+        print("    (无已排除批次)", flush=True)
+    print(f"  当前待同步发布的批次目录 ({len(included_batches)} 个):", flush=True)
+    print(f"    ✓ {', '.join(included_batches[:10])}{' ...' if len(included_batches) > 10 else ''}", flush=True)
+    print("-" * 68, flush=True)
+    print("  【操作提示】", flush=True)
+    print("  • 直接按【回车 Enter】: 立即开始同步并推送到外网", flush=True)
+    print("  • 或输入文件夹名 (如: qzs_test) 后按【回车 Enter】: 添加排除规则", flush=True)
+    print("-" * 68, flush=True)
+    sys.stdout.flush()
     
     try:
-        user_input = input("  >>> 请按【回车 Enter】直接开始同步 (或输入排除名称): ").strip()
+        user_input = input("  >>> 请按【回车 Enter】开始 (或输入排除名称): ").strip()
         if user_input:
             current_raw = read_ignore_file_raw()
             lines = [l.strip() for l in current_raw.splitlines() if l.strip()]
             if user_input not in lines:
                 lines.append(user_input)
                 write_ignore_file_raw("\n".join(lines))
-                print(f"\n  ✓ 已成功将 [{user_input}] 添加至排除列表 (ignore_batches.txt)！")
+                print(f"\n  ✓ 已成功将 [{user_input}] 添加至排除列表 (ignore_batches.txt)！", flush=True)
             else:
-                print(f"\n  ℹ️ [{user_input}] 已在排除规则中。")
+                print(f"\n  ℹ️ [{user_input}] 已在排除规则中。", flush=True)
         else:
-            print("\n  [✓] 已确认，正在开始同步发布流程...")
-    except EOFError:
+            print("\n  [✓] 正在启动同步发布流程，请稍候...", flush=True)
+    except (EOFError, KeyboardInterrupt):
+        print("\n", flush=True)
         pass
-    except KeyboardInterrupt:
-        print("\n用户取消操作。")
-        sys.exit(0)
 
 def main():
     os.system("chcp 65001 >nul")
     os.system("color 0F")
     print_banner("【3D USD 资产平台】一键外网同步与发布工具")
-    print(f"  工作目录: {BASE_DIR}")
-    print(f"  当前时间: {time.strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"  工作目录: {BASE_DIR}", flush=True)
+    print(f"  当前时间: {time.strftime('%Y-%m-%d %H:%M:%S')}", flush=True)
 
     # Prompt user for optional extra ignore filters
     prompt_filter_settings()
 
     # Step 1: Isaac Sim physics extraction (optional)
-    print_banner("[第 1/3 步] 正在提取最新的 USD 物理网格属性...")
+    print_banner("[第 1/3 步] 正在检查 USD 物理网格属性缓存...")
     isaac_python = Path(r"g:\jsuds\isaacsim\kit\python\python.exe")
-    if isaac_python.exists():
+    cache_json = BASE_DIR / "static" / "data" / "usd_physics_cache.json"
+    if cache_json.exists() and cache_json.stat().st_size > 100:
+        print("  -> 物理属性元数据缓存已就绪，直接进入数据打包。", flush=True)
+    elif isaac_python.exists():
         try:
+            print("  -> 正在调用 Isaac Sim 解析 USD 物理碰撞体...", flush=True)
             res = subprocess.run([str(isaac_python), "extract_usd_physics.py"], cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="replace")
-            print("  -> Isaac Sim 物理属性解析已就绪。")
+            print("  -> Isaac Sim 物理属性解析完成。", flush=True)
         except Exception as e:
-            print(f"  -> 跳过物理属性深入解析: {e}")
+            print(f"  -> 跳过物理属性深入解析: {e}", flush=True)
     else:
-        print("  -> 未检测到 Isaac Sim Kit 环境，使用现有元数据缓存。")
+        print("  -> 未检测到 Isaac Sim Kit 环境，使用现有元数据缓存。", flush=True)
 
     # Step 2: Build static showcase (thumbs, videos, json)
     print_banner("[第 2/3 步] 正在扫描、提取并生成外网轻量化数据包与 360° 视频...")

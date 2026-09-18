@@ -35,13 +35,13 @@ def prompt_filter_settings():
     print(f"   当前待索引展示的批次目录 ({len(included_batches)} 个):")
     print(f"     ✓ {', '.join(included_batches[:8])}{' ...' if len(included_batches) > 8 else ''}")
     print("-" * 65)
-    print("   [输入说明]：")
-    print("   • 直接按【回车 Enter】: 保持当前规则，直接开始更新")
-    print("   • 手动输入文件夹名称或通配符 (如: qzs_0916_Joint 或 *_draft*): 立即添加排除")
+    print("   【请按回车键开始】")
+    print("   • 如果不需要额外排除：直接按键盘上的【回车 Enter】即可开始更新")
+    print("   • 如果需要额外排除：输入文件夹名称 (如: qzs_test) 后按【回车 Enter】")
     print("-" * 65)
     
     try:
-        user_input = input("   请输入要排除的文件夹名称 (留空直接回车继续): ").strip()
+        user_input = input("   >>> 请按【回车 Enter】直接开始更新 (或输入排除名称): ").strip()
         if user_input:
             current_raw = read_ignore_file_raw()
             lines = [l.strip() for l in current_raw.splitlines() if l.strip()]
@@ -51,6 +51,8 @@ def prompt_filter_settings():
                 print(f"\n   ✓ 已成功将 [{user_input}] 添加至排除列表 (ignore_batches.txt)！")
             else:
                 print(f"\n   ℹ️ [{user_input}] 已在排除规则中。")
+        else:
+            print("\n   [✓] 已确认，正在开始本地资产扫描与刷新...")
     except (EOFError, KeyboardInterrupt):
         pass
 

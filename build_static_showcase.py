@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
+import io
 import json
 import os
 import shutil
+import sys
 import time
 from pathlib import Path
 from PIL import Image
+
+if sys.platform == "win32" and hasattr(sys.stdout, "buffer"):
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace", line_buffering=True, write_through=True)
 
 BASE_DIR = Path(r"G:\JSUDS\Asset")
 OUTPUT_DIR = Path(r"G:\Simreay\output")
