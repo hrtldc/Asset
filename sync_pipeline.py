@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+One-click Automated Sync Pipeline for 3D USD Asset Portal.
+- Auto-starts in 3 seconds if no user interaction
+- Cleans locks and heals Git repository
+- Builds static data (thumbnails, 360 videos, assets.json)
+- Safely batches and pushes to GitHub with real-time feedback
+"""
 import io
 import os
 import sys
@@ -21,7 +28,7 @@ def print_banner(title):
     print(f"  {title}", flush=True)
     print("=" * 68, flush=True)
 
-def prompt_filter_settings():
+def prompt_filter_settings(auto_timeout=3):
     from config import get_batch_status_list, read_ignore_file_raw, write_ignore_file_raw
     
     batches = get_batch_status_list()
@@ -40,37 +47,59 @@ def prompt_filter_settings():
     print(f"    ✓ {', '.join(included_batches[:10])}{' ...' if len(included_batches) > 10 else ''}", flush=True)
     print("-" * 68, flush=True)
     print("  【操作提示】", flush=True)
-    print("  • 直接按【回车 Enter】: 立即开始同步并推送到外网", flush=True)
-    print("  • 或输入文件夹名 (如: qzs_test) 后按【回车 Enter】: 添加排除规则", flush=True)
+    print("  • 无需操作: 3秒后自动全速启动同步与外网发布", flush=True)
+    print("  • 或输入批次名后按【回车 Enter】: 添加排除规则", flush=True)
     print("-" * 68, flush=True)
     sys.stdout.flush()
-    
+
+    # Fast non-blocking check on Windows
+    user_input = None
     try:
-        user_input = input("  >>> 请按【回车 Enter】开始 (或输入排除名称): ").strip()
-        if user_input:
+        import msvcrt
+        print(f"  >>> 倒计时 {auto_timeout} 秒后自动开始 (按任意键暂停/输入排除批次): ", end="", flush=True)
+        start_t = time.time()
+        has_key = False
+        while (time.time() - start_t) < auto_timeout:
+            if msvcrt.kbhit():
+                has_key = True
+                break
+            time.sleep(0.1)
+        
+        if has_key:
+            # User pressed a key, switch to standard input
+            first_char = msvcrt.getwche()
+            rest = input()
+            user_input = (first_char + rest).strip()
+        else:
+            print(" [自动启动]\n", flush=True)
+    except Exception:
+        # Fallback if msvcrt not available
+        pass
+
+    if user_input:
+        clean_input = user_input.replace("\\", "").replace("/", "").strip()
+        if clean_input:
             current_raw = read_ignore_file_raw()
             lines = [l.strip() for l in current_raw.splitlines() if l.strip()]
-            if user_input not in lines:
-                lines.append(user_input)
+            if clean_input not in lines:
+                lines.append(clean_input)
                 write_ignore_file_raw("\n".join(lines))
-                print(f"\n  ✓ 已成功将 [{user_input}] 添加至排除列表 (ignore_batches.txt)！", flush=True)
+                print(f"\n  ✓ 已成功将 [{clean_input}] 添加至排除列表 (ignore_batches.txt)！", flush=True)
             else:
-                print(f"\n  ℹ️ [{user_input}] 已在排除规则中。", flush=True)
-        else:
-            print("\n  [✓] 正在启动同步发布流程，请稍候...", flush=True)
-    except (EOFError, KeyboardInterrupt):
-        print("\n", flush=True)
-        pass
+                print(f"\n  ℹ️ [{clean_input}] 已在排除规则中。", flush=True)
+    
+    print("  [✓] 正在启动同步发布流程，请稍候...", flush=True)
 
 def main():
     os.system("chcp 65001 >nul")
     os.system("color 0F")
-    print_banner("【3D USD 资产平台】一键外网同步与发布工具")
+    print_banner("【3D USD 资产平台】一键外网同步与发布工具 (稳定发布版)")
     print(f"  工作目录: {BASE_DIR}", flush=True)
     print(f"  当前时间: {time.strftime('%Y-%m-%d %H:%M:%S')}", flush=True)
 
-    # Prompt user for optional extra ignore filters
-    prompt_filter_settings()
+    # Prompt user with 3s auto countdown
+    if "--auto" not in sys.argv:
+        prompt_filter_settings(auto_timeout=3)
 
     # Step 1: Isaac Sim physics extraction (optional)
     print_banner("[第 1/3 步] 正在检查 USD 物理网格属性缓存...")
@@ -81,7 +110,7 @@ def main():
     elif isaac_python.exists():
         try:
             print("  -> 正在调用 Isaac Sim 解析 USD 物理碰撞体...", flush=True)
-            res = subprocess.run([str(isaac_python), "extract_usd_physics.py"], cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="replace")
+            subprocess.run([str(isaac_python), "extract_usd_physics.py"], cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="replace")
             print("  -> Isaac Sim 物理属性解析完成。", flush=True)
         except Exception as e:
             print(f"  -> 跳过物理属性深入解析: {e}", flush=True)
@@ -90,13 +119,12 @@ def main():
 
     # Step 2: Build static showcase (thumbs, videos, json)
     print_banner("[第 2/3 步] 正在扫描、提取并生成外网轻量化数据包与 360° 视频...")
-    py_exe = sys.executable
     t0 = time.time()
     try:
         from build_static_showcase import build_showcase
         build_showcase()
     except Exception as e:
-        print(f"  [ERROR] 构建失败: {e}")
+        print(f"  [ERROR] 构建失败: {e}", flush=True)
         input("\n按回车键退出...")
         sys.exit(1)
 
@@ -107,7 +135,7 @@ def main():
         shutil.copy2(static_index, root_index)
 
     # Step 3: Git push
-    print_banner("[第 3/3 步] 正在安全提交并推送到 GitHub (带断点自动重试)...")
+    print_banner("[第 3/3 步] 正在安全提交并推送到 GitHub (带自动断点重试与实时进度)...")
     from push_to_git import safe_push
     push_ok = safe_push()
 
@@ -122,7 +150,7 @@ def main():
         print("  【本地管理地址】: http://127.0.0.1:8088/")
         print("=" * 68)
     else:
-        print("  ▲【警告：推送未完成】▲")
+        print("  ▲【警告：推送未全部完成】▲")
         print("-" * 68)
         print("  本地媒体已生成，但上传到 GitHub 时遭遇网络断开或超时。")
         print("  请检查网络/代理连接后，再次双击运行桌面脚本重试即可。")
@@ -130,3 +158,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
