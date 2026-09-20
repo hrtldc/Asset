@@ -155,7 +155,14 @@ Cloudflare Pages 返回 **HTTP 200 + `index.html` 内容**，而不是 404。
 应对：
 1. 严禁用「HTTP 状态码」判断线上文件是否存在，必须检查 `Content-Type`
    （`verify_sync.py` 已实现此判断）。
-2. 仓库根目录的 `404.html` 用于让缺失资源返回真实 404。
-   若仍返回 200，需到 Cloudflare Pages 项目设置里把
-   *Not found handling* 从 `Single-page application` 改为 `404 page`。
+2. **`404.html` 必须放在 `static/` 目录中（即 Pages 的构建输出目录），不能只放仓库根目录。**
+   Pages 的构建输出目录是 `static/`，仓库根目录的文件不会被部署
+   （`sync_pipeline.py` 会在构建后自动把 `404.html` 复制到 `static/`）。
+   一旦输出目录里存在顶层 `404.html`，Pages 便自动关闭 SPA 兜底，
+   缺失资源返回真实 404 —— 无需修改控制台设置。
+3. 验证方法（必须用原始响应，不能跟随跳转）：
+   ```bash
+   curl -s -o /dev/null -w "%{http_code}\n" https://asset-9n2.pages.dev/no-such-page
+   # 期望 404；若为 200 说明兜底仍生效
+   ```
 
