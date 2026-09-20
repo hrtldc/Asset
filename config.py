@@ -33,6 +33,14 @@ NAME_TRANSLATIONS = {
     # Bathroom
     "SM_YuShiGui": "Bathroom Vanity / 浴室柜",
     "SM-YUSHIGUI": "Bathroom Vanity / 浴室柜",
+    "SM-MATONG": "Toilet / 马桶",
+    "SM_MaTong": "Toilet / 马桶",
+
+    # Fans & Ventilation
+    "SM-DIAOSHAN": "Ceiling Fan / 吊扇",
+    "SM_DiaoShan": "Ceiling Fan / 吊扇",
+    "SM-FENGSHAN": "Electric Fan / 电风扇",
+    "SM_FengShan": "Electric Fan / 电风扇",
 
     # Doors
     "SM-PINGBANMEN": "Flat Door / 平板门",

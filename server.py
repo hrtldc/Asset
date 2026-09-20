@@ -26,6 +26,7 @@ from config import (
     is_batch_ignored, read_ignore_file_raw, write_ignore_file_raw,
     get_batch_status_list, get_ignore_patterns
 )
+from auto_classifier import classify_asset_auto
 
 app = FastAPI(title="3D USD Asset Portal", version="1.5.0")
 
@@ -89,7 +90,25 @@ def classify_category(folder_name: str, semantic_class: Optional[str] = None):
     sem = (semantic_class or "").lower()
     target = fn + " " + sem
 
-    if "bingxiang" in target or "refrigerator" in target:
+    # Gas Stove / Cooktop (燃气灶 / 灶具)
+    if any(k in target for k in ["luzao", "ranqizhao", "gasstove", "cooktop", "gas_stove", "zhaoju"]):
+        return ("Gas Stove", "燃气灶", "Kitchen Appliances", "Q180399", "GasStove", "燃气灶")
+    # Desk Lamp / Table Lamp (台灯)
+    elif any(k in target for k in ["taideng", "desklamp", "desk_lamp", "tablelamp"]):
+        return ("Desk Lamp", "台灯", "Lighting", "Q1134005", "DeskLamp", "台灯")
+    # Fans & Ventilation (风扇 / 吊扇 / 落地扇)
+    elif any(k in target for k in ["diaoshan", "ceilingfan", "ceiling_fan"]):
+        return ("Ceiling Fan", "吊扇", "Home Appliances", "Q1641320", "CeilingFan", "吊扇")
+    elif any(k in target for k in ["fengshan", "electricfan", "electric_fan", "standingfan", "floorfan", "fan"]):
+        return ("Electric Fan", "电风扇", "Home Appliances", "Q264923", "ElectricFan", "电风扇")
+    # Bathroom & Sanitary (卫浴 / 马桶 / 坐便器 / 洗手台)
+    elif any(k in target for k in ["matong", "toilet", "closestool", "closetstool", "commode", "zuobianqi", "bidet"]):
+        return ("Toilet", "马桶", "Bathroom & Sanitary", "Q7338", "Toilet", "马桶")
+    elif any(k in target for k in ["xishoutai", "taipen", "washbasin", "sink"]):
+        return ("Washbasin", "洗手池", "Bathroom & Sanitary", "Q14056", "Washbasin", "洗手池")
+    elif any(k in target for k in ["yugang", "bathtub", "huasa", "shower"]):
+        return ("Bathtub", "浴缸", "Bathroom & Sanitary", "Q108877", "Bathtub", "浴缸")
+    elif "bingxiang" in target or "refrigerator" in target:
         return ("Refrigerator", "冰箱", "Refrigerator", "Q37867", "Refrigerator", "冰箱")
     elif "yushigui" in target or "bathroomvanity" in target:
         return ("Bathroom Vanity", "浴室柜", "Bathroom Vanity", "Q1321517", "BathroomVanity", "浴室柜")
@@ -117,6 +136,26 @@ def classify_category(folder_name: str, semantic_class: Optional[str] = None):
         return ("Cabinet", "柜类", "Cabinets & Storage", "Q1321517", "Cabinet", "柜类")
     elif "bed" in target:
         return ("Bed", "床具", "Beds", "Q42177", "Bed", "床具")
+    # Furniture & Seating (沙发 / 座椅 / 餐桌 / 书桌)
+    elif any(k in target for k in ["shafa", "sofa", "couch"]):
+        return ("Sofa", "沙发", "Furniture", "Q131514", "Sofa", "沙发")
+    elif any(k in target for k in ["yizi", "chair", "dengzi", "stool"]):
+        return ("Chair", "座椅", "Furniture", "Q15026", "Chair", "椅子")
+    elif any(k in target for k in ["canzhuo", "diningtable", "dining_table"]):
+        return ("Dining Table", "餐桌", "Tables & Vanities", "Q14748", "DiningTable", "餐桌")
+    elif any(k in target for k in ["shuzhuo", "desk"]):
+        return ("Desk", "书桌", "Tables & Vanities", "Q1064858", "Desk", "书桌")
+    # Kitchen & Home Appliances
+    elif any(k in target for k in ["youyanji", "chouyouyanji", "rangehood", "range_hood"]):
+        return ("Range Hood", "厨房电器", "Kitchen Appliances", "Q584447", "RangeHood", "抽油烟机")
+    elif any(k in target for k in ["reshuiqi", "waterheater"]):
+        return ("Water Heater", "生活电器", "Home Appliances", "Q14890", "WaterHeater", "热水器")
+    elif any(k in target for k in ["yinshuiji", "waterdispenser"]):
+        return ("Water Dispenser", "生活电器", "Home Appliances", "Q252033", "WaterDispenser", "饮水机")
+    elif any(k in target for k in ["saodiji", "robotvacuum"]):
+        return ("Robot Vacuum", "生活电器", "Home Appliances", "Q1048602", "RobotVacuum", "扫地机")
+    elif any(k in target for k in ["kongdiao", "airconditioner"]):
+        return ("Air Conditioner", "生活电器", "Home Appliances", "Q170560", "AirConditioner", "空调")
     # Digital Devices & Consumer Electronics (数码用品)
     elif "pingbandiannao" in fn or "tablet" in target:
         return ("Tablet", "数码用品", "Digital Devices", "Q155972", "Tablet", "平板电脑")
@@ -132,7 +171,15 @@ def classify_category(folder_name: str, semantic_class: Optional[str] = None):
         return ("Gimbal", "数码用品", "Digital Devices", "Q15328", "CameraGimbal", "云台相机")
     elif "shexiangtou" in fn or "webcam" in target or "camera" in target:
         return ("Camera", "数码用品", "Digital Devices", "Q15328", "Camera", "摄像头")
-    return ("Asset", "其他资产", "Other", "Q223557", "PhysicalAsset", "其他资产")
+
+    # Strict rule: NEVER default to '其他' or '其他资产'. Dynamically extract semantic noun.
+    clean_stem = re.sub(r'^(sm[-_]|sn[-_]|md[-_])', '', folder_name, flags=re.IGNORECASE)
+    clean_stem = re.sub(r'[-_]\d+$', '', clean_stem).strip()
+    noun = clean_stem.capitalize() if clean_stem else "CustomAsset"
+    if semantic_class and semantic_class.lower() not in ("asset", "other", "physicalasset", "bowl", "unknown"):
+        noun_sem = semantic_class
+        return (noun_sem, noun_sem, "Custom Assets", "Q223557", noun_sem, noun_sem)
+    return (noun, noun, "Custom Assets", "Q223557", noun, noun)
 
 
 def load_batch_manifests():
@@ -180,13 +227,20 @@ def get_physics_specs(manifest_info: Optional[dict], category_en: str, item_name
         "Doors": {"mass": 28.5, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
         "Nightstand": {"mass": 18.2, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
         "Shoe Cabinet": {"mass": 32.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Kitchen Appliances": {"mass": 55.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Kitchen Appliances": {"mass": 18.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Gas Stove": {"mass": 3.5, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Lighting": {"mass": 3.5, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Desk Lamp": {"mass": 2.5, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
         "Tables & Vanities": {"mass": 22.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
         "Kitchen Island": {"mass": 85.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
         "Beds": {"mass": 65.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Fans & Ventilation": {"mass": 4.5, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Bathroom & Sanitary": {"mass": 28.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Furniture": {"mass": 18.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
+        "Home Appliances": {"mass": 15.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05},
         "Cables & Outlets": {"mass": 0.45, "static_friction": 0.6, "dynamic_friction": 0.45, "restitution": 0.05},
         "Digital Devices": {"mass": 1.2, "static_friction": 0.45, "dynamic_friction": 0.35, "restitution": 0.05},
-        "Other": {"mass": 25.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05}
+        "Other": {"mass": 10.0, "static_friction": 0.5, "dynamic_friction": 0.35, "restitution": 0.05}
     }
     fallback = DEFAULTS.get(category_en, DEFAULTS["Other"])
 
@@ -253,7 +307,7 @@ def get_physics_specs(manifest_info: Optional[dict], category_en: str, item_name
 
 def scan_assets(force_reload: bool = False) -> List[dict]:
     """Scan ASSET_SOURCE_DIR and return all indexed 3D assets."""
-    global _cached_assets, _manifest_cache, _last_scan_timestamp
+    global _cached_assets, _manifest_cache, _last_scan_timestamp, _usd_physics_cache
     now = time.time()
     
     if _cached_assets is not None and not force_reload:
@@ -261,6 +315,7 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
             return _cached_assets
 
     _manifest_cache = load_batch_manifests()
+    _usd_physics_cache = load_usd_physics_cache()
     assets = []
 
     if not ASSET_SOURCE_DIR.exists():
@@ -355,11 +410,19 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
                     friction = f"{static_friction} / {dynamic_friction}"
                 status = manifest_info.get("status", "PASS")
 
-            cls_en, cat_cn, cat_en, qcode, default_sem, *rest = classify_category(item_name, semantic_class)
-            specific_zh = rest[0] if rest else cat_cn
             asset_key = f"{current_batch}/{item_name}"
+            usd_cached = _usd_physics_cache.get(asset_key)
+            if usd_cached:
+                if not semantic_class and usd_cached.get("semantic_class"):
+                    semantic_class = usd_cached["semantic_class"]
+
+            thumb_full = (Path(item_dir.path) / thumbnail_path) if thumbnail_path else None
+            cls_en, cat_cn, cat_en, qcode, default_sem, specific_zh = classify_asset_auto(
+                current_batch, item_name, thumb_full, semantic_class
+            )
             physics = get_physics_specs(manifest_info, cat_en, item_name, asset_key=asset_key)
-            final_semantic = semantic_class or default_sem
+            final_semantic = default_sem or semantic_class
+            final_qcode = (manifest_info and manifest_info.get("wikidata_qcode")) or (usd_cached and usd_cached.get("wikidata_qcode")) or qcode
 
             asset_obj = {
                 "id": f"{current_batch}/{item_name}",
@@ -371,7 +434,7 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
                 "clean_category_en": cls_en,
                 "specific_zh": specific_zh,
                 "semantic_class": final_semantic,
-                "wikidata_qcode": qcode,
+                "wikidata_qcode": final_qcode,
                 "mass_kg": physics["mass_kg"],
                 "static_friction": physics["static_friction"],
                 "dynamic_friction": physics["dynamic_friction"],
@@ -418,10 +481,24 @@ def serve_index():
     return FileResponse(index_path, media_type="text/html", headers={"Cache-Control": "no-cache"})
 
 
+import threading
+
+def _background_auto_watcher():
+    """Background worker that silently checks and auto-indexes new assets every 30s."""
+    while True:
+        try:
+            time.sleep(30.0)
+            scan_assets(force_reload=True)
+        except Exception:
+            pass
+
 @app.on_event("startup")
 def startup_event():
     # Pre-warm asset cache on startup
     scan_assets(force_reload=True)
+    # Start non-blocking automated background ingestion worker
+    t = threading.Thread(target=_background_auto_watcher, daemon=True)
+    t.start()
 
 
 @app.get("/api/update")

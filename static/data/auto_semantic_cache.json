@@ -1,0 +1,2351 @@
+{
+  "wq_17/SM-DIAOSHAN-9": {
+    "clean_category_en": "Ceiling Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q1641320",
+    "semantic_class": "CeilingFan",
+    "specific_zh": "吊扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-MATONG-1": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "test_batch/UNKNOWN_MODEL_99": {
+    "clean_category_en": "Ceiling Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q1641320",
+    "semantic_class": "CeilingFan",
+    "specific_zh": "吊扇",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_GuiZi": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_GuiZi01": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_YuShiGui01-B": {
+    "clean_category_en": "Bathroom Vanity",
+    "category": "浴室柜",
+    "category_en": "Bathroom Vanity",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "BathroomVanity",
+    "specific_zh": "浴室柜",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_YuShiGui02-B": {
+    "clean_category_en": "Bathroom Vanity",
+    "category": "浴室柜",
+    "category_en": "Bathroom Vanity",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "BathroomVanity",
+    "specific_zh": "浴室柜",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_YuShiGui03-B": {
+    "clean_category_en": "Bathroom Vanity",
+    "category": "浴室柜",
+    "category_en": "Bathroom Vanity",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "BathroomVanity",
+    "specific_zh": "浴室柜",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_YuShiGui_B": {
+    "clean_category_en": "Bathroom Vanity",
+    "category": "浴室柜",
+    "category_en": "Bathroom Vanity",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "BathroomVanity",
+    "specific_zh": "浴室柜",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_ZheDieMen01_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_ZheDieMen02_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_ZheDieMen03_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_ZheDieMen04_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_ZheDieMen05_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_10/SM_ZheDieMen_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men01_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men02_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men03_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men04_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men05_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men06_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men11_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men12_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men13_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men14_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men15_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men16_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men17_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_Men_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_ZheDieMen07_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_ZheDieMen08_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_ZheDieMen09_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_11/SM_ZheDieMen10_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_GuiZi11": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_GuiZi12": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men18_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men19_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men20_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men21_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men22_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men23_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men24_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men25_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men26_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men27_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men28_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men29_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_14/SM_Men30_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_BiJiBenDianNao": {
+    "clean_category_en": "Laptop",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q3962",
+    "semantic_class": "Laptop",
+    "specific_zh": "笔记本电脑",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_BiJiBenDianNao01": {
+    "clean_category_en": "Laptop",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q3962",
+    "semantic_class": "Laptop",
+    "specific_zh": "笔记本电脑",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_BiJiBenDianNao02": {
+    "clean_category_en": "Laptop",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q3962",
+    "semantic_class": "Laptop",
+    "specific_zh": "笔记本电脑",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_DaJiangWuRenJi": {
+    "clean_category_en": "Drone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "Drone",
+    "specific_zh": "无人机",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_DaJiangWuRenJi01": {
+    "clean_category_en": "Drone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "Drone",
+    "specific_zh": "无人机",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_ErJi": {
+    "clean_category_en": "Headphones",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q186694",
+    "semantic_class": "Headphones",
+    "specific_zh": "耳机",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_SheXiangTou": {
+    "clean_category_en": "Camera",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q15328",
+    "semantic_class": "Camera",
+    "specific_zh": "摄像头",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_SheXiangTou01": {
+    "clean_category_en": "Camera",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q15328",
+    "semantic_class": "Camera",
+    "specific_zh": "摄像头",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_SheXiangTou02": {
+    "clean_category_en": "Camera",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q15328",
+    "semantic_class": "Camera",
+    "specific_zh": "摄像头",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_ShoJi": {
+    "clean_category_en": "Phone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q193175",
+    "semantic_class": "Phone",
+    "specific_zh": "手机",
+    "source": "naming_ontology"
+  },
+  "qzs_15/SM_ShoJi01": {
+    "clean_category_en": "Phone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q193175",
+    "semantic_class": "Phone",
+    "specific_zh": "手机",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_Deng": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_Deng01": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_Deng02": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_Deng03": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_Deng04": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_Deng05": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_QiHuaLu": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_QiHuaLu01": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_QiHuaLu02": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_QiHuaLu03": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_QiHuaLu04": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_QiHuaLu05": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_QiHuaLu06": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_XiYiJi": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_XiYiJi01": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_XiYiJi02": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "qzs_16/SM_XiYiJi03": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "qzs_2/SM_GuiZi": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_2/SM_GuiZi01": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_2/SM_GuiZi02": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_2/SM_GuiZi03": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_2/SM_GuiZi04": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_2/SM_GuiZi05": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_2/SM_GuiZi06": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_2/SM_GuiZi07": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_3/SM_BingXiang": {
+    "clean_category_en": "Refrigerator",
+    "category": "冰箱",
+    "category_en": "Refrigerator",
+    "wikidata_qcode": "Q37867",
+    "semantic_class": "Refrigerator",
+    "specific_zh": "冰箱",
+    "source": "naming_ontology"
+  },
+  "qzs_3/SM_BingXiang01": {
+    "clean_category_en": "Refrigerator",
+    "category": "冰箱",
+    "category_en": "Refrigerator",
+    "wikidata_qcode": "Q37867",
+    "semantic_class": "Refrigerator",
+    "specific_zh": "冰箱",
+    "source": "naming_ontology"
+  },
+  "qzs_3/SM_BingXiang02": {
+    "clean_category_en": "Refrigerator",
+    "category": "冰箱",
+    "category_en": "Refrigerator",
+    "wikidata_qcode": "Q37867",
+    "semantic_class": "Refrigerator",
+    "specific_zh": "冰箱",
+    "source": "naming_ontology"
+  },
+  "qzs_3/SM_BingXiang03": {
+    "clean_category_en": "Refrigerator",
+    "category": "冰箱",
+    "category_en": "Refrigerator",
+    "wikidata_qcode": "Q37867",
+    "semantic_class": "Refrigerator",
+    "specific_zh": "冰箱",
+    "source": "naming_ontology"
+  },
+  "qzs_3/SM_BingXiang04": {
+    "clean_category_en": "Refrigerator",
+    "category": "冰箱",
+    "category_en": "Refrigerator",
+    "wikidata_qcode": "Q37867",
+    "semantic_class": "Refrigerator",
+    "specific_zh": "冰箱",
+    "source": "naming_ontology"
+  },
+  "qzs_3/SM_BingXiang05": {
+    "clean_category_en": "Refrigerator",
+    "category": "冰箱",
+    "category_en": "Refrigerator",
+    "wikidata_qcode": "Q37867",
+    "semantic_class": "Refrigerator",
+    "specific_zh": "冰箱",
+    "source": "naming_ontology"
+  },
+  "qzs_3/SM_GuiZi08": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_3/SM_GuiZi09": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_4/SM_GuiZi": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_4/SM_GuiZi01": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_4/SM_GuiZi02": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_4/SM_GuiZi03": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_4/SM_KaoXiang": {
+    "clean_category_en": "Kitchen Appliance",
+    "category": "厨房电器",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q127950",
+    "semantic_class": "KitchenAppliance",
+    "specific_zh": "厨房电器",
+    "source": "naming_ontology"
+  },
+  "qzs_4/SM_KaoXiang01": {
+    "clean_category_en": "Kitchen Appliance",
+    "category": "厨房电器",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q127950",
+    "semantic_class": "KitchenAppliance",
+    "specific_zh": "厨房电器",
+    "source": "naming_ontology"
+  },
+  "qzs_4/SM_KaoXiang02": {
+    "clean_category_en": "Kitchen Appliance",
+    "category": "厨房电器",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q127950",
+    "semantic_class": "KitchenAppliance",
+    "specific_zh": "厨房电器",
+    "source": "naming_ontology"
+  },
+  "qzs_4/SM_XiaoDuGui": {
+    "clean_category_en": "Kitchen Appliance",
+    "category": "厨房电器",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q127950",
+    "semantic_class": "KitchenAppliance",
+    "specific_zh": "厨房电器",
+    "source": "naming_ontology"
+  },
+  "qzs_7/SM_GuiZi": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_7/SM_GuiZi01": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_7/SM_XieGui01": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "qzs_7/SM_XieGui02": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "qzs_7/SM_XieGui03": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "qzs_7/SM_XieGui04": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "qzs_8/SM_ChuangTouGui": {
+    "clean_category_en": "Nightstand",
+    "category": "床头柜",
+    "category_en": "Nightstand",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Nightstand",
+    "specific_zh": "床头柜",
+    "source": "naming_ontology"
+  },
+  "qzs_8/SM_ChuangTouGui01": {
+    "clean_category_en": "Nightstand",
+    "category": "床头柜",
+    "category_en": "Nightstand",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Nightstand",
+    "specific_zh": "床头柜",
+    "source": "naming_ontology"
+  },
+  "qzs_8/SM_ChuangTouGui02": {
+    "clean_category_en": "Nightstand",
+    "category": "床头柜",
+    "category_en": "Nightstand",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Nightstand",
+    "specific_zh": "床头柜",
+    "source": "naming_ontology"
+  },
+  "qzs_8/SM_ChuangTouGui03": {
+    "clean_category_en": "Nightstand",
+    "category": "床头柜",
+    "category_en": "Nightstand",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Nightstand",
+    "specific_zh": "床头柜",
+    "source": "naming_ontology"
+  },
+  "qzs_8/SM_ChuangTouGui04": {
+    "clean_category_en": "Nightstand",
+    "category": "床头柜",
+    "category_en": "Nightstand",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Nightstand",
+    "specific_zh": "床头柜",
+    "source": "naming_ontology"
+  },
+  "qzs_9/SM_GuiZi": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_9/SM_GuiZi01": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_9/SM_GuiZi02": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_9/SM_ShuiBa": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_9/SM_ShuiBa01": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "qzs_9/SN_ShoJiShuJuXian": {
+    "clean_category_en": "Phone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q193175",
+    "semantic_class": "Phone",
+    "specific_zh": "手机",
+    "source": "naming_ontology"
+  },
+  "qzs_9/SN_ShoJiShuJuXian01": {
+    "clean_category_en": "Phone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q193175",
+    "semantic_class": "Phone",
+    "specific_zh": "手机",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-TUILAMEN-1": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-TUILAMEN-2": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-TUILAMEN-3": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-TUILAMEN-4": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-YUSHIGUI-1": {
+    "clean_category_en": "Bathroom Vanity",
+    "category": "浴室柜",
+    "category_en": "Bathroom Vanity",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "BathroomVanity",
+    "specific_zh": "浴室柜",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-YUSHIGUI-2": {
+    "clean_category_en": "Bathroom Vanity",
+    "category": "浴室柜",
+    "category_en": "Bathroom Vanity",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "BathroomVanity",
+    "specific_zh": "浴室柜",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-YUSHIGUI-3": {
+    "clean_category_en": "Bathroom Vanity",
+    "category": "浴室柜",
+    "category_en": "Bathroom Vanity",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "BathroomVanity",
+    "specific_zh": "浴室柜",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-YUSHIGUI-4": {
+    "clean_category_en": "Bathroom Vanity",
+    "category": "浴室柜",
+    "category_en": "Bathroom Vanity",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "BathroomVanity",
+    "specific_zh": "浴室柜",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-YUSHIGUI-5": {
+    "clean_category_en": "Bathroom Vanity",
+    "category": "浴室柜",
+    "category_en": "Bathroom Vanity",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "BathroomVanity",
+    "specific_zh": "浴室柜",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-YUSHIGUI-6": {
+    "clean_category_en": "Bathroom Vanity",
+    "category": "浴室柜",
+    "category_en": "Bathroom Vanity",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "BathroomVanity",
+    "specific_zh": "浴室柜",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-ZHEDIEMEN-1": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-ZHEDIEMEN-2": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-ZHEDIEMEN-3": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-ZHEDIEMEN-4": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_10/SM-ZHEDIEMEN-5": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-PINGBANMEN-10_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-PINGBANMEN-1_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-PINGBANMEN-2_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-PINGBANMEN-3_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-PINGBANMEN-4_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-PINGBANMEN-5_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-PINGBANMEN-6_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-PINGBANMEN-7_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-PINGBANMEN-8_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-PINGBANMEN-9_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-SHUANGKAIMEN-1_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-SHUANGKAIMEN-2_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_11/SM-TUILAMEN_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-10_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-11_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-12_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-13_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-14_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-1_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-2_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-3_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-4_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-5_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-6_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-7_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-8_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-PINGBANMEN-9_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_14/SM-SHUANGKAIMEN-1_B": {
+    "clean_category_en": "Door",
+    "category": "门类",
+    "category_en": "Doors",
+    "wikidata_qcode": "Q36794",
+    "semantic_class": "Door",
+    "specific_zh": "门",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-BIJIBENDIANNAO-1": {
+    "clean_category_en": "Laptop",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q3962",
+    "semantic_class": "Laptop",
+    "specific_zh": "笔记本电脑",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-BIJIBENDIANNAO-2": {
+    "clean_category_en": "Laptop",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q3962",
+    "semantic_class": "Laptop",
+    "specific_zh": "笔记本电脑",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-ERJI-1": {
+    "clean_category_en": "Headphones",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q186694",
+    "semantic_class": "Headphones",
+    "specific_zh": "耳机",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-ERJI-2": {
+    "clean_category_en": "Headphones",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q186694",
+    "semantic_class": "Headphones",
+    "specific_zh": "耳机",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-PINGBANDIANNAO-1": {
+    "clean_category_en": "Tablet",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q155972",
+    "semantic_class": "Tablet",
+    "specific_zh": "平板电脑",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-SHEXIANGTOU-1": {
+    "clean_category_en": "Camera",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q15328",
+    "semantic_class": "Camera",
+    "specific_zh": "摄像头",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-SHOUJI-1": {
+    "clean_category_en": "Phone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q193175",
+    "semantic_class": "Phone",
+    "specific_zh": "手机",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-SHOUJI-2": {
+    "clean_category_en": "Phone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q193175",
+    "semantic_class": "Phone",
+    "specific_zh": "手机",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-SHOUJI-3": {
+    "clean_category_en": "Phone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q193175",
+    "semantic_class": "Phone",
+    "specific_zh": "手机",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-SHOUJI-4": {
+    "clean_category_en": "Phone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q193175",
+    "semantic_class": "Phone",
+    "specific_zh": "手机",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-SHOUJI-5": {
+    "clean_category_en": "Phone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q193175",
+    "semantic_class": "Phone",
+    "specific_zh": "手机",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-WURENJI-1": {
+    "clean_category_en": "Drone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "Drone",
+    "specific_zh": "无人机",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-WURENJI-2": {
+    "clean_category_en": "Drone",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "Drone",
+    "specific_zh": "无人机",
+    "source": "naming_ontology"
+  },
+  "wq_15/SM-YUNTAI-1": {
+    "clean_category_en": "Gimbal",
+    "category": "数码用品",
+    "category_en": "Digital Devices",
+    "wikidata_qcode": "Q15328",
+    "semantic_class": "Gimbal",
+    "specific_zh": "云台相机",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-LUZAO-1": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-LUZAO-2": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-TAIDENG-1": {
+    "clean_category_en": "Desk Lamp",
+    "category": "台灯",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q1134005",
+    "semantic_class": "DeskLamp",
+    "specific_zh": "台灯",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-TAIDENG-2": {
+    "clean_category_en": "Desk Lamp",
+    "category": "台灯",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q1134005",
+    "semantic_class": "DeskLamp",
+    "specific_zh": "台灯",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-TAIDENG-3": {
+    "clean_category_en": "Desk Lamp",
+    "category": "台灯",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q1134005",
+    "semantic_class": "DeskLamp",
+    "specific_zh": "台灯",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-TAIDENG-4": {
+    "clean_category_en": "Desk Lamp",
+    "category": "台灯",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q1134005",
+    "semantic_class": "DeskLamp",
+    "specific_zh": "台灯",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-TAIDENG-5": {
+    "clean_category_en": "Desk Lamp",
+    "category": "台灯",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q1134005",
+    "semantic_class": "DeskLamp",
+    "specific_zh": "台灯",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-TAIDENG-6": {
+    "clean_category_en": "Desk Lamp",
+    "category": "台灯",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q1134005",
+    "semantic_class": "DeskLamp",
+    "specific_zh": "台灯",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-TAIDENG-7": {
+    "clean_category_en": "Desk Lamp",
+    "category": "台灯",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q1134005",
+    "semantic_class": "DeskLamp",
+    "specific_zh": "台灯",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-TAIDENG-8": {
+    "clean_category_en": "Desk Lamp",
+    "category": "台灯",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q1134005",
+    "semantic_class": "DeskLamp",
+    "specific_zh": "台灯",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-TAIDENG-9": {
+    "clean_category_en": "Desk Lamp",
+    "category": "台灯",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q1134005",
+    "semantic_class": "DeskLamp",
+    "specific_zh": "台灯",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-XIYIJI-1": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-XIYIJI-2": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-XIYIJI-3": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-XIYIJI-4": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "wq_16/SM-XIYIJI-5": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-DIAOSHAN-1": {
+    "clean_category_en": "Ceiling Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q1641320",
+    "semantic_class": "CeilingFan",
+    "specific_zh": "吊扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-DIAOSHAN-2": {
+    "clean_category_en": "Ceiling Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q1641320",
+    "semantic_class": "CeilingFan",
+    "specific_zh": "吊扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-DIAOSHAN-3": {
+    "clean_category_en": "Ceiling Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q1641320",
+    "semantic_class": "CeilingFan",
+    "specific_zh": "吊扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-DIAOSHAN-4": {
+    "clean_category_en": "Ceiling Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q1641320",
+    "semantic_class": "CeilingFan",
+    "specific_zh": "吊扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-DIAOSHAN-5": {
+    "clean_category_en": "Ceiling Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q1641320",
+    "semantic_class": "CeilingFan",
+    "specific_zh": "吊扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-DIAOSHAN-6": {
+    "clean_category_en": "Ceiling Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q1641320",
+    "semantic_class": "CeilingFan",
+    "specific_zh": "吊扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-DIAOSHAN-7": {
+    "clean_category_en": "Ceiling Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q1641320",
+    "semantic_class": "CeilingFan",
+    "specific_zh": "吊扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-DIAOSHAN-8": {
+    "clean_category_en": "Ceiling Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q1641320",
+    "semantic_class": "CeilingFan",
+    "specific_zh": "吊扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-FENGSHAN-1": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-FENGSHAN-2": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-FENGSHAN-3": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-FENGSHAN-4": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-FENGSHAN-5": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-FENGSHAN-6": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-MATONG-2": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-MATONG-3": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "wq_17/SM-MATONG-4": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "wq_2/SM-CHAJI-1": {
+    "clean_category_en": "Coffee Table",
+    "category": "茶几",
+    "category_en": "Tables & Vanities",
+    "wikidata_qcode": "Q1151608",
+    "semantic_class": "CoffeeTable",
+    "specific_zh": "茶几",
+    "source": "naming_ontology"
+  },
+  "wq_2/SM-CHUGUI-1": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "wq_2/SM-SHUZHUANGTAI-1": {
+    "clean_category_en": "Dressing Table",
+    "category": "梳妆台",
+    "category_en": "Tables & Vanities",
+    "wikidata_qcode": "Q204370",
+    "semantic_class": "DressingTable",
+    "specific_zh": "梳妆台",
+    "source": "naming_ontology"
+  },
+  "wq_2/SM-ZHUANGSHIGUI-1": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "wq_2/SM-ZHUANGSHIGUI-2": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "wq_2/SM-ZHUANGSHIGUI-3": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "wq_2/SM-ZHUANGSHIGUI-4": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "wq_2/SM-ZHUANGSHIGUI-5": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "wq_3/SM-CHAJI-2": {
+    "clean_category_en": "Coffee Table",
+    "category": "茶几",
+    "category_en": "Tables & Vanities",
+    "wikidata_qcode": "Q1151608",
+    "semantic_class": "CoffeeTable",
+    "specific_zh": "茶几",
+    "source": "naming_ontology"
+  },
+  "wq_3/SM-bingxiang-1": {
+    "clean_category_en": "Refrigerator",
+    "category": "冰箱",
+    "category_en": "Refrigerator",
+    "wikidata_qcode": "Q37867",
+    "semantic_class": "Refrigerator",
+    "specific_zh": "冰箱",
+    "source": "naming_ontology"
+  },
+  "wq_3/SM-bingxiang-2": {
+    "clean_category_en": "Refrigerator",
+    "category": "冰箱",
+    "category_en": "Refrigerator",
+    "wikidata_qcode": "Q37867",
+    "semantic_class": "Refrigerator",
+    "specific_zh": "冰箱",
+    "source": "naming_ontology"
+  },
+  "wq_3/SM-bingxiang-3": {
+    "clean_category_en": "Refrigerator",
+    "category": "冰箱",
+    "category_en": "Refrigerator",
+    "wikidata_qcode": "Q37867",
+    "semantic_class": "Refrigerator",
+    "specific_zh": "冰箱",
+    "source": "naming_ontology"
+  },
+  "wq_3/SM-hongjiugui-1": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "wq_4/SM-SHOUNAIGUI-1": {
+    "clean_category_en": "Cabinet",
+    "category": "柜类",
+    "category_en": "Cabinets & Storage",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Cabinet",
+    "specific_zh": "柜子",
+    "source": "naming_ontology"
+  },
+  "wq_4/SM-SHUZHUANGTAI-2": {
+    "clean_category_en": "Dressing Table",
+    "category": "梳妆台",
+    "category_en": "Tables & Vanities",
+    "wikidata_qcode": "Q204370",
+    "semantic_class": "DressingTable",
+    "specific_zh": "梳妆台",
+    "source": "naming_ontology"
+  },
+  "wq_4/SM-SHUZHUANGTAI-3": {
+    "clean_category_en": "Dressing Table",
+    "category": "梳妆台",
+    "category_en": "Tables & Vanities",
+    "wikidata_qcode": "Q204370",
+    "semantic_class": "DressingTable",
+    "specific_zh": "梳妆台",
+    "source": "naming_ontology"
+  },
+  "wq_4/SM-WEIBOLU-1": {
+    "clean_category_en": "Kitchen Appliance",
+    "category": "厨房电器",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q127950",
+    "semantic_class": "KitchenAppliance",
+    "specific_zh": "厨房电器",
+    "source": "naming_ontology"
+  },
+  "wq_4/SM-WEIBOLU-2": {
+    "clean_category_en": "Kitchen Appliance",
+    "category": "厨房电器",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q127950",
+    "semantic_class": "KitchenAppliance",
+    "specific_zh": "厨房电器",
+    "source": "naming_ontology"
+  },
+  "wq_4/SM-WEIBOLU-3": {
+    "clean_category_en": "Kitchen Appliance",
+    "category": "厨房电器",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q127950",
+    "semantic_class": "KitchenAppliance",
+    "specific_zh": "厨房电器",
+    "source": "naming_ontology"
+  },
+  "wq_4/SM-XIWANJI-1": {
+    "clean_category_en": "Kitchen Appliance",
+    "category": "厨房电器",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q127950",
+    "semantic_class": "KitchenAppliance",
+    "specific_zh": "厨房电器",
+    "source": "naming_ontology"
+  },
+  "wq_7/SM-XIEGUI-1": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "wq_7/SM-XIEGUI-2": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "wq_7/SM-XIEGUI-3": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "wq_7/SM-XIEGUI-4": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "wq_7/SM-XIEGUI-5": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "wq_7/SM-XIEGUI-6": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "wq_8/SM-CHUANGTOUGUI-1": {
+    "clean_category_en": "Nightstand",
+    "category": "床头柜",
+    "category_en": "Nightstand",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Nightstand",
+    "specific_zh": "床头柜",
+    "source": "naming_ontology"
+  },
+  "wq_8/SM-CHUANGTOUGUI-2": {
+    "clean_category_en": "Nightstand",
+    "category": "床头柜",
+    "category_en": "Nightstand",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Nightstand",
+    "specific_zh": "床头柜",
+    "source": "naming_ontology"
+  },
+  "wq_8/SM-CHUANGTOUGUI-3": {
+    "clean_category_en": "Nightstand",
+    "category": "床头柜",
+    "category_en": "Nightstand",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Nightstand",
+    "specific_zh": "床头柜",
+    "source": "naming_ontology"
+  },
+  "wq_8/SM-CHUANGTOUGUI-4": {
+    "clean_category_en": "Nightstand",
+    "category": "床头柜",
+    "category_en": "Nightstand",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Nightstand",
+    "specific_zh": "床头柜",
+    "source": "naming_ontology"
+  },
+  "wq_8/SM-XIEGUI-1": {
+    "clean_category_en": "Shoe Cabinet",
+    "category": "鞋柜",
+    "category_en": "Shoe Cabinet",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "ShoeCabinet",
+    "specific_zh": "鞋柜",
+    "source": "naming_ontology"
+  },
+  "wq_9/SM-CHAZUOSHUJUXIAN-1": {
+    "clean_category_en": "Cable & Outlet",
+    "category": "数码配件",
+    "category_en": "Cables & Outlets",
+    "wikidata_qcode": "Q16865280",
+    "semantic_class": "CableOutlet",
+    "specific_zh": "插座数据线",
+    "source": "naming_ontology"
+  },
+  "wq_9/SM-CHUANGTOUGUI-1": {
+    "clean_category_en": "Nightstand",
+    "category": "床头柜",
+    "category_en": "Nightstand",
+    "wikidata_qcode": "Q1321517",
+    "semantic_class": "Nightstand",
+    "specific_zh": "床头柜",
+    "source": "naming_ontology"
+  },
+  "wq_9/SM-ZHONGDAO-1": {
+    "clean_category_en": "Kitchen Island",
+    "category": "中岛台",
+    "category_en": "Kitchen Island",
+    "wikidata_qcode": "Q148600",
+    "semantic_class": "KitchenIsland",
+    "specific_zh": "中岛台",
+    "source": "naming_ontology"
+  },
+  "wq_9/SM-ZHONGDAO-2": {
+    "clean_category_en": "Kitchen Island",
+    "category": "中岛台",
+    "category_en": "Kitchen Island",
+    "wikidata_qcode": "Q148600",
+    "semantic_class": "KitchenIsland",
+    "specific_zh": "中岛台",
+    "source": "naming_ontology"
+  },
+  "wq_9/SM-ZHONGDAO-3": {
+    "clean_category_en": "Kitchen Island",
+    "category": "中岛台",
+    "category_en": "Kitchen Island",
+    "wikidata_qcode": "Q148600",
+    "semantic_class": "KitchenIsland",
+    "specific_zh": "中岛台",
+    "source": "naming_ontology"
+  },
+  "wq_9/SM-ZHONGDAO-4": {
+    "clean_category_en": "Kitchen Island",
+    "category": "中岛台",
+    "category_en": "Kitchen Island",
+    "wikidata_qcode": "Q148600",
+    "semantic_class": "KitchenIsland",
+    "specific_zh": "中岛台",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan01": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan02": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan03": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan04": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan05": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan06": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan07": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan08": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan09": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan11": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_FengShan12": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_MaTong": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_MaTong01": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_MaTong02": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "SM_FengShan_Joint_Export/SM_MaTong03": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  }
+}

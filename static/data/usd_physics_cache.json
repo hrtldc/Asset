@@ -408,11 +408,11 @@
     "wikidata_qcode": "Q186694"
   },
   "qzs_15/SM_SheXiangTou": {
-    "mass_kg": 0.68,
-    "static_friction": 0.5,
+    "mass_kg": 0.384,
+    "static_friction": 0.45,
     "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": null,
+    "restitution": 0.15,
+    "semantic_class": "Camera",
     "wikidata_qcode": null
   },
   "qzs_15/SM_SheXiangTou01": {
@@ -919,6 +919,134 @@
     "semantic_class": "Cable",
     "wikidata_qcode": "Q16865280"
   },
+  "wq_0916/SM-LUZAO-1": {
+    "mass_kg": 2.44,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_0916/SM-LUZAO-2": {
+    "mass_kg": 1.46,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_0916/SM-TAIDENG-1": {
+    "mass_kg": 12.62,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_0916/SM-TAIDENG-2": {
+    "mass_kg": 0.44,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_0916/SM-TAIDENG-3": {
+    "mass_kg": 1.27,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_0916/SM-TAIDENG-4": {
+    "mass_kg": 0.29,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_0916/SM-TAIDENG-5": {
+    "mass_kg": 0.31,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_0916/SM-TAIDENG-6": {
+    "mass_kg": 0.33,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_0916/SM-TAIDENG-7": {
+    "mass_kg": 0.91,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_0916/SM-TAIDENG-8": {
+    "mass_kg": 0.76,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_0916/SM-TAIDENG-9": {
+    "mass_kg": 0.71,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_0916/SM-XIYIJI-1": {
+    "mass_kg": 94.25,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "wq_0916/SM-XIYIJI-2": {
+    "mass_kg": 15.22,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "wq_0916/SM-XIYIJI-3": {
+    "mass_kg": 26.43,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "wq_0916/SM-XIYIJI-4": {
+    "mass_kg": 221.91,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "wq_0916/SM-XIYIJI-5": {
+    "mass_kg": 221.92,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
   "wq_10/SM-TUILAMEN-1": {
     "mass_kg": 58.777,
     "static_friction": 0.5,
@@ -1309,7 +1437,7 @@
     "dynamic_friction": 0.35,
     "restitution": 0.15,
     "semantic_class": "Camera",
-    "wikidata_qcode": "Q15328"
+    "wikidata_qcode": null
   },
   "wq_15/SM-SHOUJI-1": {
     "mass_kg": 105686.805,
@@ -1375,6 +1503,286 @@
     "semantic_class": "Camera",
     "wikidata_qcode": "Q15328"
   },
+  "wq_16_Joint/SM-LUZAO-1": {
+    "mass_kg": 2.44,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.12,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_16_Joint/SM-LUZAO-2": {
+    "mass_kg": 1.46,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_16_Joint/SM-TAIDENG-1": {
+    "mass_kg": 12.62,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_16_Joint/SM-TAIDENG-2": {
+    "mass_kg": 0.44,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_16_Joint/SM-TAIDENG-3": {
+    "mass_kg": 1.27,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_16_Joint/SM-TAIDENG-4": {
+    "mass_kg": 0.29,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_16_Joint/SM-TAIDENG-5": {
+    "mass_kg": 0.31,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_16_Joint/SM-TAIDENG-6": {
+    "mass_kg": 0.33,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_16_Joint/SM-TAIDENG-7": {
+    "mass_kg": 0.91,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_16_Joint/SM-TAIDENG-8": {
+    "mass_kg": 0.76,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_16_Joint/SM-TAIDENG-9": {
+    "mass_kg": 0.71,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_16_Joint/SM-XIYIJI-1": {
+    "mass_kg": 94.25,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "wq_16_Joint/SM-XIYIJI-2": {
+    "mass_kg": 15.22,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "wq_16_Joint/SM-XIYIJI-3": {
+    "mass_kg": 26.43,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "wq_16_Joint/SM-XIYIJI-4": {
+    "mass_kg": 221.91,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "wq_16_Joint/SM-XIYIJI-5": {
+    "mass_kg": 221.92,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "wq_17/SM-DIAOSHAN-1": {
+    "mass_kg": 114.29,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_17/SM-DIAOSHAN-2": {
+    "mass_kg": 23.56,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_17/SM-DIAOSHAN-3": {
+    "mass_kg": 91.8,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_17/SM-DIAOSHAN-4": {
+    "mass_kg": 141.53,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_17/SM-DIAOSHAN-5": {
+    "mass_kg": 7.23,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_17/SM-DIAOSHAN-6": {
+    "mass_kg": 109.1,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_17/SM-DIAOSHAN-7": {
+    "mass_kg": 10.1,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_17/SM-DIAOSHAN-8": {
+    "mass_kg": 10.83,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_17/SM-DIAOSHAN-9": {
+    "mass_kg": 167.83,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.05,
+    "semantic_class": "Bowl",
+    "wikidata_qcode": "Q153988"
+  },
+  "wq_17/SM-FENGSHAN-1": {
+    "mass_kg": 5.13,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_17/SM-FENGSHAN-2": {
+    "mass_kg": 3.72,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.08,
+    "semantic_class": "Dishwasher",
+    "wikidata_qcode": "Q186263"
+  },
+  "wq_17/SM-FENGSHAN-3": {
+    "mass_kg": 4.06,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "DeskLamp",
+    "wikidata_qcode": "Q1134005"
+  },
+  "wq_17/SM-FENGSHAN-4": {
+    "mass_kg": 10.9,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_17/SM-FENGSHAN-5": {
+    "mass_kg": 6.46,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "GasStove",
+    "wikidata_qcode": "Q180399"
+  },
+  "wq_17/SM-FENGSHAN-6": {
+    "mass_kg": 16.96,
+    "static_friction": 0.55,
+    "dynamic_friction": 0.4,
+    "restitution": 0.05,
+    "semantic_class": "Bowl",
+    "wikidata_qcode": "Q153988"
+  },
+  "wq_17/SM-MATONG-1": {
+    "mass_kg": 58.66,
+    "static_friction": 0.4,
+    "dynamic_friction": 0.3,
+    "restitution": 0.1,
+    "semantic_class": "Toilet",
+    "wikidata_qcode": "Q37555"
+  },
+  "wq_17/SM-MATONG-2": {
+    "mass_kg": 31.99,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "WashingMachine",
+    "wikidata_qcode": "Q124441"
+  },
+  "wq_17/SM-MATONG-3": {
+    "mass_kg": 52.47,
+    "static_friction": 0.4,
+    "dynamic_friction": 0.3,
+    "restitution": 0.1,
+    "semantic_class": "Toilet",
+    "wikidata_qcode": "Q37555"
+  },
+  "wq_17/SM-MATONG-4": {
+    "mass_kg": 244.57,
+    "static_friction": 0.4,
+    "dynamic_friction": 0.3,
+    "restitution": 0.1,
+    "semantic_class": "Toilet",
+    "wikidata_qcode": "Q37555"
+  },
   "wq_2/SM-CHAJI-1": {
     "mass_kg": 50.589,
     "static_friction": 0.5,
@@ -1408,12 +1816,12 @@
     "wikidata_qcode": "Q1321517"
   },
   "wq_2/SM-ZHUANGSHIGUI-2": {
-    "mass_kg": 93.422,
+    "mass_kg": 81.486,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
-    "semantic_class": "DisplayCabinet",
-    "wikidata_qcode": "Q1321517"
+    "semantic_class": "Table",
+    "wikidata_qcode": null
   },
   "wq_2/SM-ZHUANGSHIGUI-3": {
     "mass_kg": null,

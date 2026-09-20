@@ -101,19 +101,19 @@ def main():
     if "--auto" not in sys.argv:
         prompt_filter_settings(auto_timeout=3)
 
-    # Step 1: Isaac Sim physics extraction (optional)
-    print_banner("[第 1/3 步] 正在检查 USD 物理网格属性缓存...")
-    isaac_python = Path(r"g:\jsuds\isaacsim\kit\python\python.exe")
+    # Step 1: Isaac Sim physics extraction (fast incremental update)
+    print_banner("[第 1/3 步] 正在检查 USD 物理网格属性与语义元数据缓存...")
+    isaac_python = Path(r"G:\JSUDS\isaac-sim-standalone-6.0.1-windows-x86_64\kit\python\python.exe")
     cache_json = BASE_DIR / "static" / "data" / "usd_physics_cache.json"
-    if cache_json.exists() and cache_json.stat().st_size > 100:
-        print("  -> 物理属性元数据缓存已就绪，直接进入数据打包。", flush=True)
-    elif isaac_python.exists():
+    if isaac_python.exists():
         try:
-            print("  -> 正在调用 Isaac Sim 解析 USD 物理碰撞体...", flush=True)
+            print("  -> 正在调用 Isaac Sim 解析 USD 物理碰撞体、真实质量与语义元数据...", flush=True)
             subprocess.run([str(isaac_python), "extract_usd_physics.py"], cwd=str(BASE_DIR), capture_output=True, text=True, encoding="utf-8", errors="replace")
             print("  -> Isaac Sim 物理属性解析完成。", flush=True)
         except Exception as e:
             print(f"  -> 跳过物理属性深入解析: {e}", flush=True)
+    elif cache_json.exists() and cache_json.stat().st_size > 100:
+        print("  -> 物理属性元数据缓存已就绪，直接进入数据打包。", flush=True)
     else:
         print("  -> 未检测到 Isaac Sim Kit 环境，使用现有元数据缓存。", flush=True)
 
