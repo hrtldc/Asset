@@ -125,7 +125,9 @@ def main():
         build_showcase()
     except Exception as e:
         print(f"  [ERROR] 构建失败: {e}", flush=True)
-        input("\n按回车键退出...")
+        # --auto（守护进程/无人值守）模式下绝不能等待键盘输入，否则会永久挂起
+        if "--auto" not in sys.argv:
+            input("\n按回车键退出...")
         sys.exit(1)
 
     # Sync index.html
