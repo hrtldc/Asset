@@ -105,6 +105,29 @@ def build_showcase():
         if idx % 20 == 0 or idx == len(raw_assets):
             print(f"  -> 处理进度: {idx}/{len(raw_assets)} 套模型...")
 
+    # ------------------------------------------------------------------
+    # 清理孤儿媒体目录
+    # 背景：资产源目录会被上游管线整体重建，某些批次目录会消失或改名。
+    #      旧的 static/media/<批次> 会被永久遗留在仓库里并持续推送到 CDN，
+    #      造成线上文件数远多于实际被引用的数量（占额度、拖慢构建）。
+    # 安全护栏：扫描结果为 0 时绝不执行清理（例如 G 盘未挂载），
+    #          否则会把整个媒体库误删。
+    # ------------------------------------------------------------------
+    if len(static_assets) == 0:
+        print("  [警告] 本次扫描到 0 个资产，跳过孤儿媒体清理（防止误删）。")
+    elif STATIC_MEDIA_DIR.exists():
+        live_batches = {a["batch"] for a in static_assets}
+        orphans = [d for d in STATIC_MEDIA_DIR.iterdir()
+                   if d.is_dir() and d.name not in live_batches]
+        if orphans:
+            print(f"  -> 检测到 {len(orphans)} 个已废弃的孤儿媒体目录，正在清理...")
+        for d in orphans:
+            try:
+                shutil.rmtree(d)
+                print(f"     ✓ 已清理孤儿目录: {d.name}")
+            except Exception as e:
+                print(f"     ✗ 清理失败 {d.name}: {e}")
+
     from collections import Counter
     cat_counter = Counter(a["category"] for a in static_assets)
     sorted_categories = [cat for cat, _ in cat_counter.most_common()]

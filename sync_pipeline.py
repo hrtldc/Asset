@@ -135,25 +135,53 @@ def main():
         shutil.copy2(static_index, root_index)
 
     # Step 3: Git push
-    print_banner("[第 3/3 步] 正在安全提交并推送到 GitHub (带自动断点重试与实时进度)...")
+    print_banner("[第 3/4 步] 正在安全提交并推送到 GitHub (媒体先行·元数据最后·自动断点重试)...")
     from push_to_git import safe_push
     push_ok = safe_push()
 
-    print("\n" + "=" * 68)
+    # Step 4: Verify the public site truly matches local
+    print_banner("[第 4/4 步] 正在校验外网站点与本地是否完全一致...")
+    verify_ok = None
     if push_ok:
-        print("  ★【执行成功！全部同步完毕】★")
+        try:
+            from verify_sync import wait_and_verify
+            verify_ok = wait_and_verify(seconds=240)
+        except Exception as e:
+            print(f"  [提示] 校验模块不可用: {e}", flush=True)
+    else:
+        print("  [跳过] 推送未完成，无需校验。", flush=True)
+
+    print("\n" + "=" * 68)
+    if push_ok and verify_ok is True:
+        print("  ★【全部同步完毕，且外网校验通过】★")
         print("-" * 68)
-        print("  1. 本地所有资产、WebP 封面与 360° 关节视频已成功推送至 GitHub！")
-        print("  2. Cloudflare Pages 已自动触发全球 CDN 构建（约 20-30 秒生效）。")
+        print("  1. 本地媒体已全部推送到 GitHub。")
+        print("  2. Cloudflare Pages 已自动构建，线上内容与本地逐条核对一致。")
         print("-" * 68)
         print("  【外网展示地址】: https://asset-9n2.pages.dev/")
         print("  【本地管理地址】: http://127.0.0.1:8088/")
         print("=" * 68)
+    elif push_ok and verify_ok is None:
+        print("  ★【推送成功】★  (但线上校验未执行，建议稍后手动确认)")
+        print("-" * 68)
+        print("  可手动运行:  python verify_sync.py --wait 180")
+        print("-" * 68)
+        print("  【外网展示地址】: https://asset-9n2.pages.dev/")
+        print("=" * 68)
+    elif push_ok and verify_ok is False:
+        print("  ▲【推送成功，但外网尚未完全一致】▲")
+        print("-" * 68)
+        print("  最常见原因: Cloudflare Pages 正在构建中（约 30-60 秒）。")
+        print("  请稍候执行:  python verify_sync.py --wait 180")
+        print("  若仍不一致，重新运行本脚本即可补齐剩余项。")
+        print("=" * 68)
     else:
         print("  ▲【警告：推送未全部完成】▲")
         print("-" * 68)
-        print("  本地媒体已生成，但上传到 GitHub 时遭遇网络断开或超时。")
-        print("  请检查网络/代理连接后，再次双击运行桌面脚本重试即可。")
+        print("  本地媒体与元数据已生成，但上传到 GitHub 时遭遇网络断开或超时。")
+        print("  保护机制已生效：元数据没有上线，所以外网站点仍是上一个完整状态，")
+        print("  不会出现图片/视频打不开的情况。")
+        print("  请检查网络/代理连接后，再次双击运行本脚本重试即可（已推批次无需重传）。")
         print("=" * 68)
 
 if __name__ == "__main__":

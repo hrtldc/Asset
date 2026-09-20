@@ -4,6 +4,7 @@ description: >-
   Complete operational, architectural, and automated classification guide for the 3D USD Asset Portal (http://127.0.0.1:8088/ at G:\JSUDS\Asset).
   Activate and read this entire skill using view_file IMMEDIATELY whenever the user mentions "http://127.0.0.1:8088/", "127.0.0.1:8088", "8088", "Asset Portal", "资产展示平台", "资产入库", or asks about asset categorization, physicalization tags, or server endpoints in G:\JSUDS\Asset.
   Enforces strict asset ingestion rules: MUST recognize semantic meanings via automated ontology & local Qwen2.5-VL vision AI, producing precise Chinese/English category tags. STRICTLY PROHIBITS generic fallback categories like "其他" or "其他资产".
+  ALSO covers the local→public sync pipeline (GitHub hrtldc/Asset → Cloudflare Pages at https://asset-9n2.pages.dev/) — activate whenever the user mentions "同步", "外网", "内网外网不一致", "无法同步", "破图", "asset-9n2.pages.dev", pushing assets online, or asks why the public site differs from 127.0.0.1:8088.
 ---
 
 # 3D USD Asset Portal Architecture & Semantic Ingestion Skill
@@ -93,3 +94,68 @@ This skill is the single source of truth for the **3D USD Asset Portal** (runnin
   - 自动沉淀的语义识别结果持久化数据库。
 - **`index.html` & `static/js/app.js`**:
   - 赛博风格 Cyber Studio 资产可视化前端，支持 360° 视频悬停播放与直接下载。
+
+---
+
+## 4. 本地 ↔ 外网同步机制 (Local → Public Sync Pipeline)
+
+### 4.1 双站数据来源本质差异
+
+| | 本地管理站 | 外网展示站 |
+| :--- | :--- | :--- |
+| 地址 | `http://127.0.0.1:8088/` | `https://asset-9n2.pages.dev/` |
+| 数据来源 | `scan_assets()` **实时扫描** `G:\Simreay\output` | `static/data/assets.json` **构建快照** |
+| 媒体来源 | `/api/media/*` 直出 **原始分辨率** PNG / MP4 | `static/media/*` **540px WebP 缩略图** + 拷贝版 MP4 |
+| 新增资产可见 | 后台 watcher 约 30 秒内自动出现 | 必须跑同步管线并等 Pages 构建完成 |
+
+**因此「本地正确」不会自动等于「外网正确」，两者之间有一道显式同步工序。**
+
+### 4.2 同步管线执行顺序（★ 不可颠倒）
+
+```
+G:\Simreay\output
+      ↓  build_static_showcase.py    压缩 WebP / 拷贝 MP4 / 清理孤儿目录 / 写 assets.json
+   static/
+      ↓  push_to_git.py  safe_push()
+      ├─ ① 媒体（static/media/**）  先提交、先推送 —— 分批推送即断点续传
+      └─ ② 元数据（static/data/assets.json）  最后提交、最后推送
+      ↓  verify_sync.py              推送后逐条核对线上是否与本地一致
+Cloudflare Pages (hrtldc/Asset → asset-9n2.pages.dev)
+```
+
+**核心铁律：`assets.json` 必须最后上线。**
+它是外网站点唯一的索引来源。只要它上线的瞬间其引用的每个媒体文件都已在 CDN 上，
+外网就永远不会出现「索引指向不存在文件」的半同步态。
+若中途断网，宁可**元数据不上线**（外网停留在上一个完整状态），也不上线一个破图站点。
+
+### 4.3 关键脚本索引
+
+- **`sync_pipeline.py`** — 一键总入口，四步：物理属性解析 → 构建静态包 → 安全推送 → 线上校验。
+- **`push_to_git.py`** — 推送核心。含 `check_local_integrity()` 完整性闸门：
+  推送元数据前逐条确认其引用的媒体在本地真实存在，缺失即拒绝上线。
+- **`verify_sync.py`** — 线上一致性校验器。用法：
+  - `python verify_sync.py` 单次校验
+  - `python verify_sync.py --wait 180` 等 Pages 构建完成后校验
+- **`build_static_showcase.py`** — 构建静态包，并清理**孤儿媒体目录**
+  （已从源目录消失、但残留在 `static/media` 中会持续污染 CDN 的批次目录）。
+  安全护栏：扫描到 0 个资产时跳过清理，防止 G 盘未挂载时误删整个媒体库。
+- **`watch_and_sync.py`** — 源目录守护进程，实现「上游出资产 ⇒ 外网自动更新」。
+  带防抖（等上游写完）、单实例锁、日志 `logs/autosync.log`。
+- **`start_autosync_silent.vbs`** / **`stop_autosync.bat`** — 守护进程的启动/停止。
+
+### 4.4 ⚠️ 已知陷阱：Cloudflare Pages 的 SPA 兜底路由
+
+**本平台最危险的假象来源**：请求线上一个不存在的文件时，
+Cloudflare Pages 返回 **HTTP 200 + `index.html` 内容**，而不是 404。
+
+后果：缺失的图片/视频**不会**在浏览器 Network 面板显示为红色错误，
+页面看上去"正常同步了"，实际是坏图。历史上曾因此掩盖了 19 个缺失视频、
+12 个过期缩略图，长达多轮同步无人察觉。
+
+应对：
+1. 严禁用「HTTP 状态码」判断线上文件是否存在，必须检查 `Content-Type`
+   （`verify_sync.py` 已实现此判断）。
+2. 仓库根目录的 `404.html` 用于让缺失资源返回真实 404。
+   若仍返回 200，需到 Cloudflare Pages 项目设置里把
+   *Not found handling* 从 `Single-page application` 改为 `404 page`。
+
