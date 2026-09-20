@@ -3,3 +3,5 @@ __pycache__/
 cloudflared.exe
 *.log
 static/cache/
+logs/.proxy_cache
+logs/.autosync.lock
