@@ -134,6 +134,16 @@ def main():
     if static_index.exists():
         shutil.copy2(static_index, root_index)
 
+    # Sync 404.html into the deploy output directory.
+    # ★ Cloudflare Pages 的构建输出目录是 static/（不是仓库根目录），
+    #   404.html 必须放在 static/ 里才会被部署；否则 Pages 会启用 SPA 兜底，
+    #   把所有不存在的文件都返回 200 + index.html，从而隐藏真实的缺失。
+    root_404 = BASE_DIR / "404.html"
+    static_404 = BASE_DIR / "static" / "404.html"
+    if root_404.exists():
+        shutil.copy2(root_404, static_404)
+        print("  已同步 404.html 到构建输出目录 static/", flush=True)
+
     # Step 3: Git push
     print_banner("[第 3/4 步] 正在安全提交并推送到 GitHub (媒体先行·元数据最后·自动断点重试)...")
     from push_to_git import safe_push

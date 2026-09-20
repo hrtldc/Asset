@@ -152,10 +152,34 @@ def _write_proxy_cache(proxy):
         pass
 
 
+def _scan_listening_ports(limit=40):
+    """兜底：枚举本机 127.0.0.1 上正在监听的端口（VPN 的端口可能任意）。"""
+    ports = []
+    try:
+        out = subprocess.run(["netstat", "-ano", "-p", "TCP"],
+                             capture_output=True, text=True, timeout=20,
+                             encoding="utf-8", errors="replace").stdout
+        for line in out.splitlines():
+            parts = line.split()
+            if len(parts) >= 4 and parts[0].upper() == "TCP" and "LISTEN" in parts[3].upper():
+                addr = parts[1]
+                if addr.startswith("127.0.0.1:") or addr.startswith("0.0.0.0:"):
+                    try:
+                        p = int(addr.rsplit(":", 1)[1])
+                    except ValueError:
+                        continue
+                    if p not in ports:
+                        ports.append(p)
+    except Exception:
+        return []
+    return ports[:limit]
+
+
 def detect_working_proxy(verbose=True):
     """
-    依序探测：缓存 -> 环境变量 -> 直连 -> 注册表 -> 常见端口扫描。
-    返回形如 "http://127.0.0.1:7890" 的代理，None 表示直连可用/未找到。
+    依序探测：缓存 -> 环境变量 -> 直连 -> 注册表 -> 常见端口 -> 本机监听端口。
+    返回形如 "http://127.0.0.1:7890" 的代理，None 表示直连可用，
+    "DIRECT_FAIL" 表示全部失败。
     """
     cached = _read_proxy_cache()
     candidates = []
@@ -170,20 +194,33 @@ def detect_working_proxy(verbose=True):
     for port in COMMON_PROXY_PORTS:
         candidates.append(f"http://127.0.0.1:{port}")
 
-    seen = set()
-    for proxy in candidates:
-        if proxy in seen:
-            continue
-        seen.add(proxy)
-        label = proxy or "直连"
-        if verbose:
-            print(f"  [网络] 正在测试通道: {label} ...", flush=True)
-        if _probe_proxy(proxy):
-            _write_proxy_cache(proxy)
+    def try_all(cands):
+        seen = set()
+        for proxy in cands:
+            if proxy in seen:
+                continue
+            seen.add(proxy)
+            label = proxy or "直连"
             if verbose:
-                print(f"  [网络] ✓ 通道可用: {label}", flush=True)
-            return proxy
-    return "DIRECT_FAIL"  # 全部失败（区别于 None=直连可用）
+                print(f"  [网络] 正在测试通道: {label} ...", flush=True)
+            if _probe_proxy(proxy):
+                _write_proxy_cache(proxy)
+                if verbose:
+                    print(f"  [网络] ✓ 通道可用: {label}", flush=True)
+                return proxy
+        return "DIRECT_FAIL"
+
+    result = try_all(candidates)
+    if result != "DIRECT_FAIL":
+        return result
+
+    # 兜底：扫描本机正在监听的端口
+    ports = _scan_listening_ports()
+    if ports:
+        if verbose:
+            print(f"  [网络] 常规通道均失败，正在扫描本机监听端口 ({len(ports)} 个)...", flush=True)
+        result = try_all([f"http://127.0.0.1:{p}" for p in ports])
+    return result
 
 
 def git_proxy_args():
@@ -440,7 +477,7 @@ def commit_metadata():
         "config.py", "server.py", "build_static_showcase.py", "push_to_git.py",
         "sync_pipeline.py", "verify_sync.py", "auto_classifier.py",
         "ignore_batches.txt", "index.html", "404.html",
-        "static/index.html", "static/data", "static/js", "static/css",
+        "static/index.html", "static/404.html", "static/data", "static/js", "static/css",
     ]
     existing = [f for f in code_files if (BASE_DIR / f).exists()]
     if existing:
