@@ -119,6 +119,102 @@
     "semantic_class": "Nightstand",
     "wikidata_qcode": "Q6545229"
   },
+  "qzs_0910_SimReady_Processed/SM_GuiZi": {
+    "mass_kg": 96.06,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0910_SimReady_Processed/SM_GuiZi01": {
+    "mass_kg": 12.1,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0910_SimReady_Processed/SM_YuShiGui01-B": {
+    "mass_kg": 63.78,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "BathroomVanity",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0910_SimReady_Processed/SM_YuShiGui02-B": {
+    "mass_kg": 197.81,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "BathroomVanity",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0910_SimReady_Processed/SM_YuShiGui03-B": {
+    "mass_kg": 35.57,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "BathroomVanity",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0910_SimReady_Processed/SM_YuShiGui_B": {
+    "mass_kg": 34.66,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "BathroomVanity",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0910_SimReady_Processed/SM_ZheDieMen01_B": {
+    "mass_kg": 30.37,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_0910_SimReady_Processed/SM_ZheDieMen02_B": {
+    "mass_kg": 45.96,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_0910_SimReady_Processed/SM_ZheDieMen03_B": {
+    "mass_kg": 91.28,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_0910_SimReady_Processed/SM_ZheDieMen04_B": {
+    "mass_kg": 3.57,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_0910_SimReady_Processed/SM_ZheDieMen05_B": {
+    "mass_kg": 7.29,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
+  "qzs_0910_SimReady_Processed/SM_ZheDieMen_B": {
+    "mass_kg": 78.94,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "Door",
+    "wikidata_qcode": "Q36794"
+  },
   "qzs_0917_SimReady_Processed/SM_FengShan": {
     "mass_kg": 1.99,
     "static_friction": 0.5,
