@@ -2,7 +2,7 @@
 """发布期视频转码模块（构建期工具，不进入公网产物）。
 
 职责：把发布拷贝 `static/media/**/V_*.mp4` 做一次 H.264 恒定质量二次压缩，
-以降低外网访客的下载体积；源文件（G:\\Simreay\\output）不做任何修改。
+以降低外网访客的下载体积；资产源目录（由构建配置指定）内的源文件不做任何修改。
 
 设计约束（与 openspec/changes/optimize-public-site-performance 一致）：
 1. ffmpeg 通过**自动探测**获得（FFMPEG_BIN -> PATH -> 常见安装位置 -> 项目内被忽略的 tools/），

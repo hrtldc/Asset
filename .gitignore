@@ -11,3 +11,6 @@ tools/
 *.tmp.mp4
 *.mp4.tmp
 .transcode_probe_tmp*
+
+# --- 本地规划文档（含本机路径，只留在本地）---
+openspec/
