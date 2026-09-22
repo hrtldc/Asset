@@ -31,4 +31,4 @@
 
 - [x] 5.1 【已完成·已验证】本地 8088 回归（headless Chrome + CDP 实测）：网格 260 卡/259 视频渲染正常、首屏视频请求数 0、搜索"GuiZi" 260→23、USD 筛选正常、详情弹窗打开且视频加载、"排除文件夹设置"弹窗正常读取本地接口、悬停播放/离开暂停均正常、并发上限 3 生效
 - [x] 5.2 【已完成·已验证】外网静态模式模拟（`_headers` 语义的本地静态服务 + CDP）：媒体 URL 稳定、二次访问 4/4 命中磁盘缓存（`Cache-Control: public, max-age=31536000, immutable`）、无本地专属入口与文案、悬停并发 ≤3、视频墙只播视口内视频
-- [ ] 5.3 运行发布链路（`push_to_git.py` 分批推送），确认 Cloudflare Pages 构建成功后线上 https://asset-9n2.pages.dev/ 行为符合本 change 三份 spec 的全部 Scenario，验证：线上抽查 `_headers` 生效、媒体 URL 稳定、二次访问基本零媒体回源
+- [x] 5.3 【已完成·已验证】发布并完成线上验收：`push_to_git.py` 24 个媒体批次 + 元数据全部推送成功（完整性闸门核对 519 个媒体条目），Cloudflare Pages 构建完成后线上 https://asset-9n2.pages.dev/ 实测（headless Chrome + CDP）：`_headers` 生效（媒体 `Cache-Control: public, max-age=31536000, immutable`、HTML/JSON `max-age=0, must-revalidate`）、媒体 URL 稳定、二次访问 4/4 命中磁盘缓存、媒体 URL 无 `_b=`、无本地专属入口与文案、悬停并发 ≤3、视频墙只播视口内 8 个 —— 三份 spec 全部 Scenario 通过
