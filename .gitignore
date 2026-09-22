@@ -5,3 +5,9 @@ cloudflared.exe
 static/cache/
 logs/.proxy_cache
 logs/.autosync.lock
+
+# --- 构建期工具与中转产物：绝不进入公网仓库（push_to_git.py 使用 git add -A）---
+tools/
+*.tmp.mp4
+*.mp4.tmp
+.transcode_probe_tmp*

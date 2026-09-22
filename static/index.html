@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D USD 资产展示平台 - Cyber Studio</title>
-  <link rel="stylesheet" href="css/style.css?v=20260920_v9">
+  <link rel="stylesheet" href="css/style.css?v=20260922_perf1">
 </head>
 <body style="background-color: #050811; color: #f8fafc;">
 
@@ -81,7 +81,7 @@
         </button>
 
         <!-- One-Click Full Update Button -->
-        <button id="updateAllBtn" class="btn-update-all" title="全量重新扫描 G:\Simreay\output 磁盘并强刷最新图片与视频">
+        <button id="updateAllBtn" class="btn-update-all" title="同步最新资产数据与视频">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
           </svg>
@@ -188,8 +188,8 @@
             </div>
           </div>
 
-          <!-- Local Desktop Integration -->
-          <div class="info-section" style="margin-top: auto; padding-top: 16px;">
+          <!-- Local Desktop Integration (hidden on the public static site) -->
+          <div class="info-section" id="localIntegrationSection" style="margin-top: auto; padding-top: 16px;">
             <div class="section-label">本地开发集成 (Isaac Sim / Omniverse)</div>
             <div class="tools-row">
               <button class="btn-tool" id="modalOpenFolderBtn">
@@ -249,7 +249,7 @@
           <label class="filter-label">📝 手动编辑排除规则列表 (每行一条规则，支持 * 通配符，可随时自由编辑填写)</label>
           <textarea id="ignoreRulesTextarea" class="filter-textarea" rows="6" spellcheck="false" placeholder="# 每行一个规则，例如：&#10;*_Joint&#10;*_Processed&#10;*_SimReady_Processed*&#10;*_wip*&#10;*_temp*"></textarea>
           <div class="filter-note">
-            💡 规则将保存至根目录下的 <code>ignore_batches.txt</code>。被排除的批次既不会出现在本地 8088 页面，也不会被上传至外网展示。
+            💡 规则将保存至根目录下的 <code>ignore_batches.txt</code>。被排除的批次既不会出现在展示页面，也不会被上传至外网展示。
           </div>
         </div>
       </div>
@@ -267,6 +267,6 @@
 
   <div id="toastNotice" class="toast-notice"></div>
 
-  <script src="js/app.js?v=20260920_v2"></script>
+  <script src="js/app.js?v=20260922_perf1"></script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+# Cloudflare Pages 缓存策略
+# 参考: https://developers.cloudflare.com/pages/configuration/headers/
+#
+# 目标：448MB 级媒体资产可被浏览器与 Cloudflare 边缘长期缓存，重复访问接近零回源。
+# 注意：媒体 URL 自带稳定版本参数（?v=<源mtime>_<转码参数签名>），
+#       因此内容变更时 URL 一定变化，可以放心使用 immutable。
+
+# --- 媒体资产：一年 immutable ---
+/media/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# --- 首页与 HTML：始终协商，保证及时拿到新版资源引用 ---
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# --- 资产索引：必须能及时感知更新（配合前端的“一键同步更新”强刷） ---
+/data/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# --- 样式与脚本：HTML 中带 ?v= 版本号，缓存一天后协商校验 ---
+/css/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/js/*
+  Cache-Control: public, max-age=86400, must-revalidate

@@ -78,7 +78,19 @@ const elements = {
 // Initialize
 async function initApp() {
   bindEvents();
+  applyEnvironmentVisibility();
   await loadAssets();
+}
+
+// 外网（静态）模式下隐藏仅本地可用的入口：它们依赖本机接口，对外部访客无意义
+function applyEnvironmentVisibility() {
+  if (isLocalServer) return;
+  if (elements.openFilterModalBtn) elements.openFilterModalBtn.style.display = "none";
+  const localSection = document.getElementById("localIntegrationSection");
+  if (localSection) localSection.style.display = "none";
+  if (elements.updateAllBtn) {
+    elements.updateAllBtn.title = "强制刷新外网最新资产数据与视频缓存";
+  }
 }
 
 function showToast(msg) {
@@ -137,10 +149,10 @@ function bindEvents() {
     });
   }
 
-  // One-Click Force Update & Cache Busting (Enabled for both local server and public static showcase)
+  // One-Click Refresh (local: rescan disk; public: pull latest published data)
   if (elements.updateAllBtn) {
-    if (!isLocalServer) {
-      elements.updateAllBtn.title = "强制刷新外网最新资产数据与视频缓存";
+    if (isLocalServer) {
+      elements.updateAllBtn.title = "全量重新扫描磁盘并强刷最新图片与视频";
     }
     elements.updateAllBtn.addEventListener("click", async () => {
       elements.updateAllBtn.classList.add("spinning");
@@ -233,27 +245,101 @@ function bindEvents() {
   });
 }
 
+// ==============================================================================
+// 播放带宽控制（Playback Bandwidth Control）
+//   1) 缩略图（悬停）模式：同一时刻实际播放的视频不超过 PLAY_LIMIT 路，
+//      避免访客快速划过大量卡片时几十路视频同时抢带宽导致卡死；
+//   2) 视频墙模式：只播放视口内的视频（rootMargin 200px 缓冲区），
+//      滚动离开立即暂停，不再无限制同时加载播放。
+// ==============================================================================
+const PLAY_LIMIT = 3;
+const activePlays = new Set();
+const viewportVideos = new Set();
+let cardObserver = null;
+
+function startPlay(videoElem, respectLimit = true) {
+  if (!videoElem) return false;
+  if (!videoElem.src && videoElem.dataset.src) {
+    videoElem.src = videoElem.dataset.src;
+    videoElem.preload = "auto";
+  }
+  if (!videoElem.src) return false;
+  if (!activePlays.has(videoElem)) {
+    if (respectLimit && activePlays.size >= PLAY_LIMIT) return false;
+    activePlays.add(videoElem);
+  }
+  const p = videoElem.play();
+  if (p && p.catch) p.catch(() => {});
+  return true;
+}
+
+function stopPlay(videoElem, resetTime = false) {
+  if (!videoElem) return;
+  try { videoElem.pause(); } catch (e) { /* noop */ }
+  videoElem.classList.remove("is-playing");
+  activePlays.delete(videoElem);
+  if (resetTime) { try { videoElem.currentTime = 0; } catch (e) { /* noop */ } }
+}
+
+// 视口管理：两种模式共用同一个 IntersectionObserver
+function setupCardObserver() {
+  if (cardObserver) {
+    cardObserver.disconnect();
+    cardObserver = null;
+  }
+  viewportVideos.clear();
+  if (typeof IntersectionObserver === "undefined") return;
+
+  cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const card = entry.target;
+      const videoElem = card.querySelector("video.has-video");
+      if (!videoElem) return;
+      if (entry.isIntersecting) {
+        viewportVideos.add(videoElem);
+        if (state.viewMode === "videowall") {
+          startPlay(videoElem, false);
+        } else if (card.matches(":hover")) {
+          startPlay(videoElem, true);
+        }
+      } else {
+        viewportVideos.delete(videoElem);
+        stopPlay(videoElem, state.viewMode !== "videowall");
+      }
+    });
+  }, { rootMargin: "200px", threshold: 0 });
+
+  elements.assetGrid.querySelectorAll(".asset-card").forEach((c) => cardObserver.observe(c));
+}
+
+// 切换模式时重算当前应播放的集合
+function applyPlaybackMode() {
+  elements.assetGrid.querySelectorAll(".asset-card").forEach((card) => {
+    const videoElem = card.querySelector("video.has-video");
+    if (!videoElem) return;
+    if (state.viewMode === "videowall") {
+      if (viewportVideos.has(videoElem)) startPlay(videoElem, false);
+    } else {
+      stopPlay(videoElem, true);
+    }
+  });
+}
+
 function setViewMode(mode) {
   state.viewMode = mode;
   if (mode === "videowall") {
     document.body.classList.add("mode-videowall");
     elements.modeVideoBtn.classList.add("active");
     elements.modeThumbBtn.classList.remove("active");
-    document.querySelectorAll(".card-preview video.has-video").forEach((v) => {
-      if (!v.src && v.dataset.src) v.src = v.dataset.src;
-      v.play().catch(() => {});
-    });
   } else {
     document.body.classList.remove("mode-videowall");
     elements.modeThumbBtn.classList.add("active");
     elements.modeVideoBtn.classList.remove("active");
-    document.querySelectorAll(".card-preview video").forEach((v) => {
-      v.pause();
-    });
   }
+  applyPlaybackMode();
 }
 
-// Fetch Assets from API with Cache Buster
+// Fetch Assets: local API when running the local server, static JSON on the public CDN
 async function loadAssets(forceRefresh = false) {
   try {
     let data;
@@ -264,12 +350,18 @@ async function loadAssets(forceRefresh = false) {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       data = await res.json();
     } else {
-      // Public Static Mode (Cloudflare / GitHub Pages) with zero-cache timestamp
-      const ts = Date.now();
-      let staticRes = await fetch(`data/assets.json?_t=${ts}`, { cache: "no-store" });
-      if (!staticRes.ok) staticRes = await fetch(`/data/assets.json?_t=${ts}`, { cache: "no-store" });
-      if (!staticRes.ok) staticRes = await fetch(`/static/data/assets.json?_t=${ts}`, { cache: "no-store" });
-      if (!staticRes.ok) throw new Error(`Static data load failed: ${staticRes.status}`);
+      // 外网静态模式：默认使用浏览器正常缓存语义（配合 _headers 的 must-revalidate
+      // 得到 304 / 内存缓存命中）；只有"一键同步更新"才附加时间戳绕过缓存。
+      const candidates = ["data/assets.json", "/data/assets.json", "/static/data/assets.json"];
+      let staticRes = null;
+      for (const base of candidates) {
+        staticRes = await fetch(forceRefresh ? `${base}?_t=${Date.now()}` : base,
+          forceRefresh ? { cache: "no-store" } : undefined);
+        if (staticRes.ok) break;
+      }
+      if (!staticRes || !staticRes.ok) {
+        throw new Error(`Static data load failed: ${staticRes ? staticRes.status : "network"}`);
+      }
       data = await staticRes.json();
     }
 
@@ -470,8 +562,10 @@ function renderGrid() {
     } else {
       const rawThumb = asset.static_thumb_path || (asset.thumbnail_rel_path ? `media/${asset.batch}/${asset.name}/thumb.webp` : null);
       const rawVideo = asset.static_video_path || (asset.video_rel_path ? `media/${asset.batch}/${asset.name}/${asset.video_rel_path.split("/").pop()}` : null);
-      thumbUrl = rawThumb ? (rawThumb.includes("?") ? `${rawThumb}&_b=${state.forceBuster}` : `${rawThumb}?_b=${state.forceBuster}`) : null;
-      videoUrl = rawVideo ? (rawVideo.includes("?") ? `${rawVideo}&_b=${state.forceBuster}` : `${rawVideo}?_b=${state.forceBuster}`) : null;
+      // 外网模式：沿用构建脚本写入的稳定版本参数（?v=源mtime_转码参数签名）。
+      // 绝不再追加随会话变化的 `_b=`——它会让浏览器缓存与 Cloudflare 边缘缓存全部失效。
+      thumbUrl = rawThumb ? (rawThumb.includes("?") ? rawThumb : `${rawThumb}?v=${asset.thumbnail_mtime || 0}`) : null;
+      videoUrl = rawVideo ? (rawVideo.includes("?") ? rawVideo : `${rawVideo}?v=${asset.video_mtime || 0}`) : null;
     }
 
     let mediaHtml = "";
@@ -521,30 +615,20 @@ function renderGrid() {
       </div>
     `;
 
-    // Video hover interaction with on-demand zero-lag loading
+    // 悬停播放：受全局并发上限约束（≤PLAY_LIMIT 路）；离开悬停或离开视口立即暂停
     const videoElem = card.querySelector("video.has-video");
     if (videoElem) {
       videoElem.addEventListener("playing", () => {
         videoElem.classList.add("is-playing");
       });
+      videoElem.addEventListener("pause", () => {
+        videoElem.classList.remove("is-playing");
+      });
       card.addEventListener("mouseenter", () => {
-        if (!videoElem.src && videoElem.dataset.src) {
-          videoElem.src = videoElem.dataset.src;
-          videoElem.preload = "auto";
-        }
-        if (state.viewMode === "thumb") {
-          const playPromise = videoElem.play();
-          if (playPromise !== undefined) {
-            playPromise.catch(() => {});
-          }
-        }
+        if (state.viewMode === "thumb") startPlay(videoElem, true);
       });
       card.addEventListener("mouseleave", () => {
-        if (state.viewMode === "thumb") {
-          videoElem.pause();
-          videoElem.classList.remove("is-playing");
-          videoElem.currentTime = 0;
-        }
+        if (state.viewMode === "thumb") stopPlay(videoElem, true);
       });
     }
 
@@ -558,12 +642,9 @@ function renderGrid() {
 
   container.appendChild(fragment);
 
-  // If in video-wall mode, play newly rendered videos
-  if (state.viewMode === "videowall") {
-    container.querySelectorAll("video.has-video").forEach((v) => {
-      v.play().catch(() => {});
-    });
-  }
+  // 重建视口观察器：卡片重绘后需重新绑定。观察器首次回调会带上当前相交状态，
+  // 因此视频墙模式下视口内的视频会自动开始播放，缩略图模式则只等待悬停。
+  setupCardObserver();
 }
 
 // Modal Detail and Download Logic
@@ -606,8 +687,9 @@ function openModal(asset) {
   } else {
     const rawThumb = asset.static_thumb_path || (asset.thumbnail_rel_path ? `media/${asset.batch}/${asset.name}/thumb.webp` : null);
     const rawVideo = asset.static_video_path || (asset.video_rel_path ? `media/${asset.batch}/${asset.name}/${asset.video_rel_path.split("/").pop()}` : null);
-    thumbUrl = rawThumb ? (rawThumb.includes("?") ? `${rawThumb}&_b=${state.forceBuster}` : `${rawThumb}?_b=${state.forceBuster}`) : null;
-    videoUrl = rawVideo ? (rawVideo.includes("?") ? `${rawVideo}&_b=${state.forceBuster}` : `${rawVideo}?_b=${state.forceBuster}`) : null;
+    // 与网格卡片一致：使用构建脚本写入的稳定版本参数，不再追加会话时间戳
+    thumbUrl = rawThumb ? (rawThumb.includes("?") ? rawThumb : `${rawThumb}?v=${asset.thumbnail_mtime || 0}`) : null;
+    videoUrl = rawVideo ? (rawVideo.includes("?") ? rawVideo : `${rawVideo}?v=${asset.video_mtime || 0}`) : null;
   }
 
   if (videoUrl) {
@@ -756,7 +838,7 @@ function renderStaticFilterRules() {
     elements.ignoreRulesTextarea.value = `*_Joint\n*_Processed\n*_SimReady_Processed*\n*_wip*\n*_temp*\n*_draft*`;
   }
   if (elements.batchTagsGrid) {
-    elements.batchTagsGrid.innerHTML = '<div style="color:#94a3b8; font-size:0.82rem; padding:10px;">🌐 当前处于外网静态模式。规则配置可在本地 http://127.0.0.1:8088/ 直接编辑并一键同步。</div>';
+    elements.batchTagsGrid.innerHTML = '<div style="color:#94a3b8; font-size:0.82rem; padding:10px;">🌐 当前处于外网静态展示模式，规则配置由发布端统一维护。</div>';
   }
 }
 
@@ -892,7 +974,7 @@ async function saveFilterRules(andSyncPublic = false) {
       }
       closeFilterSettingsModal();
     } else {
-      showToast("⚠️ 保存失败，请确认是否运行在本地 8088 端口");
+      showToast("⚠️ 保存失败：该操作需要在本地服务端进行");
     }
   } catch (e) {
     showToast("⚠️ 请求异常: " + e.message);

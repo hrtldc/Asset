@@ -27,6 +27,7 @@ import sys
 sys.path.insert(0, str(BASE_DIR))
 from server import scan_assets
 from config import is_batch_ignored
+from transcode_media import MediaTranscoder
 
 def build_showcase():
     print("=" * 60)
@@ -46,6 +47,17 @@ def build_showcase():
     t0 = time.time()
     raw_assets = scan_assets(force_reload=True)
     print(f"[1/4] 扫描到 {len(raw_assets)} 套模型资产 (已自动过滤未处理/WIP文件夹)...")
+
+    # 构建期视频转码器：ffmpeg 自动探测（不安装进仓库、不硬编码路径）。
+    # 探测不到时退化为直接复制源文件——站点功能不受影响，仅失去体积收益。
+    sample_mp4 = None
+    for _a in raw_assets:
+        if _a.get("video_rel_path"):
+            _cand = Path(_a["abs_path"]) / _a["video_rel_path"]
+            if _cand.exists():
+                sample_mp4 = str(_cand)
+                break
+    transcoder = MediaTranscoder(sample_path=sample_mp4)
 
     static_assets = []
     total_videos_copied = 0
@@ -83,10 +95,11 @@ def build_showcase():
             dst_mp4 = asset_media_dir / src_mp4.name
             if src_mp4.exists():
                 src_stat = src_mp4.stat()
-                needs_copy = not dst_mp4.exists() or dst_mp4.stat().st_size != src_stat.st_size or dst_mp4.stat().st_mtime < src_stat.st_mtime
-                if needs_copy:
-                    shutil.copy2(src_mp4, dst_mp4)
-                v_stamp = int(src_stat.st_mtime)
+                # 转码为发布压缩版（幂等：源未变且档位未变则跳过；失败自动退化为复制）
+                transcoder.process(src_mp4, dst_mp4)
+                # 版本号 = 源 mtime + 转码参数签名：源变更或档位变更都会让 URL 失效，
+                # 避免 immutable 长缓存下取到旧档位产物
+                v_stamp = transcoder.version_tag(src_mp4)
                 target_video_name = f"media/{batch}/{name}/{src_mp4.name}?v={v_stamp}"
                 total_videos_copied += 1
 
@@ -163,6 +176,7 @@ def build_showcase():
 
     print(f"[3/4] 成功导出静态元数据: {out_file}")
     print(f"[4/4] 统计: 已复制/生成 {total_thumbs_copied} 个缩略图, {total_videos_copied} 个 360° 视频")
+    print(f"      视频压缩: {transcoder.summary()}")
     print(f"Done in {time.time()-t0:.2f}s")
 
 if __name__ == "__main__":

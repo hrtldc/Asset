@@ -2347,5 +2347,203 @@
     "semantic_class": "Toilet",
     "specific_zh": "马桶",
     "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan01": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan02": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan03": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan04": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan05": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan06": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan07": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan08": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan09": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan11": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_FengShan12": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_MaTong": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_MaTong01": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_MaTong02": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "qzs_17/SM_MaTong03": {
+    "clean_category_en": "Toilet",
+    "category": "马桶",
+    "category_en": "Bathroom & Sanitary",
+    "wikidata_qcode": "Q7338",
+    "semantic_class": "Toilet",
+    "specific_zh": "马桶",
+    "source": "naming_ontology"
+  },
+  "qzs_0901-0911xg_Joint_Export/0901": {
+    "clean_category_en": "0901",
+    "category": "0901",
+    "category_en": "Custom Assets",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "0901",
+    "specific_zh": "0901",
+    "source": "dynamic_stem"
+  },
+  "qzs_0901-0911xg_Joint_Export/0903": {
+    "clean_category_en": "0903",
+    "category": "0903",
+    "category_en": "Custom Assets",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "0903",
+    "specific_zh": "0903",
+    "source": "dynamic_stem"
+  },
+  "qzs_0901-0911xg_Joint_Export/0904": {
+    "clean_category_en": "Laundry Cycle Indicator",
+    "category": "家用电器",
+    "category_en": "Appliances",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "LaundryCycleIndicator",
+    "specific_zh": "洗衣程序指示器",
+    "source": "qwen2.5vl_vision"
+  },
+  "qzs_0901-0911xg_Joint_Export/0907": {
+    "clean_category_en": "Wood Panel",
+    "category": "建筑材料",
+    "category_en": "Building Material",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "WoodPanel",
+    "specific_zh": "木板",
+    "source": "qwen2.5vl_vision"
+  },
+  "qzs_0901-0911xg_Joint_Export/0910": {
+    "clean_category_en": "0910",
+    "category": "0910",
+    "category_en": "Custom Assets",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "0910",
+    "specific_zh": "0910",
+    "source": "dynamic_stem"
+  },
+  "qzs_0901-0911xg_Joint_Export/0911": {
+    "clean_category_en": "0911",
+    "category": "0911",
+    "category_en": "Custom Assets",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "0911",
+    "specific_zh": "0911",
+    "source": "dynamic_stem"
   }
 }
