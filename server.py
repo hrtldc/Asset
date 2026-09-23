@@ -347,116 +347,128 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
             candidate_items.append((batch_name, item_dir))
 
         for current_batch, item_dir in candidate_items:
-            item_name = item_dir.name
-            manifest_info = manifest_by_subfolder.get(item_name)
+            try:
+                item_name = item_dir.name
+                manifest_info = manifest_by_subfolder.get(item_name)
 
-            usd_files = []
-            video_files = []
-            image_files = []
-            all_files = []
-            total_size_bytes = 0
+                usd_files = []
+                video_files = []
+                image_files = []
+                all_files = []
+                total_size_bytes = 0
 
-            for root, _, files in os.walk(item_dir.path):
-                for f in files:
-                    full_p = Path(root) / f
-                    rel_p = str(full_p.relative_to(item_dir.path)).replace("\\", "/")
-                    f_stat = full_p.stat()
-                    f_size = f_stat.st_size
-                    f_mtime = int(f_stat.st_mtime)
-                    total_size_bytes += f_size
-                    
-                    file_record = {
-                        "name": f,
-                        "rel_path": rel_p,
-                        "size_bytes": f_size,
-                        "mtime": f_mtime,
-                        "size_str": f"{f_size / (1024 * 1024):.2f} MB" if f_size > 1024 * 1024 else f"{f_size / 1024:.1f} KB"
-                    }
-                    all_files.append(file_record)
+                for root, _, files in os.walk(item_dir.path):
+                    for f in files:
+                        full_p = Path(root) / f
+                        try:
+                            rel_p = str(full_p.relative_to(item_dir.path)).replace("\\", "/")
+                            f_stat = full_p.stat()
+                            f_size = f_stat.st_size
+                            f_mtime = int(f_stat.st_mtime)
+                            total_size_bytes += f_size
+                        except Exception:
+                            continue
+                        
+                        file_record = {
+                            "name": f,
+                            "rel_path": rel_p,
+                            "size_bytes": f_size,
+                            "mtime": f_mtime,
+                            "size_str": f"{f_size / (1024 * 1024):.2f} MB" if f_size > 1024 * 1024 else f"{f_size / 1024:.1f} KB"
+                        }
+                        all_files.append(file_record)
 
-                    lower_f = f.lower()
-                    if lower_f.endswith((".usd", ".usdc", ".usda")):
-                        usd_files.append(file_record)
-                    elif lower_f.endswith((".mp4", ".webm", ".mov")):
-                        video_files.append(file_record)
-                    elif lower_f.endswith((".png", ".jpg", ".jpeg", ".webp")):
-                        if lower_f.startswith("t_"):
-                            image_files.insert(0, file_record)
-                        else:
-                            image_files.append(file_record)
+                        lower_f = f.lower()
+                        if lower_f.endswith((".usd", ".usdc", ".usda")):
+                            usd_files.append(file_record)
+                        elif lower_f.endswith((".mp4", ".webm", ".mov")):
+                            video_files.append(file_record)
+                        elif lower_f.endswith((".png", ".jpg", ".jpeg", ".webp")):
+                            if lower_f.startswith("t_"):
+                                image_files.insert(0, file_record)
+                            else:
+                                image_files.append(file_record)
 
-            thumbnail_path = image_files[0]["rel_path"] if image_files else None
-            thumbnail_mtime = image_files[0]["mtime"] if image_files else 0
-            
-            video_path = video_files[0]["rel_path"] if video_files else None
-            video_mtime = video_files[0]["mtime"] if video_files else 0
+                thumbnail_path = image_files[0]["rel_path"] if image_files else None
+                thumbnail_mtime = image_files[0]["mtime"] if image_files else 0
+                
+                video_path = video_files[0]["rel_path"] if video_files else None
+                video_mtime = video_files[0]["mtime"] if video_files else 0
 
-            primary_usd = None
-            if usd_files:
-                pure_usd = [u for u in usd_files if u["name"].lower().endswith(".usd")]
-                primary_usd = (pure_usd[0] if pure_usd else usd_files[0])["rel_path"]
+                primary_usd = None
+                if usd_files:
+                    pure_usd = [u for u in usd_files if u["name"].lower().endswith(".usd")]
+                    primary_usd = (pure_usd[0] if pure_usd else usd_files[0])["rel_path"]
 
-            semantic_class = None
-            mass_kg = None
-            friction = None
-            status = "Ready"
+                semantic_class = None
+                mass_kg = None
+                friction = None
+                status = "Ready"
 
-            if manifest_info:
-                semantic_class = manifest_info.get("semantic_class")
-                mass_kg = manifest_info.get("mass_kg")
-                static_friction = manifest_info.get("static_friction")
-                dynamic_friction = manifest_info.get("dynamic_friction")
-                if static_friction is not None:
-                    friction = f"{static_friction} / {dynamic_friction}"
-                status = manifest_info.get("status", "PASS")
+                if manifest_info:
+                    semantic_class = manifest_info.get("semantic_class")
+                    mass_kg = manifest_info.get("mass_kg")
+                    static_friction = manifest_info.get("static_friction")
+                    dynamic_friction = manifest_info.get("dynamic_friction")
+                    if static_friction is not None:
+                        friction = f"{static_friction} / {dynamic_friction}"
+                    status = manifest_info.get("status", "PASS")
 
-            asset_key = f"{current_batch}/{item_name}"
-            usd_cached = _usd_physics_cache.get(asset_key)
-            if usd_cached:
-                if not semantic_class and usd_cached.get("semantic_class"):
-                    semantic_class = usd_cached["semantic_class"]
+                asset_key = f"{current_batch}/{item_name}"
+                usd_cached = _usd_physics_cache.get(asset_key)
+                if usd_cached:
+                    if not semantic_class and usd_cached.get("semantic_class"):
+                        semantic_class = usd_cached["semantic_class"]
 
-            thumb_full = (Path(item_dir.path) / thumbnail_path) if thumbnail_path else None
-            cls_en, cat_cn, cat_en, qcode, default_sem, specific_zh = classify_asset_auto(
-                current_batch, item_name, thumb_full, semantic_class
-            )
-            physics = get_physics_specs(manifest_info, cat_en, item_name, asset_key=asset_key)
-            final_semantic = default_sem or semantic_class
-            final_qcode = (manifest_info and manifest_info.get("wikidata_qcode")) or (usd_cached and usd_cached.get("wikidata_qcode")) or qcode
+                thumb_full = (Path(item_dir.path) / thumbnail_path) if thumbnail_path else None
+                cls_en, cat_cn, cat_en, qcode, default_sem, specific_zh = classify_asset_auto(
+                    current_batch, item_name, thumb_full, semantic_class
+                )
+                physics = get_physics_specs(manifest_info, cat_en, item_name, asset_key=asset_key)
+                final_semantic = default_sem or semantic_class
+                final_qcode = (manifest_info and manifest_info.get("wikidata_qcode")) or (usd_cached and usd_cached.get("wikidata_qcode")) or qcode
 
-            asset_obj = {
-                "id": f"{current_batch}/{item_name}",
-                "batch": current_batch,
-                "name": item_name,
-                "category": cat_cn,
-                "category_en": cat_en,
-                "category_display": f"{cat_cn} / {cat_en}",
-                "clean_category_en": cls_en,
-                "specific_zh": specific_zh,
-                "semantic_class": final_semantic,
-                "wikidata_qcode": final_qcode,
-                "mass_kg": physics["mass_kg"],
-                "static_friction": physics["static_friction"],
-                "dynamic_friction": physics["dynamic_friction"],
-                "restitution": physics["restitution"],
-                "friction": f"{physics['static_friction']} / {physics['dynamic_friction']}",
-                "status": status,
-                "has_video": len(video_files) > 0,
-                "has_usd": len(usd_files) > 0,
-                "thumbnail_rel_path": thumbnail_path,
-                "thumbnail_mtime": thumbnail_mtime,
-                "video_rel_path": video_path,
-                "video_mtime": video_mtime,
-                "primary_usd_rel_path": primary_usd,
-                "total_size_bytes": total_size_bytes,
-                "total_size_mb": round(total_size_bytes / (1024 * 1024), 2),
-                "usd_files": usd_files,
-                "video_files": video_files,
-                "image_files": image_files,
-                "all_files": all_files,
-                "abs_path": str(Path(item_dir.path).resolve())
-            }
-            assets.append(asset_obj)
+                try:
+                    abs_path_str = str(Path(item_dir.path).resolve())
+                except Exception:
+                    abs_path_str = str(item_dir.path)
+
+                asset_obj = {
+                    "id": f"{current_batch}/{item_name}",
+                    "batch": current_batch,
+                    "name": item_name,
+                    "category": cat_cn,
+                    "category_en": cat_en,
+                    "category_display": f"{cat_cn} / {cat_en}",
+                    "clean_category_en": cls_en,
+                    "specific_zh": specific_zh,
+                    "semantic_class": final_semantic,
+                    "wikidata_qcode": final_qcode,
+                    "mass_kg": physics["mass_kg"],
+                    "static_friction": physics["static_friction"],
+                    "dynamic_friction": physics["dynamic_friction"],
+                    "restitution": physics["restitution"],
+                    "friction": f"{physics['static_friction']} / {physics['dynamic_friction']}",
+                    "status": status,
+                    "has_video": len(video_files) > 0,
+                    "has_usd": len(usd_files) > 0,
+                    "thumbnail_rel_path": thumbnail_path,
+                    "thumbnail_mtime": thumbnail_mtime,
+                    "video_rel_path": video_path,
+                    "video_mtime": video_mtime,
+                    "primary_usd_rel_path": primary_usd,
+                    "total_size_bytes": total_size_bytes,
+                    "total_size_mb": round(total_size_bytes / (1024 * 1024), 2),
+                    "usd_files": usd_files,
+                    "video_files": video_files,
+                    "image_files": image_files,
+                    "all_files": all_files,
+                    "abs_path": abs_path_str
+                }
+                assets.append(asset_obj)
+            except Exception as item_err:
+                print(f"[scan_assets] Warning: failed to parse asset {current_batch}/{getattr(item_dir, 'name', 'unknown')}: {item_err}")
+                continue
 
     # Sort assets by id to ensure deterministic order, then assign sequential numbers per category
     assets.sort(key=lambda a: (a["category"], a["clean_category_en"], a["batch"], a["name"]))
