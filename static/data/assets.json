@@ -869,33 +869,33 @@
       "specific_zh": "台灯",
       "semantic_class": "DeskLamp",
       "wikidata_qcode": "Q1134005",
-      "mass_kg": 0.44,
+      "mass_kg": 0.01,
       "static_friction": 0.45,
-      "dynamic_friction": 0.33,
-      "restitution": 0.08,
-      "friction": "0.45 / 0.33",
+      "dynamic_friction": 0.35,
+      "restitution": 0.15,
+      "friction": "0.45 / 0.35",
       "status": "Ready",
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_TAIDENG.png",
-      "thumbnail_mtime": 1789723786,
+      "thumbnail_mtime": 1790044593,
       "video_rel_path": "V_TAIDENG.mp4",
-      "video_mtime": 1789723900,
+      "video_mtime": 1790044803,
       "primary_usd_rel_path": "SM-TAIDENG-2.usd",
-      "total_size_bytes": 7520496,
-      "total_size_mb": 7.17,
+      "total_size_bytes": 10693346,
+      "total_size_mb": 10.2,
       "video_files": [
         {
           "name": "V_TAIDENG.mp4",
           "rel_path": "V_TAIDENG.mp4",
-          "size_bytes": 487091,
-          "mtime": 1789723900,
-          "size_str": "475.7 KB"
+          "size_bytes": 2303804,
+          "mtime": 1790044803,
+          "size_str": "2.20 MB"
         }
       ],
       "displayName": "Desk Lamp / 台灯 - 02",
-      "static_thumb_path": "media/wq_16/SM-TAIDENG-2/thumb.webp?v=1789875718",
-      "static_video_path": "media/wq_16/SM-TAIDENG-2/V_TAIDENG.mp4?v=1789723900_0702d566"
+      "static_thumb_path": "media/wq_16/SM-TAIDENG-2/thumb.webp?v=1790144145",
+      "static_video_path": "media/wq_16/SM-TAIDENG-2/V_TAIDENG.mp4?v=1790044803_0702d566"
     },
     {
       "id": "wq_16/SM-TAIDENG-3",
@@ -1103,7 +1103,7 @@
       "specific_zh": "台灯",
       "semantic_class": "DeskLamp",
       "wikidata_qcode": "Q1134005",
-      "mass_kg": 0.76,
+      "mass_kg": 0.807,
       "static_friction": 0.45,
       "dynamic_friction": 0.33,
       "restitution": 0.08,
@@ -1112,24 +1112,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_TAIDENG.png",
-      "thumbnail_mtime": 1789716000,
+      "thumbnail_mtime": 1790136087,
       "video_rel_path": "V_TAIDENG.mp4",
-      "video_mtime": 1789717039,
+      "video_mtime": 1790136184,
       "primary_usd_rel_path": "SM-TAIDENG-8.usd",
-      "total_size_bytes": 21474066,
-      "total_size_mb": 20.48,
+      "total_size_bytes": 24780902,
+      "total_size_mb": 23.63,
       "video_files": [
         {
           "name": "V_TAIDENG.mp4",
           "rel_path": "V_TAIDENG.mp4",
-          "size_bytes": 635687,
-          "mtime": 1789717039,
-          "size_str": "620.8 KB"
+          "size_bytes": 795509,
+          "mtime": 1790136184,
+          "size_str": "776.9 KB"
         }
       ],
       "displayName": "Desk Lamp / 台灯 - 08",
-      "static_thumb_path": "media/wq_16/SM-TAIDENG-8/thumb.webp?v=1789875719",
-      "static_video_path": "media/wq_16/SM-TAIDENG-8/V_TAIDENG.mp4?v=1789717039_0702d566"
+      "static_thumb_path": "media/wq_16/SM-TAIDENG-8/thumb.webp?v=1790144147",
+      "static_video_path": "media/wq_16/SM-TAIDENG-8/V_TAIDENG.mp4?v=1790136184_0702d566"
     },
     {
       "id": "wq_16/SM-TAIDENG-9",
@@ -1142,33 +1142,33 @@
       "specific_zh": "台灯",
       "semantic_class": "DeskLamp",
       "wikidata_qcode": "Q1134005",
-      "mass_kg": 0.71,
-      "static_friction": 0.45,
-      "dynamic_friction": 0.33,
-      "restitution": 0.08,
-      "friction": "0.45 / 0.33",
+      "mass_kg": 0.999,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.35,
+      "restitution": 0.15,
+      "friction": "0.5 / 0.35",
       "status": "Ready",
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_TAIDENG.png",
-      "thumbnail_mtime": 1789722955,
+      "thumbnail_mtime": 1790136354,
       "video_rel_path": "V_TAIDENG.mp4",
-      "video_mtime": 1789723086,
+      "video_mtime": 1790136432,
       "primary_usd_rel_path": "SM-TAIDENG-9.usd",
-      "total_size_bytes": 35847268,
-      "total_size_mb": 34.19,
+      "total_size_bytes": 67280350,
+      "total_size_mb": 64.16,
       "video_files": [
         {
           "name": "V_TAIDENG.mp4",
           "rel_path": "V_TAIDENG.mp4",
-          "size_bytes": 566208,
-          "mtime": 1789723086,
-          "size_str": "552.9 KB"
+          "size_bytes": 525972,
+          "mtime": 1790136432,
+          "size_str": "513.6 KB"
         }
       ],
       "displayName": "Desk Lamp / 台灯 - 09",
-      "static_thumb_path": "media/wq_16/SM-TAIDENG-9/thumb.webp?v=1789875719",
-      "static_video_path": "media/wq_16/SM-TAIDENG-9/V_TAIDENG.mp4?v=1789723086_0702d566"
+      "static_thumb_path": "media/wq_16/SM-TAIDENG-9/thumb.webp?v=1790144149",
+      "static_video_path": "media/wq_16/SM-TAIDENG-9/V_TAIDENG.mp4?v=1790136432_0702d566"
     },
     {
       "id": "qzs_8/SM_ChuangTouGui",
@@ -5552,22 +5552,22 @@
       "thumbnail_rel_path": "T_ZheDieMen03.png",
       "thumbnail_mtime": 1789401864,
       "video_rel_path": "V_ZheDieMen03.mp4",
-      "video_mtime": 1789402183,
+      "video_mtime": 1790143996,
       "primary_usd_rel_path": "SM_ZheDieMen03_B.usd",
-      "total_size_bytes": 6754943,
-      "total_size_mb": 6.44,
+      "total_size_bytes": 7759581,
+      "total_size_mb": 7.4,
       "video_files": [
         {
           "name": "V_ZheDieMen03.mp4",
           "rel_path": "V_ZheDieMen03.mp4",
-          "size_bytes": 2070108,
-          "mtime": 1789402183,
-          "size_str": "1.97 MB"
+          "size_bytes": 3074746,
+          "mtime": 1790143996,
+          "size_str": "2.93 MB"
         }
       ],
       "displayName": "Door / 门 - 03",
       "static_thumb_path": "media/qzs_10/SM_ZheDieMen03_B/thumb.webp?v=1789448232",
-      "static_video_path": "media/qzs_10/SM_ZheDieMen03_B/V_ZheDieMen03.mp4?v=1789402183_0702d566"
+      "static_video_path": "media/qzs_10/SM_ZheDieMen03_B/V_ZheDieMen03.mp4?v=1790143996_0702d566"
     },
     {
       "id": "qzs_10/SM_ZheDieMen04_B",
@@ -9168,33 +9168,33 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 1.86,
-      "static_friction": 0.5,
+      "mass_kg": 2.027,
+      "static_friction": 0.45,
       "dynamic_friction": 0.35,
-      "restitution": 0.05,
-      "friction": "0.5 / 0.35",
+      "restitution": 0.15,
+      "friction": "0.45 / 0.35",
       "status": "Ready",
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_FengShan01.png",
-      "thumbnail_mtime": 1789875393,
+      "thumbnail_mtime": 1790044871,
       "video_rel_path": "V_FengShan01.mp4",
-      "video_mtime": 1789875509,
+      "video_mtime": 1790044938,
       "primary_usd_rel_path": "SM_FengShan01.usd",
-      "total_size_bytes": 16497616,
-      "total_size_mb": 15.73,
+      "total_size_bytes": 10844347,
+      "total_size_mb": 10.34,
       "video_files": [
         {
           "name": "V_FengShan01.mp4",
           "rel_path": "V_FengShan01.mp4",
-          "size_bytes": 1824854,
-          "mtime": 1789875509,
-          "size_str": "1.74 MB"
+          "size_bytes": 883238,
+          "mtime": 1790044938,
+          "size_str": "862.5 KB"
         }
       ],
       "displayName": "Electric Fan / 电风扇 - 02",
-      "static_thumb_path": "media/qzs_17/SM_FengShan01/thumb.webp?v=1789972749",
-      "static_video_path": "media/qzs_17/SM_FengShan01/V_FengShan01.mp4?v=1789875509_0702d566"
+      "static_thumb_path": "media/qzs_17/SM_FengShan01/thumb.webp?v=1790144153",
+      "static_video_path": "media/qzs_17/SM_FengShan01/V_FengShan01.mp4?v=1790044938_0702d566"
     },
     {
       "id": "qzs_17/SM_FengShan02",
@@ -9402,7 +9402,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 1.26,
+      "mass_kg": 4.5,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -9411,24 +9411,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_FengShan07.png",
-      "thumbnail_mtime": 1789876392,
+      "thumbnail_mtime": 1790064137,
       "video_rel_path": "V_FengShan07.mp4",
-      "video_mtime": 1789876519,
+      "video_mtime": 1790064221,
       "primary_usd_rel_path": "SM_FengShan07.usd",
-      "total_size_bytes": 37353758,
-      "total_size_mb": 35.62,
+      "total_size_bytes": 35853101,
+      "total_size_mb": 34.19,
       "video_files": [
         {
           "name": "V_FengShan07.mp4",
           "rel_path": "V_FengShan07.mp4",
-          "size_bytes": 1444145,
-          "mtime": 1789876519,
-          "size_str": "1.38 MB"
+          "size_bytes": 1185132,
+          "mtime": 1790064221,
+          "size_str": "1.13 MB"
         }
       ],
       "displayName": "Electric Fan / 电风扇 - 08",
-      "static_thumb_path": "media/qzs_17/SM_FengShan07/thumb.webp?v=1789972750",
-      "static_video_path": "media/qzs_17/SM_FengShan07/V_FengShan07.mp4?v=1789876519_0702d566"
+      "static_thumb_path": "media/qzs_17/SM_FengShan07/thumb.webp?v=1790144155",
+      "static_video_path": "media/qzs_17/SM_FengShan07/V_FengShan07.mp4?v=1790064221_0702d566"
     },
     {
       "id": "qzs_17/SM_FengShan08",
@@ -9441,33 +9441,33 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 2.12,
-      "static_friction": 0.5,
+      "mass_kg": 0.171,
+      "static_friction": 0.45,
       "dynamic_friction": 0.35,
-      "restitution": 0.05,
-      "friction": "0.5 / 0.35",
+      "restitution": 0.15,
+      "friction": "0.45 / 0.35",
       "status": "Ready",
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_FengShan07.png",
-      "thumbnail_mtime": 1789876549,
+      "thumbnail_mtime": 1790064982,
       "video_rel_path": "V_FengShan07.mp4",
-      "video_mtime": 1789876672,
+      "video_mtime": 1790065054,
       "primary_usd_rel_path": "SM_FengShan07.usd",
-      "total_size_bytes": 12249599,
-      "total_size_mb": 11.68,
+      "total_size_bytes": 12207728,
+      "total_size_mb": 11.64,
       "video_files": [
         {
           "name": "V_FengShan07.mp4",
           "rel_path": "V_FengShan07.mp4",
-          "size_bytes": 2193042,
-          "mtime": 1789876672,
-          "size_str": "2.09 MB"
+          "size_bytes": 2345092,
+          "mtime": 1790065054,
+          "size_str": "2.24 MB"
         }
       ],
       "displayName": "Electric Fan / 电风扇 - 09",
-      "static_thumb_path": "media/qzs_17/SM_FengShan08/thumb.webp?v=1789972750",
-      "static_video_path": "media/qzs_17/SM_FengShan08/V_FengShan07.mp4?v=1789876672_0702d566"
+      "static_thumb_path": "media/qzs_17/SM_FengShan08/thumb.webp?v=1790144156",
+      "static_video_path": "media/qzs_17/SM_FengShan08/V_FengShan07.mp4?v=1790065054_0702d566"
     },
     {
       "id": "qzs_17/SM_FengShan09",
@@ -9509,6 +9509,45 @@
       "static_video_path": "media/qzs_17/SM_FengShan09/V_FengShan08.mp4?v=1789876824_0702d566"
     },
     {
+      "id": "qzs_17/SM_FengShan10",
+      "batch": "qzs_17",
+      "name": "SM_FengShan10",
+      "category": "风扇",
+      "category_en": "Fans & Ventilation",
+      "category_display": "风扇 / Fans & Ventilation",
+      "clean_category_en": "Electric Fan",
+      "specific_zh": "电风扇",
+      "semantic_class": "ElectricFan",
+      "wikidata_qcode": "Q264923",
+      "mass_kg": 1.434,
+      "static_friction": 0.45,
+      "dynamic_friction": 0.35,
+      "restitution": 0.15,
+      "friction": "0.45 / 0.35",
+      "status": "Ready",
+      "has_video": true,
+      "has_usd": true,
+      "thumbnail_rel_path": "T_FengShan10.png",
+      "thumbnail_mtime": 1790069908,
+      "video_rel_path": "V_FengShan10.mp4",
+      "video_mtime": 1790069987,
+      "primary_usd_rel_path": "SM_FengShan10.usd",
+      "total_size_bytes": 17674513,
+      "total_size_mb": 16.86,
+      "video_files": [
+        {
+          "name": "V_FengShan10.mp4",
+          "rel_path": "V_FengShan10.mp4",
+          "size_bytes": 1658801,
+          "mtime": 1790069987,
+          "size_str": "1.58 MB"
+        }
+      ],
+      "displayName": "Electric Fan / 电风扇 - 11",
+      "static_thumb_path": "media/qzs_17/SM_FengShan10/thumb.webp?v=1790144158",
+      "static_video_path": "media/qzs_17/SM_FengShan10/V_FengShan10.mp4?v=1790069987_0702d566"
+    },
+    {
       "id": "qzs_17/SM_FengShan11",
       "batch": "qzs_17",
       "name": "SM_FengShan11",
@@ -9543,7 +9582,7 @@
           "size_str": "693.4 KB"
         }
       ],
-      "displayName": "Electric Fan / 电风扇 - 11",
+      "displayName": "Electric Fan / 电风扇 - 12",
       "static_thumb_path": "media/qzs_17/SM_FengShan11/thumb.webp?v=1789972750",
       "static_video_path": "media/qzs_17/SM_FengShan11/V_FengShan11.mp4?v=1789876969_0702d566"
     },
@@ -9582,7 +9621,7 @@
           "size_str": "576.4 KB"
         }
       ],
-      "displayName": "Electric Fan / 电风扇 - 12",
+      "displayName": "Electric Fan / 电风扇 - 13",
       "static_thumb_path": "media/qzs_17/SM_FengShan12/thumb.webp?v=1789972750",
       "static_video_path": "media/qzs_17/SM_FengShan12/V_FengShan12.mp4?v=1789877095_0702d566"
     },
@@ -9621,7 +9660,7 @@
           "size_str": "623.3 KB"
         }
       ],
-      "displayName": "Electric Fan / 电风扇 - 13",
+      "displayName": "Electric Fan / 电风扇 - 14",
       "static_thumb_path": "media/wq_17/SM-FENGSHAN-1/thumb.webp?v=1789867335",
       "static_video_path": "media/wq_17/SM-FENGSHAN-1/V_FENGSHAN.mp4?v=1789728945_0702d566"
     },
@@ -9660,7 +9699,7 @@
           "size_str": "794.0 KB"
         }
       ],
-      "displayName": "Electric Fan / 电风扇 - 14",
+      "displayName": "Electric Fan / 电风扇 - 15",
       "static_thumb_path": "media/wq_17/SM-FENGSHAN-2/thumb.webp?v=1789867335",
       "static_video_path": "media/wq_17/SM-FENGSHAN-2/V_FENGSHAN.mp4?v=1789729050_0702d566"
     },
@@ -9699,7 +9738,7 @@
           "size_str": "622.0 KB"
         }
       ],
-      "displayName": "Electric Fan / 电风扇 - 15",
+      "displayName": "Electric Fan / 电风扇 - 16",
       "static_thumb_path": "media/wq_17/SM-FENGSHAN-3/thumb.webp?v=1789867335",
       "static_video_path": "media/wq_17/SM-FENGSHAN-3/V_FENGSHAN.mp4?v=1789729150_0702d566"
     },
@@ -9738,7 +9777,7 @@
           "size_str": "2.75 MB"
         }
       ],
-      "displayName": "Electric Fan / 电风扇 - 16",
+      "displayName": "Electric Fan / 电风扇 - 17",
       "static_thumb_path": "media/wq_17/SM-FENGSHAN-4/thumb.webp?v=1789867336",
       "static_video_path": "media/wq_17/SM-FENGSHAN-4/V_FENGSHAN.mp4?v=1789729387_0702d566"
     },
@@ -9777,7 +9816,7 @@
           "size_str": "1.10 MB"
         }
       ],
-      "displayName": "Electric Fan / 电风扇 - 17",
+      "displayName": "Electric Fan / 电风扇 - 18",
       "static_thumb_path": "media/wq_17/SM-FENGSHAN-5/thumb.webp?v=1789867336",
       "static_video_path": "media/wq_17/SM-FENGSHAN-5/V_FENGSHAN.mp4?v=1789729504_0702d566"
     },
@@ -9816,7 +9855,7 @@
           "size_str": "1.12 MB"
         }
       ],
-      "displayName": "Electric Fan / 电风扇 - 18",
+      "displayName": "Electric Fan / 电风扇 - 19",
       "static_thumb_path": "media/wq_17/SM-FENGSHAN-6/thumb.webp?v=1789867334",
       "static_video_path": "media/wq_17/SM-FENGSHAN-6/V_FENGSHAN.mp4?v=1789729622_0702d566"
     },
@@ -9831,7 +9870,7 @@
       "specific_zh": "马桶",
       "semantic_class": "Toilet",
       "wikidata_qcode": "Q7338",
-      "mass_kg": 89.45,
+      "mass_kg": 49.695,
       "static_friction": 0.4,
       "dynamic_friction": 0.3,
       "restitution": 0.1,
@@ -9840,24 +9879,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_MaTong.png",
-      "thumbnail_mtime": 1789877117,
+      "thumbnail_mtime": 1790072186,
       "video_rel_path": "V_MaTong.mp4",
-      "video_mtime": 1789877346,
+      "video_mtime": 1790072264,
       "primary_usd_rel_path": "SM_MaTong.usd",
-      "total_size_bytes": 644417663,
-      "total_size_mb": 614.56,
+      "total_size_bytes": 643622476,
+      "total_size_mb": 613.81,
       "video_files": [
         {
           "name": "V_MaTong.mp4",
           "rel_path": "V_MaTong.mp4",
-          "size_bytes": 923349,
-          "mtime": 1789877346,
-          "size_str": "901.7 KB"
+          "size_bytes": 867527,
+          "mtime": 1790072264,
+          "size_str": "847.2 KB"
         }
       ],
       "displayName": "Toilet / 马桶 - 01",
-      "static_thumb_path": "media/qzs_17/SM_MaTong/thumb.webp?v=1789972751",
-      "static_video_path": "media/qzs_17/SM_MaTong/V_MaTong.mp4?v=1789877346_0702d566"
+      "static_thumb_path": "media/qzs_17/SM_MaTong/thumb.webp?v=1790144160",
+      "static_video_path": "media/qzs_17/SM_MaTong/V_MaTong.mp4?v=1790072264_0702d566"
     },
     {
       "id": "qzs_17/SM_MaTong01",
@@ -9870,33 +9909,33 @@
       "specific_zh": "马桶",
       "semantic_class": "Toilet",
       "wikidata_qcode": "Q7338",
-      "mass_kg": 95.12,
-      "static_friction": 0.4,
-      "dynamic_friction": 0.3,
-      "restitution": 0.1,
-      "friction": "0.4 / 0.3",
+      "mass_kg": 28.0,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.35,
+      "restitution": 0.05,
+      "friction": "0.5 / 0.35",
       "status": "Ready",
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_MaTong01.png",
-      "thumbnail_mtime": 1789877373,
+      "thumbnail_mtime": 1790072821,
       "video_rel_path": "V_MaTong01.mp4",
-      "video_mtime": 1789877644,
+      "video_mtime": 1790072894,
       "primary_usd_rel_path": "SM_MaTong01.usd",
-      "total_size_bytes": 340505680,
-      "total_size_mb": 324.73,
+      "total_size_bytes": 339393686,
+      "total_size_mb": 323.67,
       "video_files": [
         {
           "name": "V_MaTong01.mp4",
           "rel_path": "V_MaTong01.mp4",
-          "size_bytes": 800568,
-          "mtime": 1789877644,
-          "size_str": "781.8 KB"
+          "size_bytes": 811755,
+          "mtime": 1790072894,
+          "size_str": "792.7 KB"
         }
       ],
       "displayName": "Toilet / 马桶 - 02",
-      "static_thumb_path": "media/qzs_17/SM_MaTong01/thumb.webp?v=1789972751",
-      "static_video_path": "media/qzs_17/SM_MaTong01/V_MaTong01.mp4?v=1789877644_0702d566"
+      "static_thumb_path": "media/qzs_17/SM_MaTong01/thumb.webp?v=1790144161",
+      "static_video_path": "media/qzs_17/SM_MaTong01/V_MaTong01.mp4?v=1790072894_0702d566"
     },
     {
       "id": "qzs_17/SM_MaTong02",
@@ -9909,7 +9948,7 @@
       "specific_zh": "马桶",
       "semantic_class": "Toilet",
       "wikidata_qcode": "Q7338",
-      "mass_kg": 138.37,
+      "mass_kg": 76.874,
       "static_friction": 0.4,
       "dynamic_friction": 0.3,
       "restitution": 0.1,
@@ -9918,24 +9957,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_MaTong02.png",
-      "thumbnail_mtime": 1789877714,
+      "thumbnail_mtime": 1790135404,
       "video_rel_path": "V_MaTong02.mp4",
-      "video_mtime": 1789877894,
+      "video_mtime": 1790135475,
       "primary_usd_rel_path": "SM_MaTong02.usd",
-      "total_size_bytes": 69307669,
-      "total_size_mb": 66.1,
+      "total_size_bytes": 68682913,
+      "total_size_mb": 65.5,
       "video_files": [
         {
           "name": "V_MaTong02.mp4",
           "rel_path": "V_MaTong02.mp4",
-          "size_bytes": 1048039,
-          "mtime": 1789877894,
-          "size_str": "1023.5 KB"
+          "size_bytes": 855860,
+          "mtime": 1790135475,
+          "size_str": "835.8 KB"
         }
       ],
       "displayName": "Toilet / 马桶 - 03",
-      "static_thumb_path": "media/qzs_17/SM_MaTong02/thumb.webp?v=1789972751",
-      "static_video_path": "media/qzs_17/SM_MaTong02/V_MaTong02.mp4?v=1789877894_0702d566"
+      "static_thumb_path": "media/qzs_17/SM_MaTong02/thumb.webp?v=1790144163",
+      "static_video_path": "media/qzs_17/SM_MaTong02/V_MaTong02.mp4?v=1790135475_0702d566"
     },
     {
       "id": "qzs_17/SM_MaTong03",
@@ -10026,33 +10065,33 @@
       "specific_zh": "马桶",
       "semantic_class": "Toilet",
       "wikidata_qcode": "Q124441",
-      "mass_kg": 31.99,
-      "static_friction": 0.45,
-      "dynamic_friction": 0.35,
-      "restitution": 0.15,
-      "friction": "0.45 / 0.35",
+      "mass_kg": 17.455,
+      "static_friction": 0.4,
+      "dynamic_friction": 0.3,
+      "restitution": 0.1,
+      "friction": "0.4 / 0.3",
       "status": "PASS",
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_MATONG.png",
-      "thumbnail_mtime": 1789729810,
+      "thumbnail_mtime": 1789976426,
       "video_rel_path": "V_MATONG.mp4",
-      "video_mtime": 1789729936,
+      "video_mtime": 1789976756,
       "primary_usd_rel_path": "SM-MATONG-2.usd",
-      "total_size_bytes": 32653433,
-      "total_size_mb": 31.14,
+      "total_size_bytes": 38139180,
+      "total_size_mb": 36.37,
       "video_files": [
         {
           "name": "V_MATONG.mp4",
           "rel_path": "V_MATONG.mp4",
-          "size_bytes": 1068967,
-          "mtime": 1789729936,
-          "size_str": "1.02 MB"
+          "size_bytes": 3265542,
+          "mtime": 1789976756,
+          "size_str": "3.11 MB"
         }
       ],
       "displayName": "Toilet / 马桶 - 06",
-      "static_thumb_path": "media/wq_17/SM-MATONG-2/thumb.webp?v=1789867335",
-      "static_video_path": "media/wq_17/SM-MATONG-2/V_MATONG.mp4?v=1789729936_0702d566"
+      "static_thumb_path": "media/wq_17/SM-MATONG-2/thumb.webp?v=1790144165",
+      "static_video_path": "media/wq_17/SM-MATONG-2/V_MATONG.mp4?v=1789976756_0702d566"
     },
     {
       "id": "wq_17/SM-MATONG-3",
@@ -10133,7 +10172,7 @@
       "static_video_path": "media/wq_17/SM-MATONG-4/V_MATONG.mp4?v=1789730193_0702d566"
     }
   ],
-  "total": 260,
+  "total": 261,
   "batches": [
     "qzs_10",
     "qzs_11",
@@ -10163,8 +10202,8 @@
   "categories": [
     "门类",
     "柜类",
-    "数码用品",
     "风扇",
+    "数码用品",
     "鞋柜",
     "床头柜",
     "浴室柜",
@@ -10197,7 +10236,7 @@
     "茶几": 2,
     "门类": 74,
     "鞋柜": 11,
-    "风扇": 27,
+    "风扇": 28,
     "马桶": 8
   },
   "batch_counts": {
@@ -10224,16 +10263,16 @@
     "wq_14": 15,
     "wq_7": 6,
     "wq_17": 19,
-    "qzs_17": 16
+    "qzs_17": 17
   },
   "stats": {
-    "total_assets": 260,
-    "total_videos": 259,
-    "total_usds": 260,
+    "total_assets": 261,
+    "total_videos": 260,
+    "total_usds": 261,
     "total_batches": 24,
     "total_categories": 18,
-    "total_size_gb": 9.67
+    "total_size_gb": 9.71
   },
-  "build_timestamp": 1790066125,
+  "build_timestamp": 1790144166,
   "is_static_showcase": true
 }

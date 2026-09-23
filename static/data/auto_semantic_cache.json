@@ -2545,5 +2545,14 @@
     "semantic_class": "0911",
     "specific_zh": "0911",
     "source": "dynamic_stem"
+  },
+  "qzs_17/SM_FengShan10": {
+    "clean_category_en": "Electric Fan",
+    "category": "风扇",
+    "category_en": "Fans & Ventilation",
+    "wikidata_qcode": "Q264923",
+    "semantic_class": "ElectricFan",
+    "specific_zh": "电风扇",
+    "source": "naming_ontology"
   }
 }
