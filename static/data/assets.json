@@ -8904,12 +8904,12 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_DIAOSHAN.png",
-      "thumbnail_mtime": 1789877129,
+      "thumbnail_mtime": 1789728128,
       "video_rel_path": "V_DIAOSHAN.mp4",
       "video_mtime": 1789877233,
       "primary_usd_rel_path": "SM-DIAOSHAN-4.usd",
-      "total_size_bytes": 12601546,
-      "total_size_mb": 12.02,
+      "total_size_bytes": 10724490,
+      "total_size_mb": 10.23,
       "video_files": [
         {
           "name": "V_DIAOSHAN.mp4",
@@ -10273,6 +10273,6 @@
     "total_categories": 18,
     "total_size_gb": 9.71
   },
-  "build_timestamp": 1790144166,
+  "build_timestamp": 1790148811,
   "is_static_showcase": true
 }
