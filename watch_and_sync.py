@@ -42,7 +42,7 @@ LOG_DIR.mkdir(exist_ok=True)
 LOG_FILE = LOG_DIR / "autosync.log"
 LOCK_FILE = LOG_DIR / ".autosync.lock"
 
-SOURCE_DIR = Path(r"G:\Simreay\output")
+from config import ASSET_SOURCE_DIR as SOURCE_DIR, is_batch_ignored
 
 
 def log(msg):
@@ -62,7 +62,11 @@ def snapshot(root: Path):
     """返回 (签名, 文件数, 总字节)。签名变化即代表源目录内容有变。"""
     items = []
     total_bytes = 0
+    root_str = str(root).rstrip("\\/")
     for dirpath, dirnames, filenames in os.walk(root):
+        # 过滤顶层被忽略的批次（如 *_Joint, *_wip, .* 等）
+        if dirpath.rstrip("\\/") == root_str:
+            dirnames[:] = [d for d in dirnames if not is_batch_ignored(d)]
         dirnames.sort()
         for fn in filenames:
             p = os.path.join(dirpath, fn)
@@ -156,9 +160,17 @@ def main():
 
     source = Path(args.source)
     if not source.exists():
-        log(f"[错误] 源目录不存在: {source}")
-        log("       请确认 G 盘已挂载。守护进程退出。")
-        sys.exit(2)
+        # 若是常驻模式，尝试等待网络连接 (最多重试 6 次，共 30 秒)
+        if not args.once:
+            log(f"[提示] 源目录暂不可达: {source}，正在等待网络共享连接...")
+            for retry in range(6):
+                time.sleep(5)
+                if source.exists():
+                    break
+        if not source.exists():
+            log(f"[错误] 源目录不可达: {source}")
+            log("       请确认网络畅通且共享服务器 \\\\TOP2 处于连接状态。守护进程退出。")
+            sys.exit(2)
 
     log("=" * 62)
     log("  3D USD 资产平台 · 自动同步守护进程已启动")

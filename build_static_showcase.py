@@ -14,8 +14,8 @@ if hasattr(sys.stdout, "reconfigure"):
 if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
-BASE_DIR = Path(r"G:\JSUDS\Asset")
-OUTPUT_DIR = Path(r"G:\Simreay\output")
+BASE_DIR = Path(__file__).resolve().parent
+from config import ASSET_SOURCE_DIR
 STATIC_DIR = BASE_DIR / "static"
 STATIC_MEDIA_DIR = STATIC_DIR / "media"
 STATIC_DATA_DIR = STATIC_DIR / "data"

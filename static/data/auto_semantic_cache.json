@@ -2554,5 +2554,23 @@
     "semantic_class": "ElectricFan",
     "specific_zh": "电风扇",
     "source": "naming_ontology"
+  },
+  "qzs_16/0916xg": {
+    "clean_category_en": "0916xg",
+    "category": "0916xg",
+    "category_en": "Custom Assets",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "0916xg",
+    "specific_zh": "0916xg",
+    "source": "dynamic_stem"
+  },
+  "qzs_17/新建文件夹": {
+    "clean_category_en": "Electric Appliance",
+    "category": "家用电器",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "ElectricAppliance",
+    "specific_zh": "电器",
+    "source": "qwen2.5vl_vision"
   }
 }

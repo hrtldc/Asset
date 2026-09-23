@@ -4,8 +4,8 @@ Configuration settings for 3D USD Asset Portal
 """
 from pathlib import Path
 
-# Base directory where 3D assets are located
-ASSET_SOURCE_DIR = Path(r"G:\Simreay\output")
+# Base directory where 3D assets are located (LAN shared server path)
+ASSET_SOURCE_DIR = Path(r"\\TOP2\Project\SimReady\output")
 
 # Server settings - Port 8088
 HOST = "127.0.0.1"

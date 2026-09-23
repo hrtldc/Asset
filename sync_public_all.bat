@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 setlocal enabledelayedexpansion
 title 3D USD Asset Portal - Full Public Sync
 chcp 65001 >nul
@@ -24,7 +24,7 @@ if "%PYTHON_EXE%"=="" (
 
 echo ======================================================================
 echo   Full Public Sync
-echo   1) Rebuild static showcase from G:\Simreay\output
+echo   1) Rebuild static showcase from \\TOP2\Project\SimReady\output
 echo   2) Push media first, then metadata (atomic consistency)
 echo   3) Verify the public site matches local item by item
 echo ======================================================================

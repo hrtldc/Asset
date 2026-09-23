@@ -1,4 +1,4 @@
-﻿@echo off
+@echo off
 setlocal enabledelayedexpansion
 title 3D USD Asset Portal - Auto Sync Watcher
 chcp 65001 >nul
@@ -24,7 +24,7 @@ if "%PYTHON_EXE%"=="" (
 
 echo ======================================================================
 echo   Auto Sync Watcher
-echo   Watching : G:\Simreay\output
+echo   Watching : \\TOP2\Project\SimReady\output
 echo   Action   : rebuild + push + verify whenever assets change
 echo   Log      : logs\autosync.log
 echo   Press Ctrl+C to stop.
