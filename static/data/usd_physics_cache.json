@@ -1,4 +1,132 @@
 {
+  "qzs_0904_Joint/SM_GuiZi": {
+    "mass_kg": 22.08,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0904_Joint/SM_GuiZi01": {
+    "mass_kg": 137.65,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0904_Joint/SM_GuiZi02": {
+    "mass_kg": 7.479,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0904_Joint/SM_GuiZi03": {
+    "mass_kg": 100.84,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0904_Joint/SM_KaoXiang": {
+    "mass_kg": 20.63,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Oven",
+    "wikidata_qcode": "Q365"
+  },
+  "qzs_0904_Joint/SM_KaoXiang01": {
+    "mass_kg": 1.0,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Oven",
+    "wikidata_qcode": "Q365"
+  },
+  "qzs_0904_Joint/SM_KaoXiang02": {
+    "mass_kg": 1.0,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Oven",
+    "wikidata_qcode": "Q365"
+  },
+  "qzs_0904_Joint/SM_XiaoDuGui": {
+    "mass_kg": 0.2,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "DisinfectionCabinet",
+    "wikidata_qcode": "Q1151608"
+  },
+  "qzs_0904_SimReady_Processed/SM_GuiZi": {
+    "mass_kg": 22.08,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0904_SimReady_Processed/SM_GuiZi01": {
+    "mass_kg": 137.65,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0904_SimReady_Processed/SM_GuiZi02": {
+    "mass_kg": 7.479,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0904_SimReady_Processed/SM_GuiZi03": {
+    "mass_kg": 100.84,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "SideCabinet",
+    "wikidata_qcode": "Q1321517"
+  },
+  "qzs_0904_SimReady_Processed/SM_KaoXiang": {
+    "mass_kg": 20.63,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Oven",
+    "wikidata_qcode": "Q365"
+  },
+  "qzs_0904_SimReady_Processed/SM_KaoXiang01": {
+    "mass_kg": 24.3,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Oven",
+    "wikidata_qcode": "Q365"
+  },
+  "qzs_0904_SimReady_Processed/SM_KaoXiang02": {
+    "mass_kg": 27.93,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.35,
+    "restitution": 0.15,
+    "semantic_class": "Oven",
+    "wikidata_qcode": "Q365"
+  },
+  "qzs_0904_SimReady_Processed/SM_XiaoDuGui": {
+    "mass_kg": 11.22,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": "DisinfectionCabinet",
+    "wikidata_qcode": "Q1151608"
+  },
   "qzs_10/SM_GuiZi": {
     "mass_kg": 79.272,
     "static_friction": 0.5,
@@ -2040,12 +2168,12 @@
     "wikidata_qcode": "Q376"
   },
   "wq_9/SM-ZHONGDAO-3": {
-    "mass_kg": 315.064,
+    "mass_kg": 279.492,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
-    "semantic_class": "Clock",
-    "wikidata_qcode": "Q376"
+    "semantic_class": "Table",
+    "wikidata_qcode": null
   },
   "wq_9/SM-ZHONGDAO-4": {
     "mass_kg": 519.599,

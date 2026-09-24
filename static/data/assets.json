@@ -98,24 +98,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_ZHONGDAO.png",
-      "thumbnail_mtime": 1789489859,
+      "thumbnail_mtime": 1790230077,
       "video_rel_path": "V_ZHONGDAO.mp4",
-      "video_mtime": 1789490144,
+      "video_mtime": 1790230532,
       "primary_usd_rel_path": "SM-ZHONGDAO-3.usd",
-      "total_size_bytes": 28980525,
-      "total_size_mb": 27.64,
+      "total_size_bytes": 112083709,
+      "total_size_mb": 106.89,
       "video_files": [
         {
           "name": "V_ZHONGDAO.mp4",
           "rel_path": "V_ZHONGDAO.mp4",
-          "size_bytes": 2180930,
-          "mtime": 1789490144,
-          "size_str": "2.08 MB"
+          "size_bytes": 13087490,
+          "mtime": 1790230532,
+          "size_str": "12.48 MB"
         }
       ],
       "displayName": "Kitchen Island / 中岛台 - 03",
-      "static_thumb_path": "media/wq_9/SM-ZHONGDAO-3/thumb.webp?v=1789522061",
-      "static_video_path": "media/wq_9/SM-ZHONGDAO-3/V_ZHONGDAO.mp4?v=1789490144_0702d566"
+      "static_thumb_path": "media/wq_9/SM-ZHONGDAO-3/thumb.webp?v=1790230905",
+      "static_video_path": "media/wq_9/SM-ZHONGDAO-3/V_ZHONGDAO.mp4?v=1790230532_0702d566"
     },
     {
       "id": "wq_9/SM-ZHONGDAO-4",
@@ -10121,8 +10121,8 @@
     "total_usds": 257,
     "total_batches": 24,
     "total_categories": 17,
-    "total_size_gb": 9.21
+    "total_size_gb": 9.29
   },
-  "build_timestamp": 1790227568,
+  "build_timestamp": 1790230910,
   "is_static_showcase": true
 }
