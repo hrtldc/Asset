@@ -1,6 +1,6 @@
 {
   "qzs_10/SM_GuiZi": {
-    "mass_kg": null,
+    "mass_kg": 79.272,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -24,7 +24,7 @@
     "wikidata_qcode": null
   },
   "qzs_10/SM_YuShiGui02-B": {
-    "mass_kg": null,
+    "mass_kg": 246.594,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -360,7 +360,7 @@
     "wikidata_qcode": "Q36794"
   },
   "qzs_15/SM_BiJiBenDianNao": {
-    "mass_kg": 0.133,
+    "mass_kg": 107.228,
     "static_friction": 0.45,
     "dynamic_friction": 0.35,
     "restitution": 0.15,
@@ -376,7 +376,7 @@
     "wikidata_qcode": "Q3962"
   },
   "qzs_15/SM_BiJiBenDianNao02": {
-    "mass_kg": 0.546,
+    "mass_kg": 230.463,
     "static_friction": 0.45,
     "dynamic_friction": 0.35,
     "restitution": 0.15,
@@ -424,12 +424,12 @@
     "wikidata_qcode": "Q15328"
   },
   "qzs_15/SM_SheXiangTou02": {
-    "mass_kg": 5.441,
+    "mass_kg": 2.975,
     "static_friction": 0.45,
     "dynamic_friction": 0.35,
     "restitution": 0.15,
-    "semantic_class": "Camera",
-    "wikidata_qcode": "Q15328"
+    "semantic_class": "Webcam",
+    "wikidata_qcode": null
   },
   "qzs_15/SM_ShoJi": {
     "mass_kg": 0.11,
@@ -448,12 +448,12 @@
     "wikidata_qcode": "Q193175"
   },
   "qzs_16/SM_Deng": {
-    "mass_kg": null,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": null,
-    "wikidata_qcode": null
+    "mass_kg": 2.574,
+    "static_friction": 0.45,
+    "dynamic_friction": 0.33,
+    "restitution": 0.08,
+    "semantic_class": "Lamp",
+    "wikidata_qcode": "Q1134005"
   },
   "qzs_16/SM_Deng01": {
     "mass_kg": 18.564,
@@ -560,7 +560,7 @@
     "wikidata_qcode": "Q124441"
   },
   "qzs_16/SM_XiYiJi02": {
-    "mass_kg": null,
+    "mass_kg": 61.572,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -592,7 +592,7 @@
     "wikidata_qcode": null
   },
   "qzs_17/SM_FengShan02": {
-    "mass_kg": 4.67,
+    "mass_kg": 11.141,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -600,7 +600,7 @@
     "wikidata_qcode": "Q264923"
   },
   "qzs_17/SM_FengShan03": {
-    "mass_kg": 36.36,
+    "mass_kg": 6.134,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -608,7 +608,7 @@
     "wikidata_qcode": "Q264923"
   },
   "qzs_17/SM_FengShan04": {
-    "mass_kg": 21.28,
+    "mass_kg": 50.756,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -624,7 +624,7 @@
     "wikidata_qcode": null
   },
   "qzs_17/SM_FengShan06": {
-    "mass_kg": 0.34,
+    "mass_kg": 0.799,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -632,7 +632,7 @@
     "wikidata_qcode": "Q264923"
   },
   "qzs_17/SM_FengShan07": {
-    "mass_kg": null,
+    "mass_kg": 3.015,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -648,7 +648,7 @@
     "wikidata_qcode": null
   },
   "qzs_17/SM_FengShan09": {
-    "mass_kg": null,
+    "mass_kg": 1.402,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -664,7 +664,7 @@
     "wikidata_qcode": null
   },
   "qzs_17/SM_FengShan11": {
-    "mass_kg": 40.93,
+    "mass_kg": 97.609,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -672,7 +672,7 @@
     "wikidata_qcode": "Q264923"
   },
   "qzs_17/SM_FengShan12": {
-    "mass_kg": 21.28,
+    "mass_kg": 50.756,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -688,7 +688,7 @@
     "wikidata_qcode": null
   },
   "qzs_17/SM_MaTong01": {
-    "mass_kg": null,
+    "mass_kg": 52.844,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -704,12 +704,12 @@
     "wikidata_qcode": null
   },
   "qzs_17/SM_MaTong03": {
-    "mass_kg": 121.73,
+    "mass_kg": 67.626,
     "static_friction": 0.4,
     "dynamic_friction": 0.3,
     "restitution": 0.1,
-    "semantic_class": "Toilet",
-    "wikidata_qcode": "Q7338"
+    "semantic_class": "Cosmetics",
+    "wikidata_qcode": null
   },
   "qzs_2/SM_GuiZi": {
     "mass_kg": 130.414,
@@ -832,7 +832,7 @@
     "wikidata_qcode": "Q1321517"
   },
   "qzs_3/SM_GuiZi09": {
-    "mass_kg": null,
+    "mass_kg": 50.596,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -928,7 +928,7 @@
     "wikidata_qcode": "Q1321517"
   },
   "qzs_7/SM_XieGui02": {
-    "mass_kg": 120.0,
+    "mass_kg": 8381.052,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -952,7 +952,7 @@
     "wikidata_qcode": null
   },
   "qzs_8/SM_ChuangTouGui": {
-    "mass_kg": 11.426,
+    "mass_kg": 41.261,
     "static_friction": 0.55,
     "dynamic_friction": 0.4,
     "restitution": 0.2,
@@ -960,7 +960,7 @@
     "wikidata_qcode": "Q42177"
   },
   "qzs_8/SM_ChuangTouGui01": {
-    "mass_kg": 22.948,
+    "mass_kg": 82.868,
     "static_friction": 0.55,
     "dynamic_friction": 0.4,
     "restitution": 0.2,
@@ -968,7 +968,7 @@
     "wikidata_qcode": "Q42177"
   },
   "qzs_8/SM_ChuangTouGui02": {
-    "mass_kg": 21.225,
+    "mass_kg": 75.745,
     "static_friction": 0.55,
     "dynamic_friction": 0.4,
     "restitution": 0.2,
@@ -976,7 +976,7 @@
     "wikidata_qcode": "Q42177"
   },
   "qzs_8/SM_ChuangTouGui03": {
-    "mass_kg": 19.407,
+    "mass_kg": 70.082,
     "static_friction": 0.55,
     "dynamic_friction": 0.4,
     "restitution": 0.2,
@@ -1029,14 +1029,6 @@
     "dynamic_friction": 0.35,
     "restitution": 0.05,
     "semantic_class": "Table",
-    "wikidata_qcode": null
-  },
-  "SM_GuiZi_SimReady_Processed/Materials": {
-    "mass_kg": null,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": null,
     "wikidata_qcode": null
   },
   "wq_10/SM-TUILAMEN-1": {
@@ -1264,7 +1256,7 @@
     "wikidata_qcode": "Q36794"
   },
   "wq_14/SM-PINGBANMEN-10_B": {
-    "mass_kg": 22.133,
+    "mass_kg": 30.012,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -1288,7 +1280,7 @@
     "wikidata_qcode": "Q36794"
   },
   "wq_14/SM-PINGBANMEN-13_B": {
-    "mass_kg": 60.002,
+    "mass_kg": 5120.738,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -1400,7 +1392,7 @@
     "wikidata_qcode": "Q3962"
   },
   "wq_15/SM-ERJI-1": {
-    "mass_kg": null,
+    "mass_kg": 0.057,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -1432,7 +1424,7 @@
     "wikidata_qcode": null
   },
   "wq_15/SM-SHOUJI-1": {
-    "mass_kg": 105686.805,
+    "mass_kg": 0.106,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.15,
@@ -1496,7 +1488,7 @@
     "wikidata_qcode": "Q15328"
   },
   "wq_16/SM-LUZAO-1": {
-    "mass_kg": 2.44,
+    "mass_kg": 148793.344,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -1512,7 +1504,7 @@
     "wikidata_qcode": "Q180399"
   },
   "wq_16/SM-TAIDENG-1": {
-    "mass_kg": 12.62,
+    "mass_kg": 13.363,
     "static_friction": 0.45,
     "dynamic_friction": 0.33,
     "restitution": 0.08,
@@ -1528,7 +1520,7 @@
     "wikidata_qcode": null
   },
   "wq_16/SM-TAIDENG-3": {
-    "mass_kg": 1.27,
+    "mass_kg": 1.348,
     "static_friction": 0.45,
     "dynamic_friction": 0.33,
     "restitution": 0.08,
@@ -1536,7 +1528,7 @@
     "wikidata_qcode": "Q1134005"
   },
   "wq_16/SM-TAIDENG-4": {
-    "mass_kg": 0.29,
+    "mass_kg": 0.308,
     "static_friction": 0.45,
     "dynamic_friction": 0.33,
     "restitution": 0.08,
@@ -1544,7 +1536,7 @@
     "wikidata_qcode": "Q1134005"
   },
   "wq_16/SM-TAIDENG-5": {
-    "mass_kg": 0.31,
+    "mass_kg": 0.328,
     "static_friction": 0.45,
     "dynamic_friction": 0.33,
     "restitution": 0.08,
@@ -1592,7 +1584,7 @@
     "wikidata_qcode": null
   },
   "wq_16/SM-XIYIJI-2": {
-    "mass_kg": 15.22,
+    "mass_kg": 774182.75,
     "static_friction": 0.45,
     "dynamic_friction": 0.35,
     "restitution": 0.15,
@@ -1624,7 +1616,7 @@
     "wikidata_qcode": null
   },
   "wq_17/SM-DIAOSHAN-1": {
-    "mass_kg": null,
+    "mass_kg": 5.703,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -1640,7 +1632,7 @@
     "wikidata_qcode": null
   },
   "wq_17/SM-DIAOSHAN-3": {
-    "mass_kg": 91.8,
+    "mass_kg": 3.476,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -1648,7 +1640,7 @@
     "wikidata_qcode": "Q180399"
   },
   "wq_17/SM-DIAOSHAN-4": {
-    "mass_kg": 141.53,
+    "mass_kg": 4.111,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -1664,7 +1656,7 @@
     "wikidata_qcode": "Q180399"
   },
   "wq_17/SM-DIAOSHAN-6": {
-    "mass_kg": 109.1,
+    "mass_kg": 5.094,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -1688,7 +1680,7 @@
     "wikidata_qcode": "Q1134005"
   },
   "wq_17/SM-DIAOSHAN-9": {
-    "mass_kg": null,
+    "mass_kg": 14.53,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,
@@ -1696,7 +1688,7 @@
     "wikidata_qcode": null
   },
   "wq_17/SM-FENGSHAN-1": {
-    "mass_kg": 5.13,
+    "mass_kg": 5.434,
     "static_friction": 0.45,
     "dynamic_friction": 0.33,
     "restitution": 0.08,
@@ -1712,7 +1704,7 @@
     "wikidata_qcode": "Q186263"
   },
   "wq_17/SM-FENGSHAN-3": {
-    "mass_kg": 4.06,
+    "mass_kg": 4.3,
     "static_friction": 0.45,
     "dynamic_friction": 0.33,
     "restitution": 0.08,
@@ -1816,7 +1808,7 @@
     "wikidata_qcode": null
   },
   "wq_2/SM-ZHUANGSHIGUI-3": {
-    "mass_kg": null,
+    "mass_kg": 77.502,
     "static_friction": 0.5,
     "dynamic_friction": 0.35,
     "restitution": 0.05,

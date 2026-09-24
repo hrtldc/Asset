@@ -830,7 +830,7 @@
       "specific_zh": "台灯",
       "semantic_class": "DeskLamp",
       "wikidata_qcode": "Q1134005",
-      "mass_kg": 12.62,
+      "mass_kg": 13.363,
       "static_friction": 0.45,
       "dynamic_friction": 0.33,
       "restitution": 0.08,
@@ -843,7 +843,7 @@
       "video_rel_path": "V_TAIDENG.mp4",
       "video_mtime": 1789723811,
       "primary_usd_rel_path": "SM-TAIDENG-1.usd",
-      "total_size_bytes": 26472090,
+      "total_size_bytes": 26472234,
       "total_size_mb": 25.25,
       "video_files": [
         {
@@ -908,7 +908,7 @@
       "specific_zh": "台灯",
       "semantic_class": "DeskLamp",
       "wikidata_qcode": "Q1134005",
-      "mass_kg": 1.27,
+      "mass_kg": 1.348,
       "static_friction": 0.45,
       "dynamic_friction": 0.33,
       "restitution": 0.08,
@@ -921,7 +921,7 @@
       "video_rel_path": "V_TAIDENG.mp4",
       "video_mtime": 1789724127,
       "primary_usd_rel_path": "SM-TAIDENG-3.usd",
-      "total_size_bytes": 4108958,
+      "total_size_bytes": 4109007,
       "total_size_mb": 3.92,
       "video_files": [
         {
@@ -947,7 +947,7 @@
       "specific_zh": "台灯",
       "semantic_class": "DeskLamp",
       "wikidata_qcode": "Q1134005",
-      "mass_kg": 0.29,
+      "mass_kg": 0.308,
       "static_friction": 0.45,
       "dynamic_friction": 0.33,
       "restitution": 0.08,
@@ -960,8 +960,8 @@
       "video_rel_path": "V_TAIDENG.mp4",
       "video_mtime": 1789724183,
       "primary_usd_rel_path": "SM-TAIDENG-4.usd",
-      "total_size_bytes": 23820856,
-      "total_size_mb": 22.72,
+      "total_size_bytes": 23817549,
+      "total_size_mb": 22.71,
       "video_files": [
         {
           "name": "V_TAIDENG.mp4",
@@ -986,7 +986,7 @@
       "specific_zh": "台灯",
       "semantic_class": "DeskLamp",
       "wikidata_qcode": "Q1134005",
-      "mass_kg": 0.31,
+      "mass_kg": 0.328,
       "static_friction": 0.45,
       "dynamic_friction": 0.33,
       "restitution": 0.08,
@@ -999,7 +999,7 @@
       "video_rel_path": "V_TAIDENG.mp4",
       "video_mtime": 1789715122,
       "primary_usd_rel_path": "SM-TAIDENG-5.usd",
-      "total_size_bytes": 4007520,
+      "total_size_bytes": 4004465,
       "total_size_mb": 3.82,
       "video_files": [
         {
@@ -1181,7 +1181,7 @@
       "specific_zh": "床头柜",
       "semantic_class": "Nightstand",
       "wikidata_qcode": "Q42177",
-      "mass_kg": 11.426,
+      "mass_kg": 41.261,
       "static_friction": 0.55,
       "dynamic_friction": 0.4,
       "restitution": 0.2,
@@ -1194,7 +1194,7 @@
       "video_rel_path": "V_ChuangTouGui.mp4",
       "video_mtime": 1789436053,
       "primary_usd_rel_path": "SM_ChuangTouGui.usd",
-      "total_size_bytes": 22604873,
+      "total_size_bytes": 22604881,
       "total_size_mb": 21.56,
       "video_files": [
         {
@@ -1220,7 +1220,7 @@
       "specific_zh": "床头柜",
       "semantic_class": "Nightstand",
       "wikidata_qcode": "Q42177",
-      "mass_kg": 22.948,
+      "mass_kg": 82.868,
       "static_friction": 0.55,
       "dynamic_friction": 0.4,
       "restitution": 0.2,
@@ -1233,7 +1233,7 @@
       "video_rel_path": "V_ChuangTouGui01.mp4",
       "video_mtime": 1789436340,
       "primary_usd_rel_path": "SM_ChuangTouGui01.usd",
-      "total_size_bytes": 26422845,
+      "total_size_bytes": 26422995,
       "total_size_mb": 25.2,
       "video_files": [
         {
@@ -1259,7 +1259,7 @@
       "specific_zh": "床头柜",
       "semantic_class": "Nightstand",
       "wikidata_qcode": "Q42177",
-      "mass_kg": 21.225,
+      "mass_kg": 75.745,
       "static_friction": 0.55,
       "dynamic_friction": 0.4,
       "restitution": 0.2,
@@ -1272,7 +1272,7 @@
       "video_rel_path": "V_ChuangTouGui02.mp4",
       "video_mtime": 1789436633,
       "primary_usd_rel_path": "SM_ChuangTouGui02.usd",
-      "total_size_bytes": 5742567,
+      "total_size_bytes": 5742681,
       "total_size_mb": 5.48,
       "video_files": [
         {
@@ -1298,7 +1298,7 @@
       "specific_zh": "床头柜",
       "semantic_class": "Nightstand",
       "wikidata_qcode": "Q42177",
-      "mass_kg": 19.407,
+      "mass_kg": 70.082,
       "static_friction": 0.55,
       "dynamic_friction": 0.4,
       "restitution": 0.2,
@@ -1311,7 +1311,7 @@
       "video_rel_path": "V_ChuangTouGui03.mp4",
       "video_mtime": 1789436925,
       "primary_usd_rel_path": "SM_ChuangTouGui03.usd",
-      "total_size_bytes": 11576844,
+      "total_size_bytes": 11577049,
       "total_size_mb": 11.04,
       "video_files": [
         {
@@ -1350,7 +1350,7 @@
       "video_rel_path": "V_ChuangTouGui04.mp4",
       "video_mtime": 1789437230,
       "primary_usd_rel_path": "SM_ChuangTouGui04.usd",
-      "total_size_bytes": 56469327,
+      "total_size_bytes": 56469962,
       "total_size_mb": 53.85,
       "video_files": [
         {
@@ -1649,7 +1649,7 @@
       "specific_zh": "摄像头",
       "semantic_class": "Camera",
       "wikidata_qcode": "Q15328",
-      "mass_kg": 5.441,
+      "mass_kg": 2.975,
       "static_friction": 0.45,
       "dynamic_friction": 0.35,
       "restitution": 0.15,
@@ -1658,24 +1658,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SheXiangTou02.png",
-      "thumbnail_mtime": 1789540750,
+      "thumbnail_mtime": 1790224334,
       "video_rel_path": "V_SheXiangTou02.mp4",
-      "video_mtime": 1789540880,
+      "video_mtime": 1790224437,
       "primary_usd_rel_path": "SM_SheXiangTou02.usd",
-      "total_size_bytes": 5801774,
-      "total_size_mb": 5.53,
+      "total_size_bytes": 6159032,
+      "total_size_mb": 5.87,
       "video_files": [
         {
           "name": "V_SheXiangTou02.mp4",
           "rel_path": "V_SheXiangTou02.mp4",
-          "size_bytes": 643195,
-          "mtime": 1789540880,
-          "size_str": "628.1 KB"
+          "size_bytes": 672143,
+          "mtime": 1790224437,
+          "size_str": "656.4 KB"
         }
       ],
       "displayName": "Camera / 摄像头 - 03",
-      "static_thumb_path": "media/qzs_15/SM_SheXiangTou02/thumb.webp?v=1789547404",
-      "static_video_path": "media/qzs_15/SM_SheXiangTou02/V_SheXiangTou02.mp4?v=1789540880_0702d566"
+      "static_thumb_path": "media/qzs_15/SM_SheXiangTou02/thumb.webp?v=1790227564",
+      "static_video_path": "media/qzs_15/SM_SheXiangTou02/V_SheXiangTou02.mp4?v=1790224437_0702d566"
     },
     {
       "id": "wq_15/SM-SHEXIANGTOU-1",
@@ -1974,8 +1974,8 @@
       "video_rel_path": "V_ERJI.mp4",
       "video_mtime": 1789716778,
       "primary_usd_rel_path": "SM-ERJI-1.usd",
-      "total_size_bytes": 69455735,
-      "total_size_mb": 66.24,
+      "total_size_bytes": 69448268,
+      "total_size_mb": 66.23,
       "video_files": [
         {
           "name": "V_ERJI.mp4",
@@ -2039,7 +2039,7 @@
       "specific_zh": "笔记本电脑",
       "semantic_class": "Laptop",
       "wikidata_qcode": "Q3962",
-      "mass_kg": 0.133,
+      "mass_kg": 107.228,
       "static_friction": 0.45,
       "dynamic_friction": 0.35,
       "restitution": 0.15,
@@ -2052,8 +2052,8 @@
       "video_rel_path": "V_BiJiBenDianNao.mp4",
       "video_mtime": 1789544629,
       "primary_usd_rel_path": "SM_BiJiBenDianNao.usd",
-      "total_size_bytes": 8600136,
-      "total_size_mb": 8.2,
+      "total_size_bytes": 8607802,
+      "total_size_mb": 8.21,
       "video_files": [
         {
           "name": "V_BiJiBenDianNao.mp4",
@@ -2117,7 +2117,7 @@
       "specific_zh": "笔记本电脑",
       "semantic_class": "Laptop",
       "wikidata_qcode": "Q3962",
-      "mass_kg": 0.546,
+      "mass_kg": 1.8,
       "static_friction": 0.45,
       "dynamic_friction": 0.35,
       "restitution": 0.15,
@@ -2130,7 +2130,7 @@
       "video_rel_path": "V_BiJiBenDianNao02.mp4",
       "video_mtime": 1789546440,
       "primary_usd_rel_path": "SM_BiJiBenDianNao02.usd",
-      "total_size_bytes": 44995747,
+      "total_size_bytes": 44996307,
       "total_size_mb": 42.91,
       "video_files": [
         {
@@ -2312,7 +2312,7 @@
       "specific_zh": "手机",
       "semantic_class": "Phone",
       "wikidata_qcode": "Q193175",
-      "mass_kg": 0.19,
+      "mass_kg": 0.106,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.15,
@@ -2325,8 +2325,8 @@
       "video_rel_path": "V_SHOUJI.mp4",
       "video_mtime": 1789708063,
       "primary_usd_rel_path": "SM-SHOUJI-1.usd",
-      "total_size_bytes": 6199563,
-      "total_size_mb": 5.91,
+      "total_size_bytes": 6207381,
+      "total_size_mb": 5.92,
       "video_files": [
         {
           "name": "V_SHOUJI.mp4",
@@ -2546,7 +2546,7 @@
       "specific_zh": "柜子",
       "semantic_class": "Cabinet",
       "wikidata_qcode": "Q1321517",
-      "mass_kg": 45.0,
+      "mass_kg": 79.272,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -2559,8 +2559,8 @@
       "video_rel_path": "V_GuiZi.mp4",
       "video_mtime": 1790145546,
       "primary_usd_rel_path": "SM_GuiZi.usd",
-      "total_size_bytes": 14861451,
-      "total_size_mb": 14.17,
+      "total_size_bytes": 14084894,
+      "total_size_mb": 13.43,
       "video_files": [
         {
           "name": "V_GuiZi.mp4",
@@ -3066,7 +3066,7 @@
       "video_rel_path": "V_GuiZi09.mp4",
       "video_mtime": 1789426106,
       "primary_usd_rel_path": "SM_GuiZi09_B.usd",
-      "total_size_bytes": 43427014,
+      "total_size_bytes": 43427500,
       "total_size_mb": 41.42,
       "video_files": [
         {
@@ -3638,7 +3638,7 @@
       "specific_zh": "柜子",
       "semantic_class": "Cabinet",
       "wikidata_qcode": "Q1321517",
-      "mass_kg": 45.0,
+      "mass_kg": 77.502,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -3651,7 +3651,7 @@
       "video_rel_path": "V_ZHUANGSHIGUI.mp4",
       "video_mtime": 1789478442,
       "primary_usd_rel_path": "SM-ZHUANGSHIGUI-3.usd",
-      "total_size_bytes": 18150271,
+      "total_size_bytes": 18150602,
       "total_size_mb": 17.31,
       "video_files": [
         {
@@ -3989,7 +3989,7 @@
       "specific_zh": "洗衣机",
       "semantic_class": "WashingMachine",
       "wikidata_qcode": "Q124441",
-      "mass_kg": 75.754,
+      "mass_kg": 61.572,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -4002,8 +4002,8 @@
       "video_rel_path": "SM_XiYiJi02.mp4",
       "video_mtime": 1789987389,
       "primary_usd_rel_path": "SM_XiYiJi02.usd",
-      "total_size_bytes": 19593008,
-      "total_size_mb": 18.69,
+      "total_size_bytes": 19586098,
+      "total_size_mb": 18.68,
       "video_files": [
         {
           "name": "SM_XiYiJi02.mp4",
@@ -4106,7 +4106,7 @@
       "specific_zh": "洗衣机",
       "semantic_class": "WashingMachine",
       "wikidata_qcode": "Q124441",
-      "mass_kg": 15.22,
+      "mass_kg": 15.0,
       "static_friction": 0.45,
       "dynamic_friction": 0.35,
       "restitution": 0.15,
@@ -4119,7 +4119,7 @@
       "video_rel_path": "V_XIYIJI.mp4",
       "video_mtime": 1789719695,
       "primary_usd_rel_path": "SM-XIYIJI-2.usd",
-      "total_size_bytes": 12748808,
+      "total_size_bytes": 12746039,
       "total_size_mb": 12.16,
       "video_files": [
         {
@@ -4314,8 +4314,8 @@
       "video_rel_path": "V_YuShiGui02.mp4",
       "video_mtime": 1789630943,
       "primary_usd_rel_path": "SM_YuShiGui02-B.usd",
-      "total_size_bytes": 33240525,
-      "total_size_mb": 31.7,
+      "total_size_bytes": 33220640,
+      "total_size_mb": 31.68,
       "video_files": [
         {
           "name": "V_YuShiGui02.mp4",
@@ -4653,10 +4653,10 @@
       "semantic_class": "Light",
       "wikidata_qcode": "Q1134005",
       "mass_kg": 2.574,
-      "static_friction": 0.5,
-      "dynamic_friction": 0.35,
-      "restitution": 0.05,
-      "friction": "0.5 / 0.35",
+      "static_friction": 0.45,
+      "dynamic_friction": 0.33,
+      "restitution": 0.08,
+      "friction": "0.45 / 0.33",
       "status": "PASS",
       "has_video": true,
       "has_usd": true,
@@ -4665,8 +4665,8 @@
       "video_rel_path": "V_Deng.mp4",
       "video_mtime": 1789640299,
       "primary_usd_rel_path": "SM_Deng.usd",
-      "total_size_bytes": 1559468,
-      "total_size_mb": 1.49,
+      "total_size_bytes": 1554602,
+      "total_size_mb": 1.48,
       "video_files": [
         {
           "name": "V_Deng.mp4",
@@ -5159,7 +5159,7 @@
       "specific_zh": "燃气灶",
       "semantic_class": "GasStove",
       "wikidata_qcode": "Q180399",
-      "mass_kg": 2.44,
+      "mass_kg": 18.0,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -5172,8 +5172,8 @@
       "video_rel_path": "V_LUZAO.mp4",
       "video_mtime": 1789717440,
       "primary_usd_rel_path": "SM-LUZAO-1.usd",
-      "total_size_bytes": 8300923,
-      "total_size_mb": 7.92,
+      "total_size_bytes": 8297686,
+      "total_size_mb": 7.91,
       "video_files": [
         {
           "name": "V_LUZAO.mp4",
@@ -7616,7 +7616,7 @@
       "specific_zh": "门",
       "semantic_class": "Door",
       "wikidata_qcode": "Q36794",
-      "mass_kg": 22.133,
+      "mass_kg": 30.012,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -7629,8 +7629,8 @@
       "video_rel_path": "V_PINGBANMEN-10.mp4",
       "video_mtime": 1789458509,
       "primary_usd_rel_path": "SM-PINGBANMEN-10_B.usd",
-      "total_size_bytes": 16096549,
-      "total_size_mb": 15.35,
+      "total_size_bytes": 16104773,
+      "total_size_mb": 15.36,
       "video_files": [
         {
           "name": "V_PINGBANMEN-10.mp4",
@@ -7733,7 +7733,7 @@
       "specific_zh": "门",
       "semantic_class": "Door",
       "wikidata_qcode": "Q36794",
-      "mass_kg": 60.002,
+      "mass_kg": 28.5,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -7746,8 +7746,8 @@
       "video_rel_path": "V_PINGBANMEN-13.mp4",
       "video_mtime": 1789459819,
       "primary_usd_rel_path": "SM-PINGBANMEN-13_B.usd",
-      "total_size_bytes": 10951783,
-      "total_size_mb": 10.44,
+      "total_size_bytes": 10959998,
+      "total_size_mb": 10.45,
       "video_files": [
         {
           "name": "V_PINGBANMEN-13.mp4",
@@ -8240,7 +8240,7 @@
       "specific_zh": "鞋柜",
       "semantic_class": "ShoeCabinet",
       "wikidata_qcode": "Q1321517",
-      "mass_kg": 120.0,
+      "mass_kg": 32.0,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -8253,7 +8253,7 @@
       "video_rel_path": "V_XieGui02.mp4",
       "video_mtime": 1789434760,
       "primary_usd_rel_path": "SM_XieGui02_B.usd",
-      "total_size_bytes": 20612266,
+      "total_size_bytes": 20612412,
       "total_size_mb": 19.66,
       "video_files": [
         {
@@ -8630,7 +8630,7 @@
       "specific_zh": "吊扇",
       "semantic_class": "CeilingFan",
       "wikidata_qcode": "Q180399",
-      "mass_kg": 114.29,
+      "mass_kg": 5.703,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -8643,8 +8643,8 @@
       "video_rel_path": "V_DIAOSHAN.mp4",
       "video_mtime": 1790219130,
       "primary_usd_rel_path": "SM-DIAOSHAN-1.usd",
-      "total_size_bytes": 25943230,
-      "total_size_mb": 24.74,
+      "total_size_bytes": 25951354,
+      "total_size_mb": 24.75,
       "video_files": [
         {
           "name": "V_DIAOSHAN.mp4",
@@ -8708,7 +8708,7 @@
       "specific_zh": "吊扇",
       "semantic_class": "CeilingFan",
       "wikidata_qcode": "Q180399",
-      "mass_kg": 91.8,
+      "mass_kg": 3.476,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -8721,7 +8721,7 @@
       "video_rel_path": "V_DIAOSHAN.mp4",
       "video_mtime": 1789728117,
       "primary_usd_rel_path": "SM-DIAOSHAN-3.usd",
-      "total_size_bytes": 7297360,
+      "total_size_bytes": 7294238,
       "total_size_mb": 6.96,
       "video_files": [
         {
@@ -8747,7 +8747,7 @@
       "specific_zh": "吊扇",
       "semantic_class": "CeilingFan",
       "wikidata_qcode": "Q180399",
-      "mass_kg": 141.53,
+      "mass_kg": 4.111,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -8760,7 +8760,7 @@
       "video_rel_path": "V_DIAOSHAN.mp4",
       "video_mtime": 1790218297,
       "primary_usd_rel_path": "SM-DIAOSHAN-4.usd",
-      "total_size_bytes": 12746811,
+      "total_size_bytes": 12746543,
       "total_size_mb": 12.16,
       "video_files": [
         {
@@ -8825,7 +8825,7 @@
       "specific_zh": "吊扇",
       "semantic_class": "CeilingFan",
       "wikidata_qcode": "Q180399",
-      "mass_kg": 109.1,
+      "mass_kg": 5.094,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -8838,7 +8838,7 @@
       "video_rel_path": "V_DIAOSHAN.mp4",
       "video_mtime": 1789728495,
       "primary_usd_rel_path": "SM-DIAOSHAN-6.usd",
-      "total_size_bytes": 20907484,
+      "total_size_bytes": 20904459,
       "total_size_mb": 19.94,
       "video_files": [
         {
@@ -8942,7 +8942,7 @@
       "specific_zh": "吊扇",
       "semantic_class": "CeilingFan",
       "wikidata_qcode": "Q153988",
-      "mass_kg": 4.5,
+      "mass_kg": 14.53,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -8955,8 +8955,8 @@
       "video_rel_path": "V_DIAOSHAN.mp4",
       "video_mtime": 1790133159,
       "primary_usd_rel_path": "SM-DIAOSHAN-9.usd",
-      "total_size_bytes": 27742730,
-      "total_size_mb": 26.46,
+      "total_size_bytes": 26966942,
+      "total_size_mb": 25.72,
       "video_files": [
         {
           "name": "V_DIAOSHAN.mp4",
@@ -9059,7 +9059,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 4.67,
+      "mass_kg": 11.141,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -9072,8 +9072,8 @@
       "video_rel_path": "V_FengShan02.mp4",
       "video_mtime": 1789875636,
       "primary_usd_rel_path": "SM_FengShan02.usd",
-      "total_size_bytes": 19226870,
-      "total_size_mb": 18.34,
+      "total_size_bytes": 19223928,
+      "total_size_mb": 18.33,
       "video_files": [
         {
           "name": "V_FengShan02.mp4",
@@ -9098,7 +9098,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 36.36,
+      "mass_kg": 6.134,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -9111,8 +9111,8 @@
       "video_rel_path": "V_FengShan03.mp4",
       "video_mtime": 1789875767,
       "primary_usd_rel_path": "SM_FengShan03.usd",
-      "total_size_bytes": 11322179,
-      "total_size_mb": 10.8,
+      "total_size_bytes": 11319166,
+      "total_size_mb": 10.79,
       "video_files": [
         {
           "name": "V_FengShan03.mp4",
@@ -9137,7 +9137,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 21.28,
+      "mass_kg": 50.756,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -9150,8 +9150,8 @@
       "video_rel_path": "V_FengShan04.mp4",
       "video_mtime": 1789875922,
       "primary_usd_rel_path": "SM_FengShan04.usd",
-      "total_size_bytes": 7346244,
-      "total_size_mb": 7.01,
+      "total_size_bytes": 7343200,
+      "total_size_mb": 7.0,
       "video_files": [
         {
           "name": "V_FengShan04.mp4",
@@ -9215,7 +9215,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 0.34,
+      "mass_kg": 0.799,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -9228,8 +9228,8 @@
       "video_rel_path": "V_FengShan06.mp4",
       "video_mtime": 1789876341,
       "primary_usd_rel_path": "SM_FengShan06.usd",
-      "total_size_bytes": 64023432,
-      "total_size_mb": 61.06,
+      "total_size_bytes": 64020426,
+      "total_size_mb": 61.05,
       "video_files": [
         {
           "name": "V_FengShan06.mp4",
@@ -9254,7 +9254,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 4.5,
+      "mass_kg": 3.015,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -9267,8 +9267,8 @@
       "video_rel_path": "V_FengShan07.mp4",
       "video_mtime": 1790064221,
       "primary_usd_rel_path": "SM_FengShan07.usd",
-      "total_size_bytes": 35853101,
-      "total_size_mb": 34.19,
+      "total_size_bytes": 35860661,
+      "total_size_mb": 34.2,
       "video_files": [
         {
           "name": "V_FengShan07.mp4",
@@ -9332,7 +9332,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 4.5,
+      "mass_kg": 1.402,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -9345,8 +9345,8 @@
       "video_rel_path": "V_FengShan09.mp4",
       "video_mtime": 1790150203,
       "primary_usd_rel_path": "SM_FengShan09.usd",
-      "total_size_bytes": 17469654,
-      "total_size_mb": 16.66,
+      "total_size_bytes": 16708728,
+      "total_size_mb": 15.93,
       "video_files": [
         {
           "name": "V_FengShan09.mp4",
@@ -9410,7 +9410,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 40.93,
+      "mass_kg": 97.609,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -9423,7 +9423,7 @@
       "video_rel_path": "V_FengShan11.mp4",
       "video_mtime": 1789876969,
       "primary_usd_rel_path": "SM_FengShan11.usd",
-      "total_size_bytes": 8429425,
+      "total_size_bytes": 8426335,
       "total_size_mb": 8.04,
       "video_files": [
         {
@@ -9449,7 +9449,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q264923",
-      "mass_kg": 21.28,
+      "mass_kg": 50.756,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -9462,7 +9462,7 @@
       "video_rel_path": "V_FengShan12.mp4",
       "video_mtime": 1789877095,
       "primary_usd_rel_path": "SM_FengShan12.usd",
-      "total_size_bytes": 6867815,
+      "total_size_bytes": 6864679,
       "total_size_mb": 6.55,
       "video_files": [
         {
@@ -9488,7 +9488,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q1134005",
-      "mass_kg": 5.13,
+      "mass_kg": 5.434,
       "static_friction": 0.45,
       "dynamic_friction": 0.33,
       "restitution": 0.08,
@@ -9501,7 +9501,7 @@
       "video_rel_path": "V_FENGSHAN.mp4",
       "video_mtime": 1789728945,
       "primary_usd_rel_path": "SM-FENGSHAN-1.usd",
-      "total_size_bytes": 8660958,
+      "total_size_bytes": 8657780,
       "total_size_mb": 8.26,
       "video_files": [
         {
@@ -9566,7 +9566,7 @@
       "specific_zh": "电风扇",
       "semantic_class": "ElectricFan",
       "wikidata_qcode": "Q1134005",
-      "mass_kg": 4.06,
+      "mass_kg": 4.3,
       "static_friction": 0.45,
       "dynamic_friction": 0.33,
       "restitution": 0.08,
@@ -9579,8 +9579,8 @@
       "video_rel_path": "V_FENGSHAN.mp4",
       "video_mtime": 1789729150,
       "primary_usd_rel_path": "SM-FENGSHAN-3.usd",
-      "total_size_bytes": 8846966,
-      "total_size_mb": 8.44,
+      "total_size_bytes": 8843764,
+      "total_size_mb": 8.43,
       "video_files": [
         {
           "name": "V_FENGSHAN.mp4",
@@ -9761,7 +9761,7 @@
       "specific_zh": "马桶",
       "semantic_class": "Toilet",
       "wikidata_qcode": "Q7338",
-      "mass_kg": 28.0,
+      "mass_kg": 52.844,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -9774,8 +9774,8 @@
       "video_rel_path": "V_MaTong01.mp4",
       "video_mtime": 1790072894,
       "primary_usd_rel_path": "SM_MaTong01.usd",
-      "total_size_bytes": 339393686,
-      "total_size_mb": 323.67,
+      "total_size_bytes": 339386569,
+      "total_size_mb": 323.66,
       "video_files": [
         {
           "name": "V_MaTong01.mp4",
@@ -9839,7 +9839,7 @@
       "specific_zh": "马桶",
       "semantic_class": "Toilet",
       "wikidata_qcode": "Q7338",
-      "mass_kg": 121.73,
+      "mass_kg": 67.626,
       "static_friction": 0.4,
       "dynamic_friction": 0.3,
       "restitution": 0.1,
@@ -9848,24 +9848,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_MaTong03.png",
-      "thumbnail_mtime": 1789877925,
+      "thumbnail_mtime": 1790131148,
       "video_rel_path": "V_MaTong03.mp4",
-      "video_mtime": 1789878103,
+      "video_mtime": 1790131216,
       "primary_usd_rel_path": "SM_MaTong03.usd",
-      "total_size_bytes": 55929630,
-      "total_size_mb": 53.34,
+      "total_size_bytes": 81234416,
+      "total_size_mb": 77.47,
       "video_files": [
         {
           "name": "V_MaTong03.mp4",
           "rel_path": "V_MaTong03.mp4",
-          "size_bytes": 1105260,
-          "mtime": 1789878103,
-          "size_str": "1.05 MB"
+          "size_bytes": 967576,
+          "mtime": 1790131216,
+          "size_str": "944.9 KB"
         }
       ],
       "displayName": "Toilet / 马桶 - 04",
       "static_thumb_path": "media/qzs_17/SM_MaTong03/thumb.webp?v=1790154107",
-      "static_video_path": "media/qzs_17/SM_MaTong03/V_MaTong03.mp4?v=1789878103_0702d566"
+      "static_video_path": "media/qzs_17/SM_MaTong03/V_MaTong03.mp4?v=1790131216_0702d566"
     },
     {
       "id": "wq_17/SM-MATONG-1",
@@ -10121,8 +10121,8 @@
     "total_usds": 257,
     "total_batches": 24,
     "total_categories": 17,
-    "total_size_gb": 9.19
+    "total_size_gb": 9.21
   },
-  "build_timestamp": 1790221656,
+  "build_timestamp": 1790227568,
   "is_static_showcase": true
 }
