@@ -1580,24 +1580,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_SheXiangTou.png",
-      "thumbnail_mtime": 1789707331,
+      "thumbnail_mtime": 1790158321,
       "video_rel_path": "V_SheXiangTou.mp4",
-      "video_mtime": 1789707465,
+      "video_mtime": 1790158397,
       "primary_usd_rel_path": "SM_SheXiangTou.usd",
-      "total_size_bytes": 101215097,
-      "total_size_mb": 96.53,
+      "total_size_bytes": 101065146,
+      "total_size_mb": 96.38,
       "video_files": [
         {
           "name": "V_SheXiangTou.mp4",
           "rel_path": "V_SheXiangTou.mp4",
-          "size_bytes": 559391,
-          "mtime": 1789707465,
-          "size_str": "546.3 KB"
+          "size_bytes": 832227,
+          "mtime": 1790158397,
+          "size_str": "812.7 KB"
         }
       ],
       "displayName": "Camera / 摄像头 - 01",
-      "static_thumb_path": "media/qzs_15/SM_SheXiangTou/thumb.webp?v=1789708433",
-      "static_video_path": "media/qzs_15/SM_SheXiangTou/V_SheXiangTou.mp4?v=1789707465_0702d566"
+      "static_thumb_path": "media/qzs_15/SM_SheXiangTou/thumb.webp?v=1790159097",
+      "static_video_path": "media/qzs_15/SM_SheXiangTou/V_SheXiangTou.mp4?v=1790158397_0702d566"
     },
     {
       "id": "qzs_15/SM_SheXiangTou01",
@@ -2663,7 +2663,7 @@
       "specific_zh": "柜子",
       "semantic_class": "Cabinet",
       "wikidata_qcode": "Q1321517",
-      "mass_kg": 124.073,
+      "mass_kg": 45.0,
       "static_friction": 0.5,
       "dynamic_friction": 0.35,
       "restitution": 0.05,
@@ -2672,24 +2672,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_GuiZi.png",
-      "thumbnail_mtime": 1789396774,
+      "thumbnail_mtime": 1790145472,
       "video_rel_path": "V_GuiZi.mp4",
-      "video_mtime": 1789397036,
+      "video_mtime": 1790145546,
       "primary_usd_rel_path": "SM_GuiZi.usd",
-      "total_size_bytes": 13280780,
-      "total_size_mb": 12.67,
+      "total_size_bytes": 14861451,
+      "total_size_mb": 14.17,
       "video_files": [
         {
           "name": "V_GuiZi.mp4",
           "rel_path": "V_GuiZi.mp4",
-          "size_bytes": 1306242,
-          "mtime": 1789397036,
-          "size_str": "1.25 MB"
+          "size_bytes": 1287786,
+          "mtime": 1790145546,
+          "size_str": "1.23 MB"
         }
       ],
       "displayName": "Cabinet / 柜子 - 01",
       "static_thumb_path": "media/qzs_10/SM_GuiZi/thumb.webp?v=1790154061",
-      "static_video_path": "media/qzs_10/SM_GuiZi/V_GuiZi.mp4?v=1789397036_0702d566"
+      "static_video_path": "media/qzs_10/SM_GuiZi/V_GuiZi.mp4?v=1790145546_0702d566"
     },
     {
       "id": "qzs_10/SM_GuiZi01",
@@ -10152,24 +10152,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_MATONG.png",
-      "thumbnail_mtime": 1789730089,
+      "thumbnail_mtime": 1790214349,
       "video_rel_path": "V_MATONG.mp4",
-      "video_mtime": 1789730193,
+      "video_mtime": 1790214453,
       "primary_usd_rel_path": "SM-MATONG-4.usd",
-      "total_size_bytes": 8677271,
-      "total_size_mb": 8.28,
+      "total_size_bytes": 10613524,
+      "total_size_mb": 10.12,
       "video_files": [
         {
           "name": "V_MATONG.mp4",
           "rel_path": "V_MATONG.mp4",
-          "size_bytes": 794910,
-          "mtime": 1789730193,
-          "size_str": "776.3 KB"
+          "size_bytes": 788923,
+          "mtime": 1790214453,
+          "size_str": "770.4 KB"
         }
       ],
       "displayName": "Toilet / 马桶 - 08",
-      "static_thumb_path": "media/wq_17/SM-MATONG-4/thumb.webp?v=1790157558",
-      "static_video_path": "media/wq_17/SM-MATONG-4/V_MATONG.mp4?v=1789730193_0702d566"
+      "static_thumb_path": "media/wq_17/SM-MATONG-4/thumb.webp?v=1790215268",
+      "static_video_path": "media/wq_17/SM-MATONG-4/V_MATONG.mp4?v=1790214453_0702d566"
     }
   ],
   "total": 261,
@@ -10273,6 +10273,6 @@
     "total_categories": 18,
     "total_size_gb": 9.72
   },
-  "build_timestamp": 1790158098,
+  "build_timestamp": 1790215269,
   "is_static_showcase": true
 }
