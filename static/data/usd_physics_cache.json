@@ -472,12 +472,12 @@
     "wikidata_qcode": "Q1134005"
   },
   "qzs_16/SM_Deng03": {
-    "mass_kg": 0.4,
-    "static_friction": 0.45,
-    "dynamic_friction": 0.33,
-    "restitution": 0.08,
-    "semantic_class": "Lamp",
-    "wikidata_qcode": "Q1134005"
+    "mass_kg": 0.282,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
   },
   "qzs_16/SM_Deng04": {
     "mass_kg": 0.446,
@@ -1029,14 +1029,6 @@
     "dynamic_friction": 0.35,
     "restitution": 0.05,
     "semantic_class": "Table",
-    "wikidata_qcode": null
-  },
-  "SM_GuiZi_SimReady_Processed/.studio_tmp_video": {
-    "mass_kg": null,
-    "static_friction": 0.5,
-    "dynamic_friction": 0.35,
-    "restitution": 0.05,
-    "semantic_class": null,
     "wikidata_qcode": null
   },
   "SM_GuiZi_SimReady_Processed/Materials": {
@@ -2030,14 +2022,6 @@
     "restitution": 0.05,
     "semantic_class": "ShoeCabinet",
     "wikidata_qcode": "Q1321517"
-  },
-  "wq_9/SM-CHAZUOSHUJUXIAN-1": {
-    "mass_kg": 0.889,
-    "static_friction": 0.6,
-    "dynamic_friction": 0.45,
-    "restitution": 0.05,
-    "semantic_class": "Cable",
-    "wikidata_qcode": "Q16865280"
   },
   "wq_9/SM-CHUANGTOUGUI-1": {
     "mass_kg": 8.393,

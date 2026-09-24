@@ -2536,45 +2536,6 @@
       "static_video_path": "media/wq_15/SM-PINGBANDIANNAO-1/V_PINGBANDIANNAO.mp4?v=1789619064_0702d566"
     },
     {
-      "id": "wq_9/SM-CHAZUOSHUJUXIAN-1",
-      "batch": "wq_9",
-      "name": "SM-CHAZUOSHUJUXIAN-1",
-      "category": "数码配件",
-      "category_en": "Cables & Outlets",
-      "category_display": "数码配件 / Cables & Outlets",
-      "clean_category_en": "Cable & Outlet",
-      "specific_zh": "插座数据线",
-      "semantic_class": "CableOutlet",
-      "wikidata_qcode": "Q16865280",
-      "mass_kg": 0.889,
-      "static_friction": 0.6,
-      "dynamic_friction": 0.45,
-      "restitution": 0.05,
-      "friction": "0.6 / 0.45",
-      "status": "PASS",
-      "has_video": true,
-      "has_usd": true,
-      "thumbnail_rel_path": "T_CHAZUOSHUJUXIAN.png",
-      "thumbnail_mtime": 1789618906,
-      "video_rel_path": "V_CHAZUOSHUJUXIAN.mp4",
-      "video_mtime": 1789619760,
-      "primary_usd_rel_path": "SM-CHAZUOSHUJUXIAN-1.usd",
-      "total_size_bytes": 19834918,
-      "total_size_mb": 18.92,
-      "video_files": [
-        {
-          "name": "V_CHAZUOSHUJUXIAN.mp4",
-          "rel_path": "V_CHAZUOSHUJUXIAN.mp4",
-          "size_bytes": 902935,
-          "mtime": 1789619760,
-          "size_str": "881.8 KB"
-        }
-      ],
-      "displayName": "Cable & Outlet / 插座数据线 - 01",
-      "static_thumb_path": "media/wq_9/SM-CHAZUOSHUJUXIAN-1/thumb.webp?v=1789627306",
-      "static_video_path": "media/wq_9/SM-CHAZUOSHUJUXIAN-1/V_CHAZUOSHUJUXIAN.mp4?v=1789619760_0702d566"
-    },
-    {
       "id": "qzs_10/SM_GuiZi",
       "batch": "qzs_10",
       "name": "SM_GuiZi",
@@ -4808,33 +4769,33 @@
       "specific_zh": "灯具",
       "semantic_class": "Light",
       "wikidata_qcode": "Q1134005",
-      "mass_kg": 0.4,
-      "static_friction": 0.45,
-      "dynamic_friction": 0.33,
-      "restitution": 0.08,
-      "friction": "0.45 / 0.33",
+      "mass_kg": 0.282,
+      "static_friction": 0.5,
+      "dynamic_friction": 0.35,
+      "restitution": 0.05,
+      "friction": "0.5 / 0.35",
       "status": "PASS",
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_Deng03.png",
-      "thumbnail_mtime": 1789640468,
+      "thumbnail_mtime": 1790137794,
       "video_rel_path": "V_Deng03.mp4",
-      "video_mtime": 1789640529,
+      "video_mtime": 1790137862,
       "primary_usd_rel_path": "SM_Deng03.usd",
-      "total_size_bytes": 9852140,
-      "total_size_mb": 9.4,
+      "total_size_bytes": 11734370,
+      "total_size_mb": 11.19,
       "video_files": [
         {
           "name": "V_Deng03.mp4",
           "rel_path": "V_Deng03.mp4",
-          "size_bytes": 240254,
-          "mtime": 1789640529,
-          "size_str": "234.6 KB"
+          "size_bytes": 566973,
+          "mtime": 1790137862,
+          "size_str": "553.7 KB"
         }
       ],
       "displayName": "Light / 灯具 - 04",
       "static_thumb_path": "media/qzs_16/SM_Deng03/thumb.webp?v=1790154071",
-      "static_video_path": "media/qzs_16/SM_Deng03/V_Deng03.mp4?v=1789640529_0702d566"
+      "static_video_path": "media/qzs_16/SM_Deng03/V_Deng03.mp4?v=1790137862_0702d566"
     },
     {
       "id": "qzs_16/SM_Deng04",
@@ -10063,7 +10024,7 @@
       "static_video_path": "media/wq_17/SM-MATONG-4/V_MATONG.mp4?v=1790214453_0702d566"
     }
   ],
-  "total": 258,
+  "total": 257,
   "batches": [
     "qzs_10",
     "qzs_11",
@@ -10107,8 +10068,7 @@
     "灯具",
     "中岛台",
     "梳妆台",
-    "茶几",
-    "数码配件"
+    "茶几"
   ],
   "category_counts": {
     "中岛台": 4,
@@ -10117,7 +10077,6 @@
     "台灯": 9,
     "床头柜": 10,
     "数码用品": 25,
-    "数码配件": 1,
     "柜类": 33,
     "梳妆台": 3,
     "洗衣机": 8,
@@ -10131,7 +10090,7 @@
     "马桶": 8
   },
   "batch_counts": {
-    "wq_9": 6,
+    "wq_9": 5,
     "qzs_3": 8,
     "wq_3": 5,
     "qzs_4": 8,
@@ -10157,13 +10116,13 @@
     "qzs_17": 17
   },
   "stats": {
-    "total_assets": 258,
-    "total_videos": 258,
-    "total_usds": 258,
+    "total_assets": 257,
+    "total_videos": 257,
+    "total_usds": 257,
     "total_batches": 24,
-    "total_categories": 18,
-    "total_size_gb": 9.21
+    "total_categories": 17,
+    "total_size_gb": 9.19
   },
-  "build_timestamp": 1790220231,
+  "build_timestamp": 1790221656,
   "is_static_showcase": true
 }
