@@ -5,27 +5,45 @@
 const isLocalServer = (window.location.hostname === "127.0.0.1" || window.location.hostname === "localhost") && (window.location.port === "8088" || window.location.port === "8000");
 
 const state = {
+  currentSection: "assets", // 'assets' | 'scenes'
   assets: [],
+  scenes: [],
   filteredAssets: [],
+  filteredScenes: [],
   batches: [],
   categories: [],
   categoryCounts: {},
   batchCounts: {},
+  sceneBatches: [],
+  sceneCategories: [],
+  sceneCategoryCounts: {},
+  sceneBatchCounts: {},
   stats: {},
   stripMode: "category", // 'category' | 'batch'
   currentCategory: "all",
   currentBatch: "all",
+  currentSceneCategory: "all",
+  currentSceneBatch: "all",
   mediaFilter: "all", // 'all' | 'video' | 'usd'
   searchQuery: "",
   sortBy: "name", // 'name' | 'category' | 'batch' | 'size'
   viewMode: "thumb", // 'thumb' (hover play) | 'videowall' (always play)
   selectedAsset: null,
   activeMediaTab: "video", // 'video' | 'image'
+  selectedGalleryImage: null,
+  modalMediaList: [],
+  modalMediaIndex: 0,
   forceBuster: Date.now()
 };
 
 // DOM elements
 const elements = {
+  // Navigation Tabs Switcher
+  tabSectionAssets: document.getElementById("tabSectionAssets"),
+  tabSectionScenes: document.getElementById("tabSectionScenes"),
+  assetsCountBadge: document.getElementById("assetsCountBadge"),
+  scenesCountBadge: document.getElementById("scenesCountBadge"),
+
   assetGrid: document.getElementById("assetGrid"),
   searchInput: document.getElementById("searchInput"),
   filterChips: document.getElementById("filterChips"),
@@ -48,16 +66,29 @@ const elements = {
   modalSubtitle: document.getElementById("modalSubtitle"),
   modalVideoPlayer: document.getElementById("modalVideoPlayer"),
   modalImagePreview: document.getElementById("modalImagePreview"),
+  modalNavPrev: document.getElementById("modalNavPrev"),
+  modalNavNext: document.getElementById("modalNavNext"),
+  modalMediaCounter: document.getElementById("modalMediaCounter"),
+  modalMediaCounterText: document.getElementById("modalMediaCounterText"),
+  modalMediaControlsTab: document.getElementById("modalMediaControlsTab"),
   modalVideoTabBtn: document.getElementById("modalVideoTabBtn"),
   modalImageTabBtn: document.getElementById("modalImageTabBtn"),
+  modalGalleryStrip: document.getElementById("modalGalleryStrip"),
   modalDownloadZip: document.getElementById("modalDownloadZip"),
   modalQuickUsdRow: document.getElementById("modalQuickUsdRow"),
+  physicsSpecsCard: document.getElementById("physicsSpecsCard"),
+  sceneSpecsCard: document.getElementById("sceneSpecsCard"),
   modalMassVal: document.getElementById("modalMassVal"),
   modalSemanticClassVal: document.getElementById("modalSemanticClassVal"),
   modalQCodeVal: document.getElementById("modalQCodeVal"),
   modalStaticFrictionVal: document.getElementById("modalStaticFrictionVal"),
   modalDynamicFrictionVal: document.getElementById("modalDynamicFrictionVal"),
   modalRestitutionVal: document.getElementById("modalRestitutionVal"),
+  modalSceneTypeVal: document.getElementById("modalSceneTypeVal"),
+  modalSceneBatchVal: document.getElementById("modalSceneBatchVal"),
+  modalSceneImagesVal: document.getElementById("modalSceneImagesVal"),
+  modalSceneVideoVal: document.getElementById("modalSceneVideoVal"),
+  modalSceneUsdVal: document.getElementById("modalSceneUsdVal"),
   modalOpenFolderBtn: document.getElementById("modalOpenFolderBtn"),
   modalCopyPathBtn: document.getElementById("modalCopyPathBtn"),
   toast: document.getElementById("toastNotice"),
@@ -102,8 +133,73 @@ function showToast(msg) {
   }, 2800);
 }
 
+function switchSection(section) {
+  state.currentSection = section;
+  const tabAssets = document.getElementById("tabSectionAssets") || elements.tabSectionAssets;
+  const tabScenes = document.getElementById("tabSectionScenes") || elements.tabSectionScenes;
+  const searchInput = document.getElementById("searchInput") || elements.searchInput;
+
+  if (section === "assets") {
+    if (tabAssets) tabAssets.classList.add("active");
+    if (tabScenes) tabScenes.classList.remove("active");
+    if (searchInput) searchInput.placeholder = "搜索资产名称、分类、批次...";
+    document.body.classList.remove("scene-mode");
+    if (elements.filterChips) elements.filterChips.style.display = "flex";
+  } else {
+    if (tabScenes) tabScenes.classList.add("active");
+    if (tabAssets) tabAssets.classList.remove("active");
+    if (searchInput) searchInput.placeholder = "搜索场景名称、空间类型、批次...";
+    document.body.classList.add("scene-mode");
+    if (elements.filterChips) {
+      elements.filterChips.style.display = "flex";
+    }
+  }
+  renderFilterChips();
+  applyFilters();
+}
+window.switchSection = switchSection;
+
+// Global delegation backup to guarantee switching works under any DOM state
+document.addEventListener("click", (e) => {
+  const sceneBtn = e.target.closest && e.target.closest("#tabSectionScenes");
+  if (sceneBtn) {
+    e.preventDefault();
+    switchSection("scenes");
+    return;
+  }
+  const assetBtn = e.target.closest && e.target.closest("#tabSectionAssets");
+  if (assetBtn) {
+    e.preventDefault();
+    switchSection("assets");
+    return;
+  }
+  const prevBtn = e.target.closest && e.target.closest("#modalNavPrev");
+  if (prevBtn) {
+    e.preventDefault();
+    e.stopPropagation();
+    renderModalMediaItem(state.modalMediaIndex - 1);
+    return;
+  }
+  const nextBtn = e.target.closest && e.target.closest("#modalNavNext");
+  if (nextBtn) {
+    e.preventDefault();
+    e.stopPropagation();
+    renderModalMediaItem(state.modalMediaIndex + 1);
+    return;
+  }
+});
+
 // Event Listeners
 function bindEvents() {
+  const tabAssets = document.getElementById("tabSectionAssets") || elements.tabSectionAssets;
+  const tabScenes = document.getElementById("tabSectionScenes") || elements.tabSectionScenes;
+  if (tabAssets) {
+    tabAssets.addEventListener("click", () => switchSection("assets"));
+  }
+  if (tabScenes) {
+    tabScenes.addEventListener("click", () => switchSection("scenes"));
+  }
+
   elements.searchInput.addEventListener("input", (e) => {
     state.searchQuery = e.target.value.trim().toLowerCase();
     applyFilters();
@@ -200,10 +296,34 @@ function bindEvents() {
     if (e.target === elements.modalBackdrop) closeModal();
   });
 
+  const navPrev = document.getElementById("modalNavPrev") || elements.modalNavPrev;
+  const navNext = document.getElementById("modalNavNext") || elements.modalNavNext;
+  if (navPrev) {
+    navPrev.addEventListener("click", (e) => {
+      e.stopPropagation();
+      renderModalMediaItem(state.modalMediaIndex - 1);
+    });
+  }
+  if (navNext) {
+    navNext.addEventListener("click", (e) => {
+      e.stopPropagation();
+      renderModalMediaItem(state.modalMediaIndex + 1);
+    });
+  }
+
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeModal();
       closeFilterSettingsModal();
+    }
+    if (elements.modalBackdrop && elements.modalBackdrop.classList.contains("open")) {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        renderModalMediaItem(state.modalMediaIndex - 1);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        renderModalMediaItem(state.modalMediaIndex + 1);
+      }
     }
   });
 
@@ -366,11 +486,19 @@ async function loadAssets(forceRefresh = false) {
     }
 
     state.assets = data.assets || [];
+    state.scenes = data.scenes || [];
     state.batches = data.batches || [];
     state.categories = data.categories || [];
     state.categoryCounts = data.category_counts || {};
     state.batchCounts = data.batch_counts || {};
+    state.sceneBatches = data.scene_batches || [];
+    state.sceneCategories = data.scene_categories || [];
+    state.sceneCategoryCounts = data.scene_category_counts || {};
+    state.sceneBatchCounts = data.scene_batch_counts || {};
     state.stats = data.stats || {};
+
+    if (elements.assetsCountBadge) elements.assetsCountBadge.textContent = state.assets.length;
+    if (elements.scenesCountBadge) elements.scenesCountBadge.textContent = state.scenes.length;
 
     updateStatsBar();
     renderFilterChips();
@@ -384,11 +512,20 @@ async function loadAssets(forceRefresh = false) {
       if (staticRes.ok) {
         const data = await staticRes.json();
         state.assets = data.assets || [];
+        state.scenes = data.scenes || [];
         state.batches = data.batches || [];
         state.categories = data.categories || [];
         state.categoryCounts = data.category_counts || {};
         state.batchCounts = data.batch_counts || {};
+        state.sceneBatches = data.scene_batches || [];
+        state.sceneCategories = data.scene_categories || [];
+        state.sceneCategoryCounts = data.scene_category_counts || {};
+        state.sceneBatchCounts = data.scene_batch_counts || {};
         state.stats = data.stats || {};
+
+        if (elements.assetsCountBadge) elements.assetsCountBadge.textContent = state.assets.length;
+        if (elements.scenesCountBadge) elements.scenesCountBadge.textContent = state.scenes.length;
+
         updateStatsBar();
         renderFilterChips();
         applyFilters();
@@ -413,120 +550,233 @@ function updateStatsBar() {
   if (elements.totalSize) elements.totalSize.textContent = `${state.stats.total_size_gb || 0} GB`;
 }
 
-// Render Filter Chips (Categories or Batches)
+// Render Filter Chips (Categories or Batches for Assets vs Scenes)
 function renderFilterChips() {
   const container = elements.filterChips;
   container.innerHTML = "";
 
-  if (state.stripMode === "category") {
-    const allChip = document.createElement("button");
-    allChip.className = `batch-chip ${state.currentCategory === "all" ? "active" : ""}`;
-    allChip.textContent = `全部类别 (${state.assets.length})`;
-    allChip.addEventListener("click", () => {
-      state.currentCategory = "all";
-      container.querySelectorAll(".batch-chip").forEach((c) => c.classList.remove("active"));
-      allChip.classList.add("active");
-      applyFilters();
-    });
-    container.appendChild(allChip);
-
-    state.categories.forEach((cat) => {
-      const count = state.categoryCounts[cat] || 0;
-      const chip = document.createElement("button");
-      chip.className = `batch-chip ${state.currentCategory === cat ? "active" : ""}`;
-      chip.textContent = `${cat} (${count})`;
-      chip.addEventListener("click", () => {
-        state.currentCategory = cat;
+  if (state.currentSection === "assets") {
+    if (state.stripMode === "category") {
+      const allChip = document.createElement("button");
+      allChip.className = `batch-chip ${state.currentCategory === "all" ? "active" : ""}`;
+      allChip.textContent = `全部类别 (${state.assets.length})`;
+      allChip.addEventListener("click", () => {
+        state.currentCategory = "all";
         container.querySelectorAll(".batch-chip").forEach((c) => c.classList.remove("active"));
-        chip.classList.add("active");
+        allChip.classList.add("active");
         applyFilters();
       });
-      container.appendChild(chip);
-    });
+      container.appendChild(allChip);
+
+      state.categories.forEach((cat) => {
+        const count = state.categoryCounts[cat] || 0;
+        const chip = document.createElement("button");
+        chip.className = `batch-chip ${state.currentCategory === cat ? "active" : ""}`;
+        chip.textContent = `${cat} (${count})`;
+        chip.addEventListener("click", () => {
+          state.currentCategory = cat;
+          container.querySelectorAll(".batch-chip").forEach((c) => c.classList.remove("active"));
+          chip.classList.add("active");
+          applyFilters();
+        });
+        container.appendChild(chip);
+      });
+    } else {
+      const allChip = document.createElement("button");
+      allChip.className = `batch-chip ${state.currentBatch === "all" ? "active" : ""}`;
+      allChip.textContent = `全部批次 (${state.assets.length})`;
+      allChip.addEventListener("click", () => {
+        state.currentBatch = "all";
+        container.querySelectorAll(".batch-chip").forEach((c) => c.classList.remove("active"));
+        allChip.classList.add("active");
+        applyFilters();
+      });
+      container.appendChild(allChip);
+
+      state.batches.forEach((batch) => {
+        const count = state.batchCounts[batch] || 0;
+        const chip = document.createElement("button");
+        chip.className = `batch-chip ${state.currentBatch === batch ? "active" : ""}`;
+        chip.textContent = `${batch} (${count})`;
+        chip.addEventListener("click", () => {
+          state.currentBatch = batch;
+          container.querySelectorAll(".batch-chip").forEach((c) => c.classList.remove("active"));
+          chip.classList.add("active");
+          applyFilters();
+        });
+        container.appendChild(chip);
+      });
+    }
   } else {
+    // 3D Scene mode: Add "全部场景" UI button to keep grid vertically aligned with assets
     const allChip = document.createElement("button");
-    allChip.className = `batch-chip ${state.currentBatch === "all" ? "active" : ""}`;
-    allChip.textContent = `全部批次 (${state.assets.length})`;
+    allChip.className = "batch-chip active";
+    allChip.textContent = `🏛️ 全部场景 (${state.scenes.length})`;
+    allChip.title = "查看并重置显示所有场景";
     allChip.addEventListener("click", () => {
-      state.currentBatch = "all";
-      container.querySelectorAll(".batch-chip").forEach((c) => c.classList.remove("active"));
+      state.searchQuery = "";
+      state.currentSceneCategory = "all";
+      state.currentSceneBatch = "all";
+      if (elements.searchInput) elements.searchInput.value = "";
       allChip.classList.add("active");
       applyFilters();
     });
     container.appendChild(allChip);
-
-    state.batches.forEach((batch) => {
-      const count = state.batchCounts[batch] || 0;
-      const chip = document.createElement("button");
-      chip.className = `batch-chip ${state.currentBatch === batch ? "active" : ""}`;
-      chip.textContent = `${batch} (${count})`;
-      chip.addEventListener("click", () => {
-        state.currentBatch = batch;
-        container.querySelectorAll(".batch-chip").forEach((c) => c.classList.remove("active"));
-        chip.classList.add("active");
-        applyFilters();
-      });
-      container.appendChild(chip);
-    });
   }
 }
 
 // Filtering and Sorting
 function applyFilters() {
-  let list = [...state.assets];
+  if (state.currentSection === "assets") {
+    let list = [...state.assets];
 
-  // Category filter
-  if (state.currentCategory !== "all") {
-    list = list.filter((a) => a.category === state.currentCategory);
+    if (state.currentCategory !== "all") {
+      list = list.filter((a) => a.category === state.currentCategory);
+    }
+    if (state.currentBatch !== "all") {
+      list = list.filter((a) => a.batch === state.currentBatch);
+    }
+    if (state.mediaFilter === "video") {
+      list = list.filter((a) => a.has_video);
+    } else if (state.mediaFilter === "usd") {
+      list = list.filter((a) => a.has_usd);
+    }
+    if (state.searchQuery) {
+      const q = state.searchQuery;
+      list = list.filter((a) => {
+        return (
+          a.name.toLowerCase().includes(q) ||
+          (a.displayName && a.displayName.toLowerCase().includes(q)) ||
+          a.category.toLowerCase().includes(q) ||
+          (a.category_en && a.category_en.toLowerCase().includes(q)) ||
+          a.batch.toLowerCase().includes(q)
+        );
+      });
+    }
+    if (state.sortBy === "name") {
+      list.sort((a, b) => (a.displayName || a.name).localeCompare(b.displayName || b.name));
+    } else if (state.sortBy === "category") {
+      list.sort((a, b) => a.category.localeCompare(b.category) || (a.displayName || a.name).localeCompare(b.displayName || b.name));
+    } else if (state.sortBy === "batch") {
+      list.sort((a, b) => a.batch.localeCompare(b.batch) || a.name.localeCompare(b.name));
+    } else if (state.sortBy === "size") {
+      list.sort((a, b) => b.total_size_bytes - a.total_size_bytes);
+    }
+    state.filteredAssets = list;
+    if (elements.filteredCount) elements.filteredCount.textContent = list.length;
+  } else {
+    // 3D Scenes Filtering
+    let list = [...state.scenes];
+    if (state.currentSceneCategory !== "all") {
+      list = list.filter((s) => s.category === state.currentSceneCategory);
+    }
+    if (state.currentSceneBatch !== "all") {
+      list = list.filter((s) => s.batch === state.currentSceneBatch);
+    }
+    if (state.mediaFilter === "video") {
+      list = list.filter((s) => s.has_video);
+    } else if (state.mediaFilter === "usd") {
+      list = list.filter((s) => s.has_usd);
+    }
+    if (state.searchQuery) {
+      const q = state.searchQuery;
+      list = list.filter((s) => {
+        return (
+          (s.name && s.name.toLowerCase().includes(q)) ||
+          (s.displayName && s.displayName.toLowerCase().includes(q)) ||
+          (s.category && s.category.toLowerCase().includes(q)) ||
+          (s.category_en && s.category_en.toLowerCase().includes(q)) ||
+          (s.batch && s.batch.toLowerCase().includes(q))
+        );
+      });
+    }
+    if (state.sortBy === "name") {
+      list.sort((a, b) => (a.displayName || a.name || "").localeCompare(b.displayName || b.name || ""));
+    } else if (state.sortBy === "category") {
+      list.sort((a, b) => (a.category || "").localeCompare(b.category || "") || (a.displayName || a.name || "").localeCompare(b.displayName || b.name || ""));
+    } else if (state.sortBy === "batch") {
+      list.sort((a, b) => (a.batch || "").localeCompare(b.batch || "") || (a.name || "").localeCompare(b.name || ""));
+    } else if (state.sortBy === "size") {
+      list.sort((a, b) => (b.total_size_bytes || 0) - (a.total_size_bytes || 0));
+    }
+    state.filteredScenes = list;
+    if (elements.filteredCount) elements.filteredCount.textContent = list.length;
   }
 
-  // Batch filter
-  if (state.currentBatch !== "all") {
-    list = list.filter((a) => a.batch === state.currentBatch);
-  }
-
-  // Media filter
-  if (state.mediaFilter === "video") {
-    list = list.filter((a) => a.has_video);
-  } else if (state.mediaFilter === "usd") {
-    list = list.filter((a) => a.has_usd);
-  }
-
-  // Search query
-  if (state.searchQuery) {
-    const q = state.searchQuery;
-    list = list.filter((a) => {
-      return (
-        a.name.toLowerCase().includes(q) ||
-        a.displayName.toLowerCase().includes(q) ||
-        a.category.toLowerCase().includes(q) ||
-        a.category_en.toLowerCase().includes(q) ||
-        a.batch.toLowerCase().includes(q)
-      );
-    });
-  }
-
-  // Sort
-  if (state.sortBy === "name") {
-    list.sort((a, b) => a.displayName.localeCompare(b.displayName));
-  } else if (state.sortBy === "category") {
-    list.sort((a, b) => a.category.localeCompare(b.category) || a.displayName.localeCompare(b.displayName));
-  } else if (state.sortBy === "batch") {
-    list.sort((a, b) => a.batch.localeCompare(b.batch) || a.name.localeCompare(b.name));
-  } else if (state.sortBy === "size") {
-    list.sort((a, b) => b.total_size_bytes - a.total_size_bytes);
-  }
-
-  state.filteredAssets = list;
-  if (elements.filteredCount) elements.filteredCount.textContent = list.length;
   renderGrid();
 }
 
-// Render Asset Cards
+// Render Asset & Scene Cards
 function renderGrid() {
   const container = elements.assetGrid;
   container.innerHTML = "";
 
+  if (state.currentSection === "scenes") {
+    if (state.filteredScenes.length === 0) {
+      if (state.scenes.length === 0) {
+        container.innerHTML = `
+          <div class="scene-empty-box">
+            <div class="scene-empty-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </div>
+            <div class="scene-empty-title">🏛️ 3D 场景板块已就绪，正在监听 scene 文件夹</div>
+            <div class="scene-empty-desc">
+              系统已自动启用 <b>*scene*</b> 场景识别引擎！已检测并挂载场景监听目录：
+            </div>
+            <div class="scene-empty-paths">
+              G:\\Simreay\\output\\qzs_scene &nbsp;|&nbsp; G:\\Simreay\\output\\wq_14_scene
+            </div>
+            <div class="scene-empty-desc" style="font-size:0.85rem; color:#94a3b8;">
+              💡 您现在只需将渲染图（PNG/JPG）、漫游视频（MP4）或 USD 场景放入上述目录中，刷新页面即可实时自动识别呈现在此处！
+            </div>
+            <button class="btn-open-scene-dir" id="btnOpenSceneDir" type="button">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+              </svg>
+              在资源管理器中打开场景文件夹
+            </button>
+          </div>
+        `;
+        const btnOpen = document.getElementById("btnOpenSceneDir");
+        if (btnOpen) {
+          btnOpen.addEventListener("click", async () => {
+            try {
+              await fetch("/api/open-folder", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ batch: "qzs_scene", asset: "_root" })
+              });
+              showToast("📂 已在 Windows 资源管理器中打开场景目录");
+            } catch (err) {
+              showToast("打开文件夹失败: " + err.message);
+            }
+          });
+        }
+        return;
+      }
+      container.innerHTML = `
+        <div class="empty-state" style="grid-column: 1/-1;">
+          <h3>未找到匹配的 3D 场景</h3>
+          <p>请尝试选择其他类别或更改检索关键词</p>
+        </div>`;
+      return;
+    }
+
+    const fragment = document.createDocumentFragment();
+    state.filteredScenes.forEach((scene) => {
+      const card = createSceneCard(scene);
+      fragment.appendChild(card);
+    });
+    container.appendChild(fragment);
+    setupCardObserver();
+    return;
+  }
+
+  // Single Assets section
   if (state.filteredAssets.length === 0) {
     container.innerHTML = `
       <div class="empty-state" style="grid-column: 1/-1;">
@@ -537,201 +787,412 @@ function renderGrid() {
   }
 
   const fragment = document.createDocumentFragment();
-
   state.filteredAssets.forEach((asset) => {
-    const card = document.createElement("div");
-    card.className = "asset-card";
-    card.setAttribute("data-id", asset.id);
-
-    // Media path resolution (Local server vs Static CDN)
-    let thumbUrl = null;
-    let fallbackThumbUrl = "";
-    let videoUrl = null;
-
-    if (isLocalServer) {
-      const vStamp = `${asset.thumbnail_mtime || 0}_${state.forceBuster}`;
-      thumbUrl = asset.thumbnail_rel_path
-        ? `/api/thumbnail/${asset.batch}/${asset.name}/${asset.thumbnail_rel_path}?v=${vStamp}`
-        : null;
-      fallbackThumbUrl = asset.thumbnail_rel_path
-        ? `/api/media/${asset.batch}/${asset.name}/${asset.thumbnail_rel_path}?v=${vStamp}`
-        : "";
-      videoUrl = asset.video_rel_path
-        ? `/api/media/${asset.batch}/${asset.name}/${asset.video_rel_path}?v=${asset.video_mtime || 0}_${state.forceBuster}`
-        : null;
-    } else {
-      const rawThumb = asset.static_thumb_path || (asset.thumbnail_rel_path ? `media/${asset.batch}/${asset.name}/thumb.webp` : null);
-      const rawVideo = asset.static_video_path || (asset.video_rel_path ? `media/${asset.batch}/${asset.name}/${asset.video_rel_path.split("/").pop()}` : null);
-      // 外网模式：沿用构建脚本写入的稳定版本参数（?v=源mtime_转码参数签名）。
-      // 绝不再追加随会话变化的 `_b=`——它会让浏览器缓存与 Cloudflare 边缘缓存全部失效。
-      thumbUrl = rawThumb ? (rawThumb.includes("?") ? rawThumb : `${rawThumb}?v=${asset.thumbnail_mtime || 0}`) : null;
-      videoUrl = rawVideo ? (rawVideo.includes("?") ? rawVideo : `${rawVideo}?v=${asset.video_mtime || 0}`) : null;
-    }
-
-    let mediaHtml = "";
-    if (thumbUrl) {
-      mediaHtml += `<img src="${thumbUrl}" alt="${asset.displayName}" loading="lazy" class="${videoUrl ? "has-video-sibling" : ""}" onerror="if('${fallbackThumbUrl}' && this.src!=='${fallbackThumbUrl}'){this.src='${fallbackThumbUrl}';}">`;
-    }
-    if (videoUrl) {
-      mediaHtml += `<video data-src="${videoUrl}" loop muted playsinline preload="none" class="has-video"></video>`;
-    }
-    if (!thumbUrl && !videoUrl) {
-      mediaHtml = `
-        <div class="no-preview" style="color:#64748b; font-size:0.9rem; font-weight:600; display:flex; flex-direction:column; align-items:center; gap:8px;">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
-            <line x1="12" y1="22.08" x2="12" y2="12"/>
-          </svg>
-          <span>USD 3D Mesh</span>
-        </div>`;
-    }
-
-    card.innerHTML = `
-      <div class="card-preview">
-        ${
-          asset.has_video
-            ? `<span class="badge-video"><span class="video-playing-indicator"></span> 关节视频</span>`
-            : ""
-        }
-        ${mediaHtml}
-        <div class="card-hover-actions">
-          <button class="btn-card-action" type="button">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
-            </svg>
-            详情与下载
-          </button>
-        </div>
-      </div>
-      <div class="card-info">
-        <div class="card-title" title="${asset.displayName} (${asset.name})">${asset.displayName}</div>
-        <div class="card-meta">
-          <span class="card-tag">${asset.category}</span>
-          <span>·</span>
-          <span>${asset.total_size_mb} MB</span>
-          ${asset.has_usd ? `<span>·</span><span class="card-tag-usd">USD</span>` : ""}
-        </div>
-      </div>
-    `;
-
-    // 悬停播放：受全局并发上限约束（≤PLAY_LIMIT 路）；离开悬停或离开视口立即暂停
-    const videoElem = card.querySelector("video.has-video");
-    if (videoElem) {
-      videoElem.addEventListener("playing", () => {
-        videoElem.classList.add("is-playing");
-      });
-      videoElem.addEventListener("pause", () => {
-        videoElem.classList.remove("is-playing");
-      });
-      card.addEventListener("mouseenter", () => {
-        if (state.viewMode === "thumb") startPlay(videoElem, true);
-      });
-      card.addEventListener("mouseleave", () => {
-        if (state.viewMode === "thumb") stopPlay(videoElem, true);
-      });
-    }
-
-    // Card click opens modal
-    card.addEventListener("click", () => {
-      openModal(asset);
-    });
-
+    const card = createAssetCard(asset);
     fragment.appendChild(card);
   });
-
   container.appendChild(fragment);
-
-  // 重建视口观察器：卡片重绘后需重新绑定。观察器首次回调会带上当前相交状态，
-  // 因此视频墙模式下视口内的视频会自动开始播放，缩略图模式则只等待悬停。
   setupCardObserver();
 }
 
-// Modal Detail and Download Logic
-function openModal(asset) {
-  state.selectedAsset = asset;
-  elements.modalTitle.textContent = asset.displayName;
-  elements.modalSubtitle.textContent = `类别: ${asset.category_display} · 标识名: ${asset.name} · 批次: ${asset.batch} · 完整大小: ${asset.total_size_mb} MB`;
-
-  // Populate Physics & Simulation specs
-  if (elements.modalMassVal) {
-    elements.modalMassVal.textContent = (asset.mass_kg !== undefined && asset.mass_kg !== null) ? `${asset.mass_kg} kg` : "-- kg";
-  }
-  if (elements.modalSemanticClassVal) {
-    elements.modalSemanticClassVal.textContent = asset.semantic_class || "--";
-  }
-  if (elements.modalQCodeVal) {
-    elements.modalQCodeVal.textContent = asset.wikidata_qcode || "--";
-  }
-  if (elements.modalStaticFrictionVal) {
-    elements.modalStaticFrictionVal.textContent = (asset.static_friction !== undefined && asset.static_friction !== null) ? `${asset.static_friction}` : "0.50";
-  }
-  if (elements.modalDynamicFrictionVal) {
-    elements.modalDynamicFrictionVal.textContent = (asset.dynamic_friction !== undefined && asset.dynamic_friction !== null) ? `${asset.dynamic_friction}` : "0.35";
-  }
-  if (elements.modalRestitutionVal) {
-    elements.modalRestitutionVal.textContent = (asset.restitution !== undefined && asset.restitution !== null) ? `${asset.restitution}` : "0.05";
-  }
+function createSceneCard(scene) {
+  const card = document.createElement("div");
+  card.className = "asset-card is-scene";
+  card.setAttribute("data-id", scene.id);
 
   let thumbUrl = null;
+  let fallbackThumbUrl = "";
+  let videoUrl = null;
+  const assetSub = scene.is_loose_file ? "_root" : scene.name;
+
+  if (isLocalServer) {
+    const vStamp = `${scene.thumbnail_mtime || 0}_${state.forceBuster}`;
+    thumbUrl = scene.thumbnail_rel_path
+      ? `/api/thumbnail/${scene.batch}/${assetSub}/${scene.thumbnail_rel_path}?v=${vStamp}`
+      : null;
+    fallbackThumbUrl = scene.thumbnail_rel_path
+      ? `/api/media/${scene.batch}/${assetSub}/${scene.thumbnail_rel_path}?v=${vStamp}`
+      : "";
+    videoUrl = scene.video_rel_path
+      ? `/api/media/${scene.batch}/${assetSub}/${scene.video_rel_path}?v=${scene.video_mtime || 0}_${state.forceBuster}`
+      : null;
+  } else {
+    const rawThumb = scene.static_thumb_path;
+    const rawVideo = scene.static_video_path;
+    thumbUrl = rawThumb ? (rawThumb.includes("?") ? rawThumb : `${rawThumb}?v=${scene.thumbnail_mtime || 0}`) : null;
+    videoUrl = rawVideo ? (rawVideo.includes("?") ? rawVideo : `${rawVideo}?v=${scene.video_mtime || 0}`) : null;
+  }
+
+  let mediaHtml = "";
+  if (thumbUrl) {
+    mediaHtml += `<img src="${thumbUrl}" alt="${scene.displayName}" loading="lazy" class="${videoUrl ? "has-video-sibling" : ""}" onerror="if('${fallbackThumbUrl}' && this.src!=='${fallbackThumbUrl}'){this.src='${fallbackThumbUrl}';}">`;
+  }
+  if (videoUrl) {
+    mediaHtml += `<video data-src="${videoUrl}" loop muted playsinline preload="none" class="has-video"></video>`;
+  }
+  if (!thumbUrl && !videoUrl) {
+    mediaHtml = `
+      <div class="no-preview" style="color:#64748b; font-size:0.9rem; font-weight:600; display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <polyline points="21 15 16 10 5 21"/>
+        </svg>
+        <span>3D Scene</span>
+      </div>`;
+  }
+
+  card.innerHTML = `
+    <div class="card-preview">
+      ${
+        scene.has_video
+          ? `<span class="badge-video"><span class="video-playing-indicator"></span> 场景视频</span>`
+          : ""
+      }
+      ${
+        scene.image_files && scene.image_files.length > 1
+          ? `<span class="badge-scene-renders">🖼️ ${scene.image_files.length} 张渲染图</span>`
+          : ""
+      }
+      ${mediaHtml}
+      <div class="card-hover-actions">
+        <button class="btn-card-action" type="button">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+          </svg>
+          场景详情与下载
+        </button>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="card-title" title="${scene.displayName}">${scene.displayName}</div>
+      <div class="card-meta">
+        <span class="card-tag">${scene.category}</span>
+        <span>·</span>
+        <span style="color:#38bdf8;">${scene.batch}</span>
+        <span>·</span>
+        <span>${scene.total_size_mb} MB</span>
+        ${scene.has_usd ? `<span>·</span><span class="card-tag-usd">USD</span>` : ""}
+      </div>
+    </div>
+  `;
+
+  const videoElem = card.querySelector("video.has-video");
+  if (videoElem) {
+    videoElem.addEventListener("playing", () => {
+      videoElem.classList.add("is-playing");
+    });
+    videoElem.addEventListener("pause", () => {
+      videoElem.classList.remove("is-playing");
+    });
+    card.addEventListener("mouseenter", () => {
+      if (state.viewMode === "thumb") startPlay(videoElem, true);
+    });
+    card.addEventListener("mouseleave", () => {
+      if (state.viewMode === "thumb") stopPlay(videoElem, true);
+    });
+  }
+
+  card.addEventListener("click", () => {
+    openModal(scene);
+  });
+
+  return card;
+}
+
+function createAssetCard(asset) {
+  const card = document.createElement("div");
+  card.className = "asset-card";
+  card.setAttribute("data-id", asset.id);
+
+  let thumbUrl = null;
+  let fallbackThumbUrl = "";
   let videoUrl = null;
 
   if (isLocalServer) {
     const vStamp = `${asset.thumbnail_mtime || 0}_${state.forceBuster}`;
     thumbUrl = asset.thumbnail_rel_path
-      ? `/api/media/${asset.batch}/${asset.name}/${asset.thumbnail_rel_path}?v=${vStamp}`
+      ? `/api/thumbnail/${asset.batch}/${asset.name}/${asset.thumbnail_rel_path}?v=${vStamp}`
       : null;
+    fallbackThumbUrl = asset.thumbnail_rel_path
+      ? `/api/media/${asset.batch}/${asset.name}/${asset.thumbnail_rel_path}?v=${vStamp}`
+      : "";
     videoUrl = asset.video_rel_path
       ? `/api/media/${asset.batch}/${asset.name}/${asset.video_rel_path}?v=${asset.video_mtime || 0}_${state.forceBuster}`
       : null;
   } else {
     const rawThumb = asset.static_thumb_path || (asset.thumbnail_rel_path ? `media/${asset.batch}/${asset.name}/thumb.webp` : null);
     const rawVideo = asset.static_video_path || (asset.video_rel_path ? `media/${asset.batch}/${asset.name}/${asset.video_rel_path.split("/").pop()}` : null);
-    // 与网格卡片一致：使用构建脚本写入的稳定版本参数，不再追加会话时间戳
     thumbUrl = rawThumb ? (rawThumb.includes("?") ? rawThumb : `${rawThumb}?v=${asset.thumbnail_mtime || 0}`) : null;
     videoUrl = rawVideo ? (rawVideo.includes("?") ? rawVideo : `${rawVideo}?v=${asset.video_mtime || 0}`) : null;
   }
 
-  if (videoUrl) {
-    elements.modalVideoTabBtn.style.display = "block";
-    elements.modalVideoPlayer.src = videoUrl;
-    elements.modalVideoPlayer.style.display = "block";
-    elements.modalImagePreview.style.display = "none";
-    elements.modalVideoPlayer.play().catch(() => {});
-    switchMediaTab("video");
-  } else {
-    elements.modalVideoTabBtn.style.display = "none";
-    elements.modalVideoPlayer.pause();
-    elements.modalVideoPlayer.removeAttribute("src");
-    elements.modalVideoPlayer.style.display = "none";
-    switchMediaTab("image");
-  }
-
+  let mediaHtml = "";
   if (thumbUrl) {
-    elements.modalImageTabBtn.style.display = "block";
-    elements.modalImagePreview.src = thumbUrl;
-    elements.modalImagePreview.alt = asset.displayName;
-  } else {
-    elements.modalImageTabBtn.style.display = "none";
+    mediaHtml += `<img src="${thumbUrl}" alt="${asset.displayName}" loading="lazy" class="${videoUrl ? "has-video-sibling" : ""}" onerror="if('${fallbackThumbUrl}' && this.src!=='${fallbackThumbUrl}'){this.src='${fallbackThumbUrl}';}">`;
+  }
+  if (videoUrl) {
+    mediaHtml += `<video data-src="${videoUrl}" loop muted playsinline preload="none" class="has-video"></video>`;
+  }
+  if (!thumbUrl && !videoUrl) {
+    mediaHtml = `
+      <div class="no-preview" style="color:#64748b; font-size:0.9rem; font-weight:600; display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+          <line x1="12" y1="22.08" x2="12" y2="12"/>
+        </svg>
+        <span>USD 3D Mesh</span>
+      </div>`;
   }
 
-  // Branch action buttons based on environment
+  card.innerHTML = `
+    <div class="card-preview">
+      ${
+        asset.has_video
+          ? `<span class="badge-video"><span class="video-playing-indicator"></span> 关节视频</span>`
+          : ""
+      }
+      ${mediaHtml}
+      <div class="card-hover-actions">
+        <button class="btn-card-action" type="button">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+          </svg>
+          详情与下载
+        </button>
+      </div>
+    </div>
+    <div class="card-info">
+      <div class="card-title" title="${asset.displayName} (${asset.name})">${asset.displayName}</div>
+      <div class="card-meta">
+        <span class="card-tag">${asset.category}</span>
+        <span>·</span>
+        <span>${asset.total_size_mb} MB</span>
+        ${asset.has_usd ? `<span>·</span><span class="card-tag-usd">USD</span>` : ""}
+      </div>
+    </div>
+  `;
+
+  const videoElem = card.querySelector("video.has-video");
+  if (videoElem) {
+    videoElem.addEventListener("playing", () => {
+      videoElem.classList.add("is-playing");
+    });
+    videoElem.addEventListener("pause", () => {
+      videoElem.classList.remove("is-playing");
+    });
+    card.addEventListener("mouseenter", () => {
+      if (state.viewMode === "thumb") startPlay(videoElem, true);
+    });
+    card.addEventListener("mouseleave", () => {
+      if (state.viewMode === "thumb") stopPlay(videoElem, true);
+    });
+  }
+
+  card.addEventListener("click", () => {
+    openModal(asset);
+  });
+
+  return card;
+}
+
+// Modal Detail and Download Logic
+function openModal(item) {
+  state.selectedAsset = item;
+  const isScene = !!item.is_scene;
+  const assetSub = item.is_loose_file ? "_root" : item.name;
+
+  elements.modalTitle.textContent = item.displayName;
+
+  if (isScene) {
+    elements.modalSubtitle.textContent = `空间类型: ${item.category_display || item.category} · 批次: ${item.batch} · 效果图: ${(item.image_files ? item.image_files.length : 0)} 张 · 完整大小: ${item.total_size_mb} MB`;
+    if (elements.sceneSpecsCard) elements.sceneSpecsCard.style.display = "block";
+    if (elements.physicsSpecsCard) elements.physicsSpecsCard.style.display = "none";
+
+    if (elements.modalSceneTypeVal) elements.modalSceneTypeVal.textContent = item.category_display || item.category;
+    if (elements.modalSceneBatchVal) elements.modalSceneBatchVal.textContent = item.batch;
+    if (elements.modalSceneImagesVal) elements.modalSceneImagesVal.textContent = `${item.image_files ? item.image_files.length : 1} 张`;
+    if (elements.modalSceneVideoVal) elements.modalSceneVideoVal.textContent = item.has_video ? "已包含 (360°/漫游)" : "无视频";
+    if (elements.modalSceneUsdVal) elements.modalSceneUsdVal.textContent = item.has_usd ? (item.primary_usd_rel_path || "已就绪") : "无网格";
+  } else {
+    elements.modalSubtitle.textContent = `类别: ${item.category_display} · 标识名: ${item.name} · 批次: ${item.batch} · 完整大小: ${item.total_size_mb} MB`;
+    if (elements.sceneSpecsCard) elements.sceneSpecsCard.style.display = "none";
+    if (elements.physicsSpecsCard) elements.physicsSpecsCard.style.display = "block";
+
+    if (elements.modalMassVal) {
+      elements.modalMassVal.textContent = (item.mass_kg !== undefined && item.mass_kg !== null) ? `${item.mass_kg} kg` : "-- kg";
+    }
+    if (elements.modalSemanticClassVal) {
+      elements.modalSemanticClassVal.textContent = item.semantic_class || "--";
+    }
+    if (elements.modalQCodeVal) {
+      elements.modalQCodeVal.textContent = item.wikidata_qcode || "--";
+    }
+    if (elements.modalStaticFrictionVal) {
+      elements.modalStaticFrictionVal.textContent = (item.static_friction !== undefined && item.static_friction !== null) ? `${item.static_friction}` : "0.50";
+    }
+    if (elements.modalDynamicFrictionVal) {
+      elements.modalDynamicFrictionVal.textContent = (item.dynamic_friction !== undefined && item.dynamic_friction !== null) ? `${item.dynamic_friction}` : "0.35";
+    }
+    if (elements.modalRestitutionVal) {
+      elements.modalRestitutionVal.textContent = (item.restitution !== undefined && item.restitution !== null) ? `${item.restitution}` : "0.05";
+    }
+  }
+
+  if (!isScene) {
+    // =========================================================================
+    // 单体 3D 资产模式 (Single Asset Mode)
+    // 只有视频和图片各一个：
+    // 1) 严禁开启左右三角箭头切换 (不要切换)
+    // 2) 隐藏左上角计数胶囊
+    // 3) 隐藏底部图片视频缩略图栏 (#modalGalleryStrip)
+    // 4) 仅显示底部的 [🎬 关节视频] [🖼️ 高清渲染图] 切换栏 (#modalMediaControlsTab)
+    // =========================================================================
+    if (elements.modalNavPrev) elements.modalNavPrev.style.display = "none";
+    if (elements.modalNavNext) elements.modalNavNext.style.display = "none";
+    if (elements.modalMediaCounter) elements.modalMediaCounter.style.display = "none";
+    if (elements.modalGalleryStrip) {
+      elements.modalGalleryStrip.style.display = "none";
+      elements.modalGalleryStrip.innerHTML = "";
+    }
+
+    if (elements.modalMediaControlsTab) elements.modalMediaControlsTab.style.display = "flex";
+    if (elements.modalVideoTabBtn) {
+      elements.modalVideoTabBtn.style.display = item.has_video ? "block" : "none";
+      elements.modalVideoTabBtn.textContent = "🎬 关节视频";
+    }
+    if (elements.modalImageTabBtn) {
+      elements.modalImageTabBtn.style.display = (item.thumbnail_rel_path || item.has_image) ? "block" : "none";
+      elements.modalImageTabBtn.textContent = "🖼 高清渲染图";
+    }
+
+    let thumbUrl = null;
+    let videoUrl = null;
+    if (isLocalServer) {
+      const vStamp = `${item.thumbnail_mtime || 0}_${state.forceBuster}`;
+      thumbUrl = item.thumbnail_rel_path
+        ? `/api/media/${item.batch}/${assetSub}/${item.thumbnail_rel_path}?v=${vStamp}`
+        : null;
+      videoUrl = item.video_rel_path
+        ? `/api/media/${item.batch}/${assetSub}/${item.video_rel_path}?v=${item.video_mtime || 0}_${state.forceBuster}`
+        : null;
+    } else {
+      const rawThumb = item.static_thumb_path || (item.thumbnail_rel_path ? `media/${item.batch}/${item.name}/thumb.webp` : null);
+      const rawVideo = item.static_video_path || (item.video_rel_path ? `media/${item.batch}/${item.name}/${item.video_rel_path.split("/").pop()}` : null);
+      thumbUrl = rawThumb ? (rawThumb.includes("?") ? rawThumb : `${rawThumb}?v=${item.thumbnail_mtime || 0}`) : null;
+      videoUrl = rawVideo ? (rawVideo.includes("?") ? rawVideo : `${rawVideo}?v=${item.video_mtime || 0}`) : null;
+    }
+
+    if (thumbUrl && elements.modalImagePreview) {
+      elements.modalImagePreview.src = thumbUrl;
+      elements.modalImagePreview.alt = item.displayName;
+    }
+
+    if (videoUrl && elements.modalVideoPlayer) {
+      elements.modalVideoPlayer.src = videoUrl;
+      switchMediaTab("video");
+    } else {
+      switchMediaTab("image");
+    }
+
+  } else {
+    // =========================================================================
+    // 3D 场景模式 (3D Scene Mode)
+    // 场景有多张渲染图和漫游视频：
+    // 1) 隐藏底部的 [🎬 关节视频] [🖼️ 高清渲染图] 标签栏 (彻底消除重叠！)
+    // 2) 开启底部的多媒体缩略图切换栏 (#modalGalleryStrip)
+    // 3) 开启左右三角箭头导航按钮
+    // 4) 开启左上角计数胶囊
+    // =========================================================================
+    if (elements.modalMediaControlsTab) elements.modalMediaControlsTab.style.display = "none";
+
+    const mediaList = [];
+    // Only top-level outer videos
+    (item.video_files || []).forEach((vf, vIdx) => {
+      let url = isLocalServer
+        ? `/api/media/${item.batch}/${assetSub}/${vf.rel_path}?v=${vf.mtime || 0}_${state.forceBuster}`
+        : (vf.static_path || item.static_video_path || (item.video_rel_path ? `media/${item.batch}/${item.name}/${vf.name}` : null));
+      if (url) {
+        mediaList.push({
+          type: "video",
+          name: vf.name,
+          rel_path: vf.rel_path,
+          url: url,
+          title: `🎬 漫游视频 ${vIdx + 1}`,
+          badge: "🎬 漫游视频"
+        });
+      }
+    });
+
+    // Only top-level outer images
+    (item.image_files || []).forEach((img, iIdx) => {
+      let url = isLocalServer
+        ? `/api/media/${item.batch}/${assetSub}/${img.rel_path}?v=${img.mtime || 0}_${state.forceBuster}`
+        : (img.static_path || item.static_thumb_path || (item.thumbnail_rel_path ? `media/${item.batch}/${item.name}/thumb.webp` : null));
+      if (url) {
+        mediaList.push({
+          type: "image",
+          name: img.name,
+          rel_path: img.rel_path,
+          url: url,
+          title: `🖼️ 场景效果图 ${iIdx + 1}`,
+          badge: "🖼️ 场景效果图"
+        });
+      }
+    });
+
+    state.modalMediaList = mediaList;
+    state.modalMediaIndex = 0;
+
+    // Populate scene gallery strip
+    if (elements.modalGalleryStrip) {
+      if (mediaList.length > 1) {
+        elements.modalGalleryStrip.style.display = "flex";
+        elements.modalGalleryStrip.innerHTML = "";
+        mediaList.forEach((mItem, mIdx) => {
+          const thumbBtn = document.createElement("div");
+          thumbBtn.className = `gallery-thumb-item ${mIdx === 0 ? "active" : ""}`;
+          thumbBtn.title = `${mItem.title} (${mItem.name})`;
+          if (mItem.type === "video") {
+            thumbBtn.innerHTML = `
+              <div class="thumb-video-icon">▶</div>
+              <video src="${mItem.url}" muted preload="metadata"></video>
+            `;
+          } else {
+            thumbBtn.innerHTML = `<img src="${mItem.url}" alt="${mItem.name}">`;
+          }
+          thumbBtn.addEventListener("click", () => {
+            renderModalMediaItem(mIdx);
+          });
+          elements.modalGalleryStrip.appendChild(thumbBtn);
+        });
+      } else {
+        elements.modalGalleryStrip.style.display = "none";
+        elements.modalGalleryStrip.innerHTML = "";
+      }
+    }
+
+    renderModalMediaItem(0);
+  }
+
+  // Action buttons
   if (isLocalServer) {
     if (elements.modalOpenFolderBtn) elements.modalOpenFolderBtn.style.display = "inline-flex";
     if (elements.modalCopyPathBtn) elements.modalCopyPathBtn.style.display = "inline-flex";
 
-    elements.modalDownloadZip.href = `/api/download/zip/${asset.batch}/${asset.name}`;
-    elements.modalDownloadZip.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> 一键打包下载完整资产 (ZIP)`;
+    elements.modalDownloadZip.href = `/api/download/zip/${item.batch}/${assetSub}`;
+    elements.modalDownloadZip.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> 一键打包下载完整${isScene ? "场景" : "资产"} (ZIP)`;
     elements.modalDownloadZip.style.background = "";
     elements.modalDownloadZip.style.cursor = "pointer";
     elements.modalDownloadZip.onclick = null;
 
     elements.modalQuickUsdRow.innerHTML = "";
-    if (asset.usd_files && asset.usd_files.length > 0) {
-      asset.usd_files.forEach((usdFile) => {
+    if (item.usd_files && item.usd_files.length > 0) {
+      item.usd_files.forEach((usdFile) => {
         const dlBtn = document.createElement("a");
         dlBtn.className = "btn-secondary";
-        dlBtn.href = `/api/download/file/${asset.batch}/${asset.name}/${usdFile.rel_path}`;
+        dlBtn.href = `/api/download/file/${item.batch}/${assetSub}/${usdFile.rel_path}`;
         dlBtn.download = usdFile.name;
         dlBtn.innerHTML = `
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -768,28 +1229,120 @@ function openModal(asset) {
   document.body.style.overflow = "hidden";
 }
 
+function renderModalMediaItem(index) {
+  // Only applicable in 3D Scene Mode
+  if (!state.selectedAsset || !state.selectedAsset.is_scene) return;
+
+  const list = state.modalMediaList;
+  const navPrev = document.getElementById("modalNavPrev") || elements.modalNavPrev;
+  const navNext = document.getElementById("modalNavNext") || elements.modalNavNext;
+  const counterPill = document.getElementById("modalMediaCounter") || elements.modalMediaCounter;
+  const counterText = document.getElementById("modalMediaCounterText") || elements.modalMediaCounterText;
+  const videoPlayer = document.getElementById("modalVideoPlayer") || elements.modalVideoPlayer;
+  const imgPreview = document.getElementById("modalImagePreview") || elements.modalImagePreview;
+  const galleryStrip = document.getElementById("modalGalleryStrip") || elements.modalGalleryStrip;
+
+  if (!list || list.length === 0) {
+    if (navPrev) navPrev.style.display = "none";
+    if (navNext) navNext.style.display = "none";
+    if (counterPill) counterPill.style.display = "none";
+    if (videoPlayer) {
+      videoPlayer.pause();
+      videoPlayer.style.display = "none";
+    }
+    if (imgPreview) imgPreview.style.display = "none";
+    return;
+  }
+
+  // Circular loop
+  if (index < 0) index = list.length - 1;
+  if (index >= list.length) index = 0;
+  state.modalMediaIndex = index;
+
+  const cur = list[index];
+
+  // Triangle navigation arrows: show when multiple items exist in Scene
+  const showArrows = list.length > 1;
+  if (navPrev) navPrev.style.display = showArrows ? "flex" : "none";
+  if (navNext) navNext.style.display = showArrows ? "flex" : "none";
+
+  // Floating counter badge for Scene
+  if (counterPill && counterText) {
+    if (list.length > 1) {
+      counterPill.style.display = "flex";
+      counterText.textContent = `${cur.badge} (${index + 1} / ${list.length}) · ${cur.name}`;
+    } else {
+      counterPill.style.display = "none";
+    }
+  }
+
+  // Display video or image
+  if (cur.type === "video") {
+    if (imgPreview) imgPreview.style.display = "none";
+    if (videoPlayer) {
+      videoPlayer.style.display = "block";
+      if (!videoPlayer.src || !videoPlayer.src.includes(cur.name)) {
+        videoPlayer.src = cur.url;
+      }
+      videoPlayer.play().catch(() => {});
+    }
+  } else {
+    if (videoPlayer) {
+      videoPlayer.pause();
+      videoPlayer.style.display = "none";
+    }
+    if (imgPreview) {
+      imgPreview.style.display = "block";
+      imgPreview.src = cur.url;
+      imgPreview.alt = cur.name;
+    }
+  }
+
+  // Update active thumbnail in gallery strip
+  if (galleryStrip) {
+    const thumbs = galleryStrip.querySelectorAll(".gallery-thumb-item");
+    thumbs.forEach((t, tIdx) => {
+      if (tIdx === index) {
+        t.classList.add("active");
+        t.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      } else {
+        t.classList.remove("active");
+      }
+    });
+  }
+}
+window.renderModalMediaItem = renderModalMediaItem;
+
 function switchMediaTab(tab) {
   state.activeMediaTab = tab;
+  if (!elements.modalVideoPlayer || !elements.modalImagePreview) return;
+
   if (tab === "video") {
-    elements.modalVideoTabBtn.classList.add("active");
-    elements.modalImageTabBtn.classList.remove("active");
+    if (elements.modalVideoTabBtn) elements.modalVideoTabBtn.classList.add("active");
+    if (elements.modalImageTabBtn) elements.modalImageTabBtn.classList.remove("active");
     elements.modalVideoPlayer.style.display = "block";
-    elements.modalImagePreview.style.display = "none";
     elements.modalVideoPlayer.play().catch(() => {});
+    elements.modalImagePreview.style.display = "none";
   } else {
-    elements.modalImageTabBtn.classList.add("active");
-    elements.modalVideoTabBtn.classList.remove("active");
-    elements.modalVideoPlayer.style.display = "none";
+    if (elements.modalImageTabBtn) elements.modalImageTabBtn.classList.add("active");
+    if (elements.modalVideoTabBtn) elements.modalVideoTabBtn.classList.remove("active");
     elements.modalVideoPlayer.pause();
+    elements.modalVideoPlayer.style.display = "none";
     elements.modalImagePreview.style.display = "block";
   }
 }
 
 function closeModal() {
   elements.modalBackdrop.classList.remove("open");
-  elements.modalVideoPlayer.pause();
+  if (elements.modalVideoPlayer) {
+    elements.modalVideoPlayer.pause();
+    elements.modalVideoPlayer.removeAttribute("src");
+    elements.modalVideoPlayer.load();
+  }
   document.body.style.overflow = "";
   state.selectedAsset = null;
+  state.modalMediaList = [];
+  state.modalMediaIndex = 0;
 }
 
 // ==============================================================================

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D USD 资产展示平台 - Cyber Studio</title>
-  <link rel="stylesheet" href="css/style.css?v=20260922_perf1">
+  <link rel="stylesheet" href="css/style.css?v=20261015_scene_align1">
 </head>
 <body style="background-color: #050811; color: #f8fafc;">
 
@@ -25,6 +25,28 @@
             <span class="brand-badge">Cyber Studio</span>
           </h1>
         </div>
+      </div>
+
+      <!-- Main Section Tabs Switcher (Assets vs Scenes) -->
+      <div class="section-switcher" id="sectionSwitcher">
+        <button id="tabSectionAssets" class="section-tab-btn active" onclick="switchSection('assets')" type="button" title="单体 3D 资产库">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          </svg>
+          <span>单体资产</span>
+          <span class="tab-badge" id="assetsCountBadge">0</span>
+        </button>
+        <button id="tabSectionScenes" class="section-tab-btn" onclick="switchSection('scenes')" type="button" title="3D 场景与环境漫游">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          <span>3D 场景</span>
+          <span class="tab-badge" id="scenesCountBadge">0</span>
+        </button>
       </div>
 
       <!-- Main Toolbar -->
@@ -120,20 +142,47 @@
         <!-- Left: Media Player / Preview -->
         <div class="modal-media-col">
           <div class="media-viewer">
+            <!-- Triangle Navigation Arrow Prev (Left) -->
+            <button class="media-nav-arrow nav-prev" id="modalNavPrev" type="button" title="上一项 (快捷键: ←)" aria-label="Previous Media" style="display: none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="15 5 7 12 15 19"/>
+              </svg>
+            </button>
+
+            <!-- Video Player -->
             <video id="modalVideoPlayer" loop controls playsinline></video>
+            
+            <!-- Image Preview -->
             <img id="modalImagePreview" style="display:none;" alt="Preview">
+
+            <!-- Triangle Navigation Arrow Next (Right) -->
+            <button class="media-nav-arrow nav-next" id="modalNavNext" type="button" title="下一项 (快捷键: →)" aria-label="Next Media" style="display: none;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="9 5 17 12 9 19"/>
+              </svg>
+            </button>
+
+            <!-- Floating Media Counter Pill -->
+            <div class="media-counter-pill" id="modalMediaCounter" style="display: none;">
+              <span class="badge-dot"></span>
+              <span id="modalMediaCounterText">1 / 1</span>
+            </div>
           </div>
           <!-- Tabs switch between video & image -->
-          <div class="media-controls-tab">
-            <button id="modalVideoTabBtn" class="media-tab-btn active">🎬 关节视频</button>
-            <button id="modalImageTabBtn" class="media-tab-btn">🖼 高清渲染图</button>
+          <div class="media-controls-tab" id="modalMediaControlsTab">
+            <button id="modalVideoTabBtn" class="media-tab-btn active">🎬 漫游视频</button>
+            <button id="modalImageTabBtn" class="media-tab-btn">🖼 高清效果图</button>
+          </div>
+          <!-- Gallery Thumbnail Strip for Multi-Image Scenes / Assets -->
+          <div class="modal-gallery-strip" id="modalGalleryStrip" style="display: none;">
+            <!-- Populated by JS -->
           </div>
         </div>
 
         <!-- Right: Information & Downloads -->
         <div class="modal-info-col">
-          <!-- Physics & Simulation Parameters -->
-          <div class="info-section physics-specs-card">
+          <!-- Physics & Simulation Parameters (For Single Assets) -->
+          <div class="info-section physics-specs-card" id="physicsSpecsCard">
             <div class="section-label">⚡ 物理与仿真属性 (Isaac Sim Physics)</div>
             <div class="physics-specs-header">
               <div class="physics-mass-box">
@@ -161,6 +210,33 @@
               <div class="physics-spec-item" style="grid-column: span 2;">
                 <span class="physics-spec-label">弹性恢复 (Restitution)</span>
                 <span class="physics-spec-value" id="modalRestitutionVal">--</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Scene Specs Card (For 3D Scenes) -->
+          <div class="info-section scene-specs-card" id="sceneSpecsCard" style="display: none;">
+            <div class="section-label">🏛️ 3D 场景与空间规格 (Scene Specs)</div>
+            <div class="physics-specs-grid">
+              <div class="physics-spec-item">
+                <span class="physics-spec-label">空间类型 (Space Type)</span>
+                <span class="physics-spec-value" id="modalSceneTypeVal" style="color: var(--cyan-neon);">--</span>
+              </div>
+              <div class="physics-spec-item">
+                <span class="physics-spec-label">所属批次 (Batch)</span>
+                <span class="physics-spec-value" id="modalSceneBatchVal" style="color: var(--cyan-neon);">--</span>
+              </div>
+              <div class="physics-spec-item">
+                <span class="physics-spec-label">效果图数量 (Renders)</span>
+                <span class="physics-spec-value" id="modalSceneImagesVal">-- 张</span>
+              </div>
+              <div class="physics-spec-item">
+                <span class="physics-spec-label">视频漫游 (Video)</span>
+                <span class="physics-spec-value" id="modalSceneVideoVal">--</span>
+              </div>
+              <div class="physics-spec-item" style="grid-column: span 2;">
+                <span class="physics-spec-label">USD 场景网格 (USD Stage)</span>
+                <span class="physics-spec-value" id="modalSceneUsdVal">--</span>
               </div>
             </div>
           </div>
@@ -267,6 +343,6 @@
 
   <div id="toastNotice" class="toast-notice"></div>
 
-  <script src="js/app.js?v=20260922_perf1"></script>
+  <script src="js/app.js?v=20261015_scene_align1"></script>
 </body>
 </html>

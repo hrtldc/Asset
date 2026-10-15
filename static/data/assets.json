@@ -5363,24 +5363,24 @@
       "has_video": true,
       "has_usd": true,
       "thumbnail_rel_path": "T_ZheDieMen02.png",
-      "thumbnail_mtime": 1789401249,
+      "thumbnail_mtime": 1790662750,
       "video_rel_path": "V_ZheDieMen02.mp4",
-      "video_mtime": 1789401531,
+      "video_mtime": 1790662869,
       "primary_usd_rel_path": "SM_ZheDieMen02_B.usd",
-      "total_size_bytes": 17107728,
-      "total_size_mb": 16.32,
+      "total_size_bytes": 15032709,
+      "total_size_mb": 14.34,
       "video_files": [
         {
           "name": "V_ZheDieMen02.mp4",
           "rel_path": "V_ZheDieMen02.mp4",
-          "size_bytes": 2669642,
-          "mtime": 1789401531,
-          "size_str": "2.55 MB"
+          "size_bytes": 588798,
+          "mtime": 1790662869,
+          "size_str": "575.0 KB"
         }
       ],
       "displayName": "Door / 门 - 02",
-      "static_thumb_path": "media/qzs_10/SM_ZheDieMen02_B/thumb.webp?v=1789448231",
-      "static_video_path": "media/qzs_10/SM_ZheDieMen02_B/V_ZheDieMen02.mp4?v=1789401531_0702d566"
+      "static_thumb_path": "media/qzs_10/SM_ZheDieMen02_B/thumb.webp?v=1792028744",
+      "static_video_path": "media/qzs_10/SM_ZheDieMen02_B/V_ZheDieMen02.mp4?v=1790662869_0702d566"
     },
     {
       "id": "qzs_10/SM_ZheDieMen03_B",
@@ -10115,14 +10115,72 @@
     "wq_17": 19,
     "qzs_17": 17
   },
+  "scenes": [
+    {
+      "id": "qzs_scene/SM_Home_Living_Room",
+      "batch": "qzs_scene",
+      "name": "SM_Home_Living_Room",
+      "displayName": "Living Room / 客厅场景 - SM_Home_Living_Room",
+      "category": "客厅场景",
+      "category_en": "Living Room",
+      "category_display": "客厅 / Living Room",
+      "is_scene": true,
+      "has_video": true,
+      "has_usd": true,
+      "has_image": true,
+      "thumbnail_rel_path": "render_living_room.png",
+      "thumbnail_mtime": 1789415422,
+      "video_rel_path": "walkthrough_living_room.mp4",
+      "video_mtime": 1789415855,
+      "primary_usd_rel_path": "scene.usd",
+      "total_size_bytes": 74538472,
+      "total_size_mb": 71.09,
+      "video_files": [
+        {
+          "name": "walkthrough_living_room.mp4",
+          "rel_path": "walkthrough_living_room.mp4",
+          "size_bytes": 3716527,
+          "mtime": 1789415855,
+          "size_str": "3.54 MB"
+        }
+      ],
+      "image_files": [
+        {
+          "name": "render_living_room.png",
+          "rel_path": "render_living_room.png",
+          "size_bytes": 4094779,
+          "mtime": 1789415422,
+          "size_str": "3.91 MB"
+        }
+      ],
+      "static_thumb_path": "media/qzs_scene/SM_Home_Living_Room/thumb.webp?v=1792028747",
+      "static_video_path": "media/qzs_scene/SM_Home_Living_Room/walkthrough_living_room.mp4?v=1789415855_0702d566"
+    }
+  ],
+  "total_scenes": 1,
+  "scene_categories": [
+    "客厅场景"
+  ],
+  "scene_category_counts": {
+    "客厅场景": 1
+  },
+  "scene_batches": [
+    "qzs_scene"
+  ],
+  "scene_batch_counts": {
+    "qzs_scene": 1
+  },
   "stats": {
     "total_assets": 257,
     "total_videos": 257,
     "total_usds": 257,
     "total_batches": 24,
     "total_categories": 17,
-    "total_size_gb": 9.29
+    "total_size_gb": 9.29,
+    "total_scenes": 1,
+    "total_scene_videos": 1,
+    "total_scene_usds": 1
   },
-  "build_timestamp": 1790230910,
+  "build_timestamp": 1792028751,
   "is_static_showcase": true
 }

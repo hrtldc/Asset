@@ -38,6 +38,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.middleware("http")
+async def add_no_cache_for_dev(request: Request, call_next):
+    response = await call_next(request)
+    path = request.url.path
+    if path == "/" or path.endswith((".html", ".js", ".css")) or "/js/" in path or "/css/" in path:
+        response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "0"
+    return response
+
 # Ensure static directories exist
 STATIC_DIR.mkdir(parents=True, exist_ok=True)
 (STATIC_DIR / "css").mkdir(parents=True, exist_ok=True)
@@ -56,16 +66,27 @@ if (STATIC_DIR / "data").exists():
 _manifest_cache: Dict[str, dict] = {}
 _cached_assets: Optional[List[dict]] = None
 _last_scan_timestamp: float = 0.0
+_cached_scenes: Optional[List[dict]] = None
+_last_scenes_scan_timestamp: float = 0.0
 CACHE_TTL_SECONDS = 30.0
+
+
+def is_scene_batch(batch_name: str) -> bool:
+    """Return True if folder name indicates a scene batch (e.g. qzs_scene, wq_scene, wq_14_scene)."""
+    return "scene" in batch_name.lower()
 
 
 def get_or_create_thumbnail(source_file: Path) -> Path:
     """Generate or retrieve compressed WebP thumbnail (~15-30 KB instead of 3MB)."""
     try:
         mtime_int = int(source_file.stat().st_mtime)
-        batch = source_file.parent.parent.name
-        asset = source_file.parent.name
-        cache_name = f"{batch}_{asset}_{source_file.stem}_{mtime_int}.webp"
+        try:
+            rel = source_file.relative_to(ASSET_SOURCE_DIR)
+            cache_name = f"{'_'.join(rel.parts)}_{mtime_int}.webp"
+            cache_name = re.sub(r'[^a-zA-Z0-9_\-\.]', '_', cache_name)
+        except Exception:
+            cache_name = f"{source_file.stem}_{mtime_int}.webp"
+
         cache_path = THUMB_CACHE_DIR / cache_name
         if cache_path.exists() and cache_path.stat().st_size > 0:
             return cache_path
@@ -75,7 +96,8 @@ def get_or_create_thumbnail(source_file: Path) -> Path:
                 im_conv = im.convert("RGBA")
             else:
                 im_conv = im.convert("RGB")
-            im_conv.thumbnail((540, 540), Image.Resampling.LANCZOS)
+            # 720x540 fits both 1:1 asset squares and 16:9 scene landscapes nicely
+            im_conv.thumbnail((720, 540), Image.Resampling.LANCZOS)
             cache_path.parent.mkdir(parents=True, exist_ok=True)
             im_conv.save(cache_path, "WEBP", quality=85, method=4)
         return cache_path
@@ -330,6 +352,9 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
         if is_batch_ignored(batch_dir.name):
             ignored_batches.append(batch_dir.name)
             continue
+        if is_scene_batch(batch_dir.name):
+            # Scene batches are scanned and handled separately by scan_scenes
+            continue
         batch_name = batch_dir.name
         manifest_data = _manifest_cache.get(batch_name, {})
         manifest_items = manifest_data.get("items", [])
@@ -358,6 +383,7 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
                 total_size_bytes = 0
 
                 for root, _, files in os.walk(item_dir.path):
+                    is_top_level = (Path(root) == Path(item_dir.path))
                     for f in files:
                         full_p = Path(root) / f
                         try:
@@ -381,13 +407,16 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
                         lower_f = f.lower()
                         if lower_f.endswith((".usd", ".usdc", ".usda")):
                             usd_files.append(file_record)
-                        elif lower_f.endswith((".mp4", ".webm", ".mov")):
-                            video_files.append(file_record)
-                        elif lower_f.endswith((".png", ".jpg", ".jpeg", ".webp")):
-                            if lower_f.startswith("t_"):
-                                image_files.insert(0, file_record)
-                            else:
-                                image_files.append(file_record)
+                        
+                        # Only collect images and videos from outer/top-level folder (never from Materials/textures)
+                        if is_top_level:
+                            if lower_f.endswith((".mp4", ".webm", ".mov")):
+                                video_files.append(file_record)
+                            elif lower_f.endswith((".png", ".jpg", ".jpeg", ".webp")):
+                                if lower_f.startswith("t_"):
+                                    image_files.insert(0, file_record)
+                                else:
+                                    image_files.append(file_record)
 
                 thumbnail_path = image_files[0]["rel_path"] if image_files else None
                 thumbnail_mtime = image_files[0]["mtime"] if image_files else 0
@@ -485,6 +514,247 @@ def scan_assets(force_reload: bool = False) -> List[dict]:
     return assets
 
 
+def classify_scene_category(name: str):
+    """
+    Classify 3D scenes by room or environment type.
+    Returns: (clean_en, category_cn, display_category)
+    """
+    nl = name.lower()
+    if any(k in nl for k in ["keting", "living", "livingroom", "living_room", "parlor", "lounge"]):
+        return ("Living Room", "客厅场景", "客厅 / Living Room")
+    elif any(k in nl for k in ["woshi", "bedroom", "bed_room", "sleeping"]):
+        return ("Bedroom", "卧室场景", "卧室 / Bedroom")
+    elif any(k in nl for k in ["chufang", "kitchen", "cook"]):
+        return ("Kitchen", "厨房场景", "厨房 / Kitchen")
+    elif any(k in nl for k in ["canting", "dining", "diningroom", "dining_room"]):
+        return ("Dining Room", "餐厅场景", "餐厅 / Dining Room")
+    elif any(k in nl for k in ["weishengjian", "yushi", "bathroom", "bath_room", "washroom", "toilet"]):
+        return ("Bathroom", "浴室卫生间", "浴室 / Bathroom")
+    elif any(k in nl for k in ["shufang", "study", "office", "workroom", "desk"]):
+        return ("Study Room", "书房办公", "书房 / Study")
+    elif any(k in nl for k in ["yangtai", "balcony", "terrace", "veranda"]):
+        return ("Balcony", "阳台露台", "阳台 / Balcony")
+    elif any(k in nl for k in ["xuanguan", "foyer", "entry", "hallway", "corridor"]):
+        return ("Entryway", "玄关过道", "玄关 / Entryway")
+    elif any(k in nl for k in ["ertongfang", "kids", "children"]):
+        return ("Kids Room", "儿童房", "儿童房 / Kids Room")
+    elif any(k in nl for k in ["homedecoration", "home decoration", "indoor", "interior", "house", "quanwu", "huxing", "apartment", "villa", "home"]):
+        return ("Whole House", "全屋室内", "全屋室内 / Whole House")
+    elif any(k in nl for k in ["zhanting", "showroom", "gallery", "exhibition", "studio"]):
+        return ("Showroom", "展厅空间", "展厅 / Showroom")
+    elif any(k in nl for k in ["shangye", "commercial", "shop", "cafe", "restaurant", "store"]):
+        return ("Commercial", "商业空间", "商业空间 / Commercial")
+    elif any(k in nl for k in ["huayuan", "garden", "outdoor", "park", "street", "landscape"]):
+        return ("Outdoor", "室外园林", "室外 / Outdoor")
+    else:
+        clean = re.sub(r'^(sm_|sn_|md_|sc_|scene_)', '', nl, flags=re.I)
+        clean = re.sub(r'[\d_-]+$', '', clean).strip()
+        cat_title = clean.capitalize() if clean else "3D Scene"
+        return (cat_title, "综合场景", f"{cat_title} / 综合场景")
+
+
+def scan_scenes(force_reload: bool = False) -> List[dict]:
+    """Scan all *scene* folders under ASSET_SOURCE_DIR and return indexed 3D scene environments."""
+    global _cached_scenes, _last_scenes_scan_timestamp
+    now = time.time()
+    if _cached_scenes is not None and not force_reload:
+        if (now - _last_scenes_scan_timestamp) < CACHE_TTL_SECONDS:
+            return _cached_scenes
+
+    scenes = []
+    if not ASSET_SOURCE_DIR.exists():
+        _cached_scenes = scenes
+        _last_scenes_scan_timestamp = now
+        return scenes
+
+    for batch_dir in sorted(os.scandir(ASSET_SOURCE_DIR), key=lambda e: e.name):
+        if not batch_dir.is_dir():
+            continue
+        if is_batch_ignored(batch_dir.name):
+            continue
+        if not is_scene_batch(batch_dir.name):
+            continue
+
+        batch_name = batch_dir.name
+
+        try:
+            sub_entries = [e for e in os.scandir(batch_dir.path) if not is_batch_ignored(e.name)]
+        except Exception:
+            continue
+        subfolders = [e for e in sub_entries if e.is_dir()]
+        direct_files = [e for e in sub_entries if e.is_file()]
+
+        # 1. Scan subfolders as scene items
+        for item_dir in sorted(subfolders, key=lambda e: e.name):
+            try:
+                item_name = item_dir.name
+                usd_files = []
+                video_files = []
+                image_files = []
+                all_files = []
+                total_size_bytes = 0
+
+                for root, _, files in os.walk(item_dir.path):
+                    is_top_level = (Path(root) == Path(item_dir.path))
+                    for f in files:
+                        full_p = Path(root) / f
+                        try:
+                            rel_p = str(full_p.relative_to(item_dir.path)).replace("\\", "/")
+                            f_stat = full_p.stat()
+                            f_size = f_stat.st_size
+                            f_mtime = int(f_stat.st_mtime)
+                            total_size_bytes += f_size
+                        except Exception:
+                            continue
+
+                        file_record = {
+                            "name": f,
+                            "rel_path": rel_p,
+                            "size_bytes": f_size,
+                            "mtime": f_mtime,
+                            "size_str": f"{f_size / (1024 * 1024):.2f} MB" if f_size > 1024 * 1024 else f"{f_size / 1024:.1f} KB"
+                        }
+                        all_files.append(file_record)
+                        lower_f = f.lower()
+                        if lower_f.endswith((".usd", ".usdc", ".usda")):
+                            usd_files.append(file_record)
+                        
+                        # Only collect scene renders and videos from outer/top-level directory
+                        if is_top_level:
+                            if lower_f.endswith((".mp4", ".webm", ".mov")):
+                                video_files.append(file_record)
+                            elif lower_f.endswith((".png", ".jpg", ".jpeg", ".webp")):
+                                if lower_f.startswith("t_") or "thumb" in lower_f or "render" in lower_f or "cover" in lower_f:
+                                    image_files.insert(0, file_record)
+                                else:
+                                    image_files.append(file_record)
+
+                if not (image_files or video_files or usd_files):
+                    continue
+
+                thumbnail_path = image_files[0]["rel_path"] if image_files else None
+                thumbnail_mtime = image_files[0]["mtime"] if image_files else 0
+                video_path = video_files[0]["rel_path"] if video_files else None
+                video_mtime = video_files[0]["mtime"] if video_files else 0
+
+                primary_usd = None
+                if usd_files:
+                    pure_usd = [u for u in usd_files if u["name"].lower().endswith(".usd")]
+                    primary_usd = (pure_usd[0] if pure_usd else usd_files[0])["rel_path"]
+
+                cat_en, cat_cn, cat_display = classify_scene_category(item_name)
+
+                scene_obj = {
+                    "id": f"{batch_name}/{item_name}",
+                    "batch": batch_name,
+                    "name": item_name,
+                    "displayName": f"{cat_en} / {cat_cn} - {item_name}",
+                    "category": cat_cn,
+                    "category_en": cat_en,
+                    "category_display": cat_display,
+                    "is_scene": True,
+                    "has_video": len(video_files) > 0,
+                    "has_usd": len(usd_files) > 0,
+                    "has_image": len(image_files) > 0,
+                    "thumbnail_rel_path": thumbnail_path,
+                    "thumbnail_mtime": thumbnail_mtime,
+                    "video_rel_path": video_path,
+                    "video_mtime": video_mtime,
+                    "primary_usd_rel_path": primary_usd,
+                    "total_size_bytes": total_size_bytes,
+                    "total_size_mb": round(total_size_bytes / (1024 * 1024), 2),
+                    "usd_files": usd_files,
+                    "video_files": video_files,
+                    "image_files": image_files,
+                    "all_files": all_files,
+                    "abs_path": str(Path(item_dir.path).resolve())
+                }
+                scenes.append(scene_obj)
+            except Exception as e:
+                print(f"[scan_scenes] Error scanning {batch_name}/{item_dir.name}: {e}")
+
+        # 2. Scan direct / loose files in batch_dir (root level)
+        if direct_files:
+            file_groups: Dict[str, Dict[str, list]] = {}
+            for f_entry in direct_files:
+                f_name = f_entry.name
+                lower_f = f_name.lower()
+                try:
+                    f_stat = f_entry.stat()
+                    f_size = f_stat.st_size
+                    f_mtime = int(f_stat.st_mtime)
+                except Exception:
+                    continue
+                file_record = {
+                    "name": f_name,
+                    "rel_path": f_name,
+                    "size_bytes": f_size,
+                    "mtime": f_mtime,
+                    "size_str": f"{f_size / (1024 * 1024):.2f} MB" if f_size > 1024 * 1024 else f"{f_size / 1024:.1f} KB"
+                }
+                stem = Path(f_name).stem
+                stem_clean = re.sub(r'^(t_|v_|img_|render_)', '', stem, flags=re.I)
+                group_key = stem_clean if stem_clean else stem
+
+                if group_key not in file_groups:
+                    file_groups[group_key] = {"images": [], "videos": [], "usds": [], "all": []}
+                
+                file_groups[group_key]["all"].append(file_record)
+                if lower_f.endswith((".usd", ".usdc", ".usda")):
+                    file_groups[group_key]["usds"].append(file_record)
+                elif lower_f.endswith((".mp4", ".webm", ".mov")):
+                    file_groups[group_key]["videos"].append(file_record)
+                elif lower_f.endswith((".png", ".jpg", ".jpeg", ".webp")):
+                    if lower_f.startswith("t_") or "thumb" in lower_f or "render" in lower_f:
+                        file_groups[group_key]["images"].insert(0, file_record)
+                    else:
+                        file_groups[group_key]["images"].append(file_record)
+
+            for g_name, g_data in file_groups.items():
+                if not (g_data["images"] or g_data["videos"] or g_data["usds"]):
+                    continue
+                total_size = sum(f["size_bytes"] for f in g_data["all"])
+                cat_en, cat_cn, cat_display = classify_scene_category(g_name)
+                thumb = g_data["images"][0]["rel_path"] if g_data["images"] else None
+                thumb_m = g_data["images"][0]["mtime"] if g_data["images"] else 0
+                vid = g_data["videos"][0]["rel_path"] if g_data["videos"] else None
+                vid_m = g_data["videos"][0]["mtime"] if g_data["videos"] else 0
+                usd = g_data["usds"][0]["rel_path"] if g_data["usds"] else None
+
+                scene_obj = {
+                    "id": f"{batch_name}/_root/{g_name}",
+                    "batch": batch_name,
+                    "name": g_name,
+                    "displayName": f"{cat_en} / {cat_cn} - {g_name}",
+                    "category": cat_cn,
+                    "category_en": cat_en,
+                    "category_display": cat_display,
+                    "is_scene": True,
+                    "is_loose_file": True,
+                    "has_video": len(g_data["videos"]) > 0,
+                    "has_usd": len(g_data["usds"]) > 0,
+                    "has_image": len(g_data["images"]) > 0,
+                    "thumbnail_rel_path": thumb,
+                    "thumbnail_mtime": thumb_m,
+                    "video_rel_path": vid,
+                    "video_mtime": vid_m,
+                    "primary_usd_rel_path": usd,
+                    "total_size_bytes": total_size,
+                    "total_size_mb": round(total_size / (1024 * 1024), 2),
+                    "usd_files": g_data["usds"],
+                    "video_files": g_data["videos"],
+                    "image_files": g_data["images"],
+                    "all_files": g_data["all"],
+                    "abs_path": str(Path(batch_dir.path).resolve())
+                }
+                scenes.append(scene_obj)
+
+    scenes.sort(key=lambda s: (s["category"], s["batch"], s["name"]))
+    _cached_scenes = scenes
+    _last_scenes_scan_timestamp = now
+    return scenes
+
+
 @app.get("/")
 def serve_index():
     index_path = STATIC_DIR / "index.html"
@@ -496,18 +766,20 @@ def serve_index():
 import threading
 
 def _background_auto_watcher():
-    """Background worker that silently checks and auto-indexes new assets every 30s."""
+    """Background worker that silently checks and auto-indexes new assets & scenes every 30s."""
     while True:
         try:
             time.sleep(30.0)
             scan_assets(force_reload=True)
+            scan_scenes(force_reload=True)
         except Exception:
             pass
 
 @app.on_event("startup")
 def startup_event():
-    # Pre-warm asset cache on startup
+    # Pre-warm asset and scene caches on startup
     scan_assets(force_reload=True)
+    scan_scenes(force_reload=True)
     # Start non-blocking automated background ingestion worker
     t = threading.Thread(target=_background_auto_watcher, daemon=True)
     t.start()
@@ -515,8 +787,9 @@ def startup_event():
 
 @app.get("/api/update")
 def force_update_assets():
-    """Explicit one-click refresh endpoint."""
+    """Explicit one-click refresh endpoint for assets and scenes."""
     assets = scan_assets(force_reload=True)
+    scenes = scan_scenes(force_reload=True)
     return format_assets_response(assets)
 
 
@@ -568,6 +841,50 @@ def get_assets(refresh: bool = Query(False)):
     return format_assets_response(assets)
 
 
+def format_scenes_response(scenes: List[dict]):
+    cat_counter = Counter(s["category"] for s in scenes)
+    sorted_categories = [cat for cat, _ in cat_counter.most_common()]
+
+    batch_counter = Counter(s["batch"] for s in scenes)
+    sorted_batches = sorted(list(batch_counter.keys()))
+
+    total_videos = sum(1 for s in scenes if s["has_video"])
+    total_usds = sum(1 for s in scenes if s["has_usd"])
+    total_size_gb = round(sum(s["total_size_bytes"] for s in scenes) / (1024**3), 2)
+
+    headers = {
+        "Cache-Control": "public, max-age=15"
+    }
+
+    return JSONResponse(
+        content={
+            "scenes": scenes,
+            "total": len(scenes),
+            "batches": sorted_batches,
+            "categories": sorted_categories,
+            "category_counts": dict(cat_counter),
+            "batch_counts": dict(batch_counter),
+            "stats": {
+                "total_scenes": len(scenes),
+                "total_videos": total_videos,
+                "total_usds": total_usds,
+                "total_batches": len(sorted_batches),
+                "total_categories": len(sorted_categories),
+                "total_size_gb": total_size_gb
+            },
+            "timestamp": int(time.time())
+        },
+        headers=headers
+    )
+
+
+@app.get("/api/scenes")
+def get_scenes(refresh: bool = Query(False)):
+    """Fast cached 3D scenes endpoint."""
+    scenes = scan_scenes(force_reload=refresh)
+    return format_scenes_response(scenes)
+
+
 def format_assets_response(assets: List[dict]):
     cat_counter = Counter(a["category"] for a in assets)
     sorted_categories = [cat for cat, _ in cat_counter.most_common()]
@@ -578,6 +895,10 @@ def format_assets_response(assets: List[dict]):
     total_videos = sum(1 for a in assets if a["has_video"])
     total_usds = sum(1 for a in assets if a["has_usd"])
     total_size_gb = round(sum(a["total_size_bytes"] for a in assets) / (1024**3), 2)
+
+    scenes = scan_scenes(force_reload=False)
+    scenes_cat_counter = Counter(s["category"] for s in scenes)
+    scenes_batch_counter = Counter(s["batch"] for s in scenes)
 
     headers = {
         "Cache-Control": "public, max-age=15"
@@ -591,13 +912,22 @@ def format_assets_response(assets: List[dict]):
             "categories": sorted_categories,
             "category_counts": dict(cat_counter),
             "batch_counts": dict(batch_counter),
+            "scenes": scenes,
+            "total_scenes": len(scenes),
+            "scene_categories": [cat for cat, _ in scenes_cat_counter.most_common()],
+            "scene_category_counts": dict(scenes_cat_counter),
+            "scene_batches": sorted(list(scenes_batch_counter.keys())),
+            "scene_batch_counts": dict(scenes_batch_counter),
             "stats": {
                 "total_assets": len(assets),
                 "total_videos": total_videos,
                 "total_usds": total_usds,
                 "total_batches": len(sorted_batches),
                 "total_categories": len(sorted_categories),
-                "total_size_gb": total_size_gb
+                "total_size_gb": total_size_gb,
+                "total_scenes": len(scenes),
+                "total_scene_videos": sum(1 for s in scenes if s["has_video"]),
+                "total_scene_usds": sum(1 for s in scenes if s["has_usd"])
             },
             "timestamp": int(time.time())
         },
@@ -607,7 +937,10 @@ def format_assets_response(assets: List[dict]):
 
 def get_safe_file_path(batch: str, asset: str, filepath: str) -> Path:
     """Validate and return safe absolute Path within ASSET_SOURCE_DIR."""
-    target_dir = (ASSET_SOURCE_DIR / batch / asset).resolve()
+    if asset in ("_root", ".", ""):
+        target_dir = (ASSET_SOURCE_DIR / batch).resolve()
+    else:
+        target_dir = (ASSET_SOURCE_DIR / batch / asset).resolve()
     target_file = (target_dir / filepath).resolve()
     try:
         target_file.relative_to(target_dir)
@@ -704,12 +1037,16 @@ def download_single_file(batch: str, asset: str, filepath: str):
 
 @app.get("/api/download/zip/{batch}/{asset}")
 def download_asset_zip(batch: str, asset: str):
-    """Create a ZIP archive of the entire asset folder and stream it."""
-    asset_dir = (ASSET_SOURCE_DIR / batch / asset).resolve()
-    if not asset_dir.exists() or not asset_dir.is_dir():
-        raise HTTPException(status_code=404, detail="Asset folder not found")
+    """Create a ZIP archive of the entire asset or scene folder and stream it."""
+    if asset in ("_root", ".", ""):
+        asset_dir = (ASSET_SOURCE_DIR / batch).resolve()
+        zip_filename = f"{batch}.zip"
+    else:
+        asset_dir = (ASSET_SOURCE_DIR / batch / asset).resolve()
+        zip_filename = f"{asset}.zip"
 
-    zip_filename = f"{asset}.zip"
+    if not asset_dir.exists() or not asset_dir.is_dir():
+        raise HTTPException(status_code=404, detail="Folder not found")
 
     mem_file = io.BytesIO()
     with zipfile.ZipFile(mem_file, "w", zipfile.ZIP_DEFLATED) as zf:
@@ -732,14 +1069,20 @@ def download_asset_zip(batch: str, asset: str):
 
 @app.post("/api/open-folder")
 async def open_local_folder(request: Request):
-    """Open asset directory directly in Windows Explorer."""
+    """Open asset or scene directory directly in Windows Explorer."""
     data = await request.json()
     batch = data.get("batch")
     asset = data.get("asset")
-    if not batch or not asset:
-        raise HTTPException(status_code=400, detail="Missing batch or asset")
+    if not batch:
+        raise HTTPException(status_code=400, detail="Missing batch")
     
-    target_dir = (ASSET_SOURCE_DIR / batch / asset).resolve()
+    if asset in ("_root", ".", "", None):
+        target_dir = (ASSET_SOURCE_DIR / batch).resolve()
+    else:
+        target_dir = (ASSET_SOURCE_DIR / batch / asset).resolve()
+        if not target_dir.exists():
+            target_dir = (ASSET_SOURCE_DIR / batch).resolve()
+
     if not target_dir.exists():
         raise HTTPException(status_code=404, detail="Folder not found")
     

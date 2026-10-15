@@ -2572,5 +2572,167 @@
     "semantic_class": "ElectricAppliance",
     "specific_zh": "电器",
     "source": "qwen2.5vl_vision"
+  },
+  "qzs_0916_Joint_Export111/SM_Deng": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_Deng01": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_Deng02": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_Deng03": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_Deng04": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_Deng05": {
+    "clean_category_en": "Light",
+    "category": "灯具",
+    "category_en": "Lighting",
+    "wikidata_qcode": "Q135260",
+    "semantic_class": "Light",
+    "specific_zh": "灯具",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_QiHuaLu": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_QiHuaLu01": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_QiHuaLu02": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_QiHuaLu03": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_QiHuaLu04": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_QiHuaLu05": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_QiHuaLu06": {
+    "clean_category_en": "Gas Stove",
+    "category": "燃气灶",
+    "category_en": "Kitchen Appliances",
+    "wikidata_qcode": "Q180399",
+    "semantic_class": "GasStove",
+    "specific_zh": "燃气灶",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_XiYiJi": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_XiYiJi01": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_XiYiJi02": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "qzs_0916_Joint_Export111/SM_XiYiJi03": {
+    "clean_category_en": "Washing Machine",
+    "category": "洗衣机",
+    "category_en": "Home Appliances",
+    "wikidata_qcode": "Q124441",
+    "semantic_class": "WashingMachine",
+    "specific_zh": "洗衣机",
+    "source": "naming_ontology"
+  },
+  "qzs_scene/SM_Home_Living_Room": {
+    "clean_category_en": "Home_living_room",
+    "category": "Home_living_room",
+    "category_en": "Custom Assets",
+    "wikidata_qcode": "Q223557",
+    "semantic_class": "Home_living_room",
+    "specific_zh": "Home_living_room",
+    "source": "dynamic_stem"
   }
 }
