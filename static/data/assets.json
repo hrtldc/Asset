@@ -5354,11 +5354,11 @@
       "specific_zh": "门",
       "semantic_class": "Door",
       "wikidata_qcode": "Q36794",
-      "mass_kg": 42.129,
-      "static_friction": 0.5,
-      "dynamic_friction": 0.35,
+      "mass_kg": 45.96,
+      "static_friction": 0.65,
+      "dynamic_friction": 0.55,
       "restitution": 0.05,
-      "friction": "0.5 / 0.35",
+      "friction": "0.65 / 0.55",
       "status": "Ready",
       "has_video": true,
       "has_usd": true,
@@ -10141,7 +10141,8 @@
           "rel_path": "walkthrough_living_room.mp4",
           "size_bytes": 3716527,
           "mtime": 1789415855,
-          "size_str": "3.54 MB"
+          "size_str": "3.54 MB",
+          "static_path": "media/qzs_scene/SM_Home_Living_Room/walkthrough_living_room.mp4?v=1789415855_0702d566"
         }
       ],
       "image_files": [
@@ -10150,25 +10151,73 @@
           "rel_path": "render_living_room.png",
           "size_bytes": 4094779,
           "mtime": 1789415422,
-          "size_str": "3.91 MB"
+          "size_str": "3.91 MB",
+          "static_path": "media/qzs_scene/SM_Home_Living_Room/render_living_room.webp?v=1792033319"
         }
       ],
       "static_thumb_path": "media/qzs_scene/SM_Home_Living_Room/thumb.webp?v=1792028747",
       "static_video_path": "media/qzs_scene/SM_Home_Living_Room/walkthrough_living_room.mp4?v=1789415855_0702d566"
+    },
+    {
+      "id": "wq_14_scene/_root/CHAJI",
+      "batch": "wq_14_scene",
+      "name": "CHAJI",
+      "displayName": "Chaji / 综合场景 - CHAJI",
+      "category": "综合场景",
+      "category_en": "Chaji",
+      "category_display": "Chaji / 综合场景",
+      "is_scene": true,
+      "is_loose_file": true,
+      "has_video": true,
+      "has_usd": false,
+      "has_image": true,
+      "thumbnail_rel_path": "T_CHAJI.png",
+      "thumbnail_mtime": 1789483885,
+      "video_rel_path": "V_CHAJI.mp4",
+      "video_mtime": 1789484194,
+      "primary_usd_rel_path": null,
+      "total_size_bytes": 4021294,
+      "total_size_mb": 3.84,
+      "video_files": [
+        {
+          "name": "V_CHAJI.mp4",
+          "rel_path": "V_CHAJI.mp4",
+          "size_bytes": 919021,
+          "mtime": 1789484194,
+          "size_str": "897.5 KB",
+          "static_path": "media/wq_14_scene/CHAJI/V_CHAJI.mp4?v=1789484194_0702d566"
+        }
+      ],
+      "image_files": [
+        {
+          "name": "T_CHAJI.png",
+          "rel_path": "T_CHAJI.png",
+          "size_bytes": 3102273,
+          "mtime": 1789483885,
+          "size_str": "2.96 MB",
+          "static_path": "media/wq_14_scene/CHAJI/T_CHAJI.webp?v=1792033321"
+        }
+      ],
+      "static_thumb_path": "media/wq_14_scene/CHAJI/thumb.webp?v=1792033320",
+      "static_video_path": "media/wq_14_scene/CHAJI/V_CHAJI.mp4?v=1789484194_0702d566"
     }
   ],
-  "total_scenes": 1,
+  "total_scenes": 2,
   "scene_categories": [
-    "客厅场景"
+    "客厅场景",
+    "综合场景"
   ],
   "scene_category_counts": {
-    "客厅场景": 1
+    "客厅场景": 1,
+    "综合场景": 1
   },
   "scene_batches": [
-    "qzs_scene"
+    "qzs_scene",
+    "wq_14_scene"
   ],
   "scene_batch_counts": {
-    "qzs_scene": 1
+    "qzs_scene": 1,
+    "wq_14_scene": 1
   },
   "stats": {
     "total_assets": 257,
@@ -10177,10 +10226,10 @@
     "total_batches": 24,
     "total_categories": 17,
     "total_size_gb": 9.29,
-    "total_scenes": 1,
-    "total_scene_videos": 1,
+    "total_scenes": 2,
+    "total_scene_videos": 2,
     "total_scene_usds": 1
   },
-  "build_timestamp": 1792028751,
+  "build_timestamp": 1792033321,
   "is_static_showcase": true
 }
