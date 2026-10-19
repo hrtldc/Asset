@@ -869,7 +869,7 @@ function createSceneCard(scene) {
       <div class="card-meta">
         <span class="card-tag">${scene.category}</span>
         <span>·</span>
-        <span style="color:#38bdf8;">${scene.batch}</span>
+        <span style="color:#38bdf8;">scene</span>
         <span>·</span>
         <span>${scene.total_size_mb} MB</span>
         ${scene.has_usd ? `<span>·</span><span class="card-tag-usd">USD</span>` : ""}
@@ -1006,12 +1006,12 @@ function openModal(item) {
   elements.modalTitle.textContent = item.displayName;
 
   if (isScene) {
-    elements.modalSubtitle.textContent = `空间类型: ${item.category_display || item.category} · 批次: ${item.batch} · 效果图: ${(item.image_files ? item.image_files.length : 0)} 张 · 完整大小: ${item.total_size_mb} MB`;
+    elements.modalSubtitle.textContent = `空间类型: ${item.category_display || item.category} · 批次: scene · 效果图: ${(item.image_files ? item.image_files.length : 0)} 张 · 完整大小: ${item.total_size_mb} MB`;
     if (elements.sceneSpecsCard) elements.sceneSpecsCard.style.display = "block";
     if (elements.physicsSpecsCard) elements.physicsSpecsCard.style.display = "none";
 
     if (elements.modalSceneTypeVal) elements.modalSceneTypeVal.textContent = item.category_display || item.category;
-    if (elements.modalSceneBatchVal) elements.modalSceneBatchVal.textContent = item.batch;
+    if (elements.modalSceneBatchVal) elements.modalSceneBatchVal.textContent = "scene";
     if (elements.modalSceneImagesVal) elements.modalSceneImagesVal.textContent = `${item.image_files ? item.image_files.length : 1} 张`;
     if (elements.modalSceneVideoVal) elements.modalSceneVideoVal.textContent = item.has_video ? "已包含 (360°/漫游)" : "无视频";
     if (elements.modalSceneUsdVal) elements.modalSceneUsdVal.textContent = item.has_usd ? (item.primary_usd_rel_path || "已就绪") : "无网格";
