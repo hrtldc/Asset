@@ -130,11 +130,18 @@ def main():
             input("\n按回车键退出...")
         sys.exit(1)
 
-    # Sync index.html
+    # Sync index.html with auto-stamped cache buster (busts 24h Cloudflare/browser cache for app.js & style.css)
     static_index = BASE_DIR / "static" / "index.html"
     root_index = BASE_DIR / "index.html"
     if static_index.exists():
+        import re
+        v_tag = f"v={time.strftime('%Y%m%d_%H%M%S')}"
+        idx_content = static_index.read_text(encoding="utf-8")
+        idx_content = re.sub(r'css/style\.css\?v=[a-zA-Z0-9_\-]+', f'css/style.css?{v_tag}', idx_content)
+        idx_content = re.sub(r'js/app\.js\?v=[a-zA-Z0-9_\-]+', f'js/app.js?{v_tag}', idx_content)
+        static_index.write_text(idx_content, encoding="utf-8")
         shutil.copy2(static_index, root_index)
+        print(f"  [前端缓存刷新] 已为 index.html 注入最新资源指纹: {v_tag}", flush=True)
 
     # Sync 404.html into the deploy output directory.
     # ★ Cloudflare Pages 的构建输出目录是 static/（不是仓库根目录），
