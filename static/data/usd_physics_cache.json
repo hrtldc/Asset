@@ -1032,12 +1032,12 @@
     "wikidata_qcode": null
   },
   "qzs_scene/SM_Home_Living_Room": {
-    "mass_kg": 58.91,
-    "static_friction": 0.55,
-    "dynamic_friction": 0.38,
-    "restitution": 0.1,
-    "semantic_class": "Door",
-    "wikidata_qcode": "Q36794"
+    "mass_kg": null,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
   },
   "wq_10/SM-TUILAMEN-1": {
     "mass_kg": 58.777,
@@ -1382,6 +1382,14 @@
     "restitution": 0.05,
     "semantic_class": "Door",
     "wikidata_qcode": "Q36794"
+  },
+  "wq_14_scene/SM_Home_Living_Room": {
+    "mass_kg": null,
+    "static_friction": 0.5,
+    "dynamic_friction": 0.35,
+    "restitution": 0.05,
+    "semantic_class": null,
+    "wikidata_qcode": null
   },
   "wq_15/SM-BIJIBENDIANNAO-1": {
     "mass_kg": 0.361,

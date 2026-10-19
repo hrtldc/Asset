@@ -4665,7 +4665,7 @@
       "video_rel_path": "V_Deng.mp4",
       "video_mtime": 1789640299,
       "primary_usd_rel_path": "SM_Deng.usd",
-      "total_size_bytes": 1554602,
+      "total_size_bytes": 1556219,
       "total_size_mb": 1.48,
       "video_files": [
         {
@@ -10125,91 +10125,94 @@
       "category_en": "Living Room",
       "category_display": "客厅 / Living Room",
       "is_scene": true,
-      "has_video": true,
-      "has_usd": true,
-      "has_image": true,
-      "thumbnail_rel_path": "render_living_room.png",
-      "thumbnail_mtime": 1789415422,
-      "video_rel_path": "walkthrough_living_room.mp4",
-      "video_mtime": 1789415855,
-      "primary_usd_rel_path": "scene.usd",
-      "total_size_bytes": 74538472,
-      "total_size_mb": 71.09,
-      "video_files": [
-        {
-          "name": "walkthrough_living_room.mp4",
-          "rel_path": "walkthrough_living_room.mp4",
-          "size_bytes": 3716527,
-          "mtime": 1789415855,
-          "size_str": "3.54 MB",
-          "static_path": "media/qzs_scene/SM_Home_Living_Room/walkthrough_living_room.mp4?v=1789415855_0702d566"
-        }
-      ],
-      "image_files": [
-        {
-          "name": "render_living_room.png",
-          "rel_path": "render_living_room.png",
-          "size_bytes": 4094779,
-          "mtime": 1789415422,
-          "size_str": "3.91 MB",
-          "static_path": "media/qzs_scene/SM_Home_Living_Room/render_living_room.webp?v=1792033319"
-        }
-      ],
-      "static_thumb_path": "media/qzs_scene/SM_Home_Living_Room/thumb.webp?v=1792028747",
-      "static_video_path": "media/qzs_scene/SM_Home_Living_Room/walkthrough_living_room.mp4?v=1789415855_0702d566"
-    },
-    {
-      "id": "wq_14_scene/_root/CHAJI",
-      "batch": "wq_14_scene",
-      "name": "CHAJI",
-      "displayName": "Chaji / 综合场景 - CHAJI",
-      "category": "综合场景",
-      "category_en": "Chaji",
-      "category_display": "Chaji / 综合场景",
-      "is_scene": true,
-      "is_loose_file": true,
-      "has_video": true,
+      "has_video": false,
       "has_usd": false,
       "has_image": true,
-      "thumbnail_rel_path": "T_CHAJI.png",
-      "thumbnail_mtime": 1789483885,
-      "video_rel_path": "V_CHAJI.mp4",
-      "video_mtime": 1789484194,
+      "thumbnail_rel_path": "T_OmniverseKitViewportCameraMesh.png",
+      "thumbnail_mtime": 1792129924,
+      "video_rel_path": null,
+      "video_mtime": 0,
       "primary_usd_rel_path": null,
-      "total_size_bytes": 4021294,
-      "total_size_mb": 3.84,
-      "video_files": [
-        {
-          "name": "V_CHAJI.mp4",
-          "rel_path": "V_CHAJI.mp4",
-          "size_bytes": 919021,
-          "mtime": 1789484194,
-          "size_str": "897.5 KB",
-          "static_path": "media/wq_14_scene/CHAJI/V_CHAJI.mp4?v=1789484194_0702d566"
-        }
-      ],
+      "total_size_bytes": 9664720,
+      "total_size_mb": 9.22,
+      "video_files": [],
       "image_files": [
         {
-          "name": "T_CHAJI.png",
-          "rel_path": "T_CHAJI.png",
-          "size_bytes": 3102273,
-          "mtime": 1789483885,
-          "size_str": "2.96 MB",
-          "static_path": "media/wq_14_scene/CHAJI/T_CHAJI.webp?v=1792033321"
+          "name": "T_OmniverseKitViewportCameraMesh.png",
+          "rel_path": "T_OmniverseKitViewportCameraMesh.png",
+          "size_bytes": 8395984,
+          "mtime": 1792129924,
+          "size_str": "8.01 MB",
+          "static_path": "media/qzs_scene/SM_Home_Living_Room/T_OmniverseKitViewportCameraMesh.webp?v=1792379018"
+        },
+        {
+          "name": "rgb_0001.png",
+          "rel_path": "rgb_0001.png",
+          "size_bytes": 1268736,
+          "mtime": 1792145934,
+          "size_str": "1.21 MB",
+          "static_path": "media/qzs_scene/SM_Home_Living_Room/rgb_0001.webp?v=1792379018"
         }
       ],
-      "static_thumb_path": "media/wq_14_scene/CHAJI/thumb.webp?v=1792033320",
-      "static_video_path": "media/wq_14_scene/CHAJI/V_CHAJI.mp4?v=1789484194_0702d566"
+      "static_thumb_path": "media/qzs_scene/SM_Home_Living_Room/thumb.webp?v=1792379017",
+      "static_video_path": null
+    },
+    {
+      "id": "wq_14_scene/SM_Home_Living_Room",
+      "batch": "wq_14_scene",
+      "name": "SM_Home_Living_Room",
+      "displayName": "Living Room / 客厅场景 - SM_Home_Living_Room",
+      "category": "客厅场景",
+      "category_en": "Living Room",
+      "category_display": "客厅 / Living Room",
+      "is_scene": true,
+      "has_video": false,
+      "has_usd": false,
+      "has_image": true,
+      "thumbnail_rel_path": "T_living_room02.png",
+      "thumbnail_mtime": 1792377277,
+      "video_rel_path": null,
+      "video_mtime": 0,
+      "primary_usd_rel_path": null,
+      "total_size_bytes": 7612612,
+      "total_size_mb": 7.26,
+      "video_files": [],
+      "image_files": [
+        {
+          "name": "T_living_room02.png",
+          "rel_path": "T_living_room02.png",
+          "size_bytes": 2813820,
+          "mtime": 1792377277,
+          "size_str": "2.68 MB",
+          "static_path": "media/wq_14_scene/SM_Home_Living_Room/T_living_room02.webp?v=1792379019"
+        },
+        {
+          "name": "T_living_room01.png",
+          "rel_path": "T_living_room01.png",
+          "size_bytes": 2524146,
+          "mtime": 1792377163,
+          "size_str": "2.41 MB",
+          "static_path": "media/wq_14_scene/SM_Home_Living_Room/T_living_room01.webp?v=1792379019"
+        },
+        {
+          "name": "T_kitchen.png",
+          "rel_path": "T_kitchen.png",
+          "size_bytes": 2274646,
+          "mtime": 1792377051,
+          "size_str": "2.17 MB",
+          "static_path": "media/wq_14_scene/SM_Home_Living_Room/T_kitchen.webp?v=1792379019"
+        }
+      ],
+      "static_thumb_path": "media/wq_14_scene/SM_Home_Living_Room/thumb.webp?v=1792379018",
+      "static_video_path": null
     }
   ],
   "total_scenes": 2,
   "scene_categories": [
-    "客厅场景",
-    "综合场景"
+    "客厅场景"
   ],
   "scene_category_counts": {
-    "客厅场景": 1,
-    "综合场景": 1
+    "客厅场景": 2
   },
   "scene_batches": [
     "qzs_scene",
@@ -10227,9 +10230,9 @@
     "total_categories": 17,
     "total_size_gb": 9.29,
     "total_scenes": 2,
-    "total_scene_videos": 2,
-    "total_scene_usds": 1
+    "total_scene_videos": 0,
+    "total_scene_usds": 0
   },
-  "build_timestamp": 1792033321,
+  "build_timestamp": 1792379452,
   "is_static_showcase": true
 }
